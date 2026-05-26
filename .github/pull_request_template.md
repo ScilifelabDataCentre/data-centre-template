@@ -12,13 +12,26 @@ What then?
 When you open a PR, the PR description will automatically display the contents of this file. 
 -->
 
-## Summary
+## Description
 
-## Checklist for _author_
+_This section should...:_
+
+- _Explain why the change is needed_
+- _Explain what the PR does_
+- _Clarify anything that might be unclear to a reviewer_  
+- _Highlight breaking changes if there are any_
+
+### Related issues / tasks
+
+_Mention and / or link to related issues or tasks, e.g. Jira_
+
+## For the _author_
+
+The following items should be checked **before** marking the PR as **Ready for Review**.
 
 - [ ] I've written an informative title, finishing the sentence "This PR will..."
-- [ ] I've explained what this PR does and why
-- [ ] I've mentioned and linked related issues / tasks
+- [ ] I've explained [what this PR does and why](#description)
+- [ ] I've mentioned and linked [related issues / tasks](#related-issues--tasks)
 - [ ] The PR aligns with the [Definition of Done](#)
   - [ ] The branch is up to date with `<default-branch>` <!-- Change to name of your default branch -->
   - [ ] The PR aligns with the [Acceptance Criteria](#)
@@ -30,7 +43,14 @@ When you open a PR, the PR description will automatically display the contents o
   - [ ] The changes made in the PR are documented appropriately
 - [ ] I've performed a [self-review](#) of this PR
 
-## Checklist for _reviewer_
+## For the _reviewer_
 
-<!-- checklist here -->
+See the guidelines on [how to review a PR](). It offers useful tips that simplify the process for everyone involved. 
+
+- [ ] I understand the purpose of the PR
+- [ ] The scope of the PR matches the [Acceptance Criteria](#)
+- [ ] The behavior matches the description
+- [ ] The code is clean and follows agreed upon standards
+
+Once the PR aligns with the Definition of Done: Approve the PR!
 
