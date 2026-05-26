@@ -25,7 +25,7 @@ _Use this section to...:_
 
 _Mention and / or link to related issues or tasks, e.g. Jira_
 
-### Review focus
+### Notes for reviewers
 
 _Optional: Mention anything you especially want reviewers to look at._
 
