@@ -20,14 +20,14 @@ When you open a PR, the PR description will automatically display the contents o
 - [ ] I've explained what this PR does and why
 - [ ] I've mentioned and linked related issues / tasks
 - [ ] The PR aligns with the [Definition of Done](#)
-    - [ ] The branch is up to date with `<default-branch>` <!-- Change to name of your default branch -->
-    - [ ] The PR aligns with the [Acceptance Criteria](#)
-    - [ ] All configured checks pass
-    - [ ] Unused code and debug leftovers have been removed
-    - [ ] Naming and structure follow the style guidelines
-    - [ ] Tests confirm the behavior
-    - [ ] Risks have been considered and documented
-    - [ ] The changes made in the PR are documented appropriately
+  - [ ] The branch is up to date with `<default-branch>` <!-- Change to name of your default branch -->
+  - [ ] The PR aligns with the [Acceptance Criteria](#)
+  - [ ] All configured checks pass
+  - [ ] Unused code and debug leftovers have been removed
+  - [ ] Naming and structure follow the style guidelines
+  - [ ] Tests confirm the behavior
+  - [ ] Risks have been considered and documented
+  - [ ] The changes made in the PR are documented appropriately
 - [ ] I've performed a [self-review](#) of this PR
 
 ## Checklist for _reviewer_
