@@ -32,6 +32,7 @@ _Optional: Mention anything you especially want reviewers to look at._
 ## For the author
 
 The following items should be checked **before** marking the PR as **Ready for Review**.
+For checklist items that do not apply, add a short note explaining why.
 
 ### PR context
 
