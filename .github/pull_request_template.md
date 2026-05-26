@@ -12,7 +12,7 @@ What then?
 When you open a PR, the PR description will automatically display the contents of this file. 
 -->
 
-# Description
+## Description
 
 _Use this section to...:_
 
@@ -21,27 +21,27 @@ _Use this section to...:_
 - _Clarify anything that might be unclear to a reviewer_  
 - _Highlight breaking changes if there are any_
 
-## Related issues / tasks
+### Related issues / tasks
 
 _Mention and / or link to related issues or tasks, e.g. Jira_
 
-## Review focus
+### Review focus
 
 _Optional: Mention anything you especially want reviewers to look at._
 
-# For the author
+## For the author
 
 The following items should be checked **before** marking the PR as **Ready for Review**.
 For checklist items that do not apply, add a short note explaining why.
 
-## PR context
+### PR context
 
 - [ ] I've written an informative title, finishing the sentence "This PR will..."
 - [ ] I've explained [what this PR does and why](#description)
 - [ ] I've mentioned and linked [related issues / tasks](#related-issues--tasks)
 - [ ] I've documented breaking changes, risks, assumptions, or open questions, if any
 
-## [Definition of Done](#LINK-TO-MERGED-GUIDELINES)
+### [Definition of Done](#LINK-TO-MERGED-GUIDELINES)
 
 - [ ] The branch is up to date with `<default-branch>`
 - [ ] The PR aligns with the [Acceptance Criteria](#LINK-TO-ACCEPTANCE-CRITERIA)
@@ -51,11 +51,11 @@ For checklist items that do not apply, add a short note explaining why.
 - [ ] Naming and structure follow the agreed [style guidelines](#LINK-TO-STYLE-GUIDELINES)
 - [ ] The changes made in the PR are documented appropriately
 
-## Self-review
+### Self-review
 
 - [ ] I've performed a [self-review](#LINK-TO-SELF-REVIEW-GUIDE) of this PR
 
-# For the reviewer
+## For the reviewer
 
 See the guidelines on [how to review a PR](#LINK-TO-GUIDELINES). They offer useful tips that simplify the process for everyone involved.
 
