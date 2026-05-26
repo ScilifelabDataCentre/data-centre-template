@@ -34,6 +34,8 @@ _Optional: Mention anything you especially want reviewers to look at._
 The following items should be checked **before** marking the PR as **Ready for Review**.
 For checklist items that do not apply, add a short note explaining why.
 
+<!-- Optional: If your repository uses labels, add relevant checklist item(s) regarding this. -->
+
 ### PR context
 
 - [ ] I've written an informative title, finishing the sentence "This PR will..."
