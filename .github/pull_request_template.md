@@ -48,7 +48,7 @@ For checklist items that do not apply, add a short note explaining why.
 - [ ] The branch is up to date with `<default-branch>`
 - [ ] The PR aligns with the [Acceptance Criteria](#LINK-TO-ACCEPTANCE-CRITERIA)
 - [ ] All configured checks pass
-- [ ] Tests confirm the intended behavior
+- [ ] Tests confirm the intended behaviour
 - [ ] Unused code and debug leftovers have been removed
 - [ ] Naming and structure follow the agreed [style guidelines](#LINK-TO-STYLE-GUIDELINES)
 - [ ] The changes made in the PR are documented appropriately
@@ -65,7 +65,7 @@ Review broad to narrow:
 
 - [ ] I understand the purpose of the PR
 - [ ] The scope of the PR matches the [Acceptance Criteria](#LINK-TO-ACCEPTANCE-CRITERIA)
-- [ ] The behavior matches the description
+- [ ] The behaviour matches the description
 - [ ] Risks, assumptions, edge cases, and possible side effects have been considered
 - [ ] Tests are present and meaningful, or the absence of tests is acceptable
 - [ ] The code is clean, readable, maintainable, and follows agreed standards
