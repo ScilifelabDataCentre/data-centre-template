@@ -61,6 +61,8 @@ For checklist items that do not apply, add a short note explaining why.
 
 See the guidelines on [how to review a PR](#LINK-TO-MERGED-GUIDELINES). They offer useful tips that simplify the process for everyone involved.
 
+Use the following checklist during the review.
+
 Review broad to narrow:
 
 - [ ] I understand the purpose of the PR
