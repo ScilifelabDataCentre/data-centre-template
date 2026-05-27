@@ -41,6 +41,9 @@ jobs:
       - name: Install CSpell Dictionaries (en-gb and Swedish)
         run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv @cspell/dict-medicalterms
 
+      - name: Debug "Haldol"
+        run: npx cspell trace --config .config/cspell.json Haldol
+
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
         with: # See link in the top for more configuration options
