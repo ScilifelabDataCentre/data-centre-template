@@ -25,4 +25,4 @@ jobs:
           # verbose: false # Don't log verbose action output (default)
           # use_cspell_files: false # Use the above files configuration, not the cspell.json files configuration (default)
           # report: all # Report all spelling issues (default)
-          # Testttttt # Misspelled word for testing purposes
+          # Testttt # Misspelled word for testing purposes
