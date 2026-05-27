@@ -29,14 +29,6 @@ jobs:
         uses: actions/checkout@v6
         with:
           persist-credentials: false # We don't need the token in subsequent steps
-      
-      - name: Debug CSpell
-        run: |
-          npx cspell --version
-          npx cspell trace --config .config/cspell.json partman
-          npx cspell trace --config .config/cspell.json bytea
-          npx cspell trace --config .config/cspell.json jsquery
-          npx cspell trace --config .config/cspell.json ZSON
           
       # Required for Swedish spell-check to work,
       # and keep British English spellings more consistent 
