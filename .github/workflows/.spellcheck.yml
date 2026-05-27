@@ -34,15 +34,18 @@ jobs:
         uses: actions/checkout@v6
         with:
           persist-credentials: false # We don't need the token in subsequent steps
-          
+
+      - name: Debug "bytea"
+        run: npx cspell trace --config .config/cspell.json bytea
+
       # Required for Swedish spell-check to work,
       # and keep British English spellings more consistent 
       # (en-GB flags fewer US spellings)
       - name: Install CSpell Dictionaries (en-gb and Swedish)
-        run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv @cspell/dict-medicalterms
+        run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv @cspell/dict-sql
 
-      - name: Debug "Haldol"
-        run: npx cspell trace --config .config/cspell.json Haldol
+      - name: Debug "bytea"
+        run: npx cspell trace --config .config/cspell.json bytea
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
