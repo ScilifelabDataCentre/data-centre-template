@@ -8,6 +8,6 @@
         "@cspell/dict-companies/cspell-ext.json",
         "@cspell/dict-sql/cspell-ext.json"
     ],
-    "caseSensitive": true,
+    "caseSensitive": false,
     "words": ["SciLifeLab"]
 }
