@@ -13,18 +13,20 @@ jobs:
   spellcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout Repository
+        uses: actions/checkout@v6
         with:
           persist-credentials: false # default is true, but we don't need it for this action
-      - uses: streetsidesoftware/cspell-action@v8
+      
+      # - name: Install CSpell Dictionaries (en-GB and Swedish)
+      #   run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv
+
+      - name: Run CSpell
+        uses: streetsidesoftware/cspell-action@v8
         with: # See link in the top for more configuration options
           files: '' # Spell check all files (default)
-          inline: warning # Show spelling issues as warning annotations in the PR (default)
-          suggestions: true # Don't show suggestions for misspelled words
-          # strict: true # Fail the action if any misspelled words are found (default)
-          # incremental_files_only: true # Only spell check files that have changed in the PR (default)
           config: '.config/cspell.json' # Where to find the cspell configuration file cspell.json (default)
-          # verbose: false # Don't log verbose action output (default)
-          # use_cspell_files: false # Use the above files configuration, not the cspell.json files configuration (default)
-          # report: all # Report all spelling issues (default)
-
+          inline: warning # Show spelling issues as warning annotations in the PR (default)
+          suggestions: true # Show suggestions for misspelled words
+          strict: true # Fail the action if any misspelled words are found (default)
+          incremental_files_only: true # Only spell check files that have changed in the PR (default)
