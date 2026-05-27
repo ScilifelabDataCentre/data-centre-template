@@ -4,7 +4,6 @@
 name: Spell Check
 on:
   pull_request:
-  push:
 
 jobs:
   spellcheck:
