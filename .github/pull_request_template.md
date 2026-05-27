@@ -46,7 +46,7 @@ For checklist items that do not apply, add a short note explaining why.
 ### [Definition of Done](#LINK-TO-MERGED-GUIDELINES)
 
 - [ ] The branch is up to date with `<default-branch>`
-- [ ] The PR aligns with the [Acceptance Criteria](#LINK-TO-ACCEPTANCE-CRITERIA)
+- [ ] The PR aligns with the [Acceptance Criteria](#LINK-TO-MERGED-GUIDELINES)
 - [ ] All configured checks pass
 - [ ] Tests confirm the intended behaviour
 - [ ] Unused code and debug leftovers have been removed
@@ -55,16 +55,16 @@ For checklist items that do not apply, add a short note explaining why.
 
 ### Self-review
 
-- [ ] I've performed a [self-review](#LINK-TO-SELF-REVIEW-GUIDE) of this PR
+- [ ] I've performed a [self-review](#LINK-TO-MERGED-GUIDELINES) of this PR
 
 ## For the reviewer
 
-See the guidelines on [how to review a PR](#LINK-TO-GUIDELINES). They offer useful tips that simplify the process for everyone involved.
+See the guidelines on [how to review a PR](#LINK-TO-MERGED-GUIDELINES). They offer useful tips that simplify the process for everyone involved.
 
 Review broad to narrow:
 
 - [ ] I understand the purpose of the PR
-- [ ] The scope of the PR matches the [Acceptance Criteria](#LINK-TO-ACCEPTANCE-CRITERIA)
+- [ ] The scope of the PR matches the [Acceptance Criteria](#LINK-TO-MERGED-GUIDELINES)
 - [ ] The behaviour matches the description
 - [ ] Risks, assumptions, edge cases, and possible side effects have been considered
 - [ ] Tests are present and meaningful, or the absence of tests is acceptable
