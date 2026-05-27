@@ -2,8 +2,7 @@
     "version": "0.2",
     "language": "en-gb",
     "import": [
-        "@cspell/dict-en-gb/cspell-ext.json", 
-        "@cspell/dict-sv/cspell-ext.json"
+        "@cspell/dict-en-gb/cspell-ext.json"
     ],
     "caseSensitive": true,
     "words": ["SciLifeLab"]
