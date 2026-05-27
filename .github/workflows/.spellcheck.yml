@@ -18,8 +18,8 @@ jobs:
         with:
           persist-credentials: false # default is true, but we don't need it for this action
       
-      # - name: Install CSpell Dictionaries (en-GB and Swedish)
-      #   run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv
+      - name: Install CSpell Dictionaries (en-GB and Swedish)
+        run: npm install --no-save @cspell/dict-en-gb # @cspell/dict-sv
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
