@@ -8,6 +8,11 @@
 # - correct
 # - behaviour
 # - svenska
+# - partman
+# - bytea
+# - jsquery
+# - ZSON
+# - Kubernetes
 # 
 # Should fail: 
 # - scilifelab (case sensitive)
