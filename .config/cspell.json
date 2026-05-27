@@ -6,5 +6,6 @@
         "@cspell/dict-sv/cspell-ext.json"
     ],
     "caseSensitive": true,
-    "words": ["SciLifeLab"]
+    "words": ["SciLifeLab"],
+    "dictionaries": ["en-gb", "sv"]
 }
