@@ -1,9 +1,21 @@
 # Spell checking using Cspell (cspell-action)
 # Link: https://github.com/marketplace/actions/cspell-action
 
-# Test:
-# Should pass: SciLifeLab, correct
-# Should fail: scilifelab (case sensitive), icorrect (misspelled), fdfsdfsd (nonsense word)
+# ----- Test -----
+# 
+# Should pass: 
+# - SciLifeLab
+# - correct
+# - behaviour
+# - svenska
+# 
+# Should fail: 
+# - scilifelab (case sensitive)
+# - icorrect (misspelled)
+# - fdfsdfsd (nonsense word)
+# - behavior (US)
+# - organize (US)
+# - ssvenska (misspelled Swedish)
 ---
 name: Spell Check
 on:
