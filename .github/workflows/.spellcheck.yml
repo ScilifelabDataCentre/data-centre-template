@@ -1,5 +1,9 @@
 # Spell checking using Cspell (cspell-action)
 # Link: https://github.com/marketplace/actions/cspell-action
+
+# Test:
+# Should pass: SciLifeLab, correct
+# Should fail: scilifelab (case sensitive), icorrect (misspelled), fdfsdfsd (nonsense word)
 ---
 name: Spell Check
 on:
@@ -25,9 +29,4 @@ jobs:
           # verbose: false # Don't log verbose action output (default)
           # use_cspell_files: false # Use the above files configuration, not the cspell.json files configuration (default)
           # report: all # Report all spelling issues (default)
-          # SciLifeLab should pass
-          # scilifelab should fail if caseSensitive works
-          # Behaviour should pass
-          # Behavior might or might not fail depending on dictionary behaviour
-          # asdfasdfasdf should definitely fail
-          # Organize should fail
+
