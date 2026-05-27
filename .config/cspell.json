@@ -3,9 +3,9 @@
     "language": "en-gb,sv",
     "import": [
         "@cspell/dict-en-gb/cspell-ext.json",
-        "@cspell/dict-sv/cspell-ext.json",
-        "@cspell/dict-sql/cspell-ext.json"
+        "@cspell/dict-sv/cspell-ext.json"
     ],
     "caseSensitive": false,
-    "words": ["SciLifeLab"]
+    "words": ["SciLifeLab"],
+    "dictionaries": ["sql"]
 }

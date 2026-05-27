@@ -42,7 +42,7 @@ jobs:
       # and keep British English spellings more consistent 
       # (en-GB flags fewer US spellings)
       - name: Install CSpell Dictionaries (en-gb and Swedish)
-        run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv @cspell/dict-sql
+        run: npm install --no-save @cspell/dict-en-gb @cspell/dict-sv
 
       - name: Debug "bytea"
         run: npx cspell trace --config .config/cspell.json bytea
