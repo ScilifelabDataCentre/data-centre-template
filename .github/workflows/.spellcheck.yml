@@ -17,7 +17,7 @@ jobs:
           # files: '' # Spell check all files (default)
           # check_dot_files: true # Always spell check dot files 
           # root: '.' # Spell check from the root of the repository (default)
-          inline: error # Show spelling issues as warning annotations in the PR (default)
+          inline: warning # Show spelling issues as warning annotations in the PR (default)
           # suggestions: false # Don't show suggestions for misspelled words
           # strict: true # Fail the action if any misspelled words are found (default)
           # incremental_files_only: true # Only spell check files that have changed in the PR (default)
