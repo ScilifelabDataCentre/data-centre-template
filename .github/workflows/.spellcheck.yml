@@ -14,7 +14,7 @@ jobs:
           persist-credentials: false # default is true, but we don't need it for this action
       - uses: streetsidesoftware/cspell-action@v8
         with: # See link in the top for more configuration options
-          # files: '' # Spell check all files (default)
+          files: '' # Spell check all files (default)
           # check_dot_files: true # Always spell check dot files 
           # root: '.' # Spell check from the root of the repository (default)
           inline: warning # Show spelling issues as warning annotations in the PR (default)
