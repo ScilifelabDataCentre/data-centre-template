@@ -5,7 +5,7 @@
         "@cspell/dict-en-gb/cspell-ext.json",
         "@cspell/dict-sv/cspell-ext.json"
     ],
-    "caseSensitive": true,
+    "caseSensitive": false,
     "words": ["SciLifeLab"],
     "dictionaries": [
         "en-gb",
