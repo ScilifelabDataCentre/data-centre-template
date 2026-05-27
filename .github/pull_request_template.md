@@ -14,7 +14,7 @@ When you open a PR, the PR description will automatically display the contents o
 
 ## Description
 
-_Use this section to...:_
+_Use this section to:_
 
 - _Explain why the change is needed_
 - _Explain what the PR does_
