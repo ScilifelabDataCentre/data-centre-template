@@ -9,7 +9,7 @@ EJ KORREKT:
 - Någott testt
 - Flaggga
 
-ENGELSKA
+ENGLISH
 ---------
 CORRECT:
 - English
