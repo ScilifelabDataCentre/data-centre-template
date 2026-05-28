@@ -4,7 +4,7 @@
     "import": [
         "@cspell/dict-sv/cspell-ext.json"
     ],
-    "caseSensitive": false,
+    "caseSensitive": true,
     "words": ["SciLifeLab"],
     "dictionaryDefinitions": [
         {
