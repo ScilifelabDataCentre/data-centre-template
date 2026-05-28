@@ -1,10 +1,6 @@
 {
     "version": "0.2",
     "language": "en-gb,sv",
-    "import": [
-        "@cspell/dict-en-gb/cspell-ext.json",
-        "@cspell/dict-sv/cspell-ext.json"
-    ],
     "caseSensitive": false,
     "words": ["SciLifeLab"],
     "dictionaryDefinitions": [
@@ -14,5 +10,5 @@
             "addWords": true
         }
     ],
-    "dictionaries": ["sql", "data-science", "cpp-compound-words", "project-specific-words"]
+    "dictionaries": ["en-gb", "sv","sql", "data-science", "cpp-compound-words", "project-specific-words"]
 }
