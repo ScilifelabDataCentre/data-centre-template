@@ -26,7 +26,7 @@ jobs:
         uses: streetsidesoftware/cspell-action@v8
         with: # See link at top of file for more configuration options
           files: '' # All files (default)
-          config: '.config/cspell/cspell.json' # Custom cspell config file
+          config: '.config/cspell/cspell.yaml' # Custom cspell config file
           inline: error # Show spelling issues as inline errors in PR
           suggestions: true # Show suggestions for misspelled words
           strict: true # Fail action if any misspelled words (default)
