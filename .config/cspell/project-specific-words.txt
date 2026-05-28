@@ -1,10 +1,9 @@
-# Project specific words
-# This file contains words that are not present in any Cspell dictionaries
-# but that we don't want it to flag.
+# Project-specific words
 # 
-# The words below are examples,
-# taken from this repository (data-centre-template) 
-# and the development_guidelines repository
+# Add terms that are valid for your repository but 
+# not covered by CSpell's available dictionaries.
+# One word per line.
+
 Berserkers
 Bitnami
 Bitwarden
