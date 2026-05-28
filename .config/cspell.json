@@ -7,5 +7,12 @@
     ],
     "caseSensitive": false,
     "words": ["SciLifeLab"],
-    "dictionaries": ["sql", "data-science", "cpp-compound-words"]
+    "dictionaryDefinitions": [
+        {
+            "name": "project-specific-words",
+            "path": "./project-specific-words.txt",
+            "addWords": true
+        }
+    ],
+    "dictionaries": ["sql", "data-science", "cpp-compound-words", "project-specific-words"]
 }
