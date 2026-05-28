@@ -6,6 +6,9 @@
         "@cspell/dict-people-names/cspell-ext.json"
     ],
     "caseSensitive": true,
+    "ignorePaths": [
+        "./config/cspell/cspell.json"
+    ],
     "ignoreRegExpList": [
         "MarkdownLink",
         "Url",
