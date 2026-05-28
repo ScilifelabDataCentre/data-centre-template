@@ -13,6 +13,7 @@
 # - jsquery
 # - ZSON
 # - acetylcholinesterase
+# - Distributables
 # 
 # Should fail: 
 # - scilifelab (case sensitive)
