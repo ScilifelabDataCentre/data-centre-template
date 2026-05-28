@@ -12,7 +12,7 @@ import:
 caseSensitive: true
 
 ignorePaths:
-  - ./cspell.json
+  - ./cspell-config.json
 
 # cSpell:ignore datacentre
 ignoreRegExpList:
