@@ -1,0 +1,32 @@
+SVENSKA
+--------
+KORREKT: 
+- Svenska
+- Något test
+- Flagga inte
+EJ KORREKT:
+- Svvenska
+- Någott testt
+- Flaggga
+
+ENGELSKA
+---------
+CORRECT:
+- English
+- Some test
+- Don't flag this
+INCORRECT:
+- Ennglish
+- Somme test
+- Fllaggthis
+
+PROJECT-SPECIFIC-WORDS
+-----------------------
+INCLUDED:
+- SciLifeLab
+- ORCID
+- Bitwarden
+NOT INCLUDED:
+- scilifelab
+- fgfgjiejrsdasudn
+- blablabla
