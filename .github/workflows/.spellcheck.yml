@@ -39,7 +39,7 @@ jobs:
       # and keep British English spellings more consistent 
       # (en-GB flags fewer US spellings)
       - name: Install CSpell Dictionaries (en-gb and Swedish)
-        run: npm install --no-save @cspell/dict-sv # @cspell/dict-en-gb
+        run: npm install --no-save @cspell/dict-sv @cspell/dict-en-gb
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
