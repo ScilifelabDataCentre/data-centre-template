@@ -43,7 +43,7 @@ jobs:
         uses: streetsidesoftware/cspell-action@v8
         with: # See link in the top for more configuration options
           files: '' # All files (default)
-          config: '.config/cspell.json' # Custom cspell config file (default is in root)
+          config: '.config/cspell/cspell.json' # Custom cspell config file (default is in root)
           inline: error # Show spelling issues as inline errors in PR (default is warning)
           suggestions: true # Show suggestions for misspelled words (default is false)
           strict: true # Fail action is any misspelled words (default)
