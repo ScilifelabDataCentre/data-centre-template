@@ -17,7 +17,7 @@ CORRECT:
 - Don't flag this
 INCORRECT:
 - Ennglish
-- Somme test
+- Sommee test
 - Fllaggthis
 
 PROJECT-SPECIFIC-WORDS
