@@ -1,29 +1,10 @@
-# Spell checking using Cspell (cspell-action)
+# Spell checking using CSpell (cspell-action)
 # Link: https://github.com/marketplace/actions/cspell-action
-
-# ----- Test -----
 # 
-# Should pass: 
-# - SciLifeLab
-# - correct
-# - behaviour
-# - svenska
-# - partman
-# - bytea
-# - jsquery
-# - ZSON
-# - acetylcholinesterase
-# - Distributables
-# 
-# Should fail: 
-# - scilifelab (case sensitive)
-# - icorrect (misspelled)
-# - fdfsdfsd (nonsense word)
-# - behavior (US)
-# - organize (US)
-# - ssvenska (misspelled Swedish)
+# See the ./config/cspell/ directory for information regarding 
+# this workflow and the cspell configuration file.
 ---
-name: Spell Check
+name: Spell Check with CSpell
 on:
   pull_request:
 
@@ -36,16 +17,17 @@ jobs:
         with:
           persist-credentials: false # We don't need the token in subsequent steps
 
-      # Required for Swedish spell-check to work
+      # Installation required for some dictionaries
+      # Import in the .config/cspell/cspell.json file is also required
       - name: Install CSpell Swedish Dictionary
         run: npm install --no-save @cspell/dict-sv @cspell/dict-people-names
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
-        with: # See link in the top for more configuration options
+        with: # See link at top of file for more configuration options
           files: '' # All files (default)
-          config: '.config/cspell/cspell.json' # Custom cspell config file (default is in root)
-          inline: error # Show spelling issues as inline errors in PR (default is warning)
-          suggestions: true # Show suggestions for misspelled words (default is false)
-          strict: true # Fail action is any misspelled words (default)
+          config: '.config/cspell/cspell.json' # Custom cspell config file
+          inline: error # Show spelling issues as inline errors in PR
+          suggestions: true # Show suggestions for misspelled words
+          strict: true # Fail action if any misspelled words (default)
           incremental_files_only: true # Only spell check PR diff (default)

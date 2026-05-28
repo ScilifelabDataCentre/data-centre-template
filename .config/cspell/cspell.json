@@ -22,5 +22,15 @@
             "addWords": true
         }
     ],
-    "dictionaries": ["ruby", "k8s", "latex", "fonts", "sql", "cpp-compound-words", "fullstack","project-specific-words", "companies"]
+    "dictionaries": [
+        "companies",
+        "cpp-compound-words", 
+        "fonts", 
+        "fullstack",
+        "k8s", 
+        "latex", 
+        "project-specific-words", 
+        "ruby", 
+        "sql"
+    ]
 }

@@ -17,3 +17,7 @@ npx cspell trace --config .config/cspell.json [word]
 # Expand with your project-specific words
 # and remove words where necessary
 # ----------------------------------------------------------------- -->
+
+Initial examples in the project-specific words are from the repos
+- data-centre-template
+- development_guidelines
