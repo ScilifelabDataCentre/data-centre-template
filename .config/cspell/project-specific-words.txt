@@ -9,7 +9,6 @@ Bitnami
 Bitwarden
 citability
 Distributables
-datacentre
 findability
 jsquery
 Kivy
