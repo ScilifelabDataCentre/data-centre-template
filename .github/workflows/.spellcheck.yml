@@ -35,11 +35,11 @@ jobs:
         with:
           persist-credentials: false # We don't need the token in subsequent steps
 
-      # # Required for Swedish spell-check to work,
-      # # and keep British English spellings more consistent 
-      # # (en-GB flags fewer US spellings)
-      # - name: Install CSpell Dictionaries (en-gb and Swedish)
-      #   run: npm install --no-save @cspell/dict-sv # @cspell/dict-en-gb
+      # Required for Swedish spell-check to work,
+      # and keep British English spellings more consistent 
+      # (en-GB flags fewer US spellings)
+      - name: Install CSpell Dictionaries (en-gb and Swedish)
+        run: npm install --no-save @cspell/dict-sv # @cspell/dict-en-gb
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
