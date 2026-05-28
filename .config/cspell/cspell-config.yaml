@@ -1,3 +1,5 @@
+# This file is also scanned by cspell
+# which is why the ignore is needed above the ignoreRegExpList
 ---
 version: "0.2"
 
@@ -18,8 +20,8 @@ ignorePaths:
 ignoreRegExpList:
   - MarkdownLink
   - Url
-  - /\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi
-  - /#datacentre_[a-z0-9_-]+/g
+  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi'
+  - '/#datacentre_[a-z0-9_-]+/g'
 
 dictionaryDefinitions:
   - name: project-specific-words

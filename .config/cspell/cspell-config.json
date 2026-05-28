@@ -7,7 +7,7 @@
     ],
     "caseSensitive": true,
     "ignorePaths": [
-        "./cspell.json"
+        "./cspell-config.json"
     ],
     "ignoreRegExpList": [
         "MarkdownLink",
