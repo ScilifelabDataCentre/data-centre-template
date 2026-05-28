@@ -10,5 +10,5 @@
             "addWords": true
         }
     ],
-    "dictionaries": ["en-gb", "sv","sql", "data-science", "cpp-compound-words", "project-specific-words"]
+    "dictionaries": ["sql", "data-science", "cpp-compound-words", "project-specific-words"]
 }
