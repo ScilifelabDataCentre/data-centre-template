@@ -14,7 +14,7 @@ caseSensitive: true
 ignorePaths:
   - ./cspell.json
 
-# cSpell: ignore /#datacentre_[a-z0-9_-]+/g
+# cSpell:ignoreRegExp /#datacentre_[a-z0-9_-]+/g
 ignoreRegExpList:
   - MarkdownLink
   - Url
