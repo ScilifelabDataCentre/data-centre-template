@@ -7,5 +7,5 @@
     ],
     "caseSensitive": false,
     "words": ["SciLifeLab"],
-    "dictionaries": ["sql"]
+    "dictionaries": ["sql", "data-science"]
 }
