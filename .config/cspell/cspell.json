@@ -1,0 +1,23 @@
+{
+    "version": "0.2",
+    "language": "en-gb,sv",
+    "import": [
+        "@cspell/dict-sv/cspell-ext.json",
+        "@cspell/dict-people-names/cspell-ext.json"
+    ],
+    "caseSensitive": true,
+    "ignoreRegExpList": [
+        "MarkdownLink",
+        "Url",
+        "/\\b[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}\\b/gi",
+        "/#datacentre_[a-z0-9_-]+/g"
+    ],
+    "dictionaryDefinitions": [
+        {
+            "name": "project-specific-words",
+            "path": "./project-specific-words.txt",
+            "addWords": true
+        }
+    ],
+    "dictionaries": ["ruby", "k8s", "latex", "fonts", "sql", "cpp-compound-words", "fullstack","project-specific-words", "companies"]
+}

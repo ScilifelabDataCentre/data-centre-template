@@ -37,7 +37,7 @@ jobs:
 
       # Required for Swedish spell-check to work
       - name: Install CSpell Swedish Dictionary
-        run: npm install --no-save @cspell/dict-sv
+        run: npm install --no-save @cspell/dict-sv @cspell/dict-peoples-names
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8

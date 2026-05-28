@@ -1,0 +1,30 @@
+# Project specific words
+# This file contains words that are not present in any Cspell dictionaries
+# but that we don't want it to flag.
+# 
+# The words below are examples,
+# taken from this repository (data-centre-template) 
+# and the development_guidelines repository
+Berserkers
+Bitnami
+Bitwarden
+citability
+Distributables
+findability
+jsquery
+Kivy
+logfmt
+mdlint
+MSBFS
+nerdctl
+ORCID
+Pandoc
+pandoc
+Pinga
+prek
+RACI
+RORID
+RRID
+SciLifeLab
+Zenodo
+ZSON
