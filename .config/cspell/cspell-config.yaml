@@ -14,13 +14,10 @@ caseSensitive: true
 ignorePaths:
   - ./cspell.json
 
-# cspell:disable
 ignoreRegExpList:
   - MarkdownLink
   - Url
   - /\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi
-  - /#datacentre_[a-z0-9_-]+/g
-# cspell:enable
 
 dictionaryDefinitions:
   - name: project-specific-words
