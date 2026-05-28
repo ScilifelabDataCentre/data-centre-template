@@ -13,6 +13,7 @@ caseSensitive: true
 
 ignorePaths:
   - ./cspell.json
+  - ./cspell.yaml
 
 ignoreRegExpList:
   - MarkdownLink
