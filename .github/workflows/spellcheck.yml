@@ -21,7 +21,7 @@ jobs:
           persist-credentials: false # We don't need the token in subsequent steps
 
       # Some dictionaries require installation here
-      # and import in the .config/cspell-config.yml file
+      # and import in the .config/config/cspell-config.yml file
       - name: Install CSpell Dictionaries (Swedish and names)
         run: npm install --no-save @cspell/dict-sv @cspell/dict-people-names
 
