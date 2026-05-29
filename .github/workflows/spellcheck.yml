@@ -1,27 +1,30 @@
 # Spell checking using CSpell (cspell-action)
 # Link: https://github.com/marketplace/actions/cspell-action
 # 
-# See the ./config/cspell/ directory for information regarding 
-# this workflow and the cspell configuration file.
+# See .config/cspell/ for information about
+# this workflow and the CSpell configuration
 ---
 name: Spell Check with CSpell
+
 on:
-  pull_request:
+  pull_request: # Trigger when PR is opened or updated
 
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
+
     steps:
+      # Checkout the repo to access the files for spell checking
       - name: Checkout Repository
         uses: actions/checkout@v6
         with:
           persist-credentials: false # We don't need the token in subsequent steps
 
-      # Installation required for some dictionaries
-      # Import in the .config/cspell/cspell.json file is also required
-      - name: Install CSpell Swedish Dictionary
+      # Some dictionaries require installation here
+      # and import in the .config/cspell-config.yml file
+      - name: Install CSpell Dictionaries (Swedish and names)
         run: npm install --no-save @cspell/dict-sv @cspell/dict-people-names
-
+      
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
         with: # See link at top of file for more configuration options
