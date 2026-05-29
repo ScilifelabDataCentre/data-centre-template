@@ -21,20 +21,6 @@ import:
 # Spell checking is case-sensitive
 caseSensitive: true
 
-# Patterns to ignore during spell checking
-# cSpell:ignore datacentre
-ignoreRegExpList:
-  - MarkdownLink # Ignore link target, but still check link text
-  - Url # Ignore full URLs, such as https://www.example.com
-  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # Ignore domain names without a protocol
-  - '/#datacentre_[a-z0-9_-]+/g' # Ignore Slack channel names starting with #datacentre_
-
-# Import project-specific words as a custom dictionary
-dictionaryDefinitions:
-  - name: project-specific-words
-    path: ./project-specific-words.txt
-    addWords: true
-
 # Additional dictionaries to use during spell checking
 # These do not require installation or import
 # See https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts
@@ -48,3 +34,17 @@ dictionaries:
   - project-specific-words
   - ruby
   - sql
+
+# Import project-specific words as a custom dictionary
+dictionaryDefinitions:
+  - name: project-specific-words
+    path: ./project-specific-words.txt
+    addWords: true
+
+# Patterns to ignore during spell checking
+# cSpell:ignore datacentre
+ignoreRegExpList:
+  - MarkdownLink # Ignore link target, but still check link text
+  - Url # Ignore full URLs, such as https://www.example.com
+  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # Ignore domain names without a protocol
+  - '/#datacentre_[a-z0-9_-]+/g' # Ignore Slack channel names starting with #datacentre_

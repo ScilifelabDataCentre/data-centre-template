@@ -11,6 +11,8 @@
 
 ## Files in this setup
 
+This template uses one GitHub Actions workflow file and one CSpell configuration directory. The configuration files are kept in `.config/cspell` instead of the repository root to keep the repository structured and make the template as easy as possible to use out of the box.
+
 ```text
 .
 ├── .github/
@@ -23,33 +25,28 @@
         └── project-specific-words.txt
 ```
 
-<!--
-- .github/workflows/spellcheck.yml 
-  - Workflow file
-  - Runs the spell check when a PR is opened or updated
-- .config/ -- why? 
-  - Default is in root but can become messy with config files mixed in with the rest
-- .config/cspell/ -- why? 
-  - Repo becomes more structured 
-  - We can add configurations for other workflows etc without confusion
-- .config/cspell/README.md -- this file -- aim is to make it as easy as possible for anyone to just use this out of the box
-- .config/cspell/cspell-config.yml 
-  - Configation used by the workflow file
-  - Allows us to specify which languages we want to spell check for and add dictionaries for specific fields that are not included in the default language dictionaries
-- .config/cspell/project-specific-words.txt
-  - List of words that are not present in any CSpell dictionaries but that we don't want CSpell to flag as incorrect
-  - The examples in the file are taken from this repo (data-centre-template) and the development_guidelines repo by running cspell with the above mentioned configuration
-  - What do to with the file: expand with your project specific words and remove words where necessary
--->
+| File | Purpose |
+| ------ | --------- |
+| `.github/workflows/spellcheck.yml` | Runs CSpell |
+| `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
+| `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not included in any available CSpell dictionaries but that it should allow |
+| `.config/cspell/README.md` | This guide |
 
 ## How the spell check works
 
+The workflow explicitly includes some default action settings. The workflow would work the same way without these settings being present, but including them increases clarity and reduces the risk of confusion.
+
 - The spell check runs when a PR is opened or updated
 - The workflow is configured to check changed files in the PR
-  - The `files: ''` setting keeps the action's default file selection
-  - `incremental_files_only: true` limits the check to files changed in the PR.
-- The CSpell action uses `.config/cspell/cspell-config.yml` for language, dictionary, ignore-pattern, and project-specific-word settings.
-- Some dictionaries are installed in the workflow before CSpell runs. These dictionaries also need to be imported in the CSpell config file.
+  - `incremental_files_only: true` tells CSpell to only check the PR diff, meaning files changed in the PR. It does not check the rest of the repository.
+  - `files: ''` tells CSpell to check all file types selected by the action. This is the _default_.
+- The CSpell action uses `.config/cspell/cspell-config.yml` for language, dictionary, ignored patterns, and project-specific-word settings.
+  - `language` configures the languages used during the spell check, here British English and Swedish
+  - `import` imports dictionaries that need to be installed in the workflow before CSpell runs, in this case Swedish and People Names
+  - `caseSensitive` allows CSpell to distinguish between different casing, e.g. SciLifeLab and scilifelab.
+  - `dictionaries` list dictionaries from the [`cspell-dicts` repository](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts) that do not require installation before use. They are bundled with CSpell and are enabled when listed under the `dictionaries` section
+  - `dictionaryDefinitions` imports the custom `project-specific-words.txt` as a dictionary. These are words that are not included in any other [CSpell-available dictionary](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts) but that we consider correct and CSpell should not flag.
+  - `ignoreRegExpList` tells CSpell to ignore specific patterns
 - If CSpell finds spelling issues, the workflow fails. Spelling issues are reported as GitHub annotations, and suggestions are shown when available.
 
 ## What to do when CSpell flags a correct word
