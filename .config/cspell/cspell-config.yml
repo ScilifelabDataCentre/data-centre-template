@@ -1,33 +1,41 @@
-# This file is also scanned by cspell
-# which is why the ignore is needed above the ignoreRegExpList
+# Configuration file for CSpell
+# CSpell scans this config file as well
+# --> Need the ignore part above the ignoreRegExpList
 ---
 version: "0.2"
 
 # Languages used for spell checking.
+# en-gb is British English, sv is Swedish
+# Note: British English allows some US spellings
 language: en-gb,sv
 
-# Extra dictionaries that are not bundled by the action.
+# Extra dictionaries that are enabled when imported
+# Note: They first require installation via npm
+# (see .github/workflows/spellcheck.yml)
 import:
   - "@cspell/dict-sv/cspell-ext.json"
   - "@cspell/dict-people-names/cspell-ext.json"
 
+# In most cases, we want the spell checker to be case sensitive
 caseSensitive: true
 
-ignorePaths:
-  - ./cspell-config.json
-
+# Patterns to ignore during spell checking
 # cSpell:ignore datacentre
 ignoreRegExpList:
-  - MarkdownLink
-  - Url
-  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi'
-  - '/#datacentre_[a-z0-9_-]+/g'
+  - MarkdownLink # Ignore link target, but still check link text
+  - Url # Ignore full URLs, such as https://www.example.com
+  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # Ignore domain names without a protocol
+  - '/#datacentre_[a-z0-9_-]+/g' # Ignore Slack channel names starting with #datacentre_
 
+# Import project-specific words as a custom dictionary
 dictionaryDefinitions:
   - name: project-specific-words
     path: ./project-specific-words.txt
     addWords: true
 
+# Additional dictionaries to use during spell checking
+# These do not require installation or import
+# See https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts
 dictionaries:
   - companies
   - cpp-compound-words
