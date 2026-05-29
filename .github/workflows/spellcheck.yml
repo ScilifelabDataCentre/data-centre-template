@@ -21,16 +21,16 @@ jobs:
           persist-credentials: false # We don't need the token in subsequent steps
 
       # Some dictionaries require installation here
-      # and import in the .config/config/cspell-config.yml file
+      # and import in the .config/cspell/cspell-config.yml file
       - name: Install CSpell Dictionaries (Swedish and names)
         run: npm install --no-save @cspell/dict-sv @cspell/dict-people-names
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
         with: # See link at top of file for more configuration options
-          files: '' # Spell check all files (default)
+          files: '' # Include all file types (default)
+          incremental_files_only: true # Only spell check PR diff (default)
           config: '.config/cspell/cspell-config.yml' # Custom CSpell config file
           inline: error # Show spelling issues as inline errors in PR
           suggestions: true # Show suggestions for misspelled words
           strict: true # Fail action if misspelled words are found (default)
-          incremental_files_only: true # Only spell check PR diff (default)
