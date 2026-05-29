@@ -32,7 +32,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 | `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not included in any available CSpell dictionaries but that it should allow |
 | `.config/cspell/README.md` | This guide |
 
-## How the spell check works
+## How this setup works
 
 The workflow explicitly includes some default action settings. The workflow would work the same way without these settings being present, but including them increases clarity and reduces the risk of confusion.
 
