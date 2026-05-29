@@ -21,7 +21,7 @@ CSpell has an official GitHub Action and a large set of dictionaries that can be
 - [Vale](https://github.com/vale-cli/vale-action) is a style and writing-rule linter. It is better suited for enforcing style guides, preferred terminology, tone, and wording conventions in documentation and other written text. Vale could be added alongside CSpell if stricter writing-style checks are needed.
 - [Codespell](https://github.com/marketplace/actions/codespell-with-annotations) checks code for common misspellings. It is better suited for catching known typo patterns than for dictionary-based spell checking against full language and technical dictionaries.
 
-For this template, CSpell gives the best balance between useful typo detection, configurability and ease of use in the GitHub actions.
+For this template, CSpell gives the best balance between useful typo detection, configurability, and ease of use in the GitHub Actions.
 
 ## Files in this setup
 
@@ -43,7 +43,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 | ------ | --------- |
 | `.github/workflows/spellcheck.yml` | Runs CSpell |
 | `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
-| `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not included in any available CSpell dictionaries but that it should allow |
+| `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that it should allow |
 | `.config/cspell/README.md` | This guide |
 
 ## How this setup works
