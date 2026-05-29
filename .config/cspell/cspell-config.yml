@@ -6,19 +6,19 @@
 # Version of setting file. Always 0.2
 version: "0.2"
 
-# Languages used for spell checking.
-# en-gb is British English, sv is Swedish
-# Note: British English allows some US spellings
+# Languages used for spell checking
+# en-gb is British English; sv is Swedish
+# Note: British English may allow some US spellings
 language: en-gb,sv
 
 # Extra dictionaries that are enabled when imported
-# Note: They first require installation via npm
+# Note: These dictionaries must be installed before import
 # (see .github/workflows/spellcheck.yml)
 import:
   - "@cspell/dict-sv/cspell-ext.json"
   - "@cspell/dict-people-names/cspell-ext.json"
 
-# In most cases, we want the spell checker to be case sensitive
+# Spell checking is case-sensitive
 caseSensitive: true
 
 # Patterns to ignore during spell checking
