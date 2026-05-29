@@ -2,12 +2,26 @@
 
 ## What is CSpell?
 
-<!--
-- what it does
-- en-gb but it does not flag all american spellings due to... plus also the other dicts include american spellings
-- links
-- possibly why this is a good choice? 
--->
+CSpell is a spell checker for code and documentation. It scans repository files and flags words that are not recognised by the configured languages, dictionaries, ignore patterns, or project-specific word lists.
+
+In this template, CSpell runs automatically on pull requests to help catch spelling mistakes before changes are merged.
+
+Useful links:
+
+- [CSpell GitHub Action (cspell-action)](https://github.com/marketplace/actions/cspell-action)
+- [CSpell documentation](https://cspell.org/)
+- [Available CSpell dictionaries](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts)
+
+### Why CSpell?
+
+CSpell is designed for spell checking code repositories, not only documentation. It can check documentation, comments, configuration files, and other repository content, while allowing us to configure it for specific projects and repositories.
+
+CSpell has an official GitHub Action and a large set of dictionaries that can be enabled when needed. Other tools may be better for specific use cases, for example:
+
+- [Vale](https://github.com/vale-cli/vale-action) is a style and writing-rule linter. It is better suited for enforcing style guides, preferred terminology, tone, and wording conventions in documentation and other written text. Vale could be added alongside CSpell if stricter writing-style checks are needed.
+- [Codespell](https://github.com/marketplace/actions/codespell-with-annotations) checks code for common misspellings. It is better suited for catching known typo patterns than for dictionary-based spell checking against full language and technical dictionaries.
+
+For this template, CSpell gives the best balance between useful typo detection, configurability and ease of use in the GitHub actions.
 
 ## Files in this setup
 
@@ -66,3 +80,6 @@ npx cspell trace --config .config/cspell.json [word]
 
 ## Notes and limitations
 
+The configuration in this template sets British as the English version because that is the standard at Data Centre. However, 
+
+- en-gb but it does not flag all american spellings due to... plus also the other dicts include american spellings
