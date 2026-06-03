@@ -65,20 +65,6 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 ## What to do when CSpell flags a correct word
 
-<!-- 
-What to do if Cspell flags a word that you know is correct:
-1. Check if Cspell has a dictionary to import
-npx cspell trace --config .config/cspell.json [word]
-2. If there's an asterisk (*) next to a dictionary, add the 
--->
-
-### 1. Check whether a dictionary already covers the word
-
-
-
-### 2. Add a dictionary if appropriate
-
-### 3. Add the word to project-specific words if no dictionary covers it
 
 ## Notes and limitations
 
