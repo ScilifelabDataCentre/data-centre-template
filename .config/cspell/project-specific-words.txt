@@ -17,6 +17,8 @@ mdlint
 MSBFS
 nerdctl
 ORCID
+Pandoc
+pandoc
 Pinga
 prek
 RACI
