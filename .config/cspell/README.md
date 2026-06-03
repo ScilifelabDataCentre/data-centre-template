@@ -65,6 +65,17 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 ## What to do when CSpell flags a correct word
 
+If CSpell flags a word that you know is correct, **first** check whether it's already covered by a CSpell dictionary. **Do not** immediately add it to `project-specific-words.txt`.
+
+### In short
+
+1. Run `cspell trace` to see whether the word already exists in your CSpell configuration.
+2. If the word exists in an enabled dictionary, check the spelling, casing and configuration.
+3. If the word exists in a bundled dictionary that is not enabled, add it to `dictionaries` in your `cspell-config.yml`.
+4. If the word exists in a dictionary that requires installation, install and import the dictionary.
+5. If no suitable dictionary covers the word, add it to `project-specific-words.txt`.
+6. Verify the result.
+
 
 ## Notes and limitations
 
