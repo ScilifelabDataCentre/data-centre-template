@@ -43,7 +43,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 | ------ | --------- |
 | `.github/workflows/spellcheck.yml` | Runs CSpell |
 | `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
-| `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that it should allow |
+| `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow |
 | `.config/cspell/README.md` | This guide |
 
 ## How this setup works
@@ -73,6 +73,8 @@ npx cspell trace --config .config/cspell.json [word]
 -->
 
 ### 1. Check whether a dictionary already covers the word
+
+
 
 ### 2. Add a dictionary if appropriate
 
