@@ -114,16 +114,24 @@ Word         F   Dictionary
 
 ```bash
 Word         F   Dictionary
-[YOUR-WORDS] -   some-dict*  # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
+[...]
+[YOUR-WORDS] -   some-dict*    # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
+[YOUR-WORDS] -   another-dict  # 'another-dict' is not enabled, and [YOUR-WORD] was not found in it
+[...]
 ```
 
-### 2. If the word is found in a dictionary that is not enabled: Add it to `dictionaries` in `cspell-config.yml`
+### 2. The word is found in a non-enabled bundled dict --> Enable the dict (add it to dictionaries in config)
 
-### 3. If the word is not found in a listed dictionary: Go to cspell-dicts repo
+### 3. The word is not found in any listed dicts --> go to cspell-dicts repo
 
-#### search word 
+repo: link here
 
-#### if word exists in 
+First search for the word.
+If the word is found -->
+Some dicts are bundled and can be enabled by adding it to the dictionaries list. 
+Some dicts need to be installed first, then imported.
+
+#### Install and import
 
 ## Notes and limitations
 
