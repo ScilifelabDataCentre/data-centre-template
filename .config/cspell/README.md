@@ -148,6 +148,7 @@ dictionaries:
 
 ### 3. The word is not found in any listed dicts --> go to cspell-dicts repo
 
+CSpell has a large number of dictionaries available in the [`cspell-dicts` GitHub repository](#LINK-HERE).
 repo: link here
 
 First search for the word.
