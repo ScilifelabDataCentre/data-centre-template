@@ -100,6 +100,9 @@ Word        F   Dictionary
 
 In the last row of the example, `[YOUR-WORD]` was found in a dictionary that is already enabled in your configuration (`cpp`). In this case, CSpell should not be flagging `[YOUR-WORD]` as incorrect. Check spelling, casing and your configuration. >Elaborate here?<
 
+### 2. If the word if found in a dictionary that is not enabled: Add it to `dictionaries` in `cspell-config.yml`
+
+
 ## Notes and limitations
 
 The configuration in this template sets British as the English version because that is the standard at Data Centre. However, 
