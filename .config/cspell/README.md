@@ -69,14 +69,7 @@ If CSpell flags a word that you know is correct, **first** check whether it's al
 
 ### Summary
 
-1. Check if the word is found in your CSpell configuration
-
-    - If the word exists in an enabled dictionary, check the spelling, casing and configuration.
-
-2. If the word exists in a bundled dictionary that is not enabled, add it to `dictionaries` in your `cspell-config.yml`.
-3. If the word exists in a dictionary that requires installation, install and import the dictionary.
-4. If no suitable dictionary covers the word, add it to `project-specific-words.txt`.
-5. Verify the result.
+summary here
 
 ### 1. Check if the word is found in your CSpell configuration
 
@@ -86,15 +79,15 @@ Open a terminal window and run the following command in the repository root:
 npx cspell trace --config .config/cspell/cspell-config.yml [YOUR-WORD]
 ```
 
-#### `cspell trace` output possibilities
-
 The output has the following headers:
 
 - `Word`: The word you searched for
 - `F`: `*` if the word is found in the dictionary to the right, `-` if the word is not found
 - `Dictionary`: Name of a dictionary that was searched. If there is a `*` next to the name, the dictionary is enabled in your configuration
 
-1. The word is found in enabled dict --> check spelling
+The following sections describe the possible outputs and what you should do in those cases.
+
+#### A. The word is found in enabled dict --> check spelling**
 
 ```bash
 Word        F   Dictionary
@@ -103,14 +96,14 @@ Word        F   Dictionary
 
 In the last row of the example, `[YOUR-WORD]` was found in a dictionary that is already enabled in your configuration (`cpp`). In this case, CSpell should not be flagging `[YOUR-WORD]` as incorrect. Check spelling, casing and your configuration. >Elaborate here?<
 
-2. The word is found in a non-enabled bundled dict --> see section about enabling bundled dicts
+#### B. The word is found in a non-enabled bundled dict --> see section about enabling bundled dicts
 
 ```bash
 Word         F   Dictionary
 [YOUR-WORDS] *   some-dict   # [YOUR-WORD] was found in 'some-dict', but 'some-dict' is not enabled
 ```
 
-3. The word is not found in any listed dicts --> see section about cspell-dicts repo
+#### C. The word is not found in any listed dicts --> see section about cspell-dicts repo
 
 ```bash
 Word         F   Dictionary
