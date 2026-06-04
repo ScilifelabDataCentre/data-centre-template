@@ -86,22 +86,44 @@ Open a terminal window and run the following command in the repository root:
 npx cspell trace --config .config/cspell/cspell-config.yml [YOUR-WORD]
 ```
 
-#### Example output
+#### `cspell trace` output possibilities
+
+The output has the following headers:
+
+- `Word`: The word you searched for
+- `F`: `*` if the word is found in the dictionary to the right, `-` if the word is not found
+- `Dictionary`: Name of a dictionary that was searched. If there is a `*` next to the name, the dictionary is enabled in your configuration
+
+1. The word is found in enabled dict --> check spelling
 
 ```bash
-# Word: The word you searched for
-# Dictionary: Name of a dictionary that was searched. If there is a '*' next to the name, the dictionary is enabled in your configuration
-# F: '*' if the word is found in the dictionary to the right, '-' if the word is not found
 Word        F   Dictionary
-[YOUR-WORD] -   eng-gb*     # 'eng-gb' is enabled, but [YOUR-WORD] was not found in
-[YOUR-WORD] *   sv          # [YOUR-WORD] was found in 'sv', but 'sv' is not enabled
-[YOUR-WORD] *   cpp*        # [YOUR-WORD] was found in 'cpp', and 'cpp' is enabled
+[YOUR-WORD] *   some-dict*  # [YOUR-WORD] was found in 'some-dict', and 'some-dict' is enabled
 ```
 
 In the last row of the example, `[YOUR-WORD]` was found in a dictionary that is already enabled in your configuration (`cpp`). In this case, CSpell should not be flagging `[YOUR-WORD]` as incorrect. Check spelling, casing and your configuration. >Elaborate here?<
 
-### 2. If the word if found in a dictionary that is not enabled: Add it to `dictionaries` in `cspell-config.yml`
+2. The word is found in a non-enabled bundled dict --> see section about enabling bundled dicts
 
+```bash
+Word         F   Dictionary
+[YOUR-WORDS] *   some-dict   # [YOUR-WORD] was found in 'some-dict', but 'some-dict' is not enabled
+```
+
+3. The word is not found in any listed dicts --> see section about cspell-dicts repo
+
+```bash
+Word         F   Dictionary
+[YOUR-WORDS] -   some-dict*  # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
+```
+
+### 2. If the word is found in a dictionary that is not enabled: Add it to `dictionaries` in `cspell-config.yml`
+
+### 3. If the word is not found in a listed dictionary: Go to cspell-dicts repo
+
+#### search word 
+
+#### if word exists in 
 
 ## Notes and limitations
 
