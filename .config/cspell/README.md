@@ -67,15 +67,38 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 If CSpell flags a word that you know is correct, **first** check whether it's already covered by a CSpell dictionary. **Do not** immediately add it to `project-specific-words.txt`.
 
-### In short
+### Summary
 
-1. Run `cspell trace` to see whether the word already exists in your CSpell configuration.
-2. If the word exists in an enabled dictionary, check the spelling, casing and configuration.
-3. If the word exists in a bundled dictionary that is not enabled, add it to `dictionaries` in your `cspell-config.yml`.
-4. If the word exists in a dictionary that requires installation, install and import the dictionary.
-5. If no suitable dictionary covers the word, add it to `project-specific-words.txt`.
-6. Verify the result.
+1. Check if the word is found in your CSpell configuration
 
+    - If the word exists in an enabled dictionary, check the spelling, casing and configuration.
+
+2. If the word exists in a bundled dictionary that is not enabled, add it to `dictionaries` in your `cspell-config.yml`.
+3. If the word exists in a dictionary that requires installation, install and import the dictionary.
+4. If no suitable dictionary covers the word, add it to `project-specific-words.txt`.
+5. Verify the result.
+
+### 1. Check if the word is found in your CSpell configuration
+
+Open a terminal window and run the following command in the repository root:
+
+```bash
+npx cspell trace --config .config/cspell/cspell-config.yml [YOUR-WORD]
+```
+
+#### Example output
+
+```bash
+# Word: The word you searched for
+# Dictionary: Name of a dictionary that was searched. If there is a '*' next to the name, the dictionary is enabled in your configuration
+# F: '*' if the word is found in the dictionary to the right, '-' if the word is not found
+Word        F   Dictionary
+[YOUR-WORD] -   eng-gb*     # 'eng-gb' is enabled, but [YOUR-WORD] was not found in
+[YOUR-WORD] *   sv          # [YOUR-WORD] was found in 'sv', but 'sv' is not enabled
+[YOUR-WORD] *   cpp*        # [YOUR-WORD] was found in 'cpp', and 'cpp' is enabled
+```
+
+In the last row of the example, `[YOUR-WORD]` was found in a dictionary that is already enabled in your configuration (`cpp`). In this case, CSpell should not be flagging `[YOUR-WORD]` as incorrect. Check spelling, casing and your configuration. >Elaborate here?<
 
 ## Notes and limitations
 
