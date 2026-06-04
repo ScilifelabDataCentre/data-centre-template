@@ -159,6 +159,25 @@ If the word was not found in any dictionary shipped together with `cspell`, you 
 
 #### Install and import
 
+CSpell dictionaries are installed by using the package name. You can either see this in the [search results](#LINK-HERE) or you can check the `Package` column in the [`cspell-dicts` README](#LINK-HERE). The package name always starts with `@cspell/dict-` and ends with the dictionary ID (in our example, `<some-dict>`).
+
+1. Install the dictionary locally
+2. Import the dictionary in your `.config/cspell/cspell-config.yml`
+  ```yml
+    import:
+    - "@cspell/dict-sv/cspell-ext.json"
+    - "@cspell/dict-people-names/cspell-ext.json"
+    - "@cspell/dict-<some-dict>/cspell-ext.json"
+  ```
+3. [Verify that the CSpell configuration finds the word in the installed dictionary](#LINK-HERE)
+4. Install the dictionary in the `.github/workflows/spellcheck.yml` workflow file
+  ```yml
+      - name: Install CSpell Dictionaries (...)
+        run: npm install --no-save (...) @cspell/dict-<some-dict>
+  ```
+
+Once the changes are pushed to your remote branch and there's a PR opened, the scan should pass.
+
 ## Notes and limitations
 
 The configuration in this template sets British as the English version because that is the standard at Data Centre. However, 
