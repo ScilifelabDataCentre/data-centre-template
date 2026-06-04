@@ -148,13 +148,14 @@ dictionaries:
 
 ### 3. The word is not found in any listed dicts --> go to cspell-dicts repo
 
-CSpell has a large number of dictionaries available in the [`cspell-dicts` GitHub repository](#LINK-HERE).
-repo: link here
+If the word was not found in any dictionary shipped together with `cspell`, you can search for the word in CSpell's (long) list of available dictionaries:
 
-First search for the word.
-If the word is found -->
-Some dicts are bundled and can be enabled by adding it to the dictionaries list. 
-Some dicts need to be installed first, then imported.
+1. Go to the [`cspell-dicts` GitHub repository](#LINK-HERE).
+2. Search for the word by typing `repo:streetsidesoftware/cspell-dicts [YOUR-WORD]` in the GitHub search field at the top of the page
+3. Look for the word in the results. If the correct word is listed in a file with the name format `dictionaries/<some-dict>/dict/<some-dict>.txt`, the word was found in a CSpell-available dictionary. Some words exist in many dictionaries. Pick one that makes sense to add to your configuration.
+  - Check if the dictionary is bundled with CSpell or if installation is needed by going back to the [`cspell-dicts` GitHub repository](#LINK-HERE) home page and searching for it (`Ctrl` + `F`). If the dictionary has the `1. Bundled with CSpell` footnote, [enable the dictionary](#LINK-HERE). If not, it needs to be [installed and imported](#LINK-HERE).
+  - If there is a choice between one dictionary that is `Bundled with CSpell` and one that is not, both relevant to your project, prefer the bundled one. This keeps the CSpell configuration as simple as possible.
+4. If your search results in "Your search did not match any code", the word is not found in any CSpell-available dictionary. Add the word to your `.config/cspell/project-specific-words.txt` file, in alphabetical order.
 
 #### Install and import
 
