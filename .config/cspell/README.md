@@ -133,7 +133,18 @@ Word         F   Dictionary
 
 ### 2. The word is found in a non-enabled bundled dict --> Enable the dict (add it to dictionaries in config)
 
+Open your `.config/cspell/cspell-config.yml` file and add the dictionary to `dictionaries`, in alphabetical order.
 
+Example:
+
+```yml
+dictionaries:
+  - companies
+  - cpp-compound-words
+  - fonts
+  - some-dict  # some-dict is now enabled in the cspell configuration
+  [...]
+```
 
 ### 3. The word is not found in any listed dicts --> go to cspell-dicts repo
 
