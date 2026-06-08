@@ -2,6 +2,12 @@
 
 > This guide explains how spell checking is configured in this template, how the setup works and what to do when it incorrectly flags words.
 
+<p>
+  <a href="https://github.com/streetsidesoftware/cspell-action">CSpell GitHub Action</a> ·
+  <a href="https://cspell.org/">CSpell docs</a> ·
+  <a href="https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts">Dictionaries</a>
+</p>
+
 ## What is CSpell?
 
 CSpell is a spell checker for code and documentation. It scans repository files and flags words that are not recognised by the configured languages, dictionaries, ignore patterns, or project-specific word lists.
