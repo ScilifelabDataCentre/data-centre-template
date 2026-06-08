@@ -99,8 +99,15 @@ flowchart TD
 
     J -->|No| M[Add to<br/>project-specific-words.txt]
 
-    classDef compact font-size:14px;
-    class A,B,C,D,E,F,G,H,I,J,K,L,M compact;
+    classDef neutral fill:#f6f8fa,stroke:#57606a,color:#24292f,font-size:14px;
+    classDef action fill:#ddf4ff,stroke:#0969da,color:#24292f,font-size:14px;
+    classDef preferred fill:#dafbe1,stroke:#1a7f37,color:#24292f,font-size:14px;
+    classDef fallback fill:#ffebe9,stroke:#cf222e,color:#24292f,font-size:14px;
+
+    class A,B,E,F,J,K neutral; 
+    class D,I action;
+    class C,G,H,L preferred;
+    class M fallback;
 ```
 
 Jump to:
