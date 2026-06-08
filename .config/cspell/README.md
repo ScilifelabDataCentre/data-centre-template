@@ -193,8 +193,6 @@ CSpell dictionaries are installed by using the package name. You can either see 
 6. Push the changes to your remote branch. 
 7. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
 
-Once the changes are pushed to your remote branch and there's a PR opened, the scan should pass.
-
 ## Notes and limitations
 
 The configuration in this template sets British as the English version because that is the standard at Data Centre. However, 
