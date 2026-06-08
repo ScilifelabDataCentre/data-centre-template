@@ -99,10 +99,12 @@ flowchart TD
 
     J -->|No| M[Add to<br/>project-specific-words.txt]
 
-    click D "#1-run-cspell-trace" "Jump to cspell trace instructions"
+    click D "#run-cspell-trace" "Jump to cspell trace instructions"
     classDef compact font-size:14px;
     class A,B,C,D,E,F,G,H,I,J,K,L,M compact;
 ```
+
+<a id="run-cspell-trace"></a>
 
 ### 1. Run `cspell trace`
 
