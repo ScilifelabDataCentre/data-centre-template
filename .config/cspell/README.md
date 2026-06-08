@@ -224,20 +224,22 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
           run: npm install --no-save (...) @cspell/dict-<dictionary-id>
     ```
 
-5. Import the dictionary in the `.config/cspell/cspell-config.yml` file.
-
-    ```yml
-    # Example
-    import:
-    - "@cspell/dict-sv/cspell-ext.json"
-    - "@cspell/dict-people-names/cspell-ext.json"
-    - "@cspell/dict-<dictionary-id>/cspell-ext.json"  # <some-dict> is now imported and therefore enabled in your CSpell config
-    ```
-
-6. Push the changes to your remote branch.
-7. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
+5. Push the changes to your remote branch.
+6. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
 
 ### Add word to `project-specific-words.txt`
+
+Only add a word to `.config/cspell/project-specific-words.txt` if it is correct, relevant to this repository, and not covered by a suitable CSpell dictionary.
+
+Add one word per line, in alphabetical order.
+
+```text
+exampleword
+project-specific-word
+some-tool-name
+```
+
+After adding the word, push the change and check that the PR annotation is gone.
 
 ## Notes and limitations
 
