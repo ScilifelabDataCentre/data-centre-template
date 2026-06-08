@@ -73,7 +73,7 @@ If CSpell flags a word that you know is correct, **first** check whether it's al
 ### Summary
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[CSpell flags a word] --> B[Run cspell trace]
     B --> C{Is the word found in an enabled dictionary?}
     C -->|Yes| D[Check spelling, casing, and config]
