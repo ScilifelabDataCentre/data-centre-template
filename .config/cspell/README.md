@@ -77,28 +77,27 @@ If CSpell flags a word that you know is correct, **first** check whether it's al
 config:
   themeVariables:
     edgeLabelBackground: transparent
-    edgeLabelFontWeight: "700"
 ---
 flowchart TD
     A([CSpell flags a word]) --> B{Should the word<br/>be accepted?}
 
-    B -->|No| C[Fix the typo]
-    B -->|Yes| D["`Run **cspell trace**`"]
+    B -->|"`**No**`"| C[Fix the typo]
+    B -->|"`**Yes**`"| D["`Run **cspell trace**`"]
 
     D --> E{"`Found in a dictionary<br/>shipped with cspell?`"}
 
-    E -->|Yes| F{"`Is that dictionary<br/>enabled?`"}
-    F -->|Yes| G[Check spelling,<br/>casing, and config]
-    F -->|No| H[Enable the dictionary<br/>if relevant]
+    E -->|"`**Yes**`"| F{"`Is that dictionary<br/>enabled?`"}
+    F -->|"`**Yes**`"| G[Check spelling,<br/>casing, and config]
+    F -->|"`**No**`"| H[Enable the dictionary<br/>if relevant]
 
-    E -->|No| I[Search cspell-dicts]
+    E -->|"`**No**`"| I[Search cspell-dicts]
     I --> J{"`Found in cspell-dicts?`"}
 
-    J -->|Yes| K{"`Is the dictionary<br/>bundled with CSpell?`"}
-    K -->|Yes| H
-    K -->|No| L[Install and import<br/>the dictionary]
+    J -->|"`**Yes**`"| K{"`Is the dictionary<br/>bundled with CSpell?`"}
+    K -->|"`**Yes**`"| H
+    K -->|"`**No**`"| L[Install and import<br/>the dictionary]
 
-    J -->|No| M[Add to<br/>project-specific-words.txt]
+    J -->|"`**No**`"| M[Add to<br/>project-specific-words.txt]
 
     classDef neutral fill:#f6f8fa,stroke:#57606a,color:#24292f,font-size:14px;
     classDef do fill:#ddf4ff,stroke:#0969da,color:#24292f,font-size:14px;
