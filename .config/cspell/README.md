@@ -79,24 +79,25 @@ config:
     edgeLabelBackground: transparent
 ---
 flowchart TD
-    A([CSpell flags a word]) --> B{Should the word </br> be accepted?}
+    A([CSpell flags a word]) --> B{Should the word<br/>be accepted?}
 
-    B -->|No| C[Fix typo]
+    B -->|No| C[Fix the typo]
     B -->|Yes| D["`Run **cspell trace**`"]
 
-    D --> E{"`Word found in an </br> **enabled** dictionary?`"}
-    E -->|Yes| F[Check spelling, </br> casing, and config]
-    E -->|No| G{"`Word found in a </br> **shipped** dictionary?`"}
+    D --> E{"`Found in a dictionary<br/>**shipped** with cspell?`"}
 
-    G -->|Yes| H[Enable the dictionary </br> in cspell-config.yml]
-    G -->|No| I[Search </br> cspell-dicts]
+    E -->|Yes| F{"`Is that dictionary<br/>**enabled**?`"}
+    F -->|Yes| G[Check spelling,<br/>casing, and config]
+    F -->|No| H[Enable the dictionary<br/>if relevant]
 
-    I --> J{"`Word found in </br> **bundled** dictionary?`"}
-    J -->|Yes| H
-    J -->|No| K{"`Word found in </br> **installable** dictionary?`"}
+    E -->|No| I[Search cspell-dicts]
 
-    K -->|Yes| L[Install and import </br> dictionary]
-    K -->|No| M[Add to </br> project-specific-words.txt]
+    I --> J{"`Found in cspell-dicts?`"}
+    J -->|No| K[Add to<br/>project-specific-words.txt]
+    J -->|Yes| L{"`Is the dictionary<br/>**bundled** with CSpell?`"}
+
+    L -->|Yes| H
+    L -->|No| M[Install and import<br/>the dictionary]
 
     classDef compact font-size:14px;
     class A,B,C,D,E,F,G,H,I,J,K,L,M compact;
