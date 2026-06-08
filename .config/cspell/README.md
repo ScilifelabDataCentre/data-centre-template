@@ -70,7 +70,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 If CSpell flags a word that you know is correct, **first** check whether it's already covered by a CSpell dictionary. **Do not** immediately add it to `project-specific-words.txt`.
 
-### Summary
+The flowchart below shows what to do in different scenarios. These map to specific subsections.
 
 ```mermaid
 ---
@@ -84,20 +84,21 @@ flowchart TD
     B ==>|"`**No**`"| C[Fix the typo]
     B ==>|"`**Yes**`"| D["`Run **cspell trace**`"]
 
-    D ==> E{"`Found in a dictionary<br/>shipped with cspell?`"}
+    D ==> E{"`Found in a dictionary<br/>_shipped_ with cspell?`"}
 
-    E ==>|"`**Yes**`"| F{"`Is that dictionary<br/>enabled?`"}
-    F ==>|"`**Yes**`"| G[Check spelling,<br/>casing, and config]
+    E ==>|"`**No**`"| I["`Search **cspell-dicts** repo`"]
+    E ==>|"`**Yes**`"| F{"`Is that dictionary<br/>_enabled_?`"}
+
     F ==>|"`**No**`"| H[Enable the dictionary<br/>if relevant]
+    F ==>|"`**Yes**`"| G[Check spelling,<br/>casing, and config]
 
-    E ==>|"`**No**`"| I[Search cspell-dicts]
-    I ==> J{"`Found in cspell-dicts?`"}
+    I ==> J{"`Found in a dictionary in </br> **cspell-dicts** repo?`"}
 
-    J ==>|"`**Yes**`"| K{"`Is the dictionary<br/>bundled with CSpell?`"}
-    K ==>|"`**Yes**`"| H
+    J ==>|"`**No**`"| M["`Add to <br/> **project-specific-words.txt**`"]
+    J ==>|"`**Yes**`"| K{"`Is the dictionary<br/>_bundled_ with CSpell?`"}
+
     K ==>|"`**No**`"| L[Install and import<br/>the dictionary]
-
-    J ==>|"`**No**`"| M[Add to<br/>project-specific-words.txt]
+    K ==>|"`**Yes**`"| H
 
     classDef neutral fill:#f6f8fa,stroke:#57606a,color:#24292f,font-size:14px;
     classDef do fill:#ddf4ff,stroke:#0969da,color:#24292f,font-size:14px;
@@ -112,7 +113,7 @@ Jump to:
 
 - [Run `cspell trace`](#1-run-cspell-trace)
 - [Enable a dictionary](#2-the-word-is-found-in-a-non-enabled-bundled-dict----enable-the-dict-add-it-to-dictionaries-in-config)
-- [Search `cspell-dicts`](#3-the-word-is-not-found-in-any-listed-dicts----go-to-cspell-dicts-repo)
+- [Search `cspell-dicts` repo](#3-the-word-is-not-found-in-any-listed-dicts----go-to-cspell-dicts-repo)
 - [Install and import a dictionary](#install-and-import)
 
 ### 1. Run `cspell trace`
