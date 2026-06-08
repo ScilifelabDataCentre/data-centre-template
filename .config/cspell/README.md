@@ -77,6 +77,7 @@ If CSpell flags a word that you know is correct, **first** check whether it's al
 config:
   themeVariables:
     edgeLabelBackground: transparent
+    edgeLabelFontWeight: "700"
 ---
 flowchart TD
     A([CSpell flags a word]) --> B{Should the word<br/>be accepted?}
