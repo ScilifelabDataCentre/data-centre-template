@@ -79,21 +79,27 @@ config:
     edgeLabelBackground: transparent
 ---
 flowchart TD
-    A([CSpell flags a word]) --> B[Run </br> cspell trace]
-    B --> C{Word found in </br> enabled dictionary?}
+    A([CSpell flags a word]) --> B{Should the word </br> be accepted?}
 
-    C -->|Yes| D[Check spelling, </br> casing, and config]
-    C -->|No| E{Word found in </br> bundled dictionary?}
+    B -->|No| C[Fix typo]
+    B -->|Yes| D[Run `cspell trace`]
 
-    E -->|Yes| F[Enable the dictionary </br> in cspell-config.yml]
-    E -->|No| G[Search </br> cspell-dicts]
+    D --> E{Word found in an </br> enabled dictionary?}
+    E -->|Yes| F[Check spelling, </br> casing, and config]
+    E -->|No| G{Word found in a </br> shipped/bundled dictionary?}
 
-    G --> H{Word found in </br> installable dictionary?}
-    H -->|Yes| I[Install and import </br> dictionary]
-    H -->|No| J[Add to </br> project-specific-words.txt]
+    G -->|Yes| H[Enable the dictionary </br> in cspell-config.yml]
+    G -->|No| I[Search </br> cspell-dicts]
+
+    I --> J{Word found in </br> bundled dictionary?}
+    J -->|Yes| H
+    J -->|No| K{Word found in </br> installable dictionary?}
+
+    K -->|Yes| L[Install and import </br> dictionary]
+    K -->|No| M[Add to </br> project-specific-words.txt]
 
     classDef compact font-size:14px;
-    class A,B,C,D,E,F,G,H,I,J compact;
+    class A,B,C,D,E,F,G,H,I,J,K,L,M compact;
 ```
 
 ### 1. Check whether the word is covered by an available CSpell dictionary: `cspell trace`
