@@ -84,26 +84,29 @@ flowchart TD
     B -->|No| C[Fix the typo]
     B -->|Yes| D["`Run **cspell trace**`"]
 
-    D --> E{"`Found in a dictionary<br/>**shipped** with cspell?`"}
+    D --> E{"`Found in a dictionary<br/>shipped with cspell?`"}
 
-    E -->|Yes| F{"`Is that dictionary<br/>**enabled**?`"}
+    E -->|Yes| F{"`Is that dictionary<br/>enabled?`"}
     F -->|Yes| G[Check spelling,<br/>casing, and config]
     F -->|No| H[Enable the dictionary<br/>if relevant]
 
     E -->|No| I[Search cspell-dicts]
-
     I --> J{"`Found in cspell-dicts?`"}
-    J -->|No| K[Add to<br/>project-specific-words.txt]
-    J -->|Yes| L{"`Is the dictionary<br/>**bundled** with CSpell?`"}
 
-    L -->|Yes| H
-    L -->|No| M[Install and import<br/>the dictionary]
+    J -->|Yes| K{"`Is the dictionary<br/>bundled with CSpell?`"}
+    K -->|Yes| H
+    K -->|No| L[Install and import<br/>the dictionary]
 
+    J -->|No| M[Add to<br/>project-specific-words.txt]
+
+    click D "#1-run-cspell-trace" "Jump to cspell trace instructions"
     classDef compact font-size:14px;
     class A,B,C,D,E,F,G,H,I,J,K,L,M compact;
 ```
 
-### 1. Check whether the word is covered by an available CSpell dictionary: `cspell trace`
+### 1. Run `cspell trace`
+
+What this does: Check whether the word is covered by an available CSpell dictionary: `cspell trace`
 
 Open a terminal window and run the following command in the repository root:
 
