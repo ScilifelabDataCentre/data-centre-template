@@ -86,7 +86,7 @@ flowchart TD
 
     D ==> E{"`Found in a dictionary<br/>_shipped_ with cspell?`"}
 
-    E ==>|"`**No**`"| I["`Search **cspell-dicts** repo`"]
+    E ==>|"`**No**`"| I["`Search the </br> **cspell-dicts** repo`"]
     E ==>|"`**Yes**`"| F{"`Is that dictionary<br/>_enabled_?`"}
 
     F ==>|"`**No**`"| H[Enable the dictionary<br/>if relevant]
@@ -109,14 +109,15 @@ flowchart TD
     class M fallback;
 ```
 
-Jump to:
+**Jump to:**
 
-- [Run `cspell trace`](#1-run-cspell-trace)
-- [Enable a dictionary](#2-the-word-is-found-in-a-non-enabled-bundled-dict----enable-the-dict-add-it-to-dictionaries-in-config)
-- [Search `cspell-dicts` repo](#3-the-word-is-not-found-in-any-listed-dicts----go-to-cspell-dicts-repo)
-- [Install and import a dictionary](#install-and-import)
+- [Run `cspell trace`](#run-cspell-trace)
+- [Enable a dictionary](#enable-a-dictionary)
+- [Search the `cspell-dicts` repo](#search-the-cspell-dicts-repo)
+- [Install and import a dictionary](#install-and-import-a-dictionary)
+- [Add word to `project-specific-words.txt`](#add-word-to-project-specific-wordstxt)
 
-### 1. Run `cspell trace`
+### Run `cspell trace`
 
 What this does: Check whether the word is covered by an available CSpell dictionary: `cspell trace`
 
@@ -178,7 +179,7 @@ Word         F   Dictionary
 
 **What to do:** [Search for an installable dictionary](#LINK-HERE).
 
-### 2. The word is found in a non-enabled bundled dict --> Enable the dict (add it to dictionaries in config)
+### Enable a dictionary
 
 Open your `.config/cspell/cspell-config.yml` file and add the dictionary to `dictionaries`, in alphabetical order.
 
@@ -193,7 +194,7 @@ dictionaries:
   [...]
 ```
 
-### 3. The word is not found in any listed dicts --> go to cspell-dicts repo
+### Search the `cspell-dicts` repo
 
 If the word was not found in any dictionary shipped together with `cspell`, you can search for the word in CSpell's (long) list of available dictionaries:
 
@@ -207,7 +208,7 @@ If the word was not found in any dictionary shipped together with `cspell`, you 
 
 4. If your search results in "Your search did not match any code", the word is not found in any CSpell-available dictionary. Add the word to your `.config/cspell/project-specific-words.txt` file, in alphabetical order.
 
-#### Install and import
+### Install and import a dictionary
 
 CSpell dictionaries are installed by using the package name. You can either see this in the [search results](#LINK-HERE) or you can check the `Package` column in the [`cspell-dicts` README](#LINK-HERE). The package name always starts with `@cspell/dict-` and ends with the dictionary ID (in our example, `<some-dict>`).
 
@@ -239,6 +240,9 @@ CSpell dictionaries are installed by using the package name. You can either see 
 
 6. Push the changes to your remote branch. 
 7. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
+
+### Add word to `project-specific-words.txt`
+
 
 ## Notes and limitations
 
