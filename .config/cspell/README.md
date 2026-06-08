@@ -1,5 +1,7 @@
 # Spell checking with CSpell
 
+> This guide explains how spell checking is configured in this template, how the setup works and what to do when it incorrectly flags words.
+
 ## What is CSpell?
 
 CSpell is a spell checker for code and documentation. It scans repository files and flags words that are not recognised by the configured languages, dictionaries, ignore patterns, or project-specific word lists.
