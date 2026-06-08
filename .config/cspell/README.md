@@ -82,18 +82,18 @@ flowchart TD
     A([CSpell flags a word]) --> B{Should the word </br> be accepted?}
 
     B -->|No| C[Fix typo]
-    B -->|Yes| D[Run `cspell trace`]
+    B -->|Yes| D["`Run **cspell trace**`"]
 
-    D --> E{Word found in an </br> enabled dictionary?}
+    D --> E{"`Word found in an </br> **enabled** dictionary?`"}
     E -->|Yes| F[Check spelling, </br> casing, and config]
-    E -->|No| G{Word found in a </br> shipped/bundled dictionary?}
+    E -->|No| G{"`Word found in a </br> **shipped** dictionary?`"}
 
     G -->|Yes| H[Enable the dictionary </br> in cspell-config.yml]
     G -->|No| I[Search </br> cspell-dicts]
 
-    I --> J{Word found in </br> bundled dictionary?}
+    I --> J{"`Word found in </br> **bundled** dictionary?`"}
     J -->|Yes| H
-    J -->|No| K{Word found in </br> installable dictionary?}
+    J -->|No| K{"`Word found in </br> **installable** dictionary?`"}
 
     K -->|Yes| L[Install and import </br> dictionary]
     K -->|No| M[Add to </br> project-specific-words.txt]
