@@ -14,12 +14,6 @@ CSpell is a spell checker for code and documentation. It scans repository files 
 
 In this template, CSpell runs automatically on pull requests to help catch spelling mistakes before changes are merged.
 
-Useful links:
-
-- [CSpell GitHub Action (cspell-action)](https://github.com/marketplace/actions/cspell-action)
-- [CSpell documentation](https://cspell.org/)
-- [Available CSpell dictionaries](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts)
-
 ### Why CSpell?
 
 CSpell is designed for spell checking code repositories, not only documentation. It can check documentation, comments, configuration files, and other repository content, while allowing us to configure it for specific projects and repositories.
