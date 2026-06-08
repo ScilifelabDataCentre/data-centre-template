@@ -99,12 +99,16 @@ flowchart TD
 
     J -->|No| M[Add to<br/>project-specific-words.txt]
 
-    click D "#run-cspell-trace" "Jump to cspell trace instructions"
     classDef compact font-size:14px;
     class A,B,C,D,E,F,G,H,I,J,K,L,M compact;
 ```
 
-<a id="run-cspell-trace"></a>
+Jump to:
+
+- [Run `cspell trace`](#1-run-cspell-trace)
+- [Enable a dictionary](#2-the-word-is-found-in-a-non-enabled-bundled-dict----enable-the-dict-add-it-to-dictionaries-in-config)
+- [Search `cspell-dicts`](#3-the-word-is-not-found-in-any-listed-dicts----go-to-cspell-dicts-repo)
+- [Install and import a dictionary](#install-and-import)
 
 ### 1. Run `cspell trace`
 
