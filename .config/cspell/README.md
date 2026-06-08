@@ -73,16 +73,27 @@ If CSpell flags a word that you know is correct, **first** check whether it's al
 ### Summary
 
 ```mermaid
+---
+config:
+  themeVariables:
+    edgeLabelBackground: transparent
+---
 flowchart TD
-    A[CSpell flags a word] --> B[Run cspell trace]
-    B --> C{Is the word found in an enabled dictionary?}
-    C -->|Yes| D[Check spelling, casing, and config]
-    C -->|No| E{Is the word found in a bundled dictionary?}
-    E -->|Yes| F[Enable the dictionary in cspell-config.yml]
-    E -->|No| G[Search cspell-dicts]
-    G --> H{Is the word found in an installable dictionary?}
-    H -->|Yes| I[Install and import the dictionary]
-    H -->|No| J[Add it to project-specific-words.txt]
+    A([CSpell flags a word]) --> B[Run </br> cspell trace]
+    B --> C{Word found in </br> enabled dictionary?}
+
+    C -->|Yes| D[Check spelling, </br> casing, and config]
+    C -->|No| E{Word found in </br> bundled dictionary?}
+
+    E -->|Yes| F[Enable the dictionary </br> in cspell-config.yml]
+    E -->|No| G[Search </br> cspell-dicts]
+
+    G --> H{Word found in </br> installable dictionary?}
+    H -->|Yes| I[Install and import </br> dictionary]
+    H -->|No| J[Add to </br> project-specific-words.txt]
+
+    classDef compact font-size:14px;
+    class A,B,C,D,E,F,G,H,I,J compact;
 ```
 
 ### 1. Check whether the word is covered by an available CSpell dictionary: `cspell trace`
