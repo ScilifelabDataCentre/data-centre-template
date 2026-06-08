@@ -119,66 +119,53 @@ flowchart TD
 
 ### Run `cspell trace`
 
-> [!NOTE]
-> This allows you to check whether or not the word is already covered by an available CSpell dictionary.
-
 Open a terminal window and run the following command in the repository root:
 
 ```bash
 npx cspell trace --config .config/cspell/cspell-config.yml [YOUR-WORD]
 ```
 
-The output is a table with the following headers:
+The output is a table with the following headers (`Dictionary Location` column is excluded in examples because it is irrelevant in this case):
 
 - `Word`: The word you searched for
 - `F`: `*` if the word is found in the dictionary to the right, `-` if the word is not found
 - `Dictionary`: Name of a dictionary that was searched. If there is a `*` next to the name, the dictionary is enabled in your configuration
 
-The table will contain a variety of different dictionaries that are shipped together with the installed `cspell` package. Some are enabled by default, some need to be enabled before use.
+#### Example outputs
 
-The following sections describe the possible outputs and what you should do in those cases.
+1. `[YOUR-WORD]` was found in a dictionary that **is** enabled by your current CSpell configuration. CSpell should not be flagging `[YOUR-WORD]` as incorrect.
 
-#### A. The word is found in enabled dict --> check spelling
+    ```bash
+    Word        F   Dictionary                                                        
+    [...]
+    [YOUR-WORD] *   a-dict*         # [YOUR-WORD] was found in 'a-dict', and 'a-dict' is enabled
+    [...]
+    ```
 
-Example: `[YOUR-WORD]` was found in a dictionary that **is** enabled by your current CSpell configuration.
+    **What to do:** Check spelling, casing and config.
 
-```bash
-Word        F   Dictionary
-[...]
-[YOUR-WORD] *   some-dict*  # [YOUR-WORD] was found in 'some-dict', and 'some-dict' is enabled
-[...]
-```
+2. `[YOUR-WORD]` was found in a dictionary that is **not** enabled by your current CSpell configuration.
 
-In this case, CSpell should not be flagging `[YOUR-WORD]` as incorrect.
+    ```bash
+    Word         F   Dictionary
+    [...]
+    [YOUR-WORDS] *   another-dict   # [YOUR-WORD] was found in 'another-dict', but 'another-dict' is not enabled
+    [...]
+    ```
 
-**What to do:** Check spelling, casing and your configuration. >Elaborate here?<
+    **What to do:** [Enable the dictionary](#enable-a-dictionary) **if** a dictionary containing the word is relevant to your project.
 
-#### B. The word is found in a non-enabled bundled dict --> see section about enabling bundled dicts
+3. `[YOUR-WORD]` was **not** found in any of the dictionaries _available_ in your current CSpell configuration.
 
-Example: `[YOUR-WORD]` was found in a dictionary that is **not** enabled by your current CSpell configuration. 
+    ```bash
+    Word         F   Dictionary
+    [...]
+    [YOUR-WORDS] -   some-dict*         # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
+    [YOUR-WORDS] -   yet-another-dict   # 'yet-another-dict' is not enabled, and [YOUR-WORD] was not found in it
+    [...]
+    ```
 
-```bash
-Word         F   Dictionary
-[...]
-[YOUR-WORDS] *   some-dict   # [YOUR-WORD] was found in 'some-dict', but 'some-dict' is not enabled
-[...]
-```
-
-**What to do:** [Enable the dictionary](#LINK-HERE) **if** a dictionary containing the word is relevant to your project and makes sense to add.
-
-#### C. The word is not found in any listed dicts --> see section about cspell-dicts repo
-
-Example: `[YOUR-WORD]` was **not** found in any of the dictionaries shipped with `cspell`.
-
-```bash
-Word         F   Dictionary
-[...]
-[YOUR-WORDS] -   some-dict*    # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
-[YOUR-WORDS] -   another-dict  # 'another-dict' is not enabled, and [YOUR-WORD] was not found in it
-[...]
-```
-
-**What to do:** [Search for an installable dictionary](#LINK-HERE).
+    **What to do:** [Search the `cspell-dicts` repo](#search-the-cspell-dicts-repo) for a suitable dictionary.
 
 ### Enable a dictionary
 
