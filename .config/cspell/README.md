@@ -119,7 +119,8 @@ flowchart TD
 
 ### Run `cspell trace`
 
-What this does: Check whether the word is covered by an available CSpell dictionary: `cspell trace`
+> [!NOTE]
+> This allows you to check whether or not the word is already covered by an available CSpell dictionary.
 
 Open a terminal window and run the following command in the repository root:
 
