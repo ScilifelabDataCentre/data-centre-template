@@ -184,53 +184,60 @@ dictionaries:
 
 ### Search the `cspell-dicts` repo
 
-If the word was not found in any dictionary shipped together with `cspell`, you can search for the word in CSpell's (long) list of available dictionaries:
+If [`cspell trace`](#run-cspell-trace) doesn't find the word, search the [`cspell-dicts` repository](https://github.com/streetsidesoftware/cspell-dicts) to check whether the word exists in another CSpell dictionary.
 
-1. Go to the [`cspell-dicts` GitHub repository](#LINK-HERE).
-2. Search for the word by typing `repo:streetsidesoftware/cspell-dicts [YOUR-WORD]` in the GitHub search field at the top of the page
-3. Look for the word in the results. If the correct word is listed in a file with the name format `dictionaries/<some-dict>/dict/<some-dict>.txt`, the word was found in a CSpell-available dictionary. Some words exist in many dictionaries. Pick one that makes sense to add to your configuration.
+In the GitHub search field, search for:
 
-    - Check if the dictionary is bundled with CSpell or if installation is needed by going back to the [`cspell-dicts` GitHub repository](#LINK-HERE) home page and searching for it (`Ctrl` + `F`). If the dictionary has the `1. Bundled with CSpell` footnote, [enable the dictionary](#LINK-HERE). If not, it needs to be [installed and imported](#LINK-HERE).
+```text
+repo:streetsidesoftware/cspell-dicts [YOUR-WORD]
+```
 
-    - If there is a choice between one dictionary that is `Bundled with CSpell` and one that is not, both relevant to your project, prefer the bundled one. This keeps the CSpell configuration as simple as possible.
+**What to do with the result:**
 
-4. If your search results in "Your search did not match any code", the word is not found in any CSpell-available dictionary. Add the word to your `.config/cspell/project-specific-words.txt` file, in alphabetical order.
+- If the word is found in a file under `dictionaries/<dictionary-id>/dict/`, the word exists in a CSpell dictionary.
+- Use the `<dictionary-id>` from the file path to find the dictionary in the `cspell-dicts` `README`.
+- If the dictionary **is** marked as Bundled with CSpell, [enable it](#enable-a-dictionary).
+- If the dictionary is **not** marked as `Bundled with CSpell`, [install and import the dictionary package](#install-and-import-a-dictionary).
+- If the search has no relevant results, [add the word to `.config/cspell/project-specific-words.txt`](#add-word-to-project-specific-wordstxt).
 
 ### Install and import a dictionary
 
-CSpell dictionaries are installed by using the package name. You can either see this in the [search results](#LINK-HERE) or you can check the `Package` column in the [`cspell-dicts` README](#LINK-HERE). The package name always starts with `@cspell/dict-` and ends with the dictionary ID (in our example, `<some-dict>`).
+If you find a word in a relevant dictionary available in the `cspell-dicts` repository, first install and import it locally and [run `cspell trace`](#run-cspell-trace) to verify that the word is recognized by your updated CSpell configuration. When you have confirmed that it works as expected, install the dictionary in your workflow.
 
-1. Install the dictionary locally
+1. Install the dictionary locally: `npm install @cspell/dict-<dictionary-id>`
 2. Import the dictionary in your `.config/cspell/cspell-config.yml`
 
-  ```yml
+    ```yml
+      # Example
+      import:
+      - "@cspell/dict-sv/cspell-ext.json"
+      - "@cspell/dict-people-names/cspell-ext.json"
+      - "@cspell/dict-<dictionary-id>/cspell-ext.json"
+    ```
+
+3. Use [`cspell trace`](#run-cspell-trace) to verify that the updated CSpell configuration recognises the word
+4. Install the dictionary in the `.github/workflows/spellcheck.yml` workflow file
+
+    ```yml
+        # Example
+        - name: Install CSpell Dictionaries (...)
+          run: npm install --no-save (...) @cspell/dict-<dictionary-id>
+    ```
+
+5. Import the dictionary in the `.config/cspell/cspell-config.yml` file.
+
+    ```yml
+    # Example
     import:
     - "@cspell/dict-sv/cspell-ext.json"
     - "@cspell/dict-people-names/cspell-ext.json"
-    - "@cspell/dict-<some-dict>/cspell-ext.json"
-  ```
+    - "@cspell/dict-<dictionary-id>/cspell-ext.json"  # <some-dict> is now imported and therefore enabled in your CSpell config
+    ```
 
-3. [Verify that the CSpell configuration finds the word in the installed dictionary](#LINK-HERE)
-4. Install the dictionary in the `.github/workflows/spellcheck.yml` workflow file
-
-  ```yml
-      - name: Install CSpell Dictionaries (...)
-        run: npm install --no-save (...) @cspell/dict-<some-dict>
-  ```
-5. Import the dictionary in the `.config/cspell/cspell-config.yml` file. Note that the import is for the `.../cspell-ext.json` file in each dictionary. 
-
-  ```yml
-  import:
-  - "@cspell/dict-sv/cspell-ext.json"
-  - "@cspell/dict-people-names/cspell-ext.json"
-  - "@cspell/dict-<some-dict>/cspell-ext.json"  # <some-dict> is now imported and therefore enabled in your CSpell config
-  ```
-
-6. Push the changes to your remote branch. 
+6. Push the changes to your remote branch.
 7. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
 
 ### Add word to `project-specific-words.txt`
-
 
 ## Notes and limitations
 
