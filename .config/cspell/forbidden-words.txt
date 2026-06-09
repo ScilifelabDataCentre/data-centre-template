@@ -8,6 +8,8 @@
 # One word per line.
 # Each line should start with !
 # ---
+# cspell:disable
 !recognize
 !recognized
 !recognizes
+# cspell:enable
