@@ -1,0 +1,13 @@
+# Forbidden words
+# 
+# Add words / terms that should be flagged as incorrect,
+# but are allowed by an enabled dictionary 
+# 
+# The examples below are US spellings. British English uses "recognise", "recognised", and "recognises".
+#
+# One word per line.
+# Each line should start with !
+# ---
+!recognize
+!regnognized
+!recognizes

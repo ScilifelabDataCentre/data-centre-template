@@ -40,6 +40,8 @@ dictionaryDefinitions:
   - name: project-specific-words
     path: ./project-specific-words.txt
     addWords: true
+  - name: forbidden-words
+    path: ./forbidden-words.txt
 
 # Patterns to ignore during spell checking
 # cSpell:ignore datacentre
