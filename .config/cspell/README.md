@@ -203,24 +203,29 @@ repo:streetsidesoftware/cspell-dicts [YOUR-WORD]
 
 If you find a word in a relevant dictionary available in the `cspell-dicts` repository, first install and import it locally and [run `cspell trace`](#run-cspell-trace) to verify that the word is recognized by your updated CSpell configuration. When you have confirmed that it works as expected, install the dictionary in your workflow.
 
-1. Install the dictionary locally: `npm install @cspell/dict-<dictionary-id>`
+1. Install the dictionary locally:
+
+    ```bash
+    npm install @cspell/dict-<dictionary-id>`
+    ```
+
 2. Import the dictionary in your `.config/cspell/cspell-config.yml`
 
     ```yml
-      # Example
-      import:
-      - "@cspell/dict-sv/cspell-ext.json"
-      - "@cspell/dict-people-names/cspell-ext.json"
-      - "@cspell/dict-<dictionary-id>/cspell-ext.json"
+    # Example
+    import:
+    - "@cspell/dict-sv/cspell-ext.json"
+    - "@cspell/dict-people-names/cspell-ext.json"
+    - "@cspell/dict-<dictionary-id>/cspell-ext.json"
     ```
 
 3. Use [`cspell trace`](#run-cspell-trace) to verify that the updated CSpell configuration recognises the word
 4. Install the dictionary in the `.github/workflows/spellcheck.yml` workflow file
 
     ```yml
-        # Example
-        - name: Install CSpell Dictionaries (...)
-          run: npm install --no-save (...) @cspell/dict-<dictionary-id>
+    # Example
+    - name: Install CSpell Dictionaries (...)
+      run: npm install --no-save (...) @cspell/dict-<dictionary-id>
     ```
 
 5. Push the changes to your remote branch.
