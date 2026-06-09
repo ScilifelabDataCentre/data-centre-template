@@ -40,6 +40,8 @@ dictionaryDefinitions:
   - name: project-specific-words
     path: ./project-specific-words.txt
     addWords: true
+  - name: forbidden-words
+    path: ./forbidden-words.txt
 
 # Patterns to ignore during spell checking
 # cSpell:ignore datacentre
@@ -48,3 +50,9 @@ ignoreRegExpList:
   - Url # Ignore full URLs, such as https://www.example.com
   - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # Ignore domain names without a protocol
   - '/#datacentre_[a-z0-9_-]+/g' # Ignore Slack channel names starting with #datacentre_
+
+# Words that should be flagged as incorrect, even if they are in an enabled dictionary
+# The examples below are US spellings (British English would be "recognised" and "recognises")
+flagWords:
+  - recognized
+  - regnognizes
