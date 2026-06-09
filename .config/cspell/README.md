@@ -69,7 +69,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 If CSpell flags a word that you know is correct, **first** check whether it's already covered by a CSpell dictionary. **Do not** immediately add it to `project-specific-words.txt`.
 
-The flowchart below shows what to do in different scenarios. These map to specific subsections.
+The flowchart below shows what to do in different scenarios. These map to specific subsections (found after the flowchart).
 
 ```mermaid
 ---
@@ -91,7 +91,7 @@ flowchart TD
     F ==>|"`**No**`"| H[Enable the dictionary<br/>if relevant]
     F ==>|"`**Yes**`"| G[Check spelling,<br/>casing, and config]
 
-    I ==> J{"`Found in a dictionary in </br> **cspell-dicts** repo?`"}
+    I ==> J{"`Word found in a dictionary in </br> **cspell-dicts** repo?`"}
 
     J ==>|"`**No**`"| M["`Add to <br/> **project-specific-words.txt**`"]
     J ==>|"`**Yes**`"| K{"`Is the dictionary<br/>_bundled_ with CSpell?`"}
