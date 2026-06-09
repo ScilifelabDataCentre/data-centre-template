@@ -256,7 +256,7 @@ Only add a word to `.config/cspell/project-specific-words.txt` if it is correct,
 Add one word per line, in alphabetical order.
 
 ```text
-exampleword
+example
 project-specific-word
 some-tool-name
 ```
