@@ -38,7 +38,8 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
     └── cspell/
         ├── README.md
         ├── cspell-config.yml
-        └── project-specific-words.txt
+        ├── project-specific-words.txt
+        └── forbidden-words.txt
 ```
 
 | File | Purpose |
@@ -46,6 +47,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 | `.github/workflows/spellcheck.yml` | Runs CSpell |
 | `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
 | `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow |
+| `.config/cspell/forbidden-words.txt` | List of words that should be flagged by CSpell but that are allowed by one or more enabled dictionaries |
 | `.config/cspell/README.md` | This guide |
 
 ## How this setup works
