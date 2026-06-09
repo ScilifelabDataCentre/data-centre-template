@@ -212,7 +212,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
     This may create or update `node_modules/`, `package.json`, and `package-lock.json`.
 
     - Commit `package.json` and `package-lock.json` so the dictionary dependency is recorded.
-    - Do not commit `node_modules/`; make sure it's listed in the `.gitignore`.
+    - Do not commit `node_modules/`; make sure `node_modules/` is listed in the repository root `.gitignore`.
 
 2. Import the dictionary in your `.config/cspell/cspell-config.yml`
 
@@ -265,4 +265,6 @@ After adding the word, push the change and check that the PR annotation is gone.
 
 ## Notes and limitations
 
-The standard English at the SciLifeLab Data Centre is British, which is why this CSpell configuration uses `en-gb`. The original goal was for `cspell` to automatically flag US specific words and spellings, but since `en-gb` and the other dictionaries allow some of them, we instead need to add non-British words and spellings to the `project-specific-words.txt` file when needed.
+The standard English at the SciLifeLab Data Centre is British English, which is why this CSpell configuration uses `en-gb`.
+
+This does not mean that CSpell will flag every US spelling. Some US spellings may still be accepted because they are included in `en-gb` or in other enabled dictionaries. If a non-British spelling should be avoided in this template but is not flagged by CSpell, add it to `project-specific-words.txt`.
