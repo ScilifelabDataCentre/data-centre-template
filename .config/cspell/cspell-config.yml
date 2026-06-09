@@ -57,4 +57,4 @@ ignoreRegExpList:
 flagWords:
   - recognize
   - recognized
-  - regnognizes
+  - recognizes

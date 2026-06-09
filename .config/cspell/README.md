@@ -201,7 +201,7 @@ repo:streetsidesoftware/cspell-dicts [YOUR-WORD]
 
 ### Install and import a dictionary
 
-If you find a word in a relevant dictionary available in the `cspell-dicts` repository, first install and import it locally and [run `cspell trace`](#run-cspell-trace) to verify that the word is recognized by your updated CSpell configuration. When you have confirmed that it works as expected, install the dictionary in your workflow.
+If you find a word in a relevant dictionary available in the `cspell-dicts` repository, first install and import it locally and [run `cspell trace`](#run-cspell-trace) to verify that the word is recognised by your updated CSpell configuration. When you have confirmed that it works as expected, install the dictionary in your workflow.
 
 1. Install the dictionary locally:
 
