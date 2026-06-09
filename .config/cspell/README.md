@@ -211,7 +211,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 
     This may create or update `node_modules/`, `package.json`, and `package-lock.json`.
 
-    - Do not commit `node_modules/`.
+    - Do not commit `node_modules/`: Make sure it's listed in the repo's `.gitignore`
     - Commit `package.json` and `package-lock.json` if they were created or changed.
 
 2. Import the dictionary in your `.config/cspell/cspell-config.yml`
