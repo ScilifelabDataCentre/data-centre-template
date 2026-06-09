@@ -8,6 +8,7 @@ Berserkers
 Bitnami
 Bitwarden
 citability
+Codespell
 Distributables
 findability
 jsquery
