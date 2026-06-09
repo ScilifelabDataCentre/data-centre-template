@@ -9,5 +9,5 @@
 # Each line should start with !
 # ---
 !recognize
-!regnognized
+!recognized
 !recognizes
