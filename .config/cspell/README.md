@@ -267,4 +267,8 @@ After adding the word, push the change and check that the PR annotation is gone.
 
 The standard English at the SciLifeLab Data Centre is British English, which is why this CSpell configuration uses `en-gb`.
 
-This does not mean that CSpell will flag every US spelling. Some US spellings may still be accepted because they are included in `en-gb` or in other enabled dictionaries. If a non-British spelling should be avoided in this template but is not flagged by CSpell, add it to the `flagWords` section at the bottom of the `.config/cspell/cspell-config.yml` file.
+This does not mean that CSpell will flag every US spelling. Some US spellings may still be accepted because they are included in `en-gb` or in other enabled dictionaries. If a non-British spelling should be avoided in this template but is not flagged by CSpell, add it to the `.config/cspell/forbidden-words.txt` file. 
+
+```text
+!flag
+```
