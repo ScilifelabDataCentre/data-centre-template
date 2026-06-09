@@ -1,6 +1,6 @@
 # Project-specific words
-# 
-# Add terms that are valid for your repository but 
+#
+# Add terms that are valid for your repository but
 # not covered by CSpell's available dictionaries.
 # One word per line.
 # ---

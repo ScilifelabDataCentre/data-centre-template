@@ -1,6 +1,6 @@
 # Spell checking using CSpell (cspell-action)
 # Link: https://github.com/marketplace/actions/cspell-action
-# 
+#
 # See .config/cspell/ for information about
 # this workflow and the CSpell configuration
 ---
