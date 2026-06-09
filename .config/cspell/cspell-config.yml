@@ -28,6 +28,7 @@ dictionaries:
   - companies
   - cpp-compound-words
   - fonts
+  - forbidden-words
   - fullstack
   - k8s
   - latex
