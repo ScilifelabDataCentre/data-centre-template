@@ -265,6 +265,4 @@ After adding the word, push the change and check that the PR annotation is gone.
 
 ## Notes and limitations
 
-The configuration in this template sets British as the English version because that is the standard at Data Centre. However, 
-
-- en-gb but it does not flag all american spellings due to... plus also the other dicts include american spellings
+The standard English at the SciLifeLab Data Centre is British English, which is why this CSpell configuration uses `en-gb`. The original goal was for this CSpell configuration to automatically flag US specific words and spellings, but since `en-gb` and the other dictionaries allow some of them, we instead need to add non-British words and spellings to the `project-specific-words.txt` file when needed.
