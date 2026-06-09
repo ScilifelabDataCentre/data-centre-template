@@ -83,7 +83,7 @@ flowchart TD
     B ==>|"`**No**`"| C[Fix the typo]
     B ==>|"`**Yes**`"| D["`Run **cspell trace**`"]
 
-    D ==> E{"`Word found in a dictionary<br/>_shipped_ with cspell?`"}
+    D ==> E{"`Word found in a dictionary<br/>in the current cspell config?`"}
 
     E ==>|"`**No**`"| I["`Search the </br> **cspell-dicts** repo`"]
     E ==>|"`**Yes**`"| F{"`Is that dictionary<br/>_enabled_?`"}
