@@ -54,5 +54,6 @@ ignoreRegExpList:
 # Words that should be flagged as incorrect, even if they are in an enabled dictionary
 # The examples below are US spellings (British English would be "recognised" and "recognises")
 flagWords:
+  - recognize
   - recognized
   - regnognizes
