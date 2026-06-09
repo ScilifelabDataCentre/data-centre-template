@@ -236,6 +236,19 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 5. Push the changes to your remote branch.
 6. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
 
+#### How to remove a dictionary from the configuration
+
+To undo the changes listed above, uninstall the dictionary package:
+
+```bash
+npm uninstall @cspell/dict-<dictionary-id>
+```
+
+Then remove:
+
+- the dictionary import from `.config/cspell/cspell-config.yml`
+- the dictionary install command from `.github/workflows/spellcheck.yml`
+
 ### Add word to `project-specific-words.txt`
 
 Only add a word to `.config/cspell/project-specific-words.txt` if it is correct, relevant to this repository, and not covered by a suitable CSpell dictionary.
