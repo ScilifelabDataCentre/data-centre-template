@@ -246,8 +246,8 @@ npm uninstall @cspell/dict-<dictionary-id>
 
 Then remove:
 
-- the dictionary import from `.config/cspell/cspell-config.yml`
 - the dictionary install command from `.github/workflows/spellcheck.yml`
+- the dictionary import from `.config/cspell/cspell-config.yml`
 
 ### Add word to `project-specific-words.txt`
 
