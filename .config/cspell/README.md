@@ -50,7 +50,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 
 ## How this setup works
 
-The workflow explicitly includes some default action settings. The workflow would work the same way without these settings being present, but including them increases clarity and reduces the risk of confusion.
+The workflow includes some default action settings explicitly. The workflow would work the same way without doing this, but including them increases clarity and reduces the risk of confusion.
 
 - The spell check runs when a PR is opened or updated
 - The workflow is configured to check changed files in the PR
