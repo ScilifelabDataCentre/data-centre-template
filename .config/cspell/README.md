@@ -63,7 +63,9 @@ The workflow explicitly includes some default action settings. The workflow woul
   - `import` imports dictionaries that need to be installed in the workflow before CSpell runs, in this case Swedish and People Names
   - `caseSensitive` allows CSpell to distinguish between different casing, e.g. GitHub and github.
   - `dictionaries` list dictionaries from the [`cspell-dicts` repository](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts) that do not require installation before use. They are bundled with CSpell and are enabled when listed under the `dictionaries` section
-  - `dictionaryDefinitions` imports the custom `project-specific-words.txt` as a dictionary. These are words that are not included in any other [CSpell-available dictionary](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts) but that we consider correct and CSpell should not flag.
+  - `dictionaryDefinitions` imports the two custom files as dictionaries:
+    - `project-specific-words.txt` contains words that are not included in any other [CSpell-available dictionary](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts) but that we consider correct and CSpell should not flag.
+    - `forbidden-words.txt` contains words that are allowed in an enabled CSpell dictionary, but that we want to flag as incorrect, e.g. US English spellings.
   - `ignoreRegExpList` tells CSpell to ignore specific patterns
 - If CSpell finds spelling issues, the workflow fails. Spelling issues are reported as GitHub annotations, and suggestions are shown when available.
 
