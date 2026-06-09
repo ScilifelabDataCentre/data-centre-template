@@ -5,7 +5,7 @@
 <p>
   <a href="https://github.com/streetsidesoftware/cspell-action">CSpell GitHub Action</a> ·
   <a href="https://cspell.org/">CSpell docs</a> ·
-  <a href="https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts">Dictionaries</a>
+  <a href="https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts">CSpell Dictionaries</a>
 </p>
 
 ## What is CSpell?
