@@ -23,7 +23,7 @@ CSpell has an official GitHub Action and a large set of dictionaries that can be
 - [Vale](https://github.com/vale-cli/vale-action) is a style and writing-rule linter. It is better suited for enforcing style guides, preferred terminology, tone, and wording conventions in documentation and other written text. Vale could be added alongside CSpell if stricter writing-style checks are needed.
 - [Codespell](https://github.com/marketplace/actions/codespell-with-annotations) checks code for common misspellings. It is better suited for catching known typo patterns than for dictionary-based spell checking against full language and technical dictionaries.
 
-For this template, CSpell gives the best balance between useful typo detection, configurability, and ease of use in the GitHub Actions.
+At the time of writing this template, CSpell gives the best balance between useful typo detection, configurability, and ease of use in the GitHub Actions.
 
 ## Files in this setup
 
