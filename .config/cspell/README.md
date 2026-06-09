@@ -12,8 +12,7 @@
 
 CSpell is a spell checker for code and documentation. It scans repository files and flags words that are not recognised by the configured languages, dictionaries, ignore patterns, or project-specific word lists.
 
-> [!NOTE]
-> In this template, CSpell runs automatically on pull requests to help catch spelling mistakes before changes are merged.
+In this template, CSpell runs automatically on pull requests to help catch spelling mistakes before changes are merged.
 
 ### Why CSpell?
 
