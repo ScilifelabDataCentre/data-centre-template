@@ -206,8 +206,13 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 1. Install the dictionary locally:
 
     ```bash
-    npm install @cspell/dict-<dictionary-id>
+    npm install --save-dev @cspell/dict-<dictionary-id>
     ```
+
+    This may create or update `node_modules/`, `package.json`, and `package-lock.json`.
+
+    - Do not commit `node_modules/`.
+    - Commit `package.json` and `package-lock.json` if they were created or changed.
 
 2. Import the dictionary in your `.config/cspell/cspell-config.yml`
 
