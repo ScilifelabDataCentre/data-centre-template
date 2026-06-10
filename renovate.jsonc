@@ -1,21 +1,17 @@
-// presets to add
-// - :automergeDisabled
-// - :automergeLinters
-// - :dependencyDashboard
-// - :docker
-// - :enablePreCommit¶
-// - :gitSignOff
-// - :group (?)
-// - :ignoreUnstable
-// - :includeNodeModules
-// - :label / :labels
-// - :npm
-// - :pinDependencies
-// - :pinDevDependencies
-// - :prConcurrentLimit10
-// - :prHourlyLimit1
-// - :renovatePrefix
-
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":configMigration",
+    "abandonments:recommended",
+    "security:minimumReleaseAgeNpm",
+    ":maintainLockFilesWeekly",
+    ":automergeDisabled",
+    ":gitSignOff",
+    ":ignoreUnstable",
+    ":prConcurrentLimit10",
+    ":prHourlyLimit1",
+    ":renovatePrefix"
+  ],
+  "labels": ["dependencies"]
 }
