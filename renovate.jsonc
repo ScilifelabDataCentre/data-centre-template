@@ -1,0 +1,21 @@
+// presets to add
+// - :automergeDisabled
+// - :automergeLinters
+// - :dependencyDashboard
+// - :docker
+// - :enablePreCommit¶
+// - :gitSignOff
+// - :group (?)
+// - :ignoreUnstable
+// - :includeNodeModules
+// - :label / :labels
+// - :npm
+// - :pinDependencies
+// - :pinDevDependencies
+// - :prConcurrentLimit10
+// - :prHourlyLimit1
+// - :renovatePrefix
+
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+}
