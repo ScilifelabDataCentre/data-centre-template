@@ -23,7 +23,7 @@ jobs:
       # Some dictionaries require installation here
       # and import in the .config/cspell/cspell-config.yml file
       - name: Install CSpell Dictionaries (Swedish and names)
-        run: npm install --no-save @cspell/dict-sv @cspell/dict-people-names
+        run: npm install --no-save --ignore-scripts @cspell/dict-sv @cspell/dict-people-names
 
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
