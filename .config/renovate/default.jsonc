@@ -23,32 +23,32 @@
     // Label PRs by specific categories and managers
     // Available at: https://docs.renovatebot.com/modules/manager/#supported-managers
     {  
-        "description": "Add the 'ci' label to all CI-related updates",
+        "description": "Label CI-related dependency updates",
         "matchCategories": ["ci"],
         "addLabels": ["ci"]
     },
     {
-        "description": "Add the 'cd' label to all CD-related updates",
+        "description": "Label CD-related dependency updates",
         "matchCategories": ["cd"],
         "addLabels": ["cd"]
     },
     {
-        "description": "Add the 'docker' label to all Docker-related updates",
+        "description": "Label Docker-related dependency updates",
         "matchCategories": ["docker"],
         "addLabels": ["docker"]
     },
     {
-        "description": "Add the 'python' label to all Python-related updates",
+        "description": "Label Python-related dependency updates",
         "matchCategories": ["python"],
         "addLabels": ["python"]
     },
     {
-        "description": "Add the 'js' label to all JavaScript-related updates",
+        "description": "Label JavaScript-related dependency updates",
         "matchCategories": ["js"],
         "addLabels": ["js"]
     },
     {
-        "description": "Add the 'github-actions' label to all updates related to GitHub Actions. These will also have the 'ci' label.",
+        "description": "Label updates related to GitHub Actions. These will also have the 'ci' label.",
         "matchManagers": ["github-actions"],
         "addLabels": ["github-actions"]
     }
