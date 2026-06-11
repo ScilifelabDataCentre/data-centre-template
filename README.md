@@ -1,7 +1,27 @@
-# DC Template Repository
+# Template Repository for the SciLifeLab Data Centre
 
-This repository implements guidelines detailed in [DC's development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines).
-See those guidelines for more information.
+![Status: Work in Progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)
 
-> [!IMPORTANT]  
-> Replace this content with your relevant README content.
+This repository provides example configurations for a set of different tools.
+
+The end goal is for this repository to be populated with examples implementing guidelines detailed in  the [SciLifeLab Data Centre's development guidelines repository](https://github.com/ScilifelabDataCentre/development-guidelines).
+
+## Intended repository structure
+
+```text
+.
+├── .github/
+│   ├── workflows/
+│   │   └── ...
+│   └── ...
+├── .config/
+│   ├── <tool-specific-config-1>
+│   └── ...
+└── README.md
+```
+
+## Repository contents
+
+### Tool / purpose
+
+- Link to config / README
