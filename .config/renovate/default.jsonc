@@ -1,3 +1,8 @@
+// Custom Renovate Preset for the SciLifeLab Data Centre
+// This preset extends the recommended configuration with some of the presets from config:best-practices
+// and some custom settings.
+// Use this preset in your own repositories by extending the renovate.json file. 
+// See .github/renovate.jsonc for an example.
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
