@@ -57,6 +57,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 - The spell check runs when a PR is opened or updated
 - The workflow is configured to check changed files in the PR
   - `incremental_files_only: true` tells CSpell to only check the PR diff, meaning files changed in the PR. It does not check the rest of the repository.
+  - `include_dot_files: true` makes sure that dotfiles are scanned. This includes files under `.github/` and `.config/`. If other dot files should not be scanned, add them to a `ignorePaths:` list in  `.config/cspell/cspell-config.yml`.
   - `files: ''` tells CSpell to check all file types selected by the action. This is the _default_.
 - The CSpell action uses `.config/cspell/cspell-config.yml` for language, dictionary, ignored patterns, and project-specific-word settings.
   - `language` configures the languages used during the spell check, here British English and Swedish
