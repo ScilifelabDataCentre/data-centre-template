@@ -1,5 +1,32 @@
+// Example configuration for Renovate
+// Extends the custom preset defined in .config/renovate/default.jsonc
+// Some examples of custom package rules regarding labels
 {
     "extends": [
         "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc"
+    ],
+    "packageRules": [
+        // Add more category labels if needed
+        {
+            "matchCategories": ["kubernetes"],
+            "addLabels": ["k8s"]
+        },
+        // And more granular labels based on manager
+        {
+            "matchManagers": ["docker-compose"],
+            "addLabels": ["docker-compose"]
+        },
+        {
+            "matchManagers": ["dockerfile"],
+            "addLabels": ["dockerfile"]
+        },
+        {
+            "matchManagers": ["pip_requirements"],
+            "addLabels": ["pip-requirements"]
+        },
+        {
+            "matchManagers": ["npm"],
+            "addLabels": ["npm"]
+        }
     ]
 }

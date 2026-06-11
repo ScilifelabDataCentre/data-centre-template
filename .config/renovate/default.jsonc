@@ -5,6 +5,7 @@
 // See .github/renovate.jsonc for an example.
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Custom Renovate Preset for the SciLifeLab Data Centre",
   "extends": [
     "config:recommended", // The recommended default presets
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
@@ -18,6 +19,40 @@
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "labels": ["dependencies"],
+  "packageRules": [
+    // Label PRs by specific categories and managers
+    // Available at: https://docs.renovatebot.com/modules/manager/#supported-managers
+    {  
+        "description": "Add the 'ci' label to all CI-related updates",
+        "matchCategories": ["ci"],
+        "addLabels": ["ci"]
+    },
+    {
+        "description": "Add the 'cd' label to all CD-related updates",
+        "matchCategories": ["cd"],
+        "addLabels": ["cd"]
+    },
+    {
+        "description": "Add the 'docker' label to all Docker-related updates",
+        "matchCategories": ["docker"],
+        "addLabels": ["docker"]
+    },
+    {
+        "description": "Add the 'python' label to all Python-related updates",
+        "matchCategories": ["python"],
+        "addLabels": ["python"]
+    },
+    {
+        "description": "Add the 'js' label to all JavaScript-related updates",
+        "matchCategories": ["js"],
+        "addLabels": ["js"]
+    },
+    {
+        "description": "Add the 'github-actions' label to all updates related to GitHub Actions. These will also have the 'ci' label.",
+        "matchManagers": ["github-actions"],
+        "addLabels": ["github-actions"]
+    }
+  ]
 }
 
 
