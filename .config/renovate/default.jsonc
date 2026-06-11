@@ -20,6 +20,22 @@
   ],
   "labels": ["dependencies"],
   "packageRules": [
+    // Label PRs by update type
+    {
+        "description": "Add the 'major' label to all major updates.",
+        "matchUpdateTypes": ["major"],
+        "addLabels": ["major"]
+    },
+    {
+        "description": "Add the 'minor' label to all minor updates.",
+        "matchUpdateTypes": ["minor"],
+        "addLabels": ["minor"]
+    },
+    {
+        "description": "Add the 'patch' label to all patch updates.",
+        "matchUpdateTypes": ["patch"],
+        "addLabels": ["patch"]
+    },
     // Label PRs by specific categories and managers
     // Available at: https://docs.renovatebot.com/modules/manager/#supported-managers
     {  
