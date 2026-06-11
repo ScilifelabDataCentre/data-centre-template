@@ -1,0 +1,5 @@
+{
+    "extends": [
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc"
+    ]
+}
