@@ -6,11 +6,7 @@ This repository provides example configurations for a set of different tools.
 
 The end goal is for this repository to be populated with examples implementing guidelines detailed in  the [SciLifeLab Data Centre's development guidelines repository](https://github.com/ScilifelabDataCentre/development-guidelines).
 
-## Repository contents
-
-
-
-## Repository structure
+## Intended repository structure
 
 ```text
 .
@@ -23,3 +19,9 @@ The end goal is for this repository to be populated with examples implementing g
 │   └── ...
 └── README.md
 ```
+
+## Repository contents
+
+### Tool / purpose
+
+- Link to config / README
