@@ -23,12 +23,8 @@ The end goal is for this repository to be populated with examples implementing g
 
 ## Repository contents
 
-### GitHub-specific files
+| Configuration | Purpose | Related guidelines |
+|---------------|---------|--------------------|
+| [Pull request template](.github/pull_request_template.md) | When a PR is opened, the description is automatically filled with the contents of this file. It helps make pull requests easier to prepare and review. | [PR Guidelines Intro](https://github.com/ScilifelabDataCentre/development-guidelines/pull/54), [Preparing a PR](https://github.com/ScilifelabDataCentre/development-guidelines/pull/61), [Reviewing a PR](https://github.com/ScilifelabDataCentre/development-guidelines/pull/63) |
 
-| File | Purpose | Related Guidelines |
-|------|---------|--------------------|
-| [`.github/pull_request_template.md`](.github/pull_request_template.md) | When a PR is opened, the description is automatically filled with the contents of this file. It helps make pull requests easier to prepare and review. | [PR Guidelines Intro](https://github.com/ScilifelabDataCentre/development-guidelines/pull/54), [Preparing a PR](https://github.com/ScilifelabDataCentre/development-guidelines/pull/61), [Reviewing a PR](https://github.com/ScilifelabDataCentre/development-guidelines/pull/63) (Will be replaced with one link after the PRs are merged) |
-
-### Tool configuration examples
-
-No tool configuration examples have been added yet.
+> Links pointing to PRs will be replaced once PRs in `development_guidelines` repository are merged.
