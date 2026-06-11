@@ -6,17 +6,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":configMigration",
-    "abandonments:recommended",
-    "security:minimumReleaseAgeNpm",
-    ":maintainLockFilesWeekly",
-    ":automergeDisabled",
-    ":gitSignOff",
-    ":ignoreUnstable",
-    ":prConcurrentLimit10",
-    ":prHourlyLimit1",
-    ":renovatePrefix"
+    "config:recommended", // The recommended default presets
+    "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
+    "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
+    ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
+    ":automergeDisabled", // Default: Disable automerging, always wait for humans to merge PRs
+    ":gitSignOff", // Add a "Signed-off-by" line to commit messages
+    ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
+    ":prConcurrentLimit10", // Default: Limit the number of open PRs to 10 (vulnerability PRs bypass it)
+    ":prHourlyLimit1", // Renovate can only open 1 PR per hour
+    ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "labels": ["dependencies"]
 }
+
+
