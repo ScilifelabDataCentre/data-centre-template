@@ -10,18 +10,19 @@ The end goal is for this repository to be populated with examples implementing g
 
 ```text
 .
-├── .github/
+├── .github/        # Repo config, e.g. workflows and templates
 │   ├── workflows/
 │   │   └── ...
 │   └── ...
-├── .config/
-│   ├── <tool-specific-config-1>
+├── .config/        # Tool config, one subdir per tool
+│   ├── <tool-specific-config-1>/
+│   │   └── ...
 │   └── ...
 └── README.md
 ```
 
 ## Repository contents
 
-### Tool / purpose
+### Pull request template
 
 - Link to config / README
