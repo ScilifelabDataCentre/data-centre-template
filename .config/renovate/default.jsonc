@@ -17,7 +17,7 @@
     ":prHourlyLimit1", // Renovate can only open 1 PR per hour
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
-  "labels": ["dependencies"]
+  "labels": ["dependencies"],
 }
 
 
