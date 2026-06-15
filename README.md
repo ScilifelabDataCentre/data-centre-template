@@ -22,6 +22,6 @@ The end goal is for this repository to be populated with examples implementing g
 
 ## Repository contents
 
-### Tool / purpose
-
-- Link to config / README
+| Configuration | Purpose | Related guidelines |
+|---------------|---------|--------------------|
+| [CODEOWNERS file](.github/CODEOWNERS) | Defines which individuals or teams that are responsible for the contents of this repository. | - |
