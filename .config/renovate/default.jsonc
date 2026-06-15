@@ -41,7 +41,6 @@
     // Label PRs by specific categories and managers
     // Available at: https://docs.renovatebot.com/modules/manager/#supported-managers
     // 
-    // definitely enable GitHub Actions updates and group them. These are low-risk, broadly useful, and likely to benefit even repos without application dependencies.
     // include npm support, but group it separately from Python. Frontend updates can be noisier, especially Next/React/Cypress majors.
     // a shared preset should avoid being too opinionated at first. Start with grouping, schedule, labels, dashboards, and safe defaults; let repos keep local overrides for automerge, major updates, or deployment-sensitive dependencies.
     // prPriority to -1 for dev dependencies
@@ -62,6 +61,18 @@
         "description": "dockerfile and docker compose",
         "matchManagers": ["dockerfile", "docker-compose"],
         "addLabels": ["docker"]
+    },
+    // definitely enable GitHub Actions updates and group them. These are low-risk, broadly useful, and likely to benefit even repos without application dependencies.
+    {
+        "description": "github actions",
+        "matchManagers": ["github-actions"],
+        "addLabels": ["github-actions"]
+    },
+    {
+        "description": "group github actions",
+        "matchManagers": ["github-actions"],
+        "matchUpdateTypes": ["minor", "patch"],
+        "groupName": "GitHub Actions (minor and patch updates)"
     },
     {  
         "description": "Add the 'ci' label to all CI-related updates",
