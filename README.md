@@ -13,9 +13,9 @@ The end goal is for this repository to be populated with examples implementing g
 ├── .github/
 │   ├── workflows/
 │   │   └── ...
-│   └── ...
+│   └── CODEOWNERS
 ├── .config/
-│   ├── <tool-specific-config-1>
+│   ├── <tool-specific-config-1>/
 │   └── ...
 └── README.md
 ```
