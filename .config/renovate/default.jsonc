@@ -41,12 +41,11 @@
     // Label PRs by specific categories and managers
     // Available at: https://docs.renovatebot.com/modules/manager/#supported-managers
     // 
-    // make Python first-class. Support pip_requirements, pep621/pyproject, uv, Python version files, pre-commit hooks, and GitHub Actions used for tests.
-    // include Dockerfile and Compose managers, group Docker base-image updates, and consider pinning digests for container images only after testing whether teams are comfortable with digest noise.
     // definitely enable GitHub Actions updates and group them. These are low-risk, broadly useful, and likely to benefit even repos without application dependencies.
     // include npm support, but group it separately from Python. Frontend updates can be noisier, especially Next/React/Cypress majors.
     // a shared preset should avoid being too opinionated at first. Start with grouping, schedule, labels, dashboards, and safe defaults; let repos keep local overrides for automerge, major updates, or deployment-sensitive dependencies.
     // prPriority to -1 for dev dependencies
+    // X - make Python first-class. Support pip_requirements, pep621/pyproject, uv, Python version files, pre-commit hooks, and GitHub Actions used for tests.
     {
         "description": "python rules",
         "matchCategories": ["python"],
@@ -57,6 +56,12 @@
         "matchManagers": ["pre-commit"],
         "addLabels": ["pre-commit"],
         "prPriority": -1 // lower priority for these updates
+    },
+    // include Dockerfile and Compose managers, group Docker base-image updates, and consider pinning digests for container images only after testing whether teams are comfortable with digest noise.
+    {
+        "description": "dockerfile and docker compose",
+        "matchManagers": ["dockerfile", "docker-compose"],
+        "addLabels": ["docker"]
     },
     {  
         "description": "Add the 'ci' label to all CI-related updates",
