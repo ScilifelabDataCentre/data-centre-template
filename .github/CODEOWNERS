@@ -1,5 +1,14 @@
+# CODEOWNERS
+# Defines which individuals or teams that are responsible for the contents of a repository.
+
+# Automatically set the code owners as mandatory reviewers by: 
+# 1. Going to the branch protection rules in the repository settings
+# 2. Edit the settings for an existing rule or create a new rule
+# 3. Check the box "Require review from Code Owners"  under "Require a pull request before merging" and save the rule
+# When a PR is marked as Ready for Review, the code owners will be automatically tagged as reviewers
+
+# See the GitHub Docs for more information, including syntax and examples.
+# Link: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
 # The Technical Enablement Lead is set as owner of this repository in order to be a mandatory approver
 * @ScilifelabDataCentre/technical-enablement-lead
-
-# TBD
-* @almanilsson
