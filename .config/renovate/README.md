@@ -18,8 +18,8 @@ config:recommended
     "helpers:gitlabDigestChangelogs", // Ensure that every dependency pinned by digest and sourced from GitLab.com contains a link to the commit-to-commit diff
     "helpers:goXPackagesChangelogLink", // Correctly link to the source code for golang.org/x packages
     "helpers:goXPackagesNameLink", // Link to pkg.go.dev/... for golang.org/x packages' title
-    "helpers:renovateChangelog" // Provide a link to octochangelog's improved breakdown for Renovate's changelogs
-  ]
+    "helpers:renovateChangelog", // Provide a link to octochangelog's improved breakdown for Renovate's changelogs
+  ],
 }
 ```
 
