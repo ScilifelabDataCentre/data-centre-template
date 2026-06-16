@@ -9,21 +9,22 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
   <!-- <a href=""></a> · -->
 </p>
 
+## TL;DR
 
-<renovate is activated / available for our org. this files explains how to use the custom renovate preset to make it more useful for us>
-<links, to renovate>
-
-1. TLDR; 
   <just copy paste this / replace your existing renovate.json file with this> 
   <if your repo already has a renovate config, add the preset to extends instead of replacing the entire thing>
   <if you want a more detailed example, see here>
   <more information on what this config does: link to below sections>
-2. files in this setup
+
+## Files in this setup
+
   - custom preset intended for shared use
   - minimal example
   - detailed example
   - readme
-3. how to use the custom preset 
+
+## How to use the custom preset
+
   - no existing config --> create renovate.json or renovate.jsonc 
       - copy paste the contents of one of the example files into the file
   - existing config --> add shared preset to extends 
@@ -31,10 +32,21 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
   - want local behavior --> add overrides below extends
   - links to available presets your can enable
   - links to available config for packageRules
-4. what the preset does -- what happens if i enable this -- how did i get to these choices? just brief - that this is based on the orgs repos contents
-5. what the preset does not do -- doesn't automerge, does not group risky ecosystems. etc.
-6. examples and overrides 
+
+## What does the preset do? 
+
+ -- what happens if i enable this -- how did i get to these choices? just brief - that this is based on the orgs repos contents
+
+## What does the preset not do? 
+
+-- doesn't automerge, does not group risky ecosystems. etc.
+
+## Examples and overrides
+
 - what are the examples for, the details are in the example files
+
+
+--- 
 
 https://docs.renovatebot.com/presets-config/#configrecommended
 config:recommended
