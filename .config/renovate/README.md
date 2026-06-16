@@ -60,3 +60,5 @@ Renovate will:
     Pin dependencies to a single version if it appears not to be a library
     Update yarn.lock or package-lock.json files, if found
     Create Pull Requests immediately after branch creation
+
+// Available at: https://docs.renovatebot.com/modules/manager/#supported-managers

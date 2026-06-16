@@ -1,12 +1,10 @@
 // Custom Renovate Preset for the SciLifeLab Data Centre
 // This preset extends the recommended configuration with some of the presets from config:best-practices
 // and some custom settings.
-// Use this preset in your own repositories by extending the renovate.json file.
-// See .github/renovate.jsonc for an example.
-// Available at: https://docs.renovatebot.com/modules/manager/#supported-managers
+// See the .config/renovate/README.md for instructions on how to use this preset in your repository.
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Custom Renovate Preset for the SciLifeLab Data Centre",
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
+  "description": "Custom Renovate Preset for the SciLifeLab Data Centre", 
   "extends": [
     ":dependencyDashboard", // Enable the Dependency Dashboard
     "config:recommended", // The recommended default presets
