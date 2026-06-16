@@ -1,5 +1,14 @@
 # Automatic dependency updates using Renovate
 
+The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate). This README details how to use the [custom Renovate preset](./default.jsonc) defined in this template.
+
+<p>
+  <a href="https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate">DC-interal Renovate instructions</a> ·
+  <a href="https://docs.renovatebot.com/">Renovate documentation</a> ·
+  <!-- <a href=""></a> · -->
+</p>
+
+
 <renovate is activated / available for our org. this files explains how to use the custom renovate preset to make it more useful for us>
 <links, to renovate>
 
