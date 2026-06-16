@@ -18,10 +18,26 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 
 ## Files in this setup
 
-  - custom preset intended for shared use
-  - minimal example
-  - detailed example
-  - readme
+```bash
+.
+├── .github/
+│   └── renovate.jsonc # Renovate configuration for this repository
+└── .config/
+    ├── renovate/
+    │   ├── README.md # This file
+    │   └── default.jsonc # Custom preset
+    └── examples/
+        ├── minimal.jsonc # Minimal example
+        └── detailed.jsonc # Detailed example
+```
+
+| File | Purpose |
+| ------ | --------- |
+| `.config/renovate/README.md` | This guide |
+| `.config/renovate/default.jsonc` | Custom Renovate preset |
+| `.config/renovate/examples/minimal.jsonc` | Minimal example of how to use the preset in your repository |
+| `.config/renovate/examples/detailed.jsonc` | An example of how to use the preset in your repository and extend if to a specific repository's needs |
+| `.github/renovate.jsonc` | Renovate configuration used in this repository |
 
 ## How to use the custom preset
 
