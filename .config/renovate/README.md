@@ -4,7 +4,8 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 
 <p>
   <a href="https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate">DC-interal Renovate instructions</a> ·
-  <a href="https://docs.renovatebot.com/">Renovate documentation</a> ·
+  <a href="https://docs.renovatebot.com/">Renovate documentation</a>
+   <!-- · -->
   <!-- <a href=""></a> · -->
 </p>
 
