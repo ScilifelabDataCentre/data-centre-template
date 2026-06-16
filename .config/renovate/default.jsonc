@@ -16,7 +16,7 @@
     ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
     ":prConcurrentLimit10", // Default: Limit the number of open PRs to 10 (vulnerability PRs bypass it)
     ":prHourlyLimit1", // Renovate can only open 1 PR per hour
-    ":renovatePrefix", // Default: All branches are prefixed with "renovate/"
+    ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "labels": ["dependencies"],
   "schedule": ["* 0-6 * * *"],
@@ -25,50 +25,50 @@
     {
       "description": "Label all GitHub Actions updates",
       "matchManagers": ["github-actions"],
-      "addLabels": ["github-actions"],
+      "addLabels": ["github-actions"]
     },
     {
       "description": "Group minor and patch GitHub Actions updates",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "GitHub Actions (minor and patch)",
+      "groupName": "GitHub Actions (minor and patch)"
     },
     {
       "description": "Label Python specific updates",
       "matchCategories": ["python"],
-      "addLabels": ["python"],
+      "addLabels": ["python"]
     },
     {
       "description": "Label pre-commit specific updates and set lower priority",
       "matchManagers": ["pre-commit"],
       "addLabels": ["pre-commit"],
-      "prPriority": -1,
+      "prPriority": -1
     },
     {
       "description": "Label Dockerfile and docker-compose updates",
       "matchManagers": ["dockerfile", "docker-compose"],
-      "addLabels": ["docker"],
+      "addLabels": ["docker"]
     },
     {
       "description": "Label npm specific updates",
       "matchManagers": ["npm"],
-      "addLabels": ["npm"],
+      "addLabels": ["npm"]
     },
     // Label PRs by update type -- example instead?
     {
       "description": "Add the 'major' label to all major updates.",
       "matchUpdateTypes": ["major"],
-      "addLabels": ["major"],
+      "addLabels": ["major"]
     },
     {
       "description": "Add the 'minor' label to all minor updates.",
       "matchUpdateTypes": ["minor"],
-      "addLabels": ["minor"],
+      "addLabels": ["minor"]
     },
     {
       "description": "Add the 'patch' label to all patch updates.",
       "matchUpdateTypes": ["patch"],
-      "addLabels": ["patch"],
+      "addLabels": ["patch"]
     },
   ],
 }
