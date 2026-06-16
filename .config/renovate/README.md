@@ -1,3 +1,11 @@
+# Automatic dependency updates using Renovate
+
+1. links
+2. What is renovate
+3. files in this setup
+  - custom preset
+  - example
+
 https://docs.renovatebot.com/presets-config/#configrecommended
 config:recommended
 
