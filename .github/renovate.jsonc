@@ -1,6 +1,5 @@
 // Example configuration for Renovate
 // Extends the custom preset defined in .config/renovate/default.jsonc
-// Some examples of custom package rules regarding labels
 {
   "extends": [
     "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc"
