@@ -2,6 +2,6 @@
 // Extends the custom preset defined in .config/renovate/default.jsonc
 {
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.json5#TE-61-review-renovate-configuration"
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#TE-61-review-renovate-configuration"
   ]
 }
