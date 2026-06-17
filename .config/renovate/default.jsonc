@@ -9,33 +9,34 @@
     "config:recommended", // The recommended default presets, see README
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
     "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
+    "workarounds:all", // Apply workarounds for known issues in package managers and ecosystems
     ":automergeDisabled", // Default: Disable automerging, always wait for humans to merge PRs
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages
     ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
     ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
-    ":prConcurrentLimit10", // Default: Limit the number of open PRs to 10 (vulnerability PRs bypass it)
+    ":prConcurrentLimit10", // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
     ":prHourlyLimit1", // Renovate can only open 1 PR per hour
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
-  "labels": ["dependencies"], // Add the "dependencies" label to all PRs
+  "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
   "schedule": ["* 0-6 * * *"],  // PRs opened before 7 AM
   "timezone": "Europe/Stockholm", // Use Stockholm time for scheduling
   "packageRules": [
     // Label all PRs by update type
     {
-      "description": "Add the 'major' label to all major updates.",
+      "description": "Label all major updates.",
       "matchUpdateTypes": ["major"],
-      "addLabels": ["major"]
+      "addLabels": ["update: major"]
     },
     {
-      "description": "Add the 'minor' label to all minor updates.",
+      "description": "Label all minor updates.",
       "matchUpdateTypes": ["minor"],
-      "addLabels": ["minor"]
+      "addLabels": ["update: minor"]
     },
     {
-      "description": "Add the 'patch' label to all patch updates.",
+      "description": "Label all patch updates.",
       "matchUpdateTypes": ["patch"],
-      "addLabels": ["patch"]
+      "addLabels": ["update: patch"]
     },
     // GitHub Actions rule: Label and group
     {
