@@ -4,24 +4,25 @@
 
 This repository provides example configurations for a set of different tools.
 
-The end goal is for this repository to be populated with examples implementing guidelines detailed in  the [SciLifeLab Data Centre's development guidelines repository](https://github.com/ScilifelabDataCentre/development-guidelines).
+The end goal is for this repository to be populated with examples implementing guidelines detailed in the [SciLifeLab Data Centre's development guidelines repository](https://github.com/ScilifelabDataCentre/development-guidelines).
 
-## Intended repository structure
+## Repository structure
 
 ```text
 .
-├── .github/
+├── .github/        # GitHub-specific config, e.g. workflows and templates
 │   ├── workflows/
 │   │   └── ...
-│   └── ...
-├── .config/
-│   ├── <tool-specific-config-1>
+│   └── pull_request_template.md
+├── .config/        # Tool config, one subdirectory per tool
 │   └── ...
 └── README.md
 ```
 
 ## Repository contents
 
-### Tool / purpose
+| Configuration | Purpose | Related guidelines |
+|---------------|---------|--------------------|
+| [Pull request template](.github/pull_request_template.md) | When a PR is opened, the description is automatically filled with the contents of this file. It helps make pull requests easier to prepare and review. | [PR Guidelines Intro](https://github.com/ScilifelabDataCentre/development-guidelines/pull/54), [Preparing a PR](https://github.com/ScilifelabDataCentre/development-guidelines/pull/61), [Reviewing a PR](https://github.com/ScilifelabDataCentre/development-guidelines/pull/63) |
 
-- Link to config / README
+> Links pointing to PRs will be replaced once PRs in `development-guidelines` repository are merged.
