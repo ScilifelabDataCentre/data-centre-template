@@ -43,30 +43,30 @@ For checklist items that do not apply, add a short note explaining why.
 - [ ] I've mentioned and linked [related issues / tasks](#related-issues--tasks)
 - [ ] I've documented breaking changes, risks, assumptions, or open questions, if any
 
-### [Definition of Done](#LINK-TO-MERGED-GUIDELINES)
+### [Definition of Done](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/pull_requests#definition-of-done-dod)
 
 - [ ] The branch is up to date with `<default-branch>`
-- [ ] The PR aligns with the [Acceptance Criteria](#LINK-TO-MERGED-GUIDELINES)
+- [ ] The PR aligns with the [Acceptance Criteria](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/pull_requests#acceptance-criteria)
 - [ ] All configured checks pass
 - [ ] Tests confirm the intended behaviour
 - [ ] Unused code and debug leftovers have been removed
-- [ ] Naming and structure follow the agreed [style guidelines](#LINK-TO-STYLE-GUIDELINES)
+- [ ] Naming and structure follow the agreed [style guidelines](https://google.github.io/styleguide/)
 - [ ] The changes made in the PR are documented appropriately
 
 ### Self-review
 
-- [ ] I've performed a [self-review](#LINK-TO-MERGED-GUIDELINES) of this PR
+- [ ] I've performed a [self-review](https://github.com/ScilifelabDataCentre/development-guidelines/blob/main/pull_requests/pr_author.md#5-self-review-before-requesting-review) of this PR
 
 ## For the reviewer
 
-See the guidelines on [how to review a PR](#LINK-TO-MERGED-GUIDELINES). They offer useful tips that simplify the process for everyone involved.
+See the guidelines on [how to review a PR](https://github.com/ScilifelabDataCentre/development-guidelines/blob/main/pull_requests/pr_reviewer.md#how-to-review-a-pull-request). They offer useful tips that simplify the process for everyone involved.
 
 Use the following checklist during the review.
 
 Review broad to narrow:
 
 - [ ] I understand the purpose of the PR
-- [ ] The scope of the PR matches the [Acceptance Criteria](#LINK-TO-MERGED-GUIDELINES)
+- [ ] The scope of the PR matches the [Acceptance Criteria](https://github.com/ScilifelabDataCentre/development-guidelines/blob/main/pull_requests/README.md#acceptance-criteria)
 - [ ] The behaviour matches the description
 - [ ] Risks, assumptions, edge cases, and possible side effects have been considered
 - [ ] Tests are present and meaningful, or the absence of tests is acceptable
