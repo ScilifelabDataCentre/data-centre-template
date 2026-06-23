@@ -11,11 +11,12 @@ The end goal is for this repository to be populated with examples implementing g
 ```text
 .
 ├── .github/        # GitHub-specific config, e.g. workflows and templates
-│   ├── workflows/
-│   │   └── ...
-│   └── pull_request_template.md
-├── .config/        # Tool config, one subdirectory per tool
-│   └── ...
+│   ├── pull_request_template.md
+│   ├── CODEOWNERS
+│   └── workflows/
+│       └── ...
+├── .config/        # Tool config, one subdirectory per tool   
+│   └── <tool-specific-config-1>/
 └── README.md
 ```
 
@@ -24,5 +25,6 @@ The end goal is for this repository to be populated with examples implementing g
 | Configuration | Purpose | Related guidelines |
 |---------------|---------|--------------------|
 | [Pull request template](.github/pull_request_template.md) | When a PR is opened, the description is automatically filled with the contents of this file. It helps make pull requests easier to prepare and review. | [Pull Request Guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/pull_requests) |
+| [CODEOWNERS file](.github/CODEOWNERS) | Defines which individuals or teams that are responsible for the contents of this repository. | - |
 
 > Links pointing to PRs will be replaced once PRs in `development-guidelines` repository are merged.
