@@ -10,6 +10,6 @@
 # See the GitHub Docs for more information, including syntax and examples.
 # Link: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-# The Technical Enablement Lead and Guidelines team are set as owner of this repository in order to be a mandatory approver
+# The Technical Enablement Lead and Guidelines team are set as owner of this repository in order to be mandatory approvers
 * @ScilifelabDataCentre/technical-enablement-lead
 * @ScilifelabDataCentre/guidelines
