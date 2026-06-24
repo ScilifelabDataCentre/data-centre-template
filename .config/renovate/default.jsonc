@@ -1,0 +1,78 @@
+// Custom Renovate Preset for the SciLifeLab Data Centre
+// This preset extends the recommended configuration with some of the presets from config:best-practices
+// and some custom settings.
+// See the .config/renovate/README.md for instructions on how to use this preset in your repository.
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
+  "description": "Custom Renovate Preset for the SciLifeLab Data Centre", 
+  "extends": [
+    "config:recommended", // The recommended default presets, see README
+    "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
+    "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
+    "workarounds:all", // Apply workarounds for known issues in package managers and ecosystems
+    ":automergeDisabled", // Default: Disable automerging, always wait for humans to merge PRs
+    ":gitSignOff", // Add a "Signed-off-by" line to commit messages
+    ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
+    ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
+    ":prConcurrentLimit10", // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
+    ":prHourlyLimit1", // Renovate can only open 1 PR per hour
+    ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
+  ],
+  "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
+  "schedule": ["* 0-6 * * *"],  // PRs opened before 7 AM
+  "timezone": "Europe/Stockholm", // Use Stockholm time for scheduling
+  "packageRules": [
+    // Label all PRs by update type
+    {
+      "description": "Label all major updates.",
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["update: major"]
+    },
+    {
+      "description": "Label all minor updates.",
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["update: minor"]
+    },
+    {
+      "description": "Label all patch updates.",
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["update: patch"]
+    },
+    // GitHub Actions rule: Label and group
+    {
+      "description": "Label all GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "addLabels": ["github-actions"]
+    },
+    {
+      "description": "Group minor and patch GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "GitHub Actions (minor and patch)",
+    },
+    // Python rule: Label all Python updates, and set lower priority for pre-commit updates
+    {
+      "description": "Label Python specific updates",
+      "matchCategories": ["python"],
+      "addLabels": ["python"]
+    },
+    {
+      "description": "Label pre-commit specific updates and set lower priority",
+      "matchManagers": ["pre-commit"],
+      "addLabels": ["pre-commit"],
+      "prPriority": -1
+    },
+    // Docker rule: Label
+    {
+      "description": "Label Dockerfile and docker-compose updates",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "addLabels": ["docker"]
+    },
+    // npm rule: Label
+    {
+      "description": "Label npm specific updates",
+      "matchManagers": ["npm"],
+      "addLabels": ["npm"]
+    }
+  ]
+}

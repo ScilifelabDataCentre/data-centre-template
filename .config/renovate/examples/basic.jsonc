@@ -1,0 +1,8 @@
+// Minimum example configuration for Renovate
+// Extends the custom preset defined in .config/renovate/default.jsonc
+// This is the minimum required configuration needed to use the custom preset
+{
+  "extends": [
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc"
+  ]
+}
