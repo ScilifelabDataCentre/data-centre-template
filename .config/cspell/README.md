@@ -62,7 +62,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 - The spell check runs when a PR is opened or updated
 - The workflow is configured to check changed files in the PR
   - `incremental_files_only: true` tells CSpell to only check the PR diff, meaning files changed in the PR. It does not check the rest of the repository.
-  - `include_dot_files: true` makes sure that dotfiles are scanned. This includes files under `.github/` and `.config/`. If some dot files should not be scanned, add them to a `ignorePaths:` list in  `.config/cspell/cspell-config.yml`.
+  - `check_dot_files: true` makes sure that dotfiles are scanned. This includes files under `.github/` and `.config/`. If some dot files should not be scanned, add them to a `ignorePaths:` list in  `.config/cspell/cspell-config.yml`.
   - `files: ''` tells CSpell to check all file types selected by the action. This is the _default_.
 - The CSpell action uses `.config/cspell/cspell-config.yml` for language, dictionary, ignored patterns, and project-specific-word settings.
   - `language` configures the languages used during the spell check, here British English and Swedish
@@ -77,6 +77,9 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 ## How to use this in your repository
 
+> [!NOTE]
+> **You do not need to install CSpell on your machine in order to follow the guides in this README.** However, [the CSpell docs](https://cspell.org/docs/installation) have information on what the requirements are, and also instructions on how to install locally if needed / wanted.
+
 ### What you need
 
 All files listed in the [Files in this setup](#files-in-this-setup) section. Your setup should have the same file structure and all files should initially have exact same contents as the files in this template. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
@@ -85,7 +88,6 @@ Most of the files in this setup have instructions at the top. Follow those instr
 
 ### What we recommend
 
-- Install [CSpell](https://cspell.org/docs/installation) locally. Without this you will have to have an open PR and push to your branch every time you want to check if a specific word is flagged. Without CSpell installed locally you will also not be able to fully follow the instructions in this file.
 - Go to `project-specific-words.txt`. Does it include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file. You could also start from scratch completely by removing everything under the `#---` line.
 - Go to `forbidden-words.txt`. Does it include any words that should be allowed (considered correct) in your repository? If so, remove the words from the file. As with the item above, you can also start from scratch by removing all rows under `#---` in that file.
 
