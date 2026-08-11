@@ -8,7 +8,7 @@
   <a href="https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts">CSpell Dictionaries</a>
 </p>
 
-> [!INFO]
+> [!NOTE]
 > Want to cut to the chase?
 > Go to [How to use this in your repository](#how-to-use-this-in-your-repository) for a step-by-step on how to use this CSpell template in your repository.
 
