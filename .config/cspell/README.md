@@ -1,6 +1,6 @@
 # Spell checking with CSpell
 
-> This guide explains how spell checking is configured in this template, how the setup works and what to do when it incorrectly flags words.
+This guide explains how spell checking is configured in this template, how the setup works and what to do when it incorrectly flags words.
 
 <p>
   <a href="https://github.com/streetsidesoftware/cspell-action">CSpell GitHub Action</a> ·
