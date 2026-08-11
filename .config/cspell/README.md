@@ -77,6 +77,18 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 ## How to use this in your repository
 
+### What you need
+
+All files listed in the [Files in this setup](#files-in-this-setup) section. Your setup should have the same file structure and all files should initially have exact same contents as the files in this template. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
+
+Most of the files in this setup have instructions at the top. Follow those instructions when altering the files.
+
+### What we recommend
+
+- Install [CSpell](https://cspell.org/docs/installation) locally. Without this you will have to have an open PR and push to your branch every time you want to check if a specific word is flagged. Without CSpell installed locally you will also not be able to fully follow the instructions in this file.
+- Go to `project-specific-words.txt`. Does it include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file. You could also start from scratch completely by removing everything under the `#---` line.
+- Go to `forbidden-words.txt`. Does it include any words that should be allowed (considered correct) in your repository? If so, remove the words from the file. As with the item above, you can also start from scratch by removing all rows under `#---` in that file.
+
 ## What to do when CSpell flags a correct word
 
 If CSpell flags a word that you know is correct, **first** check whether it's already covered by a CSpell dictionary. **Do not** immediately add it to `project-specific-words.txt`.
