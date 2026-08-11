@@ -11,7 +11,7 @@ This guide explains how spell checking is configured in this template, how the s
 > [!NOTE]
 > **Want to cut to the chase?**
 >
-> Go to [How to use this in your repository](#how-to-use-this-in-your-repository) for a step-by-step on how to use this CSpell template in your repository.
+> Go to [How to use this in your repository](#how-to-use-this-in-your-repository).
 
 ## What is CSpell?
 
