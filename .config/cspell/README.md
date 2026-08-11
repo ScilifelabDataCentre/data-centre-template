@@ -8,6 +8,10 @@
   <a href="https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts">CSpell Dictionaries</a>
 </p>
 
+> [!INFO]
+> Want to cut to the chase?
+> Go to [How to use this in your repository](#how-to-use-this-in-your-repository) for a step-by-step on how to use this CSpell template in your repository.
+
 ## What is CSpell?
 
 CSpell is a spell checker for code and documentation. It scans repository files and flags words that are not recognised by the configured languages, dictionaries, ignore patterns, or project-specific word lists.
@@ -33,7 +37,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 .
 ├── .github/
 │   └── workflows/
-│       └── spellcheck.yml
+│       └── cspell.yml
 └── .config/
     └── cspell/
         ├── README.md
@@ -44,7 +48,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 
 | File | Purpose |
 | ------ | --------- |
-| `.github/workflows/spellcheck.yml` | Runs CSpell |
+| `.github/workflows/cspell.yml` | Runs CSpell |
 | `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
 | `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow |
 | `.config/cspell/forbidden-words.txt` | List of words that should be flagged by CSpell but that are allowed by one or more enabled dictionaries |
@@ -69,6 +73,8 @@ The workflow explicitly includes some default action settings. The workflow woul
     - `forbidden-words.txt` contains words that are allowed in an enabled CSpell dictionary, but that we want to flag as incorrect, e.g. US English spellings.
   - `ignoreRegExpList` tells CSpell to ignore specific patterns
 - If CSpell finds spelling issues, the workflow fails. Spelling issues are reported as GitHub annotations, and suggestions are shown when available.
+
+## How to use this in your repository
 
 ## What to do when CSpell flags a correct word
 
@@ -230,7 +236,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
     ```
 
 3. Use [`cspell trace`](#run-cspell-trace) to verify that the updated CSpell configuration recognises the word
-4. Install the dictionary in the `.github/workflows/spellcheck.yml` workflow file
+4. Install the dictionary in the `.github/workflows/cspell.yml` workflow file
 
     ```yml
     # Example
@@ -251,7 +257,7 @@ npm uninstall @cspell/dict-<dictionary-id>
 
 Then remove:
 
-- the dictionary install command from `.github/workflows/spellcheck.yml`
+- the dictionary install command from `.github/workflows/cspell.yml`
 - the dictionary import from `.config/cspell/cspell-config.yml`
 
 ### Add word to `project-specific-words.txt`

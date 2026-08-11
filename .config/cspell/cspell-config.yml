@@ -13,7 +13,7 @@ language: en-gb,sv
 
 # Extra dictionaries that are enabled when imported
 # Note: These dictionaries must be installed before import
-# (see .github/workflows/spellcheck.yml)
+# (see .github/workflows/cspell.yml)
 import:
   - "@cspell/dict-sv/cspell-ext.json"
   - "@cspell/dict-people-names/cspell-ext.json"
