@@ -44,7 +44,9 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
         ├── README.md
         ├── cspell-config.yml
         ├── project-specific-words.txt
-        └── forbidden-words.txt
+        ├── forbidden-words.txt
+        ├── package-lock.json
+        └── package.json
 ```
 
 | File | Purpose |
@@ -53,6 +55,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 | `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
 | `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow |
 | `.config/cspell/forbidden-words.txt` | List of words that should be flagged by CSpell but that are allowed by one or more enabled dictionaries |
+| `.config/cspell/package.json` / `.config/cspell/package-lock.json` |  |
 | `.config/cspell/README.md` | This guide |
 
 ## How this setup works
@@ -84,9 +87,16 @@ The workflow explicitly includes some default action settings. The workflow woul
 > Follow the instructions when altering the files.
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file. You can and will alter the contents later, but initially the files should be exact copies. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
-2. _Optional (Recommended):_ Remove words from the `project-specific-words.txt` and `forbidden-words.txt` files. You can also start from scratch completely by removing everything under the `#---` line in those files.
+2. Install the requirements specified in `package.json` by running the following command in your repository root:
+  
+  ```bash
+  npm ci --prefix .config/cspell
+  ```
+
+3. _Optional (Recommended):_ Remove words from the `project-specific-words.txt` and `forbidden-words.txt` files. You can also start from scratch completely by removing everything under the `#---` line in those files.
     1. Does `project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
     2. Does `forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
+3. I
 3. Push the changes to your remote branch and open a PR in your repository. CSpell will do an initial run.
 4. When the CSpell run is done, check the results (e.g. in `Files Changed` in your PR). Did CSpell flag any words as incorrect? If CSpell flags a correct word as incorrect, follow the instructions in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
 
