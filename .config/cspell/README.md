@@ -278,17 +278,9 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
     - "@cspell/dict-<dictionary-id>/cspell-ext.json"
     ```
 
-3. Use [`cspell trace`](#run-cspell-trace) to verify that the updated CSpell configuration recognises the word
-4. Install the dictionary in the `.github/workflows/cspell.yml` workflow file
-
-    ```yml
-    # Example
-    - name: Install CSpell Dictionaries (...)
-      run: npm install --no-save (...) @cspell/dict-<dictionary-id>
-    ```
-
-5. Push the changes to your remote branch.
-6. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
+3. Use [`cspell trace`](#run-cspell-trace) to verify that the updated CSpell configuration recognises the word. We also recommend that you [run CSpell locally](#run-the-spell-check-locally) to verify that it no longer flags the word instead of pushing and letting GitHub Actions handle it for every single word.
+4. Push the changes to your remote branch.
+5. If you have an open PR, check the `Files changed`. There should **not** be an annotation for the correct word in the PR diff (`Files changed` tab).
 
 #### How to remove a dictionary from the configuration
 
