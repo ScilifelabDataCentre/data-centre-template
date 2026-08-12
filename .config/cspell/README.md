@@ -263,7 +263,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
     npm install --prefix .config/cspell --save-dev @cspell/dict-<dictionary-id>
     ```
 
-    This may create or update `node_modules/`, `package.json`, and `package-lock.json`.
+    This will update `.config/cspell/node_modules/`, `.config/cspell/package.json`, and `.config/cspell/package-lock.json`.
 
     - Commit `package.json` and `package-lock.json` so the dictionary dependency is recorded.
     - Do not commit `node_modules/`; make sure `node_modules/` is listed in the repository root `.gitignore`.
