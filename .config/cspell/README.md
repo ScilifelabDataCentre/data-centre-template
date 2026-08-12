@@ -55,7 +55,7 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
 | `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
 | `.config/cspell/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow |
 | `.config/cspell/forbidden-words.txt` | List of words that should be flagged by CSpell but that are allowed by one or more enabled dictionaries |
-| `.config/cspell/package.json` / `.config/cspell/package-lock.json` |  |
+| `.config/cspell/package.json` / `.config/cspell/package-lock.json` | Define and lock the npm dependencies required by the CSpell configuration, such as additional dictionaries. |
 | `.config/cspell/README.md` | This guide |
 
 ## How this setup works
@@ -75,7 +75,8 @@ The workflow explicitly includes some default action settings. The workflow woul
   - `dictionaryDefinitions` imports the two custom files as dictionaries:
     - `project-specific-words.txt` contains words that are not included in any other [CSpell-available dictionary](https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts) but that we consider correct and CSpell should not flag.
     - `forbidden-words.txt` contains words that are allowed in an enabled CSpell dictionary, but that we want to flag as incorrect, e.g. US English spellings.
-  - `ignoreRegExpList` tells CSpell to ignore specific patterns
+  - `ignoreRegExpList` tells CSpell to ignore specific patterns.
+  - `ignorePaths` tells CSpell to ignore specific files in your repository.
 - If CSpell finds spelling issues, the workflow fails. Spelling issues are reported as GitHub annotations, and suggestions are shown when available.
 
 ## How to use this in your repository
