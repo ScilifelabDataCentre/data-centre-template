@@ -87,7 +87,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 > Follow the instructions when altering the files.
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file. You can and will alter the contents later, but initially the files should be exact copies. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
-2. Install the requirements specified in `package.json` by running the following command in your repository root:
+2. Install the initial CSpell dictionaries specified in `package.json` by running the following command in your repository root:
   
   ```bash
   npm ci --prefix .config/cspell
