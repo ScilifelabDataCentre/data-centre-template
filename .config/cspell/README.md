@@ -287,13 +287,10 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 To undo the changes listed above, uninstall the dictionary package:
 
 ```bash
-npm uninstall @cspell/dict-<dictionary-id>
+npm uninstall --prefix .config/cspell @cspell/dict-<dictionary-id>
 ```
 
-Then remove:
-
-- the dictionary install command from `.github/workflows/cspell.yml`
-- the dictionary import from `.config/cspell/cspell-config.yml`
+Then also remove the dictionary import from `.config/cspell/cspell-config.yml`.
 
 ### Add word to `project-specific-words.txt`
 
