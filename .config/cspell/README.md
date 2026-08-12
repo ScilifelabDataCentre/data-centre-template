@@ -115,9 +115,6 @@ After these four steps, you're good to go and have 2 options:
 
   ```bash
   npx cspell -c .config/cspell/cspell-config.yml .
-
-  # *Example output row:*
-  # citing_and_citability/README.md:3:38 - Unknown word (repoducibility)
   ```
 
 2. Fix the misspelled words or follow the guide in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
