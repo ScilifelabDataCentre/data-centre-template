@@ -85,8 +85,8 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file. You can and will alter the contents later, but initially the files should be exact copies. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
 2. _Optional:_
-  a. test test
-  b. test test
+  1. test test
+  2. test test
 
 ### What we recommend
 
