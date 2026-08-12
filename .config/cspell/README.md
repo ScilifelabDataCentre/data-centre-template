@@ -86,6 +86,8 @@ The workflow explicitly includes some default action settings. The workflow woul
 > **Most of the files in this setup have instructions at the top.**
 > Follow the instructions when altering the files.
 
+### Initial setup
+
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file. You can and will alter the contents later, but initially the files should be exact copies. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
 2. Install the initial CSpell dictionaries specified in `package.json` by running the following command in your repository root:
   
@@ -93,12 +95,31 @@ The workflow explicitly includes some default action settings. The workflow woul
   npm ci --prefix .config/cspell
   ```
 
+  > [!IMPORTANT]
+  > Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
+
 3. _Optional (Recommended):_ Remove words from the `project-specific-words.txt` and `forbidden-words.txt` files. You can also start from scratch completely by removing everything under the `#---` line in those files.
     1. Does `project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
     2. Does `forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
-3. I
-3. Push the changes to your remote branch and open a PR in your repository. CSpell will do an initial run.
-4. When the CSpell run is done, check the results (e.g. in `Files Changed` in your PR). Did CSpell flag any words as incorrect? If CSpell flags a correct word as incorrect, follow the instructions in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
+4. Push all changes to your remote branch.
+
+After these four steps, you're good to go and have 2 options:
+
+1. Open a PR in your repository and let the workflow run an initial spell check. Then fix the misspelled words, or follow the guide in [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word).
+2. [Run the initial spell check locally](#run-the-spell-check-locally)
+
+### Run the spell check locally
+
+1. Run a spell check from your repository root:
+
+  ```bash
+  npx cspell -c .config/cspell/cspell-config.yml .
+
+  # *Example output row:*
+  # citing_and_citability/README.md:3:38 - Unknown word (repoducibility)
+  ```
+
+2. Fix the misspelled words or follow the guide in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
 
 ## What to do when CSpell flags a correct word
 
