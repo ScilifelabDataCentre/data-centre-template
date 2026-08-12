@@ -87,7 +87,8 @@ The workflow explicitly includes some default action settings. The workflow woul
 2. _Optional (Recommended):_ Remove words from the `project-specific-words.txt` and `forbidden-words.txt` files. You can also start from scratch completely by removing everything under the `#---` line in those files.
     1. Does `project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
     2. Does `forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
-3. 
+3. Push the changes to your remote branch and open a PR in your repository. CSpell will do an initial run.
+4. When the CSpell run is done, check the results (e.g. in `Files Changed` in your PR). Did CSpell flag any words as incorrect? If CSpell flags a correct word as incorrect, follow the instructions in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
 
 ## What to do when CSpell flags a correct word
 
