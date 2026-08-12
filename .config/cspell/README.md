@@ -260,7 +260,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 1. Install the dictionary locally:
 
     ```bash
-    npm install --save-dev @cspell/dict-<dictionary-id>
+    npm install --prefix .config/cspell --save-dev @cspell/dict-<dictionary-id>
     ```
 
     This may create or update `node_modules/`, `package.json`, and `package-lock.json`.
