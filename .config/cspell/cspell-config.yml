@@ -53,6 +53,8 @@ dictionaries:
   - fullstack
   - k8s
   - latex
+  - python
+  - python-common
   - ruby
   - sql
 
@@ -93,6 +95,7 @@ ignorePaths:
   # Package manifests and generated lockfiles.
   - "**/package.json"
   - "**/package-lock.json"
+  - "**/pnpm-lock.yaml"
 
   # Custom dictionary sources are maintained separately.
   - "**/custom-dicts/*.txt"
@@ -150,6 +153,9 @@ ignoreRegExpList:
   - '/ddls[a-zA-Z0-9._-]*/g' # cspell:disable-line # Ignore DDLS identifiers and their suffixes.
   - '/#datacentre_[a-z0-9_-]+/g' # cspell:disable-line # Ignore Data Centre Slack channels 
 
+  # DOI identifiers.
+  - '/DOI:.*/g' # Ignore text containing a labelled DOI reference.
+
 # ---------------------------------------------------------------------------
 # 8. File- and directory-specific settings
 # ---------------------------------------------------------------------------
@@ -170,11 +176,13 @@ overrides:
   # It might also be worth splitting this up into sections for specific file
   # types, e.g. one part for JSON, one for HTML, etc.
   # The structure should be the same as in the Directory-specific settings
-  # 
-  # - filename: "<path-to-file>"
-  #   ignoreRegExpList:
-  #     - <some regular expression>
-  #   ignoreWords: # Override the forbidden dictionary 
-  #     - <some word that is generally incorrect but not in this file>
-  #   words: # File-specific words to allow only in this file
-  #     - <some word>
+  # Use ignoreWords: to override the forbidden-words.txt dictionary
+  - filename: "**/.github/**/*.{yml,yaml}"
+    words:
+      # Allow repository-specific workflow identifiers.
+      - ScilifelabDataCentre # cspell:disable-line
+      - sarif # cspell:disable-line
+    ignoreRegExpList:
+      - '/^\s*uses:\s*\S+/gm' # Ignore GitHub Action identifiers.
+      - '/^\s*images:\s*.*$/gm' # Ignore container image values.
+      - '/^\s*image-ref:\s*.*$/gm' # Ignore image reference values.
