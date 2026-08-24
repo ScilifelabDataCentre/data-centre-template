@@ -1,20 +1,25 @@
 # Project-specific words
 #
 # Add terms that are valid for your repository but
-# not covered by CSpell's available dictionaries.
-# One word per line.
+# that are not covered by any of CSpell's available dictionaries.
+# 
+# One word per line, in alphabetical order.
 # ---
 Berserkers
+Berzelius
 Bitnami
 Bitwarden
 citability
 Codespell
 Distributables
+Dockerfiles
+Figshare
 findability
 jsquery
 Kivy
 logfmt
 mdlint
+Miarka
 MSBFS
 nerdctl
 ORCID
@@ -25,6 +30,8 @@ prek
 RACI
 RORID
 RRID
+sarif
 SciLifeLab
+trivy
 Zenodo
 ZSON
