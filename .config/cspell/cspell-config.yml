@@ -146,7 +146,7 @@ ignoreRegExpList:
   - '/@scilifelab\./gi' # cspell:disable-line # Ignore SciLifeLab email domains.
 
   # Project-specific identifiers and paths.
-  - '/ddls[a-zA-Z0-9._-]*/g' # Ignore DDLS identifiers and their suffixes.
+  - '/ddls[a-zA-Z0-9._-]*/g' # cspell:disable-line # Ignore DDLS identifiers and their suffixes.
   - '/#datacentre_[a-z0-9_-]+/g' # cspell:disable-line # Ignore Data Centre Slack channels 
 
 # ---------------------------------------------------------------------------
