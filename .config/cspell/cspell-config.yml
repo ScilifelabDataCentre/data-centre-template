@@ -3,57 +3,177 @@
 # so we may need to use CSpell's ignore functionality in some cases,
 # e.g. before the ignoreRegExpList below.
 ---
+# ---------------------------------------------------------------------------
+# 1. Core settings
+# ---------------------------------------------------------------------------
 # Version of setting file. Always 0.2
 version: "0.2"
 
-# Languages used for spell checking
-# en-gb is British English; sv is Swedish
-# Note: British English may allow some US spellings
+# Use British English and Swedish
+# Note: The British English dictionary includes some US spellings
 language: en-gb,sv
 
-# Extra dictionaries that are enabled when imported
-# Note: These dictionaries must be installed before import
-# (see .github/workflows/cspell.yml)
+# Spell checking is case-sensitive: Treat differently capitalised words as distinct.
+caseSensitive: true
+
+# Exclude files and directories matched by .gitignore.
+useGitignore: true
+
+# ---------------------------------------------------------------------------
+# 2. Installed dictionary packages
+# ---------------------------------------------------------------------------
+
+# Load dictionary extensions installed through .config/cspell/package.json.
+# The GitHub Actions workflow installs them before running CSpell.
+# For local installation instructions, see .config/cspell/README.md.
 import:
   - "@cspell/dict-sv/cspell-ext.json"
   - "@cspell/dict-people-names/cspell-ext.json"
 
-# Spell checking is case-sensitive
-caseSensitive: true
+# ---------------------------------------------------------------------------
+# 3. Enabled dictionaries
+# ---------------------------------------------------------------------------
 
-# Additional dictionaries to use during spell checking
-# These do not require installation or import
-# See https://github.com/streetsidesoftware/cspell-dicts#cspell-dicts
+# Dictionaries enabled globally for all checked files.
+# Directory-specific dictionaries are enabled later under overrides.
+# The dictionary extensions imported in section 2 are enabled automatically.
+
 dictionaries:
+  # Custom dictionaries defined in section 4 below.
+  - approved-acronyms
+  - approved-names
+  - forbidden-words
+  - project-specific-words
+
+  # Dictionaries bundled with CSpell
   - companies
   - cpp-compound-words
   - fonts
-  - forbidden-words
   - fullstack
   - k8s
   - latex
-  - project-specific-words
   - ruby
   - sql
 
-# Import project-specific words as a custom dictionary
+# ---------------------------------------------------------------------------
+# 4. Custom dictionary definitions
+# ---------------------------------------------------------------------------
+
+# Register custom dictionary files.
+# Dictionaries are enabled globally in section 3 or selectively under overrides.
 dictionaryDefinitions:
-  - name: project-specific-words
-    path: ./custom-dicts/project-specific-words.txt
+  # Globally enabled dictionaries
+  - name: approved-acronyms
+    path: ./custom-dicts/approved-acronyms.txt
     addWords: true
+
+  - name: approved-names
+    path: ./custom-dicts/approved-names.txt
+    addWords: true
+
   - name: forbidden-words
     path: ./custom-dicts/forbidden-words.txt
 
-# Patterns to ignore during spell checking
-# cSpell:ignore datacentre
-ignoreRegExpList:
-  - MarkdownLink # Ignore link target, but still check link text
-  - Url # Ignore full URLs, such as https://www.example.com
-  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # Ignore domain names without a protocol
-  - '/#datacentre_[a-z0-9_-]+/g' # Ignore Slack channel names starting with #datacentre_
+  - name: project-specific-words
+    path: ./custom-dicts/project-specific-words.txt
+    addWords: true
+
+  # Directory-specific dictionaries enabled under overrides
+  # - name: <directory-name>-words
+  #   path: ./custom-dicts/<directory-name>-words.txt
+  #   addWords: true
+
+# ---------------------------------------------------------------------------
+# 5. Ignored files
+# ---------------------------------------------------------------------------
 
 # Paths to ignore during spell checking
 ignorePaths:
+  # Package manifests and generated lockfiles.
   - "**/package.json"
   - "**/package-lock.json"
-  - "**/node_modules/**"
+
+  # Custom dictionary sources are maintained separately.
+  - "**/custom-dicts/*.txt"
+
+  # Repository path and ownership rules.
+  - "**/.gitignore"
+  - "**/CODEOWNERS"
+
+  # Tool configuration containing only selectors, identifiers and metadata.
+  # - <some path here>
+
+# ---------------------------------------------------------------------------
+# 6. Language-specific settings
+# ---------------------------------------------------------------------------
+
+# Language settings for specific file types.
+languageSettings:
+  # Enable HTML terminology for HTML and XML files.
+  - languageId: html,xml
+    dictionaries:
+      - html
+
+  # Enable CSS terminology and allow valid CSS spelling.
+  - languageId: css,scss
+    dictionaries:
+      - css
+    ignoreWords:
+      - gray # cspell:disable-line
+
+  # Enable programming terminology for JavaScript files.
+  - languageId: javascript,javascriptreact
+    dictionaries:
+      - typescript
+
+  # Enable Docker terminology and accept differently cased identifiers.
+  - languageId: dockerfile
+    caseSensitive: false
+    dictionaries:
+      - docker
+
+# ---------------------------------------------------------------------------
+# 7. Global ignore patterns
+# ---------------------------------------------------------------------------
+
+# Patterns that may appear across multiple file types.
+ignoreRegExpList:
+  # Links and addresses
+  - MarkdownLink # Ignore link targets but continue checking visible link text.
+  - Url # Ignore complete URLs, such as https://www.example.com
+  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # cspell:disable-line # Ignore bare domain names. 
+  - '/scilifelab\.[a-z0-9.-]+/gi' # cspell:disable-line # Ignore SciLifeLab domain names. 
+  - '/@scilifelab\./gi' # cspell:disable-line # Ignore SciLifeLab email domains.
+
+  # Project-specific identifiers and paths.
+  - '/ddls[a-zA-Z0-9._-]*/g' # Ignore DDLS identifiers and their suffixes.
+  - '/#datacentre_[a-z0-9_-]+/g' # cspell:disable-line # Ignore Data Centre Slack channels 
+
+# ---------------------------------------------------------------------------
+# 8. File- and directory-specific settings
+# ---------------------------------------------------------------------------
+
+overrides:
+  # -------------------------------------------------------------------------
+  # Directory-specific settings
+  # -------------------------------------------------------------------------
+  # - filename: "<path-to-directory>"
+  #   dictionaries:
+  #     - <directory-name>-words # This is registered in section 4 above
+  #   ignoreRegExpList:
+  #     - <some regular expression>
+
+  # -------------------------------------------------------------------------
+  # File-specific settings
+  # -------------------------------------------------------------------------
+  # It might also be worth splitting this up into sections for specific file
+  # types, e.g. one part for JSON, one for HTML, etc.
+  # The structure should be the same as in the Directory-specific settings
+  # 
+  # - filename: "<path-to-file>"
+  #   ignoreRegExpList:
+  #     - <some regular expression>
+  #   ignoreWords: # Override the forbidden dictionary 
+  #     - <some word that is generally incorrect but not in this file>
+  #   words: # File-specific words to allow only in this file
+  #     - <some word>
