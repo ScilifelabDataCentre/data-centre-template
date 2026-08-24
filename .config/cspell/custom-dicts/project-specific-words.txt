@@ -7,14 +7,12 @@
 # ---
 Berserkers
 Berzelius
-Bitnami
 Bitwarden
 citability
 Codespell
 Distributables
 Dockerfiles
 Figshare
-findability
 jsquery
 Kivy
 logfmt
@@ -22,16 +20,13 @@ mdlint
 Miarka
 MSBFS
 nerdctl
-ORCID
 Pandoc
 pandoc
 Pinga
 prek
 RACI
 RORID
-RRID
 sarif
-SciLifeLab
 trivy
 Zenodo
 ZSON

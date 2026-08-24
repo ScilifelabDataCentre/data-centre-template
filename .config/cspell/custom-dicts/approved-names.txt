@@ -10,3 +10,4 @@
 #
 # One name per line, in alphabetical order.
 # ---
+SciLifeLab

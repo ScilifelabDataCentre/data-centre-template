@@ -7,16 +7,13 @@
 # Each capitalisation form needs its own line
 # Prefix each word with "!"
 #
-# Some of these words are correct English mistakes AND real identifiers: CSS
-# properties, JSON keys, API fields, library names.
+# Some of these words should be considered incorrect spelling,
+# but they are ALSO real identifiers: CSS properties, JSON keys, API fields, library names.
 #   - Do NOT delete the entry in this file
-#   - Allow it only where it's geniunely an identifier
+#   - Allow it only where it's genuinely an identifier
 #   - Use the 'overrides' under "8. File- and directory-specific settings" if the word occurs multiple times throughout the repository
-#   - Use an inline comment to ignore a single occurence
+#   - Use an inline comment to ignore a single occurrence
 # ---
-# ===========================================================================
-# 1. Core British English
-# ===========================================================================
 !analyze
 !Analyze
 !analyzed
