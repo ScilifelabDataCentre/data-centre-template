@@ -39,10 +39,10 @@ dictionaries:
 # Import project-specific words as a custom dictionary
 dictionaryDefinitions:
   - name: project-specific-words
-    path: ./project-specific-words.txt
+    path: ./custom-dicts/project-specific-words.txt
     addWords: true
   - name: forbidden-words
-    path: ./forbidden-words.txt
+    path: ./custom-dicts/forbidden-words.txt
 
 # Patterns to ignore during spell checking
 # cSpell:ignore datacentre
