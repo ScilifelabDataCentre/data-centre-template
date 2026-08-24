@@ -9,6 +9,9 @@ name: Spell Check with CSpell
 on:
   pull_request: # Trigger when PR is opened or updated
 
+permissions:
+    contents: read
+    
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
