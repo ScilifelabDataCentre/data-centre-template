@@ -1,13 +1,8 @@
 # Approved acronyms
-#
-# Acronyms that CSpell does not recognise but that are valid across this
-# repository. Repository-wide scope.
-#
-# The entries below are Swedish, Nordic and European research-infrastructure
-# and funder acronyms that recur across Data Centre repositories. Verified
-# against CSpell's dictionaries: every entry here is genuinely NOT covered.
-# Remove any that your repository does not use.
-#
+# 
+# Add acronyms that are valid for your repository but
+# that are not covered by any of CSpell's available dictionaries.
+# 
 # One acronym per line, in alphabetical order.
 # ---
 
