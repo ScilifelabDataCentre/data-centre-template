@@ -186,3 +186,8 @@ overrides:
       - '/^\s*uses:\s*\S+/gm' # Ignore GitHub Action identifiers.
       - '/^\s*images:\s*.*$/gm' # Ignore container image values.
       - '/^\s*image-ref:\s*.*$/gm' # Ignore image reference values.
+
+  - filename: "**/*.md"
+    ignoreRegExpList:
+      # Allow the CSS property inside Mermaid class definitions.
+      - '/(?<=^\s*classDef\b[^\n]*)\bcolor(?=:)/gm' # cspell:disable-line
