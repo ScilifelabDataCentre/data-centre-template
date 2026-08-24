@@ -27,8 +27,9 @@ useGitignore: true
 # The GitHub Actions workflow installs them before running CSpell.
 # For local installation instructions, see .config/cspell/README.md.
 import:
-  - "@cspell/dict-sv/cspell-ext.json"
+  - "@cspell/dict-en-gb/cspell-ext.json"
   - "@cspell/dict-people-names/cspell-ext.json"
+  - "@cspell/dict-sv/cspell-ext.json"
 
 # ---------------------------------------------------------------------------
 # 3. Enabled dictionaries

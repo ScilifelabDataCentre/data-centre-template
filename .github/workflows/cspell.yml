@@ -25,7 +25,7 @@ jobs:
 
       # Some dictionaries require installation here
       # and import in the .config/cspell/cspell-config.yml file
-      - name: Install CSpell Dictionaries (Swedish and names)
+      - name: Install CSpell Dictionaries
         run: npm ci --prefix .config/cspell --ignore-scripts
 
       - name: Run CSpell
