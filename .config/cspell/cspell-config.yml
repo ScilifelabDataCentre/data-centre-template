@@ -168,16 +168,16 @@ ignoreRegExpList:
   # Links and addresses
   - MarkdownLink # Ignore link targets but continue checking visible link text.
   - Url # Ignore complete URLs, such as https://www.example.com
-  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # cspell:disable-line # Ignore bare domain names. 
-  - '/scilifelab\.[a-z0-9.-]+/gi' # cspell:disable-line # Ignore SciLifeLab domain names. 
+  - '/\b[a-z0-9]+(?:-[a-z0-9]+)*\.[a-z]{2,}\b/gi' # cspell:disable-line # Ignore bare domain names.
+  - '/scilifelab\.[a-z0-9.-]+/gi' # cspell:disable-line # Ignore SciLifeLab domain names.
   - '/@scilifelab\./gi' # cspell:disable-line # Ignore SciLifeLab email domains.
 
   # Project-specific identifiers and paths.
-  - '/ddls[a-zA-Z0-9._-]*/g' # cspell:disable-line # Ignore DDLS identifiers and their suffixes.
-  - '/#datacentre_[a-z0-9_-]+/g' # cspell:disable-line # Ignore Data Centre Slack channels 
+  - "/ddls[a-zA-Z0-9._-]*/g" # cspell:disable-line # Ignore DDLS identifiers and their suffixes.
+  - "/#datacentre_[a-z0-9_-]+/g" # cspell:disable-line # Ignore Data Centre Slack channels
 
   # DOI identifiers.
-  - '/DOI:.*/g' # Ignore text containing a labelled DOI reference.
+  - "/DOI:.*/g" # Ignore text containing a labelled DOI reference.
 
 # ---------------------------------------------------------------------------
 # 8. File- and directory-specific settings

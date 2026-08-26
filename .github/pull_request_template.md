@@ -1,15 +1,15 @@
-<!-- 
-Pull Request Template 
+<!--
+Pull Request Template
 
-What is this: 
+What is this:
 A template to help PRs be prepared and reviewed thoroughly and consistently.
 
-What to do: 
+What to do:
 Copy this file to your own repository and edit / extend where needed.
-The location of the file should be: <your-repository>/.github/pull_request_template.md 
+The location of the file should be: <your-repository>/.github/pull_request_template.md
 
 What then?
-When you open a PR, the PR description will automatically display the contents of this file. 
+When you open a PR, the PR description will automatically display the contents of this file.
 -->
 
 ## Description
@@ -18,7 +18,7 @@ _Use this section to:_
 
 - _Explain why the change is needed_
 - _Explain what the PR does_
-- _Clarify anything that might be unclear to a reviewer_  
+- _Clarify anything that might be unclear to a reviewer_
 - _Highlight breaking changes if there are any_
 
 ### Related issues / tasks

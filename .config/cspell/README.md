@@ -26,6 +26,7 @@ CSpell is designed for spell checking code repositories, not only documentation.
 CSpell has an official GitHub Action and a large set of dictionaries that can be enabled when needed. Other tools may be better for specific use cases, for example:
 
 <!-- cspell:ignore Codespell -->
+
 - [Vale](https://github.com/vale-cli/vale-action) is a style and writing-rule linter. It is better suited for enforcing style guides, preferred terminology, tone, and wording conventions in documentation and other written text. Vale could be added alongside CSpell if stricter writing-style checks are needed.
 - [Codespell](https://github.com/marketplace/actions/codespell-with-annotations) checks code for common misspellings. It is better suited for catching known typo patterns than for dictionary-based spell checking against full language and technical dictionaries.
 
@@ -53,17 +54,17 @@ This template uses one GitHub Actions workflow file and one CSpell configuration
         └── package.json
 ```
 
-| File | Purpose |
-| ------ | --------- |
-| `.github/workflows/cspell.yml` | Runs CSpell |
-| `.config/cspell/cspell-config.yml` | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
-| `.config/cspell/custom-dicts/approved-acronyms.txt` | Acronyms used across the repository. Enabled globally. |
-| `.config/cspell/custom-dicts/approved-names.txt` | Personal and organisation names. Enabled globally. |
-| `.config/cspell/custom-dicts/project-specific-words.txt` | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow |
-| `.config/cspell/custom-dicts/forbidden-words.txt` | List of words that should be flagged by CSpell but that are allowed by one or more enabled dictionaries |
-| `.config/cspell/custom-dicts/{...}-words.txt` | Words valid only in one content directory. Enabled per directory under overrides. |
-| `.config/cspell/package.json` / `.config/cspell/package-lock.json` | Define and lock the npm dependencies required by the CSpell configuration, such as additional dictionaries. |
-| `.config/cspell/README.md` | This guide |
+| File                                                               | Purpose                                                                                                                            |
+| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `.github/workflows/cspell.yml`                                     | Runs CSpell                                                                                                                        |
+| `.config/cspell/cspell-config.yml`                                 | CSpell configuration file used by the workflow. Defines languages, dictionaries, ignored patterns and project-specific word lists. |
+| `.config/cspell/custom-dicts/approved-acronyms.txt`                | Acronyms used across the repository. Enabled globally.                                                                             |
+| `.config/cspell/custom-dicts/approved-names.txt`                   | Personal and organisation names. Enabled globally.                                                                                 |
+| `.config/cspell/custom-dicts/project-specific-words.txt`           | List of valid repository-specific words that are not covered by any available CSpell dictionaries but that CSpell should allow     |
+| `.config/cspell/custom-dicts/forbidden-words.txt`                  | List of words that should be flagged by CSpell but that are allowed by one or more enabled dictionaries                            |
+| `.config/cspell/custom-dicts/{...}-words.txt`                      | Words valid only in one content directory. Enabled per directory under overrides.                                                  |
+| `.config/cspell/package.json` / `.config/cspell/package-lock.json` | Define and lock the npm dependencies required by the CSpell configuration, such as additional dictionaries.                        |
+| `.config/cspell/README.md`                                         | This guide                                                                                                                         |
 
 ## How this setup works
 
@@ -72,7 +73,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 - The spell check runs when a PR is opened or updated
 - The workflow is configured to check changed files in the PR
   - `incremental_files_only: true` tells CSpell to only check the PR diff, meaning files changed in the PR. It does not check the rest of the repository.
-  - `check_dot_files: true` makes sure that dotfiles are scanned. This includes files under `.github/` and `.config/`. If some dot files should not be scanned, add them to a `ignorePaths:` list in  `.config/cspell/cspell-config.yml`.
+  - `check_dot_files: true` makes sure that dotfiles are scanned. This includes files under `.github/` and `.config/`. If some dot files should not be scanned, add them to a `ignorePaths:` list in `.config/cspell/cspell-config.yml`.
   - `files: ''` tells CSpell to check all file types selected by the action. This is the _default_.
 - The CSpell action uses `.config/cspell/cspell-config.yml` for language, dictionary, ignored patterns, and project-specific-word settings.
   - `language` configures the languages used during the spell check, here British English and Swedish
@@ -101,20 +102,20 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file. You can and will alter the contents later, but initially the files should be exact copies. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
 2. Install the initial CSpell dictionaries specified in `package.json` by running the following command in your repository root:
-  
-    ```bash
-    npm ci --prefix .config/cspell --ignore-scripts
-    ```
 
-    > [!IMPORTANT]
-    > Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
+   ```bash
+   npm ci --prefix .config/cspell --ignore-scripts
+   ```
+
+   > [!IMPORTANT]
+   > Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
 
 3. _Optional (Recommended):_ Remove words from the `custom-dicts/project-specific-words.txt` and `custom-dicts/forbidden-words.txt` files. You can also start from scratch completely by removing the example entires.
-    1. Does `custom-dicts/project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
-    2. Does `custom-dicts/forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
+   1. Does `custom-dicts/project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
+   2. Does `custom-dicts/forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
 
-    > [!WARNING]
-    > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions`, otherwise CSpell fails on a missing dictionary path.
+   > [!WARNING]
+   > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions`, otherwise CSpell fails on a missing dictionary path.
 
 4. Push all changes to your remote branch.
 
@@ -127,12 +128,12 @@ After these four steps, you're good to go and have 2 options:
 
 1. Run a spell check from your repository root:
 
-    ```bash
-    npx cspell -c .config/cspell/cspell-config.yml --dot --exclude ".git/**" .
-    ```
+   ```bash
+   npx cspell -c .config/cspell/cspell-config.yml --dot --exclude ".git/**" .
+   ```
 
-    > [!NOTE]
-    > The config file is not auto-discovered; you must use the `-c` option or change the config path to `.config/cspell.config.yaml` and update the workflow input.
+   > [!NOTE]
+   > The config file is not auto-discovered; you must use the `-c` option or change the config path to `.config/cspell.config.yaml` and update the workflow input.
 
 2. Fix the misspelled words or follow the guide in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
 
@@ -209,37 +210,37 @@ The output is a table with the following headers (`Dictionary Location` column i
 
 1. `[YOUR-WORD]` was found in a dictionary that **is** enabled by your current CSpell configuration. CSpell should not be flagging `[YOUR-WORD]` as incorrect.
 
-    ```bash
-    Word        F   Dictionary
-    [...]
-    [YOUR-WORD] *   a-dict*         # [YOUR-WORD] was found in 'a-dict', and 'a-dict' is enabled
-    [...]
-    ```
+   ```bash
+   Word        F   Dictionary
+   [...]
+   [YOUR-WORD] *   a-dict*         # [YOUR-WORD] was found in 'a-dict', and 'a-dict' is enabled
+   [...]
+   ```
 
-    **What to do:** Check spelling, casing and config.
+   **What to do:** Check spelling, casing and config.
 
 2. `[YOUR-WORD]` was found in a dictionary that is **not** enabled by your current CSpell configuration.
 
-    ```bash
-    Word         F   Dictionary
-    [...]
-    [YOUR-WORDS] *   another-dict   # [YOUR-WORD] was found in 'another-dict', but 'another-dict' is not enabled
-    [...]
-    ```
+   ```bash
+   Word         F   Dictionary
+   [...]
+   [YOUR-WORDS] *   another-dict   # [YOUR-WORD] was found in 'another-dict', but 'another-dict' is not enabled
+   [...]
+   ```
 
-    **What to do:** [Enable the dictionary](#enable-a-dictionary) **if** a dictionary containing the word is relevant to your project.
+   **What to do:** [Enable the dictionary](#enable-a-dictionary) **if** a dictionary containing the word is relevant to your project.
 
 3. `[YOUR-WORD]` was **not** found in any of the dictionaries _available_ in your current CSpell configuration.
 
-    ```bash
-    Word         F   Dictionary
-    [...]
-    [YOUR-WORDS] -   some-dict*         # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
-    [YOUR-WORDS] -   yet-another-dict   # 'yet-another-dict' is not enabled, and [YOUR-WORD] was not found in it
-    [...]
-    ```
+   ```bash
+   Word         F   Dictionary
+   [...]
+   [YOUR-WORDS] -   some-dict*         # 'some-dict' is enabled, but [YOUR-WORD] was not found in it
+   [YOUR-WORDS] -   yet-another-dict   # 'yet-another-dict' is not enabled, and [YOUR-WORD] was not found in it
+   [...]
+   ```
 
-    **What to do:** [Search the `cspell-dicts` repo](#search-the-cspell-dicts-repo) for a suitable dictionary.
+   **What to do:** [Search the `cspell-dicts` repo](#search-the-cspell-dicts-repo) for a suitable dictionary.
 
 ### Enable a dictionary
 
@@ -280,24 +281,24 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 
 1. Install the dictionary locally:
 
-    ```bash
-    npm install --prefix .config/cspell --save-dev @cspell/dict-<dictionary-id>
-    ```
+   ```bash
+   npm install --prefix .config/cspell --save-dev @cspell/dict-<dictionary-id>
+   ```
 
-    This will update `.config/cspell/node_modules/`, `.config/cspell/package.json`, and `.config/cspell/package-lock.json`.
+   This will update `.config/cspell/node_modules/`, `.config/cspell/package.json`, and `.config/cspell/package-lock.json`.
 
-    - Commit `package.json` and `package-lock.json` so the dictionary dependency is recorded.
-    - Do not commit `node_modules/`; make sure `node_modules/` is listed in the repository root `.gitignore`.
+   - Commit `package.json` and `package-lock.json` so the dictionary dependency is recorded.
+   - Do not commit `node_modules/`; make sure `node_modules/` is listed in the repository root `.gitignore`.
 
 2. Import the dictionary in your `.config/cspell/cspell-config.yml`
 
-    ```yml
-    # Example
-    import:
-    - "@cspell/dict-sv/cspell-ext.json"
-    - "@cspell/dict-people-names/cspell-ext.json"
-    - "@cspell/dict-<dictionary-id>/cspell-ext.json"
-    ```
+   ```yml
+   # Example
+   import:
+     - "@cspell/dict-sv/cspell-ext.json"
+     - "@cspell/dict-people-names/cspell-ext.json"
+     - "@cspell/dict-<dictionary-id>/cspell-ext.json"
+   ```
 
 3. Use [`cspell trace`](#run-cspell-trace) to verify that the updated CSpell configuration recognises the word. We also recommend that you [run CSpell locally](#run-the-spell-check-locally) to verify that it no longer flags the word instead of pushing and letting GitHub Actions handle it for every single word.
 4. Push the changes to your remote branch.
@@ -317,11 +318,11 @@ Then also remove the dictionary import from `.config/cspell/cspell-config.yml`.
 
 The table below shows when to add a word to the different files under `custom-dicts`. Only add a word to one of the custom dictionaries if the word is correct, relevant to your repository / project, and it doesn't exist in an available CSpell dictionary.
 
-| The word is... | Add it to |
-| -------------- | --------- |
-| an acronym | `approved-acronyms.txt` |
-| a person's or organisation's name | `approved-names.txt` |
-| used across the repository | `project-specific-words.txt` |
+| The word is...                                                  | Add it to                        |
+| --------------------------------------------------------------- | -------------------------------- |
+| an acronym                                                      | `approved-acronyms.txt`          |
+| a person's or organisation's name                               | `approved-names.txt`             |
+| used across the repository                                      | `project-specific-words.txt`     |
 | only used/allowed in one directory, e.g. `<specific-directory>` | `<specific-directory>-words.txt` |
 
 If a word **should** be flagged across all files, add it to `forbidden-words.txt`.

@@ -31,10 +31,10 @@ jobs:
       - name: Run CSpell
         uses: streetsidesoftware/cspell-action@v8
         with: # See link at top of file for more configuration options
-          files: '' # Include all file types (default)
+          files: "" # Include all file types (default)
           check_dot_files: true # Include dotfiles in spell check (incl. .config/, .github/, etc.)
           incremental_files_only: true # Only spell check PR diff (default)
-          config: '.config/cspell/cspell-config.yml' # Custom CSpell config file
+          config: ".config/cspell/cspell-config.yml" # Custom CSpell config file
           inline: error # Show spelling issues as inline errors in PR
           suggestions: true # Show suggestions for misspelled words
           strict: true # Fail action if misspelled words are found (default)
