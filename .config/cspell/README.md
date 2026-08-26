@@ -107,15 +107,15 @@ The workflow explicitly includes some default action settings. The workflow woul
    npm ci --prefix .config/cspell --ignore-scripts
    ```
 
-   > [!IMPORTANT]
-   > Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
+  > [!IMPORTANT]
+  > Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
 
 3. _Optional (Recommended):_ Remove words from the `custom-dicts/project-specific-words.txt` and `custom-dicts/forbidden-words.txt` files. You can also start from scratch completely by removing the example entires.
    1. Does `custom-dicts/project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
    2. Does `custom-dicts/forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
 
-   > [!WARNING]
-   > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
+  > [!WARNING]
+  > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
 
 4. Push all changes to your remote branch.
 
@@ -132,8 +132,8 @@ After these four steps, you're good to go and have 2 options:
    npx cspell -c .config/cspell/cspell-config.yml --dot --exclude ".git/**" .
    ```
 
-   > [!NOTE]
-   > The config file is not auto-discovered; you must use the `-c` option or change the config path to `.config/cspell.config.yaml` and update the workflow input.
+  > [!NOTE]
+  > The config file is not auto-discovered; you must use the `-c` option or change the config path to `.config/cspell.config.yaml` and update the workflow input.
 
 2. Fix the misspelled words or follow the guide in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
 
