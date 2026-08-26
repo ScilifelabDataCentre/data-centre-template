@@ -115,7 +115,7 @@ The workflow explicitly includes some default action settings. The workflow woul
    2. Does `custom-dicts/forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
 
    > [!WARNING]
-   > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions`, otherwise CSpell fails on a missing dictionary path.
+   > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
 
 4. Push all changes to your remote branch.
 
