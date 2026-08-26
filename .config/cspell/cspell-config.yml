@@ -181,13 +181,6 @@ overrides:
   # The structure should be the same as in the Directory-specific settings
   # Use ignoreWords: to override the forbidden-words.txt dictionary
   # -------------------------------------------------------------------------
-  # JSON fields
-  # -------------------------------------------------------------------------
-  - filename: "**/*.json"
-    ignoreRegExpList:
-      - '/"url"\s*:\s*"[^"]*"/g' # Ignore complete URL fields.
-
-  # -------------------------------------------------------------------------
   # Markdown content and HTML
   # -------------------------------------------------------------------------
   - filename: "**/*.md"

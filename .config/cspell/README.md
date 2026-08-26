@@ -131,6 +131,9 @@ After these four steps, you're good to go and have 2 options:
     npx cspell -c .config/cspell/cspell-config.yml --dot --exclude ".git/**" .
     ```
 
+    > [!NOTE]
+    > The config file is not auto-discovered; you must use the `-c` option or change the config path to `.config/cspell.config.yaml` and update the workflow input.
+
 2. Fix the misspelled words or follow the guide in the section [What to do when CSpell flags a correct word](#what-to-do-when-cspell-flags-a-correct-word) below.
 
 ## What to do when CSpell flags a correct word
@@ -269,7 +272,7 @@ repo:streetsidesoftware/cspell-dicts [YOUR-WORD]
 - Use the `<dictionary-id>` from the file path to find the dictionary in the `cspell-dicts` `README`.
 - If the dictionary **is** marked as Bundled with CSpell, [enable it](#enable-a-dictionary).
 - If the dictionary is **not** marked as `Bundled with CSpell`, [install and import the dictionary package](#install-and-import-a-dictionary).
-- If the search has no relevant results, [add the word to `.config/cspell/custom-dicts/project-specific-words.txt`](#add-word-to-custom-dictsproject-specific-wordstxt).
+- If the search has no relevant results, [add the word to a custom dictionary](#add-word-to-a-custom-dictionary-configcspellcustom-dicts).
 
 ### Install and import a dictionary
 
@@ -278,7 +281,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 1. Install the dictionary locally:
 
     ```bash
-    npm install --prefix .config/cspell --save-dev @cspell/dict-<dictionary-id>
+    npm install --prefix .config/cspell @cspell/dict-<dictionary-id>
     ```
 
     This will update `.config/cspell/node_modules/`, `.config/cspell/package.json`, and `.config/cspell/package-lock.json`.
