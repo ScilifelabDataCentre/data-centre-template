@@ -113,11 +113,6 @@ ignorePaths:
 
 # Language settings for specific file types.
 languageSettings:
-  # Enable HTML terminology for HTML and XML files.
-  - languageId: html,xml
-    dictionaries:
-      - html
-
   # Enable CSS terminology and allow valid CSS spelling.
   - languageId: css,scss
     dictionaries:
@@ -128,16 +123,38 @@ languageSettings:
       - colors # cspell:disable-line
       - behavior # cspell:disable-line
 
-  # Enable programming terminology for JavaScript files.
-  - languageId: javascript,javascriptreact
-    dictionaries:
-      - typescript
-
   # Enable Docker terminology and accept differently cased identifiers.
   - languageId: dockerfile
     caseSensitive: false
     dictionaries:
       - docker
+
+  # Enable HTML terminology for HTML and XML files.
+  - languageId: html,xml
+    dictionaries:
+      - html
+    ignoreRegExpList:
+      # Allow the CSS property spelling inside double-quoted inline styles.
+      - '/(?<=\bstyle\s*=\s*"[^"]*)\bcolor(?=:)/g' # cspell:disable-line
+
+  # Enable programming terminology for JavaScript files.
+  - languageId: javascript,javascriptreact
+    dictionaries:
+      - typescript
+    
+  - languageId: markdown
+    ignoreRegExpList:
+      # Allow the CSS property inside Mermaid class definitions.
+      - '/(?<=^\s*classDef\b[^\n]*)\bcolor(?=:)/gm' # cspell:disable-line
+
+      # Ignore double-quoted source attribute values.
+      - '/\bsrc\s*=\s*"[^"]*"/g' # cspell:disable-line
+
+      # Allow the US CSS keyword
+      - '/(?<=\bclass\s*=\s*["''][^"'']*)\bgray\b/g' # cspell:disable-line
+
+      # Allow the CSS property spelling inside double-quoted inline styles.
+      - '/(?<=\bstyle\s*=\s*"[^"]*)\bcolor(?=:)/g' # cspell:disable-line
 
 # ---------------------------------------------------------------------------
 # 7. Global ignore patterns
@@ -180,26 +197,6 @@ overrides:
   # types, e.g. one part for JSON, one for HTML, etc.
   # The structure should be the same as in the Directory-specific settings
   # Use ignoreWords: to override the forbidden-words.txt dictionary
-  # -------------------------------------------------------------------------
-  # Markdown content and HTML
-  # -------------------------------------------------------------------------
-  - filename: "**/*.md"
-    ignoreRegExpList:
-      # Allow the CSS property inside Mermaid class definitions.
-      - '/(?<=^\s*classDef\b[^\n]*)\bcolor(?=:)/gm' # cspell:disable-line
-
-  - filename:
-      - "**/*.html"
-      - "**/*.md"
-    ignoreRegExpList:
-      - '/\bsrc\s*=\s*"[^"]*"/g' # Ignore double-quoted source attribute values.
-
-      # Allow the US CSS keyword
-      - '/(?<=\bclass\s*=\s*["''][^"'']*)\bgray\b/g' # cspell:disable-line
-      
-      # Allow the CSS property spelling inside double-quoted inline styles.
-      - '/(?<=\bstyle\s*=\s*"[^"]*)\bcolor(?=:)/g' # cspell:disable-line
-
   # -------------------------------------------------------------------------
   # GitHub Actions
   # -------------------------------------------------------------------------
