@@ -281,7 +281,7 @@ If you find a word in a relevant dictionary available in the `cspell-dicts` repo
 1. Install the dictionary locally:
 
     ```bash
-    npm install --prefix .config/cspell @cspell/dict-<dictionary-id>
+    npm install --prefix .config/cspell --save-dev @cspell/dict-<dictionary-id>
     ```
 
     This will update `.config/cspell/node_modules/`, `.config/cspell/package.json`, and `.config/cspell/package-lock.json`.
