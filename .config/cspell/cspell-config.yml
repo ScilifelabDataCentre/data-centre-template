@@ -135,7 +135,7 @@ languageSettings:
       - html
     ignoreRegExpList:
       # Allow the CSS property spelling inside double-quoted inline styles.
-      - '/(?<=\bstyle\s*=\s*"[^"]*)\bcolor(?=:)/g' # cspell:disable-line
+      - '/(?<=\bstyle\s*=\s*["''][^"'']*)\bcolor(?=:)/g' # cspell:disable-line
 
   # Enable programming terminology for JavaScript files.
   - languageId: javascript,javascriptreact
@@ -149,13 +149,13 @@ languageSettings:
       - '/(?<=^\s*classDef\b[^\n]*)\bcolor(?=:)/gm' # cspell:disable-line
 
       # Ignore double-quoted source attribute values.
-      - '/\bsrc\s*=\s*"[^"]*"/g' # cspell:disable-line
+      - '/\bsrc\s*=\s*["''][^"'']*["'']/g' # cspell:disable-line
 
       # Allow the US CSS keyword
       - '/(?<=\bclass\s*=\s*["''][^"'']*)\bgray\b/g' # cspell:disable-line
 
       # Allow the CSS property spelling inside double-quoted inline styles.
-      - '/(?<=\bstyle\s*=\s*"[^"]*)\bcolor(?=:)/g' # cspell:disable-line
+      - '/(?<=\bstyle\s*=\s*["''][^"'']*)\bcolor(?=:)/g' # cspell:disable-line
 
 # ---------------------------------------------------------------------------
 # 7. Global ignore patterns
