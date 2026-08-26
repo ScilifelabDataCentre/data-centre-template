@@ -312,7 +312,7 @@ npm uninstall --prefix .config/cspell @cspell/dict-<dictionary-id>
 Then also remove the dictionary import from `.config/cspell/cspell-config.yml`.
 
 > [!WARNING]
-> If you delete a dictionary file from `custum-dicts/` (see the "Add word to a custom dictionary" section below), you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
+> If you delete a dictionary file from `custom-dicts/` (see the "Add word to a custom dictionary" section below), you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
 
 ### Add word to a custom dictionary (`.config/cspell/custom-dicts/`)
 
