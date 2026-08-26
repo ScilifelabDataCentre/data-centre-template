@@ -9,7 +9,6 @@ Berserkers
 Berzelius
 Bitwarden
 citability
-Codespell
 Distributables
 Dockerfiles
 Figshare

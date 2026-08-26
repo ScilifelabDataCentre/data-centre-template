@@ -124,6 +124,9 @@ languageSettings:
       - css
     ignoreWords:
       - gray # cspell:disable-line
+      - color # cspell:disable-line
+      - colors # cspell:disable-line
+      - behavior # cspell:disable-line
 
   # Enable programming terminology for JavaScript files.
   - languageId: javascript,javascriptreact
@@ -177,6 +180,36 @@ overrides:
   # types, e.g. one part for JSON, one for HTML, etc.
   # The structure should be the same as in the Directory-specific settings
   # Use ignoreWords: to override the forbidden-words.txt dictionary
+  # -------------------------------------------------------------------------
+  # JSON fields
+  # -------------------------------------------------------------------------
+  - filename: "**/*.json"
+    ignoreRegExpList:
+      - '/"url"\s*:\s*"[^"]*"/g' # Ignore complete URL fields.
+
+  # -------------------------------------------------------------------------
+  # Markdown content and HTML
+  # -------------------------------------------------------------------------
+  - filename: "**/*.md"
+    ignoreRegExpList:
+      # Allow the CSS property inside Mermaid class definitions.
+      - '/(?<=^\s*classDef\b[^\n]*)\bcolor(?=:)/gm' # cspell:disable-line
+
+  - filename:
+      - "**/*.html"
+      - "**/*.md"
+    ignoreRegExpList:
+      - '/\bsrc\s*=\s*"[^"]*"/g' # Ignore double-quoted source attribute values.
+
+      # Allow the US CSS keyword
+      - '/(?<=\bclass\s*=\s*["''][^"'']*)\bgray\b/g' # cspell:disable-line
+      
+      # Allow the CSS property spelling inside double-quoted inline styles.
+      - '/(?<=\bstyle\s*=\s*"[^"]*)\bcolor(?=:)/g' # cspell:disable-line
+
+  # -------------------------------------------------------------------------
+  # GitHub Actions
+  # -------------------------------------------------------------------------
   - filename: "**/.github/**/*.{yml,yaml}"
     words:
       # Allow repository-specific workflow identifiers.
@@ -186,8 +219,3 @@ overrides:
       - '/^\s*uses:\s*\S+/gm' # Ignore GitHub Action identifiers.
       - '/^\s*images:\s*.*$/gm' # Ignore container image values.
       - '/^\s*image-ref:\s*.*$/gm' # Ignore image reference values.
-
-  - filename: "**/*.md"
-    ignoreRegExpList:
-      # Allow the CSS property inside Mermaid class definitions.
-      - '/(?<=^\s*classDef\b[^\n]*)\bcolor(?=:)/gm' # cspell:disable-line
