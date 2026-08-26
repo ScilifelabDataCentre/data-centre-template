@@ -103,7 +103,7 @@ The workflow explicitly includes some default action settings. The workflow woul
 2. Install the initial CSpell dictionaries specified in `package.json` by running the following command in your repository root:
   
     ```bash
-    npm ci --prefix .config/cspell --save-dev --ignore-scripts
+    npm ci --prefix .config/cspell --ignore-scripts
     ```
 
     > [!IMPORTANT]
