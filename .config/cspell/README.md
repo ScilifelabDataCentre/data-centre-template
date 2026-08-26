@@ -100,6 +100,9 @@ The workflow explicitly includes some default action settings. The workflow woul
 
 ### Initial setup
 
+> [!IMPORTANT]
+> Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
+
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file. You can and will alter the contents later, but initially the files should be exact copies. While this README is not technically needed, we do recommend that your repository includes this as well since the information is intended to help you with flagged words and store information you might not remember in the future.
 2. Install the initial CSpell dictionaries specified in `package.json` by running the following command in your repository root:
 
@@ -107,15 +110,9 @@ The workflow explicitly includes some default action settings. The workflow woul
    npm ci --prefix .config/cspell --ignore-scripts
    ```
 
-  > [!IMPORTANT]
-  > Your repository's `.gitignore` should contain `node_modules/`. Do not push the `node_modules/` to your remote branch.
-
 3. _Optional (Recommended):_ Remove words from the `custom-dicts/project-specific-words.txt` and `custom-dicts/forbidden-words.txt` files. You can also start from scratch completely by removing the example entires.
    1. Does `custom-dicts/project-specific-words.txt` include any words that should be considered incorrect and flagged by the spell checking? If so, remove the words from the file.
    2. Does `custom-dicts/forbidden-words.txt` include any words that should be considered correct in your repository? If so, remove the words from the file.
-
-  > [!WARNING]
-  > If you delete a dictionary file, you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
 
 4. Push all changes to your remote branch.
 
@@ -313,6 +310,9 @@ npm uninstall --prefix .config/cspell @cspell/dict-<dictionary-id>
 ```
 
 Then also remove the dictionary import from `.config/cspell/cspell-config.yml`.
+
+> [!WARNING]
+> If you delete a dictionary file from `custum-dicts/` (see the "Add word to a custom dictionary" section below), you must also remove its entry from `dictionaryDefinitions` and `dictionaries`, otherwise CSpell fails on a missing dictionary path.
 
 ### Add word to a custom dictionary (`.config/cspell/custom-dicts/`)
 
