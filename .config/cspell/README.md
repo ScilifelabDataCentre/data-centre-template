@@ -85,8 +85,8 @@ The workflow explicitly includes some default action settings. The workflow woul
     - `custom-dicts/forbidden-words.txt` contains words that are allowed in an enabled CSpell dictionary, but that we want to flag as incorrect, e.g. US English spellings.
   - `ignoreRegExpList` tells CSpell to ignore specific patterns.
   - `ignorePaths` tells CSpell to ignore specific files in your repository.
-  - `languageSettings` specifies some configuration to apply to only specific languages, incl. code languages.
-  - `overrides` contains rules, dictionaries, and single words that should only be enabled in specific files and directories, not globally.
+  - `languageSettings` specifies some configuration to apply to only specific languages, incl. code languages. Note that CSpell has its own name for each file type: Markdown files are `markdown`, even when they contain HTML.
+  - `overrides` contains rules, dictionaries, and single words that should only be enabled in specific files and directories, not globally. Prefer `languageSettings` when a rule applies to a whole file type, and `overrides` only when it applies to a specific folder or file.
 - If CSpell finds spelling issues, the workflow fails. Spelling issues are reported as GitHub annotations, and suggestions are shown when available.
 
 ## How to use this in your repository

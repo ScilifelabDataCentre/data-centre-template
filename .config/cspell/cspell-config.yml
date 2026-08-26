@@ -141,7 +141,8 @@ languageSettings:
   - languageId: javascript,javascriptreact
     dictionaries:
       - typescript
-    
+
+  # Handle raw HTML and Mermaid inside markdown
   - languageId: markdown
     ignoreRegExpList:
       # Allow the CSS property inside Mermaid class definitions.
