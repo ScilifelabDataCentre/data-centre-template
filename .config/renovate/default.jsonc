@@ -9,7 +9,7 @@
     "config:recommended", // The recommended default presets, see README
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
     "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
-    ":gitSignOff", // Add a "Signed-off-by" line to commit messages
+    ":gitSignOff", // Add a "Signed-off-by" line to commit messages (not cryptographic commit signing)
     ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
@@ -21,6 +21,14 @@
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "packageRules": [
+    // 
+    {
+      "description": "Wait three days before updating PyPI packages",
+      "matchDatasources": ["pypi"],
+      "minimumReleaseAge": "3 days",
+      "minimumReleaseAgeBehaviour": "timestamp-optional",
+      "internalChecksFilter": "strict"
+    },
     // Label SemVer updates by update type
     {
       "description": "Label all major updates.",
