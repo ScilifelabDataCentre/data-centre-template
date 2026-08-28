@@ -1,4 +1,4 @@
-// Example configuration for Renovate
+// Renovate configuration for this repository
 // Extends the custom preset defined in .config/renovate/default.jsonc
 {
   "extends": [

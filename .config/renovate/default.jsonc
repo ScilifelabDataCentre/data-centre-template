@@ -19,10 +19,10 @@
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
-  "schedule": ["* 0-6 * * *"],  // PRs opened before 7 AM
+  "schedule": ["* 0-6 * * *"],  // Allow new Renovate branches between 00:00 and 06:59 - does not cause or trigger Renovate to run
   "timezone": "Europe/Stockholm", // Use Stockholm time for scheduling
   "packageRules": [
-    // Label all PRs by update type
+    // Label SemVer updates by update type
     {
       "description": "Label all major updates.",
       "matchUpdateTypes": ["major"],
@@ -48,19 +48,13 @@
       "description": "Group minor and patch GitHub Actions updates",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "GitHub Actions (minor and patch)",
+      "groupName": "GitHub Actions (minor and patch)"
     },
     // Python rule: Label all Python updates, and set lower priority for pre-commit updates
     {
       "description": "Label Python specific updates",
       "matchCategories": ["python"],
       "addLabels": ["python"]
-    },
-    {
-      "description": "Label pre-commit specific updates and set lower priority",
-      "matchManagers": ["pre-commit"],
-      "addLabels": ["pre-commit"],
-      "prPriority": -1
     },
     // Docker rule: Label
     {
