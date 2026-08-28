@@ -9,15 +9,15 @@
     "config:recommended", // The recommended default presets, see README
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
     "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
-    ":automergeDisabled", // Default: Disable automerging, always wait for humans to merge PRs
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages
-    ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
     ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
   "schedule": ["* 0-6 * * *"],  // Allow new Renovate branches between 00:00 and 06:59 - does not cause or trigger Renovate to run
   "timezone": "Europe/Stockholm", // Use Stockholm time for scheduling
+  "ignoreUnstable": true, // Default: Don't update to unstable versions, unless already unstable
+  "automerge": false, // Default: Disable automerging, always wait for humans to merge PRs
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "packageRules": [
