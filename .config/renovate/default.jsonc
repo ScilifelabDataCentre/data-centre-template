@@ -21,7 +21,7 @@
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "packageRules": [
-    // 
+    // Only update PyPI packages that have been released for at least 3 days
     {
       "description": "Wait three days before updating PyPI packages",
       "matchDatasources": ["pypi"],
