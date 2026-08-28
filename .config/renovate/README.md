@@ -1,10 +1,5 @@
 # Automatic dependency updates using Renovate
 
-**NOTES**
-At the time of writing, our self-hosted renovate config has version 43.224.0 --> not jsonc
-
----
-
 The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate). This README details how to use the [custom Renovate preset](./default.jsonc) defined in this template.
 
 <p>
