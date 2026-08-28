@@ -9,7 +9,6 @@
     "config:recommended", // The recommended default presets, see README
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
     "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
-    "workarounds:all", // Apply workarounds for known issues in package managers and ecosystems
     ":automergeDisabled", // Default: Disable automerging, always wait for humans to merge PRs
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages
     ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
