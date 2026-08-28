@@ -13,12 +13,12 @@
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages
     ":ignoreUnstable", // Default: Don't update to unstable versions, unless already unstable
     ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
-    ":prHourlyLimit1", // Renovate can only open 1 PR per hour
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
   "schedule": ["* 0-6 * * *"],  // Allow new Renovate branches between 00:00 and 06:59 - does not cause or trigger Renovate to run
   "timezone": "Europe/Stockholm", // Use Stockholm time for scheduling
+  "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "packageRules": [
     // Label SemVer updates by update type
