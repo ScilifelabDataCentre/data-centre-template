@@ -90,12 +90,27 @@ The changes detailed in the sections below need to be merged into your repositor
 
 Put repository-specific options _below_ the `extends` list. Anything you set there wins over the preset.
 
-<!-- 
-TO ADD 
-  - want local behavior -> add overrides below extends
-  - links to available presets your can enable
-  - links to available config for packageRules
--->
+  ```jsonc
+  {
+    "extends": [
+      "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"
+    ],
+    "schedule": ["* 0-6 * * 1"], // Only open branches on Mondays (preset sets it to every day)
+    // example with pinning digests -- both extends and packagerules
+  }
+  ```
+
+> [!NOTE]
+>
+> 1. `packageRules` are additive. Yours are appended after the preset's.
+> 2. Use `addLabels` instead of `labels`. `labels` will replace the `labels` settings defined in the preset, `addLabels` will append more labels.
+
+**Useful links:**
+
+- [Configuration options](https://docs.renovatebot.com/configuration-options/)
+- [Default presets (to use in `extends`)](https://docs.renovatebot.com/presets-default/)
+- [`packageRules`](https://docs.renovatebot.com/configuration-options/#packagerules)
+- [Shareable Config Presets](https://docs.renovatebot.com/config-presets/)
 
 ## What does the preset do?
 
