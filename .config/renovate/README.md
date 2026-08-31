@@ -1,13 +1,11 @@
 # Automatic dependency updates using Renovate
 
--->
-
 The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate). This README details how to use the [custom Renovate preset](./default.jsonc) defined in this template.
 
 <p>
   <a href="https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate">DC-interal Renovate instructions</a> ·
   <a href="https://docs.renovatebot.com/">Renovate documentation</a> ·
-  <a href="https://docs.renovatebot.com/configuration-options/#configuration-options">Renovate configuration options</a>
+  <a href="https://docs.renovatebot.com/configuration-options">Renovate configuration options</a>
 </p>
 
 ## TL;DR
@@ -19,14 +17,16 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 ```bash
 .
 ├── .github/
-│   └── renovate.jsonc # Renovate configuration for this repository
+│   ├── renovate.jsonc # Renovate configuration for this repository
+│   └── workflows/
+│       └── renovate-validate.yml # Automatically validate the configuration files
 └── .config/
-    ├── renovate/
-    │   ├── README.md # This file
-    │   └── default.jsonc # Custom preset
-    └── examples/
-        ├── minimal.jsonc # Minimal example
-        └── detailed.jsonc # Detailed example
+    └── renovate/
+        ├── README.md # This file
+        ├── default.jsonc # Custom preset
+        └── examples/
+            ├── minimal.jsonc # Minimal example
+            └── detailed.jsonc # Detailed example
 ```
 
 | File | Purpose |
@@ -34,7 +34,7 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 | `.config/renovate/README.md` | This guide |
 | `.config/renovate/default.jsonc` | Custom Renovate preset |
 | `.config/renovate/examples/minimal.jsonc` | Minimal example of how to use the preset in your repository |
-| `.config/renovate/examples/detailed.jsonc` | An example of how to use the preset in your repository and extend if to a specific repository's needs |
+| `.config/renovate/examples/detailed.jsonc` | An example of how to use the preset in your repository and extend it to a specific repository's needs |
 | `.github/renovate.jsonc` | Renovate configuration used in this repository |
 | `.github/workflows/renovate-validate.yml` | Workflow for validating the Renovate configuration when there's a change in it |
 
@@ -45,7 +45,7 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 
 | Does your repository already have a Renovate configuration file? | |
 | --- | --- |
-| No | 1. Create a `.github/renovate.jsonc` in your repository. <br/> 2. Copy-paste the contents of [`./examples/minimal.jsonc`](../../.github/renovate.jsonc) into the new file. |
+| No | 1. Create a `.github/renovate.jsonc` in your repository. <br/> 2. Copy-paste the contents of [`./examples/minimal.jsonc`](./examples/minimal.jsonc) into the new file. |
 | Yes | 1. Add the preset to the `extends` list (see [`.config/renovate/examples/`](./examples/)). <br/> 2. Remove configuration options from your previous setup if redundant or out of date. |
 
 The changes need to be merged into your repository's default branch for it to take effect.
