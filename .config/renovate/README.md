@@ -3,9 +3,9 @@
 The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate). This README details how to use the [custom Renovate preset](./default.jsonc) defined in this template.
 
 <p>
-  <a href="https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate">DC-interal Renovate instructions</a> ·
+  <a href="https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate">DC-internal Renovate instructions</a> ·
   <a href="https://docs.renovatebot.com/">Renovate documentation</a> ·
-  <a href="https://docs.renovatebot.com/configuration-options">Renovate configuration options</a>
+  <a href="https://docs.renovatebot.com/configuration-options/">Renovate configuration options</a>
 </p>
 
 ## TL;DR
@@ -23,10 +23,7 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 └── .config/
     └── renovate/
         ├── README.md # This file
-        ├── default.jsonc # Custom preset
-        └── examples/
-            ├── minimal.jsonc # Minimal example
-            └── detailed.jsonc # Detailed example
+        └── default.jsonc # Custom preset
 ```
 
 | File | Purpose |
@@ -39,17 +36,60 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 | `.github/workflows/renovate-validate.yml` | Workflow for validating the Renovate configuration when there's a change in it |
 
 > [!NOTE]
-> This configuration uses `.jsonc` in order to allow comments in the JSON files. 
+> This configuration uses `.jsonc` in order to allow comments in the JSON files.
+> Renovate supports `.jsonc` for both configuration files and presets.
 
 ## How to use the custom preset
 
-| Does your repository already have a Renovate configuration file? | |
+The changes detailed in the sections below need to be merged into your repository's default branch for it to take effect.
+
+| Does your repository already have a Renovate configuration file? | Go to section... |
 | --- | --- |
-| No | 1. Create a `.github/renovate.jsonc` in your repository. <br/> 2. Copy-paste the contents of [`./examples/minimal.jsonc`](./examples/minimal.jsonc) into the new file. |
-| Yes | 1. Add the preset to the `extends` list (see [`.config/renovate/examples/`](./examples/)). <br/> 2. Remove configuration options from your previous setup if redundant or out of date. |
+| No | [From scratch](#from-scratch) |
+| Yes | [From an existing configuration](#from-an-existing-configuration) |
 
-The changes need to be merged into your repository's default branch for it to take effect.
+### From scratch
 
+> [!IMPORTANT]
+> This assumes that your repository does **not** already have a Renovate configuration file.
+
+1. Create a `.github/renovate.jsonc` file in your repository.
+2. Copy-paste the following into the new file:
+  
+    ```jsonc
+    // Renovate configuration for this repository
+    {
+      "extends": [
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"
+      ]
+    }
+    ```
+
+### From an existing configuration
+
+> [!IMPORTANT]
+> This assumes that your repository already has a Renovate configuration file.
+
+1. Add the preset to the `extends` list (example below)
+
+    ```jsonc
+    // Renovate configuration for this repository
+    // Extends the custom preset defined in .config/renovate/default.jsonc
+    // in the data-centre-template repository
+    {
+      "extends": [
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
+        // examples
+      ],
+      // examples
+    }
+    ```
+
+2. Remove configuration options from your previous setup if redundant or out of date.
+
+### Adding your own settings
+
+Put repository-specific options _below_ the `extends` list. Anything you set there wins over the preset.
 <!-- 
 TO ADD 
   - want local behavior -> add overrides below extends
@@ -61,6 +101,7 @@ TO ADD
 
 <!-- 
 TO ADD
+  - The preset is referenced by a version tag, which means changes to the preset never reach your repository unannounced. When a new version is tagged, Renovate opens a PR in your repository to bump the version. You review and merge the PR like any other update.
  - what happens if i enable this -- how did i get to these choices? just brief - that this is based on the orgs repos contents
  - default.jsonc has comments with information on what the different configs do but here are some useful links to find out more
 -->
@@ -72,11 +113,4 @@ TO ADD
 - what does the preset not do?
 - things that were decided against
 - things they should consider adding e.g. pinning github digests
--->
-
-## Examples and overrides
-
-<!--
-TO ADD
-- what are the examples for, the details are in the example files
 -->
