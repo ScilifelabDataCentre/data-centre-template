@@ -120,20 +120,28 @@ The configuration choices are based on the contents of the ScilifelabDataCentre 
 
 `default.jsonc` is commented line by line. This is the summary.
 
-### The updates it proposes
+### How it proposes updates 
 
 * Extends `config:recommended`, Renovate's recommended baseline.
 * `npm` and `PyPI` updates are not proposed until they have been released for three days. This reduces the risk of us bumping a package to an unsafe release.
 * Packages with no release for a year are flagged as abandoned.
 * Only bumps to a pre-release if you already are on one.
 * Lockfiles are refreshed weekly, on Mondays.
+* At most 1 new PR per hour and 10 open at once.
+* New branches are only created between 00:00 and 06:59. This limits when branches appear. It does not control when Renovate runs.
+* Security PRs ignore the schedule and both limits.
+* Adds a `Signed-off-by` trailer to commits. This is not cryptographic commit signing.
 
-<!-- 
-TO ADD
- - default.jsonc has comments with information on what the different configs do but here are some useful links to find out more
--->
+### Labels
+
+Every PR is labelled with `type: dependency`, the update type (`update: major`, `update: minor`, `update: patch`) and which manager the PR applies to (`github-actions`, `python`, `docker`, `npm`). Security PRs also get the label `type: security`.
 
 ## What does the preset not do?
+
+* **No automerge.** Every PR waits for a human to approve and merge.
+* **No digest pinning for Docker or GitHub Actions.** Might be useful, but left to each team and repository to add if needed.
+* **No grouping beyond GitHub Actions**. One PR per dependency is easier to review and to revert.
+
 
 <!-- 
 TO ADD
