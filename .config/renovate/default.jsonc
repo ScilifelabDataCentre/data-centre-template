@@ -21,7 +21,7 @@
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "vulnerabilityAlerts": {
-    "addLabels":  ["security"] // Security PRs bypass schedule + limits
+    "addLabels":  ["type: security"] // Security PRs bypass schedule + limits
   },
   "packageRules": [
     // Only update PyPI packages released at least 3 days ago
