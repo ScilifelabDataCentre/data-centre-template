@@ -15,14 +15,14 @@
   ],
   "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
   "schedule": ["* 0-6 * * *"],  // Allow new Renovate branches between 00:00 and 06:59 - does not cause or trigger Renovate to run
-  "timezone": "Europe/Stockholm", // Use Stockholm time for scheduling
+  "timezone": "Europe/Stockholm", // Use Stockholm time for 'schedule'
   "ignoreUnstable": true, // Default: Don't update to unstable versions, unless already unstable
   "automerge": false, // Default: Disable automerging, always wait for humans to merge PRs
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "packageRules": [
     // Only update PyPI packages released at least 3 days ago
-    // Mirrors security:minimumReleaseAgePypi (Renovate 44.8.0+)
+    // Same functionality as security:minimumReleaseAgePypi (Renovate 44.8.0+)
     // Swap to the preset once the instance is upgraded
     {
       "description": "Wait three days before updating PyPI packages",
@@ -52,6 +52,11 @@
       "matchUpdateTypes": ["patch"],
       "addLabels": ["update: patch"]
     },
+    {
+      "description": "Label all digest updates.",
+      "matchUpdateTypes": ["digest"],
+      "addLabels": ["update: digest"]
+    },
     // GitHub Actions rule: Label and group
     {
       "description": "Label all GitHub Actions updates",
@@ -64,7 +69,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "GitHub Actions (minor and patch)"
     },
-    // Python rule: Label all Python updates, and set lower priority for pre-commit updates
+    // Python rule: Label
     {
       "description": "Label Python specific updates",
       "matchCategories": ["python"],
