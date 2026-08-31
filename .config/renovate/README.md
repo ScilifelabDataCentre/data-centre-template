@@ -141,11 +141,3 @@ Every PR is labelled with `type: dependency`, the update type (`update: major`, 
 * **No automerge.** Every PR waits for a human to approve and merge.
 * **No digest pinning for Docker or GitHub Actions.** Might be useful, but left to each team and repository to add if needed.
 * **No grouping beyond GitHub Actions**. One PR per dependency is easier to review and to revert.
-
-
-<!-- 
-TO ADD
-- what does the preset not do?
-- things that were decided against
-- things they should consider adding e.g. pinning github digests
--->
