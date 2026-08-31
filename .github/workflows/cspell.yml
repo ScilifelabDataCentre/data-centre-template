@@ -22,6 +22,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           persist-credentials: false # We don't need the token in subsequent steps
+          fetch-depth: 0 # cspell needs the PR base commit to diff against
 
       # Some dictionaries require installation here
       # and import in the .config/cspell/cspell-config.yml file
