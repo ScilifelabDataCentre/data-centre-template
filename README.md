@@ -1,7 +1,6 @@
 # Template Repository for the SciLifeLab Data Centre
 
 ![Status: Work in Progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)
-[![Spell Check with CSpell](https://github.com/ScilifelabDataCentre/data-centre-template/actions/workflows/cspell.yml/badge.svg)](https://github.com/ScilifelabDataCentre/data-centre-template/actions/workflows/cspell.yml)
 
 This repository provides example configurations for a set of different tools.
 
