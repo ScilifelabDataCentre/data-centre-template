@@ -17,6 +17,8 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@7
+        with:
+          persist-credentials: false # We don't need the token in subsequent steps
       
       - name: Validate preset
         # Our version currently doesn't validate jsonc -- copy to json5
