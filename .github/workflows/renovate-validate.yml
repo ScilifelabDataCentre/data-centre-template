@@ -24,6 +24,6 @@ jobs:
         # Our version currently doesn't validate jsonc -- copy to json5
         # Pin 43 to match instance, but not exact version
         run: |
-          cp .config/renovate/default.json "$RUNNER_TEMP/preset.json5"
+          cp .config/renovate/default.jsonc "$RUNNER_TEMP/preset.json5"
           npx --yes --package renovate@43 -- \
             renovate-config-validator --no-global --strict "$RUNNER_TEMP/preset.json5"
