@@ -20,6 +20,9 @@
   "automerge": false, // Default: Disable automerging, always wait for humans to merge PRs
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
+  "vulnerabilityAlerts": {
+    "addLabels":  ["security"] // Security PRs bypass schedule + limits
+  },
   "packageRules": [
     // Only update PyPI packages released at least 3 days ago
     // Same functionality as security:minimumReleaseAgePypi (Renovate 44.8.0+)
@@ -51,11 +54,6 @@
       "description": "Label all patch updates.",
       "matchUpdateTypes": ["patch"],
       "addLabels": ["update: patch"]
-    },
-    {
-      "description": "Label all digest updates.",
-      "matchUpdateTypes": ["digest"],
-      "addLabels": ["update: digest"]
     },
     // GitHub Actions rule: Label and group
     {
