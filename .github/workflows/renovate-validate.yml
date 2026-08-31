@@ -1,0 +1,24 @@
+# Validate the Renovate configuration in .config/renovate/
+---
+name: Validate Renovate config
+
+on:
+  pull_request:
+    paths:
+      - '.config/renovate/**'
+      - '.github/renovate.jsonc'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@7
+      
+      - name: Validate preset
+        # Our version currently doesn't validate jsonc -- copy to json5
+        # Pin 43 to match instance, but not exact version
+        run: |
+          cp .config/renovate/default.json "$RUNNER_TEMP/preset.json5"
+          npx --yes --package renovate@43 -- \
+            renovate-config-validator --no-global --strict "$RUNNER_TEMP/preset.json5"
