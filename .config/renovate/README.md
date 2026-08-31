@@ -114,10 +114,22 @@ Put repository-specific options _below_ the `extends` list. Anything you set the
 
 ## What does the preset do?
 
+**Version tag:** The preset is referenced by a version tag, which means changes to the preset never reach your repository unannounced. When a new version is tagged, Renovate opens a PR in your repository to bump the version. You review and merge the PR like any other update.
+
+The configuration choices are based on the contents of the ScilifelabDataCentre GitHub Organisation repositories.
+
+`default.jsonc` is commented line by line. This is the summary.
+
+### The updates it proposes
+
+* Extends `config:recommended`, Renovate's recommended baseline.
+* `npm` and `PyPI` updates are not proposed until they have been released for three days. This reduces the risk of us bumping a package to an unsafe release.
+* Packages with no release for a year are flagged as abandoned.
+* Only bumps to a pre-release if you already are on one.
+* Lockfiles are refreshed weekly, on Mondays.
+
 <!-- 
 TO ADD
-  - The preset is referenced by a version tag, which means changes to the preset never reach your repository unannounced. When a new version is tagged, Renovate opens a PR in your repository to bump the version. You review and merge the PR like any other update.
- - what happens if i enable this -- how did i get to these choices? just brief - that this is based on the orgs repos contents
  - default.jsonc has comments with information on what the different configs do but here are some useful links to find out more
 -->
 
