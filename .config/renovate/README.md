@@ -30,8 +30,6 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 | ------ | --------- |
 | `.config/renovate/README.md` | This guide |
 | `.config/renovate/default.jsonc` | Custom Renovate preset |
-| `.config/renovate/examples/minimal.jsonc` | Minimal example of how to use the preset in your repository |
-| `.config/renovate/examples/detailed.jsonc` | An example of how to use the preset in your repository and extend it to a specific repository's needs |
 | `.github/renovate.jsonc` | Renovate configuration used in this repository |
 | `.github/workflows/renovate-validate.yml` | Workflow for validating the Renovate configuration when there's a change in it |
 
@@ -70,26 +68,28 @@ The changes detailed in the sections below need to be merged into your repositor
 > [!IMPORTANT]
 > This assumes that your repository already has a Renovate configuration file.
 
-1. Add the preset to the `extends` list (example below)
+1. Add the preset as the **first** entry of the `extends` list:
 
     ```jsonc
     // Renovate configuration for this repository
-    // Extends the custom preset defined in .config/renovate/default.jsonc
-    // in the data-centre-template repository
+    // Extends the SciLifeLab Data Centre preset
     {
       "extends": [
         "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
-        // examples
+        ":enablePreCommit" // Any presets your repository already lists in 'extends'
       ],
-      // examples
+      "prConcurrentLimit": 20 // Any options your repository already set
     }
     ```
+
+    Note that the order matters. The DC preset should come first.
 
 2. Remove configuration options from your previous setup if redundant or out of date.
 
 ### Adding your own settings
 
 Put repository-specific options _below_ the `extends` list. Anything you set there wins over the preset.
+
 <!-- 
 TO ADD 
   - want local behavior -> add overrides below extends
