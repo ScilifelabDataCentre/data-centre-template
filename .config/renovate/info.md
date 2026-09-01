@@ -3,6 +3,7 @@
 The SciLifeLab Data Centre has a self-hosted instance of Renovate. This template includes a custom Renovate preset ([`.config/renovate/deault.jsonc`](default.jsonc)) that can be adopted as the Renovate configuration in any repository within the ScilifelabDataCentre GitHub Organisation. This README details how the preset is configured, how to use it, and how to extend it if it needs tightening or loosening to suit a specific repository's needs.
 
 The aim of this template is to:
+
 - Reduce the amount of duplicate work. Currently all teams need to create their own Renovate configurations, which is time- and energy consuming. There are also a lot of configuration options to choose from. 
 - Reduce volume of PRs opened by Renovate. They are useful, but they can overwhelm and distract the teams from other tasks.
 - Provide a configuration that is useful for most Data Centre repositories, while allowing the teams to extend it where needed
@@ -15,7 +16,10 @@ The aim of this template is to:
 
 ## TL;DR
 
-See # how to use it in your repo
+<!-- 
+See # how to use it in your repo 
+Fill this in after the rest is done
+-->
 
 ## Useful links
 
