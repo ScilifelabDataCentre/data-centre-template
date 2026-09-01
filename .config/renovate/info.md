@@ -65,3 +65,36 @@
 - it uses version 43 for validation instead of the exact version - that is by design, so that we don't need to edit this configuration every time there's a patch or minor bump -- only when there's a major bump to 44.
 - what it won't catch: 
     - ??? 
+
+## what the preset does not do
+
+The following points are not implemented in the DC Renovate preset. There are likely more options that have been left out, but this mentions two. Both of these have examples below which you can either use as inspiration or copy-paste into your own configuration.
+
+- it doesn't activate digest pinning for github actions
+    - this means that github action prs will bump to specific versions
+        - the details depend on what your current settings are e.g. v1 --> v2, or v1.0.0 --> v1.0.1 etc.
+    - the prs will not pin digests -- not exact commits for that github action
+        - this means that your workflows can and will be affected when there's a change to the action
+        - v1.0.1 will still point to v1 
+        - sometimes this change won't be noticable
+        - sometimes things break even though you have done nothing -- sometimes difficult to understand why a workflow suddenly fails
+    - pinning the actions to exact commit hashes means that your actions won't be affected when the action authors push changes
+        - instead, when digest pinning is activated, renovate will open a pr to a new digest.
+        - this would make it noisy, but grouping of github action prs could mitigate most of it
+    - decided that this was an opt in
+    - if you decide to activate it, you should also consider activating this [???]
+
+```jsonc
+// Example here for activating digest pinning
+```
+
+- it only groups github actions minor and patch updates, no other packages or managers or update types
+    - this is also opt in
+    - it might make it more noisy, but we have (as explained above) set a limit to the number of open prs
+    - and setting a useful grouping strategy that should be applied to all repos is difficult
+    - instead, the teams should implement themselves if they wish
+        - you can use the examples, either as just help or copy paste them if useful
+
+```jsonc
+// Example here for activating grouping
+```
