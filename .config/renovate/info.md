@@ -12,6 +12,9 @@ The aim of this template is to:
 - the goal is to reduce the amount of work needed for each team and repository
     - if the teams only want those specific settings, they can have a very basic configuration in their repository, pointing to the preset (more details in #how to use it in your repo)
     - if the teams want to override the settings in the preset or add new options, they can add those to their config
+
+- note?
+    - while this preset and template is aimed toward the SciLifeLab Data Centre, this repository is public and open source -- anyone can copy and adjust it to their needs
 -->
 
 ## TL;DR
@@ -23,9 +26,9 @@ Fill this in after the rest is done
 
 ## Useful links
 
-* DC-internal Renovate instructions -- https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate
-* Renovate documentation -- https://docs.renovatebot.com/
-* Renovate configuration options -- https://docs.renovatebot.com/configuration-options/
+- [DC-internal Renovate instructions](https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate)
+- [Renovate documentation](https://docs.renovatebot.com/)
+- [Renovate configuration options](https://docs.renovatebot.com/configuration-options/)
 
 ## Files in this setup
 
