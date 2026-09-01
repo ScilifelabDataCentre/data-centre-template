@@ -30,6 +30,8 @@ Fill this in after the rest is done
 - [Renovate documentation](https://docs.renovatebot.com/)
 - [Renovate configuration options](https://docs.renovatebot.com/configuration-options/)
 
+<!-- are there more useful links? -->
+
 ## Files in this setup
 
 <!-- fill this in after the rest is done -->
