@@ -1,17 +1,23 @@
 # Automatic dependency updates using Renovate
 
-- The SciLifeLab Data Centre has a self-hosted instance of Renovate.
-- This readme details how to use the custom renovate preset defined in.config/renovate/default.jsonc
+The SciLifeLab Data Centre has a self-hosted instance of Renovate. This template includes a custom Renovate preset ([`.config/renovate/deault.jsonc`](default.jsonc)) that can be adopted as the Renovate configuration in any repository within the ScilifelabDataCentre GitHub Organisation. This README details how the preset is configured, how to use it, and how to extend it if it needs tightening or loosening to suit a specific repository's needs.
+
+The aim of this template is to:
+- Reduce the amount of duplicate work. Currently all teams need to create their own Renovate configurations, which is time- and energy consuming. There are also a lot of configuration options to choose from. 
+- Reduce volume of PRs opened by Renovate. They are useful, but they can overwhelm and distract the teams from other tasks.
+- Provide a configuration that is useful for most Data Centre repositories, while allowing the teams to extend it where needed
+
+<!--
 - the goal is to reduce the amount of work needed for each team and repository
-    - the preset configures some settings that are useful for most repositories
     - if the teams only want those specific settings, they can have a very basic configuration in their repository, pointing to the preset (more details in #how to use it in your repo)
     - if the teams want to override the settings in the preset or add new options, they can add those to their config
+-->
 
 ## TL;DR
 
-See # how to use it in your repo to 
+See # how to use it in your repo
 
-## useful links
+## Useful links
 
 * DC-internal Renovate instructions -- https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate
 * Renovate documentation -- https://docs.renovatebot.com/
