@@ -6,7 +6,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
   "description": "Custom Renovate Preset for the SciLifeLab Data Centre", 
   "extends": [
-    "config:recommended", // The recommended default presets, see README
+    "config:recommended", // The recommended default presets
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
     "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages (not cryptographic commit signing)
