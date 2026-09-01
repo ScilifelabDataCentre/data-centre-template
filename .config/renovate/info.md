@@ -1,0 +1,67 @@
+## How to use it in your repo
+
+- simple example -- only extend the preset
+    - at the time of writing, this is what this repo uses in .github/renovate.jsonc -- the renovate configuration for this repo, which uses the preset defined in .config/renovate/default.jsonc
+    - the preset should be followed by a version tag
+    - when there's a new version of the preset, renovate will automatically open up a new pr so that you can decide for yourself if you want to stick with the old version or the new -- no changes will happen in your repo without you knowing
+
+```jsonc
+// Renovate configuration for this repository
+// Uses the SciLifeLab Data Centre custom Renovate preset
+{
+  "extends": [
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#<ADD-TAG>" //TODO: ADD TAG
+  ]
+}
+```
+
+- extend the preset with repo specific configurations -- see examples directory
+    - the preset should always be at the top of the `extends` list and `extends` should always be at the top of the config 
+        - configuration options later in the file will override the previous options if they don't agree with each other
+
+- we also recommend that you copy the .github/workflows/renovate-validate.jsonc workflow into your repository -- see #renovate-validate section
+
+## default.jsonc -- what happens if you use it in your repo? 
+
+"straight forward explanations"
+- custom preset for the DC
+- uses the DC renovate 
+- uses the recommended default presets (config:recommended -- link)
+- packages without release for 1 year are flagged as abandoned (what does this mean exactly?)
+- Adds a "Signed-off-by" line to commit messages -- this is not cryptographic commit signing. It should look like (message from andreas here)
+- lockfiles (e.g. package-lock.json) are updated weekly (monday mornings) -- why 
+- all branches are prefixed with "renovate/" -- this is also the default, even without this explicitely in the preset 
+- unstable versions are not updated, unless you're already on an unstable version.
+- the PRs that renovate opens are not automerged -- it always waits for a human to review and merge.
+
+"more complicated explanations"
+- when?
+    - our DC instance runs at a specific schedule
+    - the preset also defines a schedule, but this does not affect when renovate runs
+    - the schedule in the preset tells renovate that it's only allowed to create new renovate branches between midnight and 06:59 AM, stockholm time.
+    - it's only allowed to create one PR per hour, and only 10 PRs are allowed to be open at the same time 
+        - vulnerability PRs (security) bypass this though, they are created no matter what, which is why we've also labeled them
+- renovate only bumps npm and pypi packages when they have been released for at least 3 days -- this allows the authors to potentially fix bugs or retract malicious code and it reduces the risk of us merging unsafe code
+    - the npm rule is a renovate preset (in extends)
+    - the pypi rule is a renovate preset in version 44.???.?? NOT in ours -- we have version 43.224.0 at the time of writing
+        - this is why we have the two packagerules for pypi: the first one tells renovate to wait 3 days for all pypi updates, the second tells it to not wait for specific update types because they do not have the "minimum release age" set and would therefore never get a pr without this addition
+        - when our renovate instance is bumped to the 44 version that supports the preset for pypi, we should switch to this.
+- labels
+    - all prs from renovate are marked as `type: dependency`
+    - Security PRs (dependabot) are marked as `type: security`
+    - semver update labels: major updates are labeled as `update: major`, minor as `update: minor` and patch as `update: patch`.
+        - i decided against adding more than these three, these are the most common ones
+    - also label github actions, python, docker, npm.
+        - I have used a mix of `matchCategories`and `matchManagers`. (links) Managers is more specific, categories more broad, and python is widely used in our org --> categories to not choose every specific manager.
+- groups only github-actions minor and patch updates.
+    - the reason: riskier to bump multiple at the same time because it's easier to miss issues. with one bump per PR for most packages --> easier to review and catch potential issues
+    - the examples/??? show an example of how to activate grouping. you can copy paste those if you want.
+
+## renovate-validate.yml -- automatic validation of the preset, config and examples
+
+- if there are mistakes in the preset, those mistakes will ofc propagate into all repos that use it in their config 
+- this was added to avoid mistakes in the configuration
+- while this was initially added for this repository, we recommend that you adopt it in your repository as well, since it will help you catch issues in your configuration if and when you decide to extend it
+- it uses version 43 for validation instead of the exact version - that is by design, so that we don't need to edit this configuration every time there's a patch or minor bump -- only when there's a major bump to 44.
+- what it won't catch: 
+    - ??? 
