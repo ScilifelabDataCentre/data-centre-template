@@ -23,6 +23,9 @@ jobs:
       - name: Validate preset
         # Our version currently doesn't validate jsonc -- copy to json5
         # Pin 43 to match instance, but not exact version
+        # --yes to automatically install renovate-config-validator if not present
+        # --no-global because we are validating a shared config preset
+        # --strict to fail if scanned config needs migration
         run: |
           cp .config/renovate/default.jsonc "$RUNNER_TEMP/preset.json5"
           npx --yes --package renovate@43 -- \
