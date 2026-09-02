@@ -137,17 +137,23 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
   - The preset also defines a [`schedule`](https://docs.renovatebot.com/key-concepts/scheduling/#scheduling-syntax), but this does **not** affect when Renovate runs; it only tells Renovate that it's allowed to create new branches between midnight and 06:59 AM (Stockholm time).
   - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaniously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
+- **npm and PyPI packages**
+  - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, and it reduces the risk of us merging unsafe code.
+  - The npm rule is defined in a Renovate preset: [`security:minimumReleaseAgeNpm`](https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm)
+  - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.244.0` at the time of writing, and `security:minimumReleaseAgePyPI` was introduced in version `44.57.1`.
+    - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
+    - When our version is updated to version `44.57.1`, we should replace the `packageRules` with the predefined preset.
 
 ----
 
 ## default.jsonc -- what happens if you use it in your repo? 
 
 "more complicated explanations"
-- renovate only bumps npm and pypi packages when they have been released for at least 3 days -- this allows the authors to potentially fix bugs or retract malicious code and it reduces the risk of us merging unsafe code
-    - the npm rule is a renovate preset (in extends)
-    - the pypi rule is a renovate preset in version 44.???.?? NOT in ours -- we have version 43.224.0 at the time of writing
-        - this is why we have the two packagerules for pypi: the first one tells renovate to wait 3 days for all pypi updates, the second tells it to not wait for specific update types because they do not have the "minimum release age" set and would therefore never get a pr without this addition
-        - when our renovate instance is bumped to the 44 version that supports the preset for pypi, we should switch to this.
+<!-- - renovate only bumps npm and pypi packages when they have been released for at least 3 days -- this allows the authors to potentially fix bugs or retract malicious code and it reduces the risk of us merging unsafe code -->
+<!-- - the npm rule is a renovate preset (in extends) -->
+<!-- - the pypi rule is a renovate preset in version 44.???.?? NOT in ours -- we have version 43.224.0 at the time of writing -->
+<!-- - this is why we have the two packagerules for pypi: the first one tells renovate to wait 3 days for all pypi updates, the second tells it to not wait for specific update types because they do not have the "minimum release age" set and would therefore never get a pr without this addition -->
+<!-- - when our renovate instance is bumped to the 44 version that supports the preset for pypi, we should switch to this. -->
 - labels
     - all prs from renovate are marked as `type: dependency`
     - Security PRs (dependabot) are marked as `type: security`
