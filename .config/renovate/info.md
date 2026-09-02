@@ -157,18 +157,7 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
   - All other packages, managers and categories get one PR per update.
   - There's an example of grouping in [What the preset does not do](#what-the-preset-does-not-do) if you're interested in implementing this into your repositories.
 
-----
-
-## renovate-validate.yml -- automatic validation of the preset, config and examples
-
-- if there are mistakes in the preset, those mistakes will ofc propagate into all repos that use it in their config 
-- this was added to avoid mistakes in the configuration
-- while this was initially added for this repository, we recommend that you adopt it in your repository as well, since it will help you catch issues in your configuration if and when you decide to extend it
-- it uses version 43 for validation instead of the exact version - that is by design, so that we don't need to edit this configuration every time there's a patch or minor bump -- only when there's a major bump to 44.
-- what it won't catch: 
-    - ??? 
-
-## what the preset does not do
+## What the preset does **not** do
 
 The following points are not implemented in the DC Renovate preset. There are likely more options that have been left out, but this mentions two. Both of these have examples below which you can either use as inspiration or copy-paste into your own configuration.
 
@@ -200,3 +189,20 @@ The following points are not implemented in the DC Renovate preset. There are li
 ```jsonc
 // Example here for activating grouping
 ```
+
+## Automatic validation of the preset and config
+
+In addition to the custom preset and repository-specific configuration, this template also includes a workflow for automatically validating the different Renovate files: `.github/workflows/renovate-validate.yml`.
+
+> [!TIP]
+> While this was initially added for this repository, we recommend that you adopt it in your repository as well, since it will help you catch issues in your configuration if and when you decide to extend it.
+
+### Why
+
+- While we strive to be as thorough as possible, mistakes in the different files are very likely, both due to human error and due to some options and settings only being available after a certain release.
+  - The validation workflow uses version `43` by design instead of a specific version, e.g. `43.224.0`. This is to avoid having to update the workflow every time our Renovate version changes and instead leave those updates to when there's a major version update.
+- If there are mistakes introduced in the preset, those issues will of course propagate into all repositories that use the preset in the Renovate configuration.
+
+### What it won't catch
+
+- ???
