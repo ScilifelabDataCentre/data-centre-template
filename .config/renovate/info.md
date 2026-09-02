@@ -122,9 +122,13 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
 
 - The preset uses the recommended default presets: [`config:recommended`](https://docs.renovatebot.com/presets-config/#configrecommended)
 - Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flag normally shows up in the Dependency Dashboard (enabled by default via `config:recommended`), but in our preset, the Dependency Dashboard has been disabled (next item in list).
-- The Dependency Dashboard is disabled since it's a regular GitHub issue and lists all pending Renovate PRs. Leaving this enabled would display all potential vulnerabilities to the public. The exception to this is of course private repositories, but the vast majority of our repositories are public.
-- Commit messages in the Renovate PRs get an "Signed-off-by" line. This is **not** cryptographic commit signing.
-- 
+- The Dependency Dashboard is disabled ([`:disableDependencyDashboard`](https://docs.renovatebot.com/presets-default/#disabledependencydashboard)) since it's a regular GitHub issue and lists all pending Renovate PRs. Leaving this enabled would display all potential vulnerabilities to the public. The exception to this is of course private repositories, but the vast majority of our repositories are public.
+- Commit messages in the Renovate PRs get an "Signed-off-by" line: [`:gitSignOff`](https://docs.renovatebot.com/presets-default/#gitsignoff). This is **not** cryptographic commit signing.
+- Lockfiles (e.g. `package-lock.json`) are updated weekly (Monday mornings): [`:maintainLockFilesWeekly`](https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly)
+- Some configurations are not technically needed and the preset would _currently_ behave the same way even if we were to remove them from the preset. They are included for clarity:
+  - All branches opened by Renovate are prefixed with `renovate/`: [`:renovatePrefix`](https://docs.renovatebot.com/presets-default/#renovateprefix). This is the default and is not technically needed in the preset.
+  - Unstable versions are not updated, unless you're already on an unstable version: [`"ignoreUnstable": true`](https://docs.renovatebot.com/configuration-options/#ignoreunstable). This is also the default.
+  - PRs opened by Renovate are **not** automerged; It always waits for a human to review and merge: [`"automerge": false`](https://docs.renovatebot.com/configuration-options/#automerge).
 
 ----
 
@@ -136,10 +140,10 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
 <!-- - uses the recommended default presets (config:recommended -- link) -->
 <!-- - packages without release for 1 year are flagged as abandoned (what does this mean exactly?) -->
 <!-- - Adds a "Signed-off-by" line to commit messages -- this is not cryptographic commit signing. It should look like (message from andreas here) -->
-- lockfiles (e.g. package-lock.json) are updated weekly (monday mornings) -- why 
-- all branches are prefixed with "renovate/" -- this is also the default, even without this explicitely in the preset 
-- unstable versions are not updated, unless you're already on an unstable version.
-- the PRs that renovate opens are not automerged -- it always waits for a human to review and merge.
+<!-- - lockfiles (e.g. package-lock.json) are updated weekly (monday mornings) -- why  -->
+<!-- - all branches are prefixed with "renovate/" -- this is also the default, even without this explicitely in the preset  -->
+<!-- - unstable versions are not updated, unless you're already on an unstable version. -->
+<!-- - the PRs that renovate opens are not automerged -- it always waits for a human to review and merge. -->
 
 "more complicated explanations"
 - when?
