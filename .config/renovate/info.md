@@ -53,6 +53,9 @@ Fill this in after the rest is done
 > - You can decide if you want to stay on the old version or update to the new one
 > - No changes will happen in your repository without you knowing
 
+> [!TIP]
+> Aside from the Renovate configuration files explained in the sections below, we also recommend that you copy the [config validation workflow (`.github/workflows/renovate-validate.jsonc`)](../../.github/workflows/renovate-validate.yml) into your repository. See [renovate-validate.yml](#renovate-validate section).
+
 ### Start from scratch
 
 1. Create a `.github/renovate.jsonc` file in your repository.
@@ -81,8 +84,9 @@ In some cases, the config has already been expanded to include presets (`extends
 
 **To use the new custom preset:**
 
-1. Remove the `$schema` line
-2. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"` to `extends`. Your file should now begin with this:
+1. Optional but **recommended**: Move/rename the config file to `.github/renovate.jsonc` (`jsonc` suffix to allow comments).
+2. Remove the `$schema` line
+3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"` to `extends`. Your file should now begin with this:
 
     ```jsonc
     // 
@@ -97,19 +101,21 @@ In some cases, the config has already been expanded to include presets (`extends
     }
     ```
 
-3. Remove configuration options from your previous setup if redundant or out of date.
+4. Remove configuration options from your previous setup if redundant or out of date.
 
 ### How to tailor the configuration to the repository needs
 
+The examples/guides in [Start from scratch](#start-from-scratch) and [Update an existing configuration](#update-an-existing-configuration) only show very basic examples of what the configuration could look like. In some cases the teams will need to adjust the Renovate configuration to suit the repository's and teams needs. The section [What the preset does not do](#what-the-preset-does-not-do) shows a couple of examples of what this could entail.
+
+When extending your config file:
+
+- Use the Renovate documentation (see [Useful links](#useful-links) at the top of this file)
+- Always leave the DC custom preset at the top of the `extends` list, and the `extends` at the top of the config; Configurations later in the file will override the previous options
+
+## What happens if you use the custom preset in your repository?
 
 
 ----
-
-- extend the preset with repo specific configurations -- see examples directory
-    - the preset should always be at the top of the `extends` list and `extends` should always be at the top of the config 
-        - configuration options later in the file will override the previous options if they don't agree with each other
-
-- we also recommend that you copy the .github/workflows/renovate-validate.jsonc workflow into your repository -- see #renovate-validate section
 
 ## default.jsonc -- what happens if you use it in your repo? 
 
