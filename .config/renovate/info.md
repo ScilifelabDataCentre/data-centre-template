@@ -151,7 +151,7 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
     - [`matchCategories`](https://docs.renovatebot.com/configuration-options/#packagerulesmatchcategories) is used for Python since it is widely used in our GitHub Organisation and categories let us avoid choosing every specific manager.
     - [`matchManagers`](https://docs.renovatebot.com/configuration-options/#packagerulesmatchmanagers) is used for the others
     - See [Supported Managers](https://docs.renovatebot.com/modules/manager/#supported-managers)
-- **Very little grouping**
+- **Grouping practically excluded**
   - Grouping updates introduces risk: One update per PR leads to easier reviews and a greater chance of finding issues we do not want merged. For this reason, grouping of updates has been practically excluded in the preset and it's up to each team to add it to their Renovate configurations if needed.
   - The preset only groups minor and patch updates for GitHub Actions; Renovate groups these updates into a single PR.
   - All other packages, managers and categories get one PR per update.
