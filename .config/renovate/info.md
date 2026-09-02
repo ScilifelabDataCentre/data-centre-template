@@ -134,17 +134,6 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
 
 ## default.jsonc -- what happens if you use it in your repo? 
 
-<!-- "straight forward explanations" -->
-<!-- - custom preset for the DC -->
-<!-- - uses the DC renovate  -->
-<!-- - uses the recommended default presets (config:recommended -- link) -->
-<!-- - packages without release for 1 year are flagged as abandoned (what does this mean exactly?) -->
-<!-- - Adds a "Signed-off-by" line to commit messages -- this is not cryptographic commit signing. It should look like (message from andreas here) -->
-<!-- - lockfiles (e.g. package-lock.json) are updated weekly (monday mornings) -- why  -->
-<!-- - all branches are prefixed with "renovate/" -- this is also the default, even without this explicitely in the preset  -->
-<!-- - unstable versions are not updated, unless you're already on an unstable version. -->
-<!-- - the PRs that renovate opens are not automerged -- it always waits for a human to review and merge. -->
-
 "more complicated explanations"
 - when?
     - our DC instance runs at a specific schedule
