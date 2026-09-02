@@ -132,19 +132,17 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
 
 ### More complicated explanations
 
-
+- **When**
+  - Our self-hosted Renovate instance runs at a specific schedule.
+  - The preset also defines a [`schedule`](https://docs.renovatebot.com/key-concepts/scheduling/#scheduling-syntax), but this does **not** affect when Renovate runs; it only tells Renovate that it's allowed to create new branches between midnight and 06:59 AM (Stockholm time).
+  - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaniously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
+  - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
 
 ----
 
 ## default.jsonc -- what happens if you use it in your repo? 
 
 "more complicated explanations"
-- when?
-    - our DC instance runs at a specific schedule
-    - the preset also defines a schedule, but this does not affect when renovate runs
-    - the schedule in the preset tells renovate that it's only allowed to create new renovate branches between midnight and 06:59 AM, stockholm time.
-    - it's only allowed to create one PR per hour, and only 10 PRs are allowed to be open at the same time 
-        - vulnerability PRs (security) bypass this though, they are created no matter what, which is why we've also labeled them
 - renovate only bumps npm and pypi packages when they have been released for at least 3 days -- this allows the authors to potentially fix bugs or retract malicious code and it reduces the risk of us merging unsafe code
     - the npm rule is a renovate preset (in extends)
     - the pypi rule is a renovate preset in version 44.???.?? NOT in ours -- we have version 43.224.0 at the time of writing
