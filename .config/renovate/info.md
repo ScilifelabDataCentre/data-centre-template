@@ -144,23 +144,20 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
     - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
     - When our version is updated to version `44.57.1`, we should replace the `packageRules` with the predefined preset.
 - **Labels**
-  - 
+  - Our custom preset labels all PRs made by Renovate with `type: dependency`
+  - Security PRs (Renovate reads these from Dependabot) are labelled with `type: security`
+  - Major updates are labelled with `update: major`, minor updates are labelled with `update: minor` and patches are labelled with `update: patch`. These are the most common and a more granular labelling configuration is left to each team and repository.
+  - GitHub Actions, Python, Docker and npm updates are also labelled.
+    - [`matchCategories`](https://docs.renovatebot.com/configuration-options/#packagerulesmatchcategories) is used for Python since it is widely used in our GitHub Organisation and categories let us avoid choosing every specific manager.
+    - [`matchManagers`](https://docs.renovatebot.com/configuration-options/#packagerulesmatchmanagers) is used for the others
+    - See [Supported Managers](https://docs.renovatebot.com/modules/manager/#supported-managers)
+- **Very little grouping**
+  - Grouping updates introduces risk: One update per PR leads to easier reviews and a greater chance of finding issues we do not want merged. For this reason, grouping of updates has been practically excluded in the preset and it's up to each team to add it to their Renovate configurations if needed.
+  - The preset only groups minor and patch updates for GitHub Actions; Renovate groups these updates into a single PR.
+  - All other packages, managers and categories get one PR per update.
+  - There's an example of grouping in [What the preset does not do](#what-the-preset-does-not-do) if you're interested in implementing this into your repositories.
 
 ----
-
-## default.jsonc -- what happens if you use it in your repo? 
-
-"more complicated explanations"
-- labels
-    - all prs from renovate are marked as `type: dependency`
-    - Security PRs (dependabot) are marked as `type: security`
-    - semver update labels: major updates are labeled as `update: major`, minor as `update: minor` and patch as `update: patch`.
-        - i decided against adding more than these three, these are the most common ones
-    - also label github actions, python, docker, npm.
-        - I have used a mix of `matchCategories`and `matchManagers`. (links) Managers is more specific, categories more broad, and python is widely used in our org --> categories to not choose every specific manager.
-- groups only github-actions minor and patch updates.
-    - the reason: riskier to bump multiple at the same time because it's easier to miss issues. with one bump per PR for most packages --> easier to review and catch potential issues
-    - the examples/??? show an example of how to activate grouping. you can copy paste those if you want.
 
 ## renovate-validate.yml -- automatic validation of the preset, config and examples
 
