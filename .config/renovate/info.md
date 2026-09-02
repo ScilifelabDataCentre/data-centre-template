@@ -143,17 +143,14 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
   - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.244.0` at the time of writing, and `security:minimumReleaseAgePyPI` was introduced in version `44.57.1`.
     - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
     - When our version is updated to version `44.57.1`, we should replace the `packageRules` with the predefined preset.
+- **Labels**
+  - 
 
 ----
 
 ## default.jsonc -- what happens if you use it in your repo? 
 
 "more complicated explanations"
-<!-- - renovate only bumps npm and pypi packages when they have been released for at least 3 days -- this allows the authors to potentially fix bugs or retract malicious code and it reduces the risk of us merging unsafe code -->
-<!-- - the npm rule is a renovate preset (in extends) -->
-<!-- - the pypi rule is a renovate preset in version 44.???.?? NOT in ours -- we have version 43.224.0 at the time of writing -->
-<!-- - this is why we have the two packagerules for pypi: the first one tells renovate to wait 3 days for all pypi updates, the second tells it to not wait for specific update types because they do not have the "minimum release age" set and would therefore never get a pr without this addition -->
-<!-- - when our renovate instance is bumped to the 44 version that supports the preset for pypi, we should switch to this. -->
 - labels
     - all prs from renovate are marked as `type: dependency`
     - Security PRs (dependabot) are marked as `type: security`
