@@ -29,6 +29,9 @@ Fill this in after the rest is done
 - [DC-internal Renovate instructions](https://github.com/ScilifelabDataCentre/k1h-platform-docs/tree/main/renovate)
 - [Renovate documentation](https://docs.renovatebot.com/)
 - [Renovate configuration options](https://docs.renovatebot.com/configuration-options/)
+- [Default presets (to use in `extends`)](https://docs.renovatebot.com/presets-default/)
+- [`packageRules`](https://docs.renovatebot.com/configuration-options/#packagerules)
+- [Shareable Config Presets](https://docs.renovatebot.com/config-presets/)
 
 <!-- are there more useful links? -->
 
@@ -36,22 +39,71 @@ Fill this in after the rest is done
 
 <!-- fill this in after the rest is done -->
 
-## How to use it in your repo
+## How to use the custom preset in your repository
 
-- simple example -- only extend the preset
-    - at the time of writing, this is what this repo uses in .github/renovate.jsonc -- the renovate configuration for this repo, which uses the preset defined in .config/renovate/default.jsonc
-    - the preset should be followed by a version tag
-    - when there's a new version of the preset, renovate will automatically open up a new pr so that you can decide for yourself if you want to stick with the old version or the new -- no changes will happen in your repo without you knowing
+- The repository has an existing Renovate configuration file, e.g. `renovate.json`: #update-the-existing-config
+- The repository **does not** have a Renovate configuration file: #start-from-scratch
 
-```jsonc
-// Renovate configuration for this repository
-// Uses the SciLifeLab Data Centre custom Renovate preset
+> [!IMPORTANT]
+> Note that the preset should be followed by a version tag (`#1.0.0` in the examples)
+>
+> What this does:
+>
+> - Renovate will automatically open a new PR when there's a new version of the preset
+> - You can decide if you want to stay on the old version or update to the new one
+> - No changes will happen in your repository without you knowing
+
+### Start from scratch
+
+1. Create a `.github/renovate.jsonc` file in your repository.
+2. Copy-paste the following into the new file:
+  
+    ```jsonc
+    // Renovate configuration for this repository
+    {
+      "extends": [
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"
+      ]
+    }
+    ```
+
+### Update an existing configuration
+
+Some repositories will already have a Renovate configuration file, e.g. `renovate.json` in the repository root. In this case, the config file will contain something like this:
+
+```json
 {
-  "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#<ADD-TAG>" //TODO: ADD TAG
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
 ```
+
+In some cases, the config has already been expanded to include presets (`extends`), different options, package-specific rules (`packageRules`) etc, below the `$schema`.
+
+**To use the new custom preset:**
+
+1. Remove the `$schema` line
+2. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"` to `extends`. Your file should now begin with this:
+
+    ```jsonc
+    // 
+    // Extends the custom preset defined in .config/renovate/default.jsonc
+    {
+    "extends": [
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
+        "<some-other-preset>" // Any presets your repository already lists in extends
+    ],
+    "<some-option>": "<some-value>", // Any options your repository already set
+    "packageRules": ... // Any package rules your repository already set
+    }
+    ```
+
+3. Remove configuration options from your previous setup if redundant or out of date.
+
+### How to tailor the configuration to the repository needs
+
+
+
+----
 
 - extend the preset with repo specific configurations -- see examples directory
     - the preset should always be at the top of the `extends` list and `extends` should always be at the top of the config 
