@@ -114,17 +114,28 @@ When extending your config file:
 
 ## What happens if you use the custom preset in your repository?
 
+Starting with the most obvious point: If you follow the guide(s) in [How to use the custom preset in your repository](#how-to-use-the-custom-preset-in-your-repository), your repository will start using the custom preset configuration built for the SciLifeLab Data Centre. The preset itself uses the SciLifeLab Data Centre self-hosted Renovate instance.
+
+The preset is defined in `.config/renovate/default.jsonc` and contains comments in order to help the reader understand what each line and section does. This section provides more of an overview, while at the same time explaining important details that are left out from and irrelevant to the actual config file.
+
+### "Straight forward" details
+
+- The preset uses the recommended default presets: [`config:recommended`](https://docs.renovatebot.com/presets-config/#configrecommended)
+- Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flag normally shows up in the Dependency Dashboard (enabled by default via `config:recommended`), but in our preset, the Dependency Dashboard has been disabled (next item in list).
+- The Dependency Dashboard is disabled since it's a regular GitHub issue and lists all pending Renovate PRs. Leaving this enabled would display all potential vulnerabilities to the public. The exception to this is of course private repositories, but the vast majority of our repositories are public.
+- Commit messages in the Renovate PRs get an "Signed-off-by" line. This is **not** cryptographic commit signing.
+- 
 
 ----
 
 ## default.jsonc -- what happens if you use it in your repo? 
 
-"straight forward explanations"
-- custom preset for the DC
-- uses the DC renovate 
-- uses the recommended default presets (config:recommended -- link)
-- packages without release for 1 year are flagged as abandoned (what does this mean exactly?)
-- Adds a "Signed-off-by" line to commit messages -- this is not cryptographic commit signing. It should look like (message from andreas here)
+<!-- "straight forward explanations" -->
+<!-- - custom preset for the DC -->
+<!-- - uses the DC renovate  -->
+<!-- - uses the recommended default presets (config:recommended -- link) -->
+<!-- - packages without release for 1 year are flagged as abandoned (what does this mean exactly?) -->
+<!-- - Adds a "Signed-off-by" line to commit messages -- this is not cryptographic commit signing. It should look like (message from andreas here) -->
 - lockfiles (e.g. package-lock.json) are updated weekly (monday mornings) -- why 
 - all branches are prefixed with "renovate/" -- this is also the default, even without this explicitely in the preset 
 - unstable versions are not updated, unless you're already on an unstable version.

@@ -8,6 +8,7 @@
   "extends": [
     "config:recommended", // The recommended default presets
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
+    ":disableDependencyDashboard", // Disable the dependency dashboard
     "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages (not cryptographic commit signing)
     ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
