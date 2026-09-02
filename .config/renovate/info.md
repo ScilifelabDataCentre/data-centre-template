@@ -130,6 +130,10 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
   - Unstable versions are not updated, unless you're already on an unstable version: [`"ignoreUnstable": true`](https://docs.renovatebot.com/configuration-options/#ignoreunstable). This is also the default.
   - PRs opened by Renovate are **not** automerged; It always waits for a human to review and merge: [`"automerge": false`](https://docs.renovatebot.com/configuration-options/#automerge).
 
+### More complicated explanations
+
+
+
 ----
 
 ## default.jsonc -- what happens if you use it in your repo? 
