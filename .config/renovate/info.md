@@ -8,15 +8,6 @@ The aim of this template is to:
 - Reduce volume of PRs opened by Renovate. They are useful, but they can overwhelm and distract the teams from other tasks.
 - Provide a configuration that is useful for most Data Centre repositories, while allowing the teams to extend it where needed
 
-<!--
-- the goal is to reduce the amount of work needed for each team and repository
-    - if the teams only want those specific settings, they can have a very basic configuration in their repository, pointing to the preset (more details in #how to use it in your repo)
-    - if the teams want to override the settings in the preset or add new options, they can add those to their config
-
-- note?
-    - while this preset and template is aimed toward the SciLifeLab Data Centre, this repository is public and open source -- anyone can copy and adjust it to their needs
--->
-
 ## TL;DR
 
 <!-- 
@@ -169,79 +160,13 @@ Pinning the actions to an exact commit hash would mean that your workflows would
 
 If you do activate digest pinning, we recommend that you also activate grouping of the digests.
 
-```jsonc
-// Example of how to activate digest pinning for GitHub Actions
-// And including grouping to partially mitigate flooding of update PRs
-{
-  "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
-    "helpers:pinGitHubActionDigests"
-  ],
-  "packageRules": [
-    {
-      "description": "Group minor, patch and digest updates for GitHub Actions",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "groupName": "GitHub Actions (minor, patch and digest)"
-    }
-  ]
-}
-```
+The file [`.config/renovate/examples/digest-pinning.jsonc`](./examples/digest-pinning.jsonc) gives an example on how to activate this in your configuraton.
 
 ### 2. **It barely uses grouping**
 
 As explained in [What happens if you use the custom preset in your repository](#more-complicated-explanations), the preset only groups GitHub Actions minor and patch updates. Excluding grouping of other packages in your configuration might make Renovate more noisy, but setting a useful grouping strategy that can be reasonably applied to all Data Centre repositories is difficult. While we have set a limit to the number of PRs opened per hour and the number of PRs open simultaneously (which should reduce the volume some), some teams might find it useful to add grouping to their configuration.
 
-Below is an example of grouping for... You can either use these as inspiration or copy-paste them into your configuration if useful.
-
-```jsonc
-// 
-{
-  "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
-  ],
-  "packageRules": [
-    // Group Python dev tooling
-    {
-      "description": "Group minor and patch updates for Python dev tools.",
-      "matchDatasources": ["pypi"], // Instead of matchCategory to line up with the minimumReleaseAge rule
-      "matchPackageNames": [
-        "black",
-        "coverage",
-        "flake8",
-        "pre-commit",
-        "pylint", 
-        "pytest", 
-        "pytest-*",
-        "ruff"
-      ],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "Python dev dependencies (minor and patch)",
-      "groupSlug": "python-dev-tools" // Branch prefix to these group PRs
-    },
-    // Group Docker image updates
-    {
-      "description": "Group minor and patch Docker image updates",
-      "matchManagers": ["dockerfile", "docker-compose"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "Docker images (minor and patch)",
-      "groupSlug": "docker-minor-patch" // Branch prefix to these group PRs
-    },
-    // Group npm dev dependencies
-    {
-      "description": "Group minor and patch npm updates",
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "npm dev dependencies (minor and patch)",
-      "groupSlug": "npm-dev-minor-patch" // Branch prefix to these group PRs
-    }
-  ]
-}
-```
-
-> [!NOTE]
-> There are also [grouping presets](https://docs.renovatebot.com/presets-group/) that you could use in your configuration. Use with care.
+See [`.config/renovate/examples/grouping.jsonc`](./examples/grouping.jsonc) for an example on how to add grouping to your configuration.
 
 ## Automatic validation of the preset and config
 
