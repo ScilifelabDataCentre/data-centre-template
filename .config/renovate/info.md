@@ -10,10 +10,7 @@ The aim of this template is to:
 
 ## TL;DR
 
-<!-- 
-See # how to use it in your repo 
-Fill this in after the rest is done
--->
+See [How to use the custom preset in your repository](#how-to-use-the-custom-preset-in-your-repository).
 
 ## Useful links
 
