@@ -183,4 +183,13 @@ In addition to the custom preset and repository-specific configuration, this tem
 
 ### What it won't catch
 
-- ???
+The validating workflow will not catch:
+
+- Rules that match nothing
+  - The validator checks that e.g. `matchPackageNames` is an array of strings
+  - The validator does not check that the strings (e.g. packages) in that array are correct
+- Rules overridden by a later rule
+- Typos in preset paths
+  - `extends` targets are never resolved
+- Labels that don't exist in the repository
+- Options valid in current Renovate version but removed later
