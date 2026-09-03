@@ -190,16 +190,58 @@ If you do activate digest pinning, we recommend that you also activate grouping 
 
 ### 2. **It barely uses grouping**
 
-- it only groups github actions minor and patch updates, no other packages or managers or update types
-    - this is also opt in
-    - it might make it more noisy, but we have (as explained above) set a limit to the number of open prs
-    - and setting a useful grouping strategy that should be applied to all repos is difficult
-    - instead, the teams should implement themselves if they wish
-        - you can use the examples, either as just help or copy paste them if useful
+As explained in [What happens if you use the custom preset in your repository](#more-complicated-explanations), the preset only groups GitHub Actions minor and patch updates. Excluding grouping of other packages in your configuration might make Renovate more noisy, but setting a useful grouping strategy that can be reasonably applied to all Data Centre repositories is difficult. While we have set a limit to the number of PRs opened per hour and the number of PRs open simultaneously (which should reduce the volume some), some teams might find it useful to add grouping to their configuration.
+
+Below is an example of grouping for... You can either use these as inspiration or copy-paste them into your configuration if useful.
 
 ```jsonc
-// Example here for activating grouping
+// 
+{
+  "extends": [
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
+  ],
+  "packageRules": [
+    // Group Python dev tooling
+    {
+      "description": "Group minor and patch updates for Python dev tools.",
+      "matchDatasources": ["pypi"], // Instead of matchCategory to line up with the minimumReleaseAge rule
+      "matchPackageNames": [
+        "black",
+        "coverage",
+        "flake8",
+        "pre-commit",
+        "pylint", 
+        "pytest", 
+        "pytest-*",
+        "ruff"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Python dev dependencies (minor and patch)",
+      "groupSlug": "python-dev-tools" // Branch prefix to these group PRs
+    },
+    // Group Docker image updates
+    {
+      "description": "Group minor and patch Docker image updates",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Docker images (minor and patch)",
+      "groupSlug": "docker-minor-patch" // Branch prefix to these group PRs
+    },
+    // Group npm dev dependencies
+    {
+      "description": "Group minor and patch npm updates",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm dev dependencies (minor and patch)",
+      "groupSlug": "npm-dev-minor-patch" // Branch prefix to these group PRs
+    }
+  ]
+}
 ```
+
+> [!NOTE]
+> There are also [grouping presets](https://docs.renovatebot.com/presets-group/) that you could use in your configuration. Use with care.
 
 ## Automatic validation of the preset and config
 
