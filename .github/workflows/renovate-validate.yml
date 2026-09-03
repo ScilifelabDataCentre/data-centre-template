@@ -20,6 +20,11 @@ jobs:
         with:
           persist-credentials: false # We don't need the token in subsequent steps
       
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
       - name: Validate preset
         # Pin 43 to match instance, but not exact version
         # First enable globstar to allow recursive search
