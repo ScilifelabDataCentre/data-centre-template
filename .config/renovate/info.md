@@ -4,9 +4,9 @@ The SciLifeLab Data Centre has a self-hosted instance of Renovate. This template
 
 The aim of this template is to:
 
-- Reduce the amount of duplicate work. Currently all teams need to create their own Renovate configurations, which is time- and energy consuming. There are also a lot of configuration options to choose from. 
 - Reduce volume of PRs opened by Renovate. They are useful, but they can overwhelm and distract the teams from other tasks.
-- Provide a configuration that is useful for most Data Centre repositories, while allowing the teams to extend it where needed
+- Provide a configuration that is useful for most Data Centre repositories, while allowing the teams to extend it where needed.
+- Reduce the amount of duplicate work. Currently all teams need to create their own Renovate configurations, which is time- and energy consuming. There are also a lot of configuration options to choose from.
 
 ## TL;DR
 
@@ -21,16 +21,14 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
 - [`packageRules`](https://docs.renovatebot.com/configuration-options/#packagerules)
 - [Shareable Config Presets](https://docs.renovatebot.com/config-presets/)
 
-<!-- are there more useful links? -->
-
 ## Files in this setup
 
 <!-- fill this in after the rest is done -->
 
 ## How to use the custom preset in your repository
 
-- The repository has an existing Renovate configuration file, e.g. `renovate.json`: #update-the-existing-config
-- The repository **does not** have a Renovate configuration file: #start-from-scratch
+- If the repository has an existing Renovate configuration file, e.g. `renovate.json`: [Update an existing configuration](#update-an-existing-configuration)
+- If the repository **does not** have a Renovate configuration file: [Start from scratch](#start-from-scratch)
 
 > [!IMPORTANT]
 > Note that the preset should be followed by a version tag (`#1.0.0` in the examples)
@@ -74,7 +72,7 @@ In some cases, the config has already been expanded to include presets (`extends
 
 1. Optional but **recommended**: Move/rename the config file to `.github/renovate.jsonc` (`jsonc` suffix to allow comments).
 2. Remove the `$schema` line
-3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"` to `extends`. Your file should now begin with this:
+3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"` to `extends`. Your file should now have this structure:
 
     ```jsonc
     // 
@@ -104,7 +102,7 @@ When extending your config file:
 
 Starting with the most obvious point: If you follow the guide(s) in [How to use the custom preset in your repository](#how-to-use-the-custom-preset-in-your-repository), your repository will start using the custom preset configuration built for the SciLifeLab Data Centre. The preset itself uses the SciLifeLab Data Centre self-hosted Renovate instance.
 
-The preset is defined in `.config/renovate/default.jsonc` and contains comments in order to help the reader understand what each line and section does. This section provides more of an overview, while at the same time explaining important details that are left out from and irrelevant to the actual config file.
+The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and contains comments in order to help the reader understand what each line and section does. This section provides more of an overview, while at the same time explaining important details that are left out from and irrelevant to the actual config file.
 
 ### "Straight forward" details
 
@@ -114,8 +112,8 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
 - Commit messages in the Renovate PRs get an "Signed-off-by" line: [`:gitSignOff`](https://docs.renovatebot.com/presets-default/#gitsignoff). This is **not** cryptographic commit signing.
 - Lockfiles (e.g. `package-lock.json`) are updated weekly (Monday mornings): [`:maintainLockFilesWeekly`](https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly)
 - Some configurations are not technically needed and the preset would _currently_ behave the same way even if we were to remove them from the preset. They are included for clarity:
-  - All branches opened by Renovate are prefixed with `renovate/`: [`:renovatePrefix`](https://docs.renovatebot.com/presets-default/#renovateprefix). This is the default and is not technically needed in the preset.
-  - Unstable versions are not updated, unless you're already on an unstable version: [`"ignoreUnstable": true`](https://docs.renovatebot.com/configuration-options/#ignoreunstable). This is also the default.
+  - All branches opened by Renovate are prefixed with `renovate/`: [`:renovatePrefix`](https://docs.renovatebot.com/presets-default/#renovateprefix).
+  - Unstable versions are not updated, unless you're already on an unstable version: [`"ignoreUnstable": true`](https://docs.renovatebot.com/configuration-options/#ignoreunstable).
   - PRs opened by Renovate are **not** automerged; It always waits for a human to review and merge: [`"automerge": false`](https://docs.renovatebot.com/configuration-options/#automerge).
 
 ### More complicated explanations
@@ -126,7 +124,7 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
   - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaniously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
 - **npm and PyPI packages**
-  - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, and it reduces the risk of us merging unsafe code.
+  - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
   - The npm rule is defined in a Renovate preset: [`security:minimumReleaseAgeNpm`](https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm)
   - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.244.0` at the time of writing, and `security:minimumReleaseAgePyPI` was introduced in version `44.57.1`.
     - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
@@ -143,11 +141,11 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
   - Grouping updates introduces risk: One update per PR leads to easier reviews and a greater chance of finding issues we do not want merged. For this reason, grouping of updates has been practically excluded in the preset and it's up to each team to add it to their Renovate configurations if needed.
   - The preset only groups minor and patch updates for GitHub Actions; Renovate groups these updates into a single PR.
   - All other packages, managers and categories get one PR per update.
-  - There's an example of grouping in [What the preset does not do](#what-the-preset-does-not-do) if you're interested in implementing this into your repositories.
+  - There's an example of grouping in [`.config/renovate/examples/grouping.jsonc`](./examples/grouping.jsonc) which you can have a look at if you're interested in implementing this into your repositories.
 
 ## What the preset does **not** do
 
-The following points are not implemented in the DC Renovate preset. There are likely more options that have been left out, but this mentions two. Both of these have examples below which you can either use as inspiration or copy-paste into your own configuration.
+The following points are not implemented in the DC Renovate preset. There are likely more options that have been left out, but this mentions two. Both of these also point to example files which you can either use as inspiration or copy-paste into your own configuration.
 
 ### 1. **It does not activate digest pinning for GitHub Actions**
 
@@ -161,7 +159,7 @@ The file [`.config/renovate/examples/digest-pinning.jsonc`](./examples/digest-pi
 
 ### 2. **It barely uses grouping**
 
-As explained in [What happens if you use the custom preset in your repository](#more-complicated-explanations), the preset only groups GitHub Actions minor and patch updates. Excluding grouping of other packages in your configuration might make Renovate more noisy, but setting a useful grouping strategy that can be reasonably applied to all Data Centre repositories is difficult. While we have set a limit to the number of PRs opened per hour and the number of PRs open simultaneously (which should reduce the volume some), some teams might find it useful to add grouping to their configuration.
+As explained in [What happens if you use the custom preset in your repository](#more-complicated-explanations), the preset only groups GitHub Actions minor and patch updates. This might make Renovate more noisy for the repositories using the preset as is, but setting a useful grouping strategy that can be reasonably applied to all Data Centre repositories is difficult. While we have set a limit to the number of PRs opened per hour and the number of PRs open simultaneously (which should reduce the volume some), some teams might find it useful to add grouping to their configuration.
 
 See [`.config/renovate/examples/grouping.jsonc`](./examples/grouping.jsonc) for an example on how to add grouping to your configuration.
 
