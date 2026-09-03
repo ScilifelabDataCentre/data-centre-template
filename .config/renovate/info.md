@@ -161,23 +161,34 @@ The preset is defined in `.config/renovate/default.jsonc` and contains comments 
 
 The following points are not implemented in the DC Renovate preset. There are likely more options that have been left out, but this mentions two. Both of these have examples below which you can either use as inspiration or copy-paste into your own configuration.
 
-- it doesn't activate digest pinning for github actions
-    - this means that github action prs will bump to specific versions
-        - the details depend on what your current settings are e.g. v1 --> v2, or v1.0.0 --> v1.0.1 etc.
-    - the prs will not pin digests -- not exact commits for that github action
-        - this means that your workflows can and will be affected when there's a change to the action
-        - v1.0.1 will still point to v1 
-        - sometimes this change won't be noticable
-        - sometimes things break even though you have done nothing -- sometimes difficult to understand why a workflow suddenly fails
-    - pinning the actions to exact commit hashes means that your actions won't be affected when the action authors push changes
-        - instead, when digest pinning is activated, renovate will open a pr to a new digest.
-        - this would make it noisy, but grouping of github action prs could mitigate most of it
-    - decided that this was an opt in
-    - if you decide to activate it, you should also consider activating this [???]
+### 1. **It does not activate digest pinning for GitHub Actions**
+
+Renovate will not update GitHub Action "versions" to specific commits - it will update the version to the version tags, e.g. from `v1` to `v2` or `v1.0.0` to `v1.0.1`. As a result of this, your workflows can and will be affected when there's a push to the main branch of the action, or if you've pinned a major version and they update a minor or patch - for example, `v1.0.1` still points to `v1`. Sometimes these changes will not be noticable, and sometimes the workflows can break without you doing anything, making it difficult to understand why a workflow suddenly fails or behaves differently.
+
+Pinning the actions to an exact commit hash would mean that your workflows would be protected from these types of issues, but it would also make Renovate noisy since it would be opening more updates to pin new updated commits. While grouping might mitigate some of this, this should still be an opt-in configuration.
+
+If you do activate digest pinning, we recommend that you also activate grouping of the digests.
 
 ```jsonc
-// Example here for activating digest pinning
+// Example of how to activate digest pinning for GitHub Actions
+// And including grouping to partially mitigate flooding of update PRs
+{
+  "extends": [
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "description": "Group minor, patch and digest updates for GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "GitHub Actions (minor, patch and digest)"
+    }
+  ]
+}
 ```
+
+### 2. **It barely uses grouping**
 
 - it only groups github actions minor and patch updates, no other packages or managers or update types
     - this is also opt in
