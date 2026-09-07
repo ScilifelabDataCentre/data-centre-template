@@ -31,6 +31,7 @@ jobs:
         # --yes to automatically install renovate-config-validator if not present
         # --no-global because we are validating a shared config preset
         # --strict to fail if scanned config needs migration
+        # cspell:ignore shopt
         run: |
           shopt -s globstar
           npx --yes --package renovate@43 -- renovate-config-validator --no-global --strict \
