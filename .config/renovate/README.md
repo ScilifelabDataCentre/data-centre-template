@@ -167,7 +167,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 - **Grouping practically excluded**
   - Grouping updates introduces risk: One update per PR leads to easier reviews and a greater chance of finding issues we do not want merged. For this reason, grouping of updates has been practically excluded in the preset and it's up to each team to add it to their Renovate configurations if needed.
   - The preset only groups minor and patch updates for GitHub Actions; Renovate groups these updates into a single PR.
-  - Some grouping occurs via `config:recommended` but all other packages, managers and categories get one PR per update.
+  - Some grouping occurs via `config:recommended` (e.g. monorepos) but all other packages, managers and categories get one PR per update.
   - There's an example of grouping in [`.config/renovate/examples/grouping.jsonc`](./examples/grouping.jsonc) which you can have a look at if you're interested in implementing this into your repositories.
 
 ## What the preset does **not** do
