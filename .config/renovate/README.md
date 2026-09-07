@@ -1,6 +1,6 @@
 # Automatic dependency updates using Renovate
 
-The SciLifeLab Data Centre has a self-hosted instance of Renovate. This template includes a custom Renovate preset ([`.config/renovate/deault.jsonc`](default.jsonc)) that can be adopted as the Renovate configuration in any repository within the ScilifelabDataCentre GitHub Organisation. This README details how the preset is configured, how to use it, and how to extend it if it needs tightening or loosening to suit a specific repository's needs.
+The SciLifeLab Data Centre has a self-hosted instance of Renovate. This template includes a custom Renovate preset ([`.config/renovate/default.jsonc`](default.jsonc)) that can be adopted as the Renovate configuration in any repository within the ScilifelabDataCentre GitHub Organisation. This README details how the preset is configured, how to use it, and how to extend it if it needs tightening or loosening to suit a specific repository's needs.
 
 The aim of this template is to:
 
@@ -66,7 +66,7 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
 > - No changes will happen in your repository without you knowing
 
 > [!TIP]
-> Aside from the Renovate configuration files explained in the sections below, we also recommend that you copy the [config validation workflow (`.github/workflows/renovate-validate.jsonc`)](../../.github/workflows/renovate-validate.yml) into your repository. See [renovate-validate.yml](#renovate-validate section).
+> Aside from the Renovate configuration files explained in the sections below, we also recommend that you copy the [config validation workflow (`.github/workflows/renovate-validate.yml`)](../../.github/workflows/renovate-validate.yml) into your repository. See [renovate-validate.yml](#renovate-validate section).
 
 ### Start from scratch
 
