@@ -132,8 +132,10 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 ### "Straight forward" details
 
 - The preset uses the recommended default presets: [`config:recommended`](https://docs.renovatebot.com/presets-config/#configrecommended)
-- Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flag normally shows up in the Dependency Dashboard (enabled by default via `config:recommended`), but in our preset, the Dependency Dashboard has been disabled (next item in list). `abandonments:recommended` therefore does not currently produce any visible output, but it is set for forward-compatibility.
-- The Dependency Dashboard is disabled ([`:disableDependencyDashboard`](https://docs.renovatebot.com/presets-default/#disabledependencydashboard)) since it's a regular GitHub issue and lists all pending Renovate PRs. Leaving this enabled would display all potential vulnerabilities to the public. The exception to this is of course private repositories, but the vast majority of our repositories are public.
+- Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flag are displayed in the Dependency Dashboard (enabled by default via `config:recommended`), see next item on list.
+- The Dependency Dashboard is enabled explicitely ([`"dependencyDashboard": true`](https://docs.renovatebot.com/key-concepts/dashboard/#introduction)), although it's already the default via `config:recommended`. The Dependency Dashboard is a GitHub issue automatically opened by Renovate.
+  - Vulnerabilities excluded from the Dependency Dashboard by default. Although the majority of our repositories are public, and all PRs are therefore visible to the public, we don't want to publicly display all CVE's.
+  - The preset explicitely sets vulnerabilities as excluded ([`"dependencyDashboardOSVVulnerabilitySummary": "none"`](https://docs.renovatebot.com/configuration-options/#dependencydashboardosvvulnerabilitysummary)) instead of trusting that this default will never change.
 - Commit messages in the Renovate PRs get an "Signed-off-by" line: [`:gitSignOff`](https://docs.renovatebot.com/presets-default/#gitsignoff). This is **not** cryptographic commit signing.
 - Lockfiles (e.g. `package-lock.json`) are updated weekly (Monday mornings): [`:maintainLockFilesWeekly`](https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly)
 - Some configurations are not technically needed and the preset would _currently_ behave the same way even if we were to remove them from the preset. They are included for clarity:
@@ -152,7 +154,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 - **npm and PyPI packages**
   - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
   - The npm rule is defined in a Renovate preset: [`security:minimumReleaseAgeNpm`](https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm)
-  - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.244.0` at the time of writing, and `security:minimumReleaseAgePypi` was introduced in version `44.8.0`.
+  - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.224.0` at the time of writing, and `security:minimumReleaseAgePypi` was introduced in version `44.8.0`.
     - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
     - When our version is updated to version `44.8.0`, we should replace the `packageRules` with the predefined preset.
 - **Labels**
