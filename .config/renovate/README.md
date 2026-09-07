@@ -133,8 +133,8 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 
 - The preset uses the recommended default presets: [`config:recommended`](https://docs.renovatebot.com/presets-config/#configrecommended)
 - Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flags are displayed in the Dependency Dashboard, see next item on list.
-- The Dependency Dashboard is a GitHub issue automatically opened by Renovate. It's enabled by default via `config:recommended`, but explicitely enabled in the preset ([`"dependencyDashboard": true`](https://docs.renovatebot.com/key-concepts/dashboard/#introduction)).
-  - The Dependency Dashboard does not display vulnerabilities unless configured to do so. Although the majority of our repositories are public, and all PRs are therefore visible to the public, we don't want to publicly display all CVE's. The preset explicitely excludes the vulnerabilities ([`"dependencyDashboardOSVVulnerabilitySummary": "none"`](https://docs.renovatebot.com/configuration-options/#dependencydashboardosvvulnerabilitysummary)) since defaults can change. This also allows us to catch any configuration changes connected to the visibility of vulnerabilities.
+- The Dependency Dashboard is a GitHub issue automatically opened by Renovate. It's enabled by default via `config:recommended`, but explicitly enabled in the preset ([`"dependencyDashboard": true`](https://docs.renovatebot.com/key-concepts/dashboard/#introduction)).
+  - The Dependency Dashboard does not display vulnerabilities unless configured to do so. Although the majority of our repositories are public, and all PRs are therefore visible to the public, we don't want to publicly display all CVEs. The preset explicitly excludes the vulnerabilities ([`"dependencyDashboardOSVVulnerabilitySummary": "none"`](https://docs.renovatebot.com/configuration-options/#dependencydashboardosvvulnerabilitysummary)) since defaults can change. This also allows us to catch any configuration changes connected to the visibility of vulnerabilities.
 - Commit messages in the Renovate PRs get an "Signed-off-by" line: [`:gitSignOff`](https://docs.renovatebot.com/presets-default/#gitsignoff). This is **not** cryptographic commit signing.
 - Lockfiles (e.g. `package-lock.json`) are updated weekly (Monday mornings): [`:maintainLockFilesWeekly`](https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly)
 - Some configurations are not technically needed and the preset would _currently_ behave the same way even if we were to remove them from the preset. They are included for clarity:
@@ -167,7 +167,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 - **Grouping practically excluded**
   - Grouping updates introduces risk: One update per PR leads to easier reviews and a greater chance of finding issues we do not want merged. For this reason, grouping of updates has been practically excluded in the preset and it's up to each team to add it to their Renovate configurations if needed.
   - The preset only groups minor and patch updates for GitHub Actions; Renovate groups these updates into a single PR.
-  - All other packages, managers and categories get one PR per update.
+  - Some grouping occurs via `config:recommended` but all other packages, managers and categories get one PR per update.
   - There's an example of grouping in [`.config/renovate/examples/grouping.jsonc`](./examples/grouping.jsonc) which you can have a look at if you're interested in implementing this into your repositories.
 
 ## What the preset does **not** do
