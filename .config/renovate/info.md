@@ -23,7 +23,33 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
 
 ## Files in this setup
 
-<!-- fill this in after the rest is done -->
+```bash
+.
+├── .github/
+│   ├── renovate.jsonc  # Renovate configuration for this repository
+│   └── workflows/
+│       └── renovate-validate.yml  # Automatically validate the configuration files
+└── .config/
+    └── renovate/
+        ├── README.md  # This file
+        ├── default.jsonc  # Custom preset
+        └── examples/
+            ├── digest-pinning.jsonc  # Example: How to activate digest pinning
+            └── grouping.jsonc  # Example: How to group updates
+```
+
+| File | Purpose |
+| ------ | --------- |
+| `.config/renovate/README.md` | This guide |
+| `.config/renovate/default.jsonc` | Custom Renovate preset |
+| `.config/renovate/examples/` | Examples of how to extend the Renovate configuration in other repository |
+| `.github/renovate.jsonc` | Renovate configuration used in this repository |
+| `.github/workflows/renovate-validate.yml` | Workflow for validating the Renovate configuration when there's a change in it |
+
+> [!NOTE]
+> This configuration uses `.jsonc` in order to allow comments in the JSON files.
+> Renovate supports `.jsonc` for both configuration files and presets.
+> JSONC was chosen instead of JSON5 because we only want to add support for comments, not other features.
 
 ## How to use the custom preset in your repository
 

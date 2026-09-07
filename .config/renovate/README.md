@@ -17,13 +17,16 @@ The SciLifeLab Data Centre has a self-hosted instance of [Renovate](https://gith
 ```bash
 .
 ├── .github/
-│   ├── renovate.jsonc # Renovate configuration for this repository
+│   ├── renovate.jsonc  # Renovate configuration for this repository
 │   └── workflows/
-│       └── renovate-validate.yml # Automatically validate the configuration files
+│       └── renovate-validate.yml  # Automatically validate the configuration files
 └── .config/
     └── renovate/
-        ├── README.md # This file
-        └── default.jsonc # Custom preset
+        ├── README.md  # This file
+        ├── default.jsonc  # Custom preset
+        └── examples/
+            ├── digest-pinning.jsonc  # Example: How to activate digest pinning
+            └── grouping.jsonc  # Example: How to group updates
 ```
 
 | File | Purpose |
