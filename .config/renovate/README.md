@@ -66,7 +66,7 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
 > - No changes will happen in your repository without you knowing
 
 > [!TIP]
-> Aside from the Renovate configuration files explained in the sections below, we also recommend that you copy the [config validation workflow (`.github/workflows/renovate-validate.yml`)](../../.github/workflows/renovate-validate.yml) into your repository. See [renovate-validate.yml](#renovate-validate section).
+> Aside from the Renovate configuration files explained in the sections below, we also recommend that you copy the [config validation workflow (`.github/workflows/renovate-validate.yml`)](../../.github/workflows/renovate-validate.yml) into your repository. See [renovate-validate.yml](#automatic-validation-of-the-preset-and-config).
 
 ### Start from scratch
 
