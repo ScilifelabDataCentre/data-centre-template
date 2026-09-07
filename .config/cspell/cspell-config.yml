@@ -179,6 +179,9 @@ ignoreRegExpList:
   # DOI identifiers.
   - "/DOI:.*/g" # Ignore text containing a labelled DOI reference.
 
+  # Phrases
+  - "ScilifelabDataCentre GitHub Organisation" # cspell:disable-line
+
 # ---------------------------------------------------------------------------
 # 8. File- and directory-specific settings
 # ---------------------------------------------------------------------------
