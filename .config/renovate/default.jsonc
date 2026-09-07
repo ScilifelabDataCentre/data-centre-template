@@ -18,7 +18,7 @@
   "schedule": ["* 0-6 * * *"],  // Allow new Renovate branches between 00:00 and 06:59 - does not cause or trigger Renovate to run
   "timezone": "Europe/Stockholm", // Use Stockholm time for 'schedule'
   "ignoreUnstable": true, // Default: Don't update to unstable versions, unless already unstable
-  "automerge": false, // Default: Disable automerging, always wait for humans to merge PRs
+  "automerge": false, // Default: Disable automerging, always wait for humans to merge PRs. cspell:ignore automerging
   "prHourlyLimit": 1, // Renovate can only open 1 PR per hour
   "prConcurrentLimit": 10, // Limit the number of open PRs to 10 (vulnerability PRs bypass it)
   "vulnerabilityAlerts": {

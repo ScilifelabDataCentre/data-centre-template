@@ -175,13 +175,13 @@ The following points are not implemented in the DC Renovate preset. There are li
 
 ### 1. **It does not activate digest pinning for GitHub Actions**
 
-Renovate will not update GitHub Action "versions" to specific commits - it will update the version to the version tags, e.g. from `v1` to `v2` or `v1.0.0` to `v1.0.1`. As a result of this, your workflows can and will be affected when there's a push to the main branch of the action, or if you've pinned a major version and they update a minor or patch - for example, `v1.0.1` still points to `v1`. Sometimes these changes will not be noticable, and sometimes the workflows can break without you doing anything, making it difficult to understand why a workflow suddenly fails or behaves differently.
+Renovate will not update GitHub Action "versions" to specific commits - it will update the version to the version tags, e.g. from `v1` to `v2` or `v1.0.0` to `v1.0.1`. As a result of this, your workflows can and will be affected when there's a push to the main branch of the action, or if you've pinned a major version and they update a minor or patch - for example, `v1.0.1` still points to `v1`. Sometimes these changes will not be noticeable, and sometimes the workflows can break without you doing anything, making it difficult to understand why a workflow suddenly fails or behaves differently.
 
 Pinning the actions to an exact commit hash would mean that your workflows would be protected from these types of issues, but it would also make Renovate noisy since it would be opening more updates to pin new updated commits. While grouping might mitigate some of this, this should still be an opt-in configuration.
 
 If you do activate digest pinning, we recommend that you also activate grouping of the digests.
 
-The file [`.config/renovate/examples/digest-pinning.jsonc`](./examples/digest-pinning.jsonc) gives an example on how to activate this in your configuraton.
+The file [`.config/renovate/examples/digest-pinning.jsonc`](./examples/digest-pinning.jsonc) gives an example on how to activate this in your configuration.
 
 ### 2. **It barely uses grouping**
 
