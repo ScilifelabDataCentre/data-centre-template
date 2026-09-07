@@ -175,7 +175,6 @@ ignoreRegExpList:
   # Project-specific identifiers and paths.
   - "/ddls[a-zA-Z0-9._-]*/g" # cspell:disable-line # Ignore DDLS identifiers and their suffixes.
   - "/#datacentre_[a-z0-9_-]+/g" # cspell:disable-line # Ignore Data Centre Slack channels
-  - "/github>ScilifelabDataCentre\\/data-centre-template\\/\\/\\.config\\/renovate\\/default\\.jsonc#[^#\\s]+/" # cspell:disable-line # Ignore path to the preset
 
   # DOI identifiers.
   - "/DOI:.*/g" # Ignore text containing a labelled DOI reference.
@@ -204,6 +203,15 @@ overrides:
   # types, e.g. one part for JSON, one for HTML, etc.
   # The structure should be the same as in the Directory-specific settings
   # Use ignoreWords: to override the forbidden-words.txt dictionary
+  # -------------------------------------------------------------------------
+  # Renovate related files
+  # -------------------------------------------------------------------------
+  - filename:
+    - "**/.github/renovate.jsonc"
+    - "**/.config/renovate/**"
+    ignoreRegExpList:
+      - "/github>ScilifelabDataCentre\\/data-centre-template\\/\\/\\.config\\/renovate\\/default\\.jsonc#[^#\\s]+/" # cspell:disable-line # Ignore path to the preset
+
   # -------------------------------------------------------------------------
   # GitHub Actions
   # -------------------------------------------------------------------------
