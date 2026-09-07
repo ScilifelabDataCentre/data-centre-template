@@ -101,7 +101,6 @@ In some cases, the config has already been expanded to include presets (`extends
 3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"` to `extends`. Your file should now have this structure:
 
     ```jsonc
-    // 
     // Extends the custom preset defined in .config/renovate/default.jsonc
     {
     "extends": [
