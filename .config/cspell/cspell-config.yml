@@ -179,6 +179,9 @@ ignoreRegExpList:
   # DOI identifiers.
   - "/DOI:.*/g" # Ignore text containing a labelled DOI reference.
 
+  # Phrases
+  - "ScilifelabDataCentre GitHub Organisation" # cspell:disable-line
+
 # ---------------------------------------------------------------------------
 # 8. File- and directory-specific settings
 # ---------------------------------------------------------------------------
@@ -212,3 +215,11 @@ overrides:
       - '/^\s*uses:\s*\S+/gm' # Ignore GitHub Action identifiers.
       - '/^\s*images:\s*.*$/gm' # Ignore container image values.
       - '/^\s*image-ref:\s*.*$/gm' # Ignore image reference values.
+  # -------------------------------------------------------------------------
+  # Renovate related files
+  # -------------------------------------------------------------------------
+  - filename:
+    - "**/.github/renovate.jsonc"
+    - "**/.config/renovate/**"
+    ignoreRegExpList:
+      - "/github>ScilifelabDataCentre\\/data-centre-template\\/\\/\\.config\\/renovate\\/default\\.jsonc#[^#\\s]+/" # cspell:disable-line # Ignore path to the preset
