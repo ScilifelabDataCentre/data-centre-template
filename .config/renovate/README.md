@@ -132,7 +132,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 ### "Straight forward" details
 
 - The preset uses the recommended default presets: [`config:recommended`](https://docs.renovatebot.com/presets-config/#configrecommended)
-- Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flag normally shows up in the Dependency Dashboard (enabled by default via `config:recommended`), but in our preset, the Dependency Dashboard has been disabled (next item in list).
+- Packages without any release for one year are flagged as abandoned: [`abandonments:recommended`](https://docs.renovatebot.com/presets-abandonments/#abandonmentsrecommended). The flag normally shows up in the Dependency Dashboard (enabled by default via `config:recommended`), but in our preset, the Dependency Dashboard has been disabled (next item in list). The preset is set for forward-compatibility.
 - The Dependency Dashboard is disabled ([`:disableDependencyDashboard`](https://docs.renovatebot.com/presets-default/#disabledependencydashboard)) since it's a regular GitHub issue and lists all pending Renovate PRs. Leaving this enabled would display all potential vulnerabilities to the public. The exception to this is of course private repositories, but the vast majority of our repositories are public.
 - Commit messages in the Renovate PRs get an "Signed-off-by" line: [`:gitSignOff`](https://docs.renovatebot.com/presets-default/#gitsignoff). This is **not** cryptographic commit signing.
 - Lockfiles (e.g. `package-lock.json`) are updated weekly (Monday mornings): [`:maintainLockFilesWeekly`](https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly)
@@ -165,7 +165,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
 - **Grouping practically excluded**
   - Grouping updates introduces risk: One update per PR leads to easier reviews and a greater chance of finding issues we do not want merged. For this reason, grouping of updates has been practically excluded in the preset and it's up to each team to add it to their Renovate configurations if needed.
   - The preset only groups minor and patch updates for GitHub Actions; Renovate groups these updates into a single PR.
-  - All other packages, managers and categories get one PR per update.
+  - There's no additional grouping beyond GitHub Actions.
   - There's an example of grouping in [`.config/renovate/examples/grouping.jsonc`](./examples/grouping.jsonc) which you can have a look at if you're interested in implementing this into your repositories.
 
 ## What the preset does **not** do
