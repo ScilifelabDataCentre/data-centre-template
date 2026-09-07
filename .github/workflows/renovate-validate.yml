@@ -5,6 +5,7 @@ name: Validate Renovate config
 on:
   pull_request:
     paths:
+      - '.github/workflows/renovate-validate.yml'
       - '.config/renovate/**'
       - '.github/renovate.jsonc' # Replace with your own config path, incl. in run below
 
