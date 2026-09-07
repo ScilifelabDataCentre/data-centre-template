@@ -4,7 +4,7 @@
 // that you could use in your configuration. Use with care.
 {
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#1.0.0"
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.0.0"
   ],
   "packageRules": [
     // Group Python dev tooling
