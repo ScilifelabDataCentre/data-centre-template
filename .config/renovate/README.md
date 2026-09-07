@@ -148,6 +148,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
   - The preset also defines a [`schedule`](https://docs.renovatebot.com/key-concepts/scheduling/#scheduling-syntax), but this does **not** affect when Renovate runs; it only tells Renovate that it's allowed to create new branches between midnight and 06:59 AM (Stockholm time).
   - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaneously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
+    - This only works if Dependabot alerts are enabled in the repository. Renovate reads the alerts from GitHub.
 - **npm and PyPI packages**
   - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
   - The npm rule is defined in a Renovate preset: [`security:minimumReleaseAgeNpm`](https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm)
