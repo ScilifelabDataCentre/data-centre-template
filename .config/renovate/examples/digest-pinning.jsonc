@@ -11,7 +11,7 @@
       "description": "Group digest updates for GitHub Actions (minor and patch grouped by preset)",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["digest", "pinDigest"], // pinDigest is for the initial pinning, digest is for subsequent updates
-      "groupName": "GitHub Actions (minor, patch and digest)"
+      "groupName": "GitHub Actions (digest)"
     }
   ]
 }
