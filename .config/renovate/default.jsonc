@@ -33,6 +33,7 @@
       "matchUpdateTypes": ["pin", "lockFileMaintenance", "rollback", "bump", "replacement"],
       "minimumReleaseAge": null
     },
+    // Digest rule added for future-proofing even though digest pinning is not enabled in this preset
     {
       "description": "Digests have no release timestamp, so the age check would hold them indefinitely.",
       "matchUpdateTypes": ["digest", "pinDigest"],
