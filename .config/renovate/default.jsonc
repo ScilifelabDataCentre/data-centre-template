@@ -29,13 +29,13 @@
     // minimumReleaseAge is not supported for these update types
     // Add rule to avoid them being held indefinitely
     {
-      "description": "Minimum Release Age is not supported for these update types",
-      "matchUpdateTypes": ["pin", "lockFileMaintenance", "lockFileUpdate","rollback", "bump", "replacement"],
+      "description": "Bypass minimumReleaseAge rule for these update types since they don't have a release stamp and would be held indefinitely.",
+      "matchUpdateTypes": ["pin", "lockFileMaintenance", "lockFileUpdate", "rollback", "bump", "replacement"],
       "minimumReleaseAge": null
     },
     // Digest rule added for future-proofing even though digest pinning is not enabled in this preset
     {
-      "description": "Digests have no release timestamp, so the age check would hold them indefinitely.",
+      "description": "Bypass minimumReleaseAge rule for digests since they often have no release timestamp and would therefore be held indefinitely.",
       "matchUpdateTypes": ["digest", "pinDigest"],
       "minimumReleaseAge": null
     },
