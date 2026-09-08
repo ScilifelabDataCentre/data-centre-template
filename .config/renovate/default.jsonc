@@ -26,17 +26,12 @@
     "addLabels":  ["type: security"] // Security PRs bypass schedule + limits
   },
   "packageRules": [
-    // minimumReleaseAge is not supported for these update types
+    // minimumReleaseAge is not supported (always/generally) for these update types
     // Add rule to avoid them being held indefinitely
-    {
-      "description": "Bypass minimumReleaseAge rule for these update types since they don't have a release stamp and would be held indefinitely.",
-      "matchUpdateTypes": ["pin", "lockFileMaintenance", "lockFileUpdate", "rollback", "bump", "replacement"],
-      "minimumReleaseAge": null
-    },
     // Digest rule added for future-proofing even though digest pinning is not enabled in this preset
     {
-      "description": "Bypass minimumReleaseAge rule for digests since they often have no release timestamp and would therefore be held indefinitely.",
-      "matchUpdateTypes": ["digest", "pinDigest"],
+      "description": "Bypass minimumReleaseAge rule for some update types.",
+      "matchUpdateTypes": ["pin", "digest", "pinDigest", "lockFileMaintenance", "lockFileUpdate", "rollback", "bump", "replacement"],
       "minimumReleaseAge": null
     },
     // Label SemVer updates by update type
