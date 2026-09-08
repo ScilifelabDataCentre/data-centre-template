@@ -3,7 +3,7 @@
 // Either use as inspiration or copy-paste into your configuration
 {
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.0.0",
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
     "helpers:pinGitHubActionDigests"
   ],
   "packageRules": [
