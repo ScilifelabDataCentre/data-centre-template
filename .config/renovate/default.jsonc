@@ -30,7 +30,7 @@
     // Add rule to avoid them being held indefinitely
     {
       "description": "Minimum Release Age is not supported for these update types",
-      "matchUpdateTypes": ["pin", "lockFileMaintenance", "lockfileUpdate", "rollback", "bump", "replacement"],
+      "matchUpdateTypes": ["pin", "lockFileMaintenance", "rollback", "bump", "replacement"],
       "minimumReleaseAge": null
     },
     {
