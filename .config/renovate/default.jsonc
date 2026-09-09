@@ -29,8 +29,8 @@
   "packageRules": [
     // minimumReleaseAge is not supported (always/generally) for these update types
     // Add rule to avoid them being held indefinitely
-    // Digest rule added for future-proofing even though digest pinning is not enabled in this preset
-    // Might technically not be needed after the addition of minimumReleaseAgeBehavior, but this is explicit and to avoid silently breaking
+    // Digest rule is inert unless a repo enables digest pinning - needed as soon as it does
+    // Might technically not be needed after the addition of minimumReleaseAgeBehaviour, but this is explicit and to avoid silently breaking
     {
       "description": "Bypass minimumReleaseAge rule for some update types.",
       "matchUpdateTypes": ["pin", "digest", "pinDigest", "lockFileMaintenance", "rollback", "bump", "replacement"],
