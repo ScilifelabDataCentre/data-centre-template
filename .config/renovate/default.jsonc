@@ -31,7 +31,7 @@
     // Digest rule added for future-proofing even though digest pinning is not enabled in this preset
     {
       "description": "Bypass minimumReleaseAge rule for some update types.",
-      "matchUpdateTypes": ["pin", "digest", "pinDigest", "lockFileMaintenance", "lockFileUpdate", "rollback", "bump", "replacement"],
+      "matchUpdateTypes": ["pin", "digest", "pinDigest", "lockFileMaintenance", "rollback", "bump", "replacement"],
       "minimumReleaseAge": null
     },
     // Label SemVer updates by update type
