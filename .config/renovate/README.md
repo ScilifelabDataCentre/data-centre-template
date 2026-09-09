@@ -150,8 +150,9 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
   - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaneously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
     - This only works if Dependabot alerts are enabled in the repository. Renovate reads the alerts from GitHub.
-  - Renovate only updates packages when they have been released for at least three days ([`minimumReleaseAge`](https://docs.renovatebot.com/configuration-options/#minimumreleaseage)). This allows the package autors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
-    - As a result of this option, there is also a rule within `packageRules` to tell Renovate to ignore the minimumReleaseAge for specific update types: these update types generally do not have a "minimum release age" and therefore would never be updated otherwise.
+  - Renovate only updates packages when they have been released for at least three days ([`minimumReleaseAge`](https://docs.renovatebot.com/configuration-options/#minimumreleaseage)). This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
+    - Some packages and data sources do not specify a release date and therefore Renovate will not attempt to update them. Renovate _will_ list the available updates in the Dependency Dashboard, but that leaves the teams with manual work (always ticking checkboxes to force updates from specific data sources) that is almost guaranteed to be forgotten.
+    - We've added a rule within `packageRules` to tell Renovate to ignore the minimumReleaseAge for specific update types: these update types generally do not have a timestamp. With the `timestamp-optional`, most of these would still be updated, but some may not and this avoids the configuration silently breaking.
 - **Labels**
   - Our custom preset labels all PRs made by Renovate with `type: dependency`
   - Security PRs (Renovate reads these from Dependabot) are labelled with `type: security`
