@@ -76,6 +76,7 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
     ```jsonc
     // Renovate configuration for this repository
     {
+      "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
       "extends": [
         "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
       ]
@@ -97,12 +98,12 @@ In some cases, the config has already been expanded to include presets (`extends
 **To use the new custom preset:**
 
 1. Optional but **recommended**: Move/rename the config file to `.github/renovate.jsonc` (`jsonc` suffix to allow comments).
-2. Remove the `$schema` line
-3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"` to `extends`. Your file should now have this structure:
+2. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"` to `extends`. Your file should now have this structure:
 
     ```jsonc
     // Extends the custom preset defined in .config/renovate/default.jsonc
     {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
     "extends": [
         "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
         "<some-other-preset>" // Any presets your repository already lists in extends
@@ -112,7 +113,7 @@ In some cases, the config has already been expanded to include presets (`extends
     }
     ```
 
-4. Remove configuration options from your previous setup if redundant or out of date.
+3. Remove configuration options from your previous setup if redundant or out of date.
 
 ### How to tailor the configuration to the repository needs
 

@@ -1,6 +1,7 @@
 // Renovate configuration for this repository
 // Extends the custom preset defined in .config/renovate/default.jsonc
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
   "extends": [
     "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
   ]
