@@ -151,6 +151,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
     - This only works if Dependabot alerts are enabled in the repository. Renovate reads the alerts from GitHub.
   - Renovate only updates packages when they have been released for at least three days ([`minimumReleaseAge`](https://docs.renovatebot.com/configuration-options/#minimumreleaseage)). This allows the package autors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
+    - As a result of this option, there is also a rule within `packageRules` to tell Renovate to ignore the minimumReleaseAge for specific update types: these update types generally do not have a "minimum release age" and therefore would never be updated otherwise.
 - **Labels**
   - Our custom preset labels all PRs made by Renovate with `type: dependency`
   - Security PRs (Renovate reads these from Dependabot) are labelled with `type: security`
