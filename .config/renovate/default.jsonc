@@ -8,13 +8,14 @@
   "extends": [
     "config:recommended", // The recommended default presets
     "abandonments:recommended", // Packages without release for 1 year are treated as abandoned
-    "security:minimumReleaseAgeNpm", // Only update npm packages that have been released for at least 3 days
     ":gitSignOff", // Add a "Signed-off-by" line to commit messages (not cryptographic commit signing)
     ":maintainLockFilesWeekly", // Update lockfiles weekly (Monday mornings)
     ":renovatePrefix" // Default: All branches are prefixed with "renovate/"
   ],
   "dependencyDashboard": true, // Default via config:recommended - See README
   "dependencyDashboardOSVVulnerabilitySummary": "none", // Experimental; pinned so a default change can't surprise us
+  "minimumReleaseAge": "3 days", // Only update packages that have been released for at least 3 days
+  "minimumReleaseAgeBehaviour": "timestamp-optional", // Change from the default timestamp-required; otherwise Renovate might miss some updates
   "labels": ["type: dependency"], // Add the "type: dependency" label to all PRs
   "schedule": ["* 0-6 * * *"],  // Allow new Renovate branches between 00:00 and 06:59 - does not cause or trigger Renovate to run
   "timezone": "Europe/Stockholm", // Use Stockholm time for 'schedule'
@@ -26,19 +27,13 @@
     "addLabels":  ["type: security"] // Security PRs bypass schedule + limits
   },
   "packageRules": [
-    // Only update PyPI packages released at least 3 days ago
-    // Same functionality as security:minimumReleaseAgePypi (Renovate 44.8.0+)
-    // Swap to the preset once the instance is upgraded
+    // minimumReleaseAge is not supported (always/generally) for these update types
+    // Add rule to avoid them being held indefinitely
+    // Digest rule is inert unless a repo enables digest pinning - needed as soon as it does
+    // Might technically not be needed after the addition of minimumReleaseAgeBehaviour, but this is explicit and to avoid silently breaking
     {
-      "description": "Wait three days before updating PyPI packages",
-      "matchDatasources": ["pypi"],
-      "minimumReleaseAge": "3 days",
-      "internalChecksFilter": "strict"
-    },
-    {
-      "description": "Minimum Release Age is not supported for these update types",
-      "matchDatasources": ["pypi"],
-      "matchUpdateTypes": ["pin", "lockFileMaintenance", "rollback", "bump", "replacement"],
+      "description": "Bypass minimumReleaseAge rule for some update types.",
+      "matchUpdateTypes": ["pin", "digest", "pinDigest", "lockFileMaintenance", "rollback", "bump", "replacement"],
       "minimumReleaseAge": null
     },
     // Label SemVer updates by update type

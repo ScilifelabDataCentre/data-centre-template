@@ -3,15 +3,15 @@
 // Either use as inspiration or copy-paste into your configuration
 {
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.0.0",
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
     "helpers:pinGitHubActionDigests"
   ],
   "packageRules": [
     {
-      "description": "Group minor, patch and digest updates for GitHub Actions",
+      "description": "Group digest updates for GitHub Actions (minor and patch grouped by preset)",
       "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "groupName": "GitHub Actions (minor, patch and digest)"
+      "matchUpdateTypes": ["digest", "pinDigest"], // pinDigest is for the initial pinning, digest is for subsequent updates
+      "groupName": "GitHub Actions (digest)"
     }
   ]
 }

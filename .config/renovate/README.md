@@ -57,7 +57,7 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
 - If the repository **does not** have a Renovate configuration file: [Start from scratch](#start-from-scratch)
 
 > [!IMPORTANT]
-> Note that the preset should be followed by a version tag (`#v1.0.0` in the examples)
+> Note that the preset should be followed by a version tag (`#v1.1.0` in the examples)
 >
 > What this does:
 >
@@ -77,7 +77,7 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
     // Renovate configuration for this repository
     {
       "extends": [
-        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.0.0"
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
       ]
     }
     ```
@@ -98,13 +98,13 @@ In some cases, the config has already been expanded to include presets (`extends
 
 1. Optional but **recommended**: Move/rename the config file to `.github/renovate.jsonc` (`jsonc` suffix to allow comments).
 2. Remove the `$schema` line
-3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.0.0"` to `extends`. Your file should now have this structure:
+3. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"` to `extends`. Your file should now have this structure:
 
     ```jsonc
     // Extends the custom preset defined in .config/renovate/default.jsonc
     {
     "extends": [
-        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.0.0",
+        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
         "<some-other-preset>" // Any presets your repository already lists in extends
     ],
     "<some-option>": "<some-value>", // Any options your repository already set
@@ -150,12 +150,9 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
   - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaneously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
     - This only works if Dependabot alerts are enabled in the repository. Renovate reads the alerts from GitHub.
-- **npm and PyPI packages**
-  - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
-  - The npm rule is defined in a Renovate preset: [`security:minimumReleaseAgeNpm`](https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm)
-  - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.224.0` at the time of writing, and `security:minimumReleaseAgePypi` was introduced in version `44.8.0`.
-    - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
-    - When our version is updated to version `44.8.0`, we should replace the `packageRules` with the predefined preset.
+  - Renovate only updates packages when they have been released for at least three days ([`minimumReleaseAge`](https://docs.renovatebot.com/configuration-options/#minimumreleaseage)). This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
+    - Some packages and data sources do not specify a release date and therefore Renovate will not attempt to update them - they will be held indefinitely. Renovate _will_ list the available updates in the Dependency Dashboard, but that leaves the teams with manual work (always ticking checkboxes to force updates from specific data sources) that is almost guaranteed to be forgotten. Because of this, [`minimumReleaseAgeBehaviour`](https://docs.renovatebot.com/configuration-options/#minimumreleaseagebehaviour) has been set to `timestamp-optional` instead of the default `timestamp-required`, allowing updates for packages where the release timestamp is missing.
+    - We've added a rule within `packageRules` to tell Renovate to ignore the minimumReleaseAge for specific update types: these update types generally do not have a timestamp. With the `timestamp-optional` configuration, most of these would still be updated, but some may not and this avoids the configuration silently breaking.
 - **Labels**
   - Our custom preset labels all PRs made by Renovate with `type: dependency`
   - Security PRs (Renovate reads these from Dependabot) are labelled with `type: security`
