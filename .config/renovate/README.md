@@ -150,12 +150,7 @@ The preset is defined in [`.config/renovate/default.jsonc`](default.jsonc) and c
   - Renovate is only allowed to create one PR per hour ([`"prHourlyLimit": 1`](https://docs.renovatebot.com/configuration-options/#prhourlylimit)) and only 10 PRs can be open simultaneously ([`"prConcurrentLimit": 10`](https://docs.renovatebot.com/configuration-options/#prconcurrentlimit))
   - Vulnerability PRs bypass all of the rules mentioned above though; vulnerability PRs are created no matter what.
     - This only works if Dependabot alerts are enabled in the repository. Renovate reads the alerts from GitHub.
-- **npm and PyPI packages**
-  - Renovate only updates npm and PyPI packages when they have been released for at least three days. This allows the package authors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
-  - The npm rule is defined in a Renovate preset: [`security:minimumReleaseAgeNpm`](https://docs.renovatebot.com/presets-security/#securityminimumreleaseagenpm)
-  - The PyPI rule **is** a Renovate preset as well, **but** not in our version; our self-hosted instance has Renovate version `43.224.0` at the time of writing, and `security:minimumReleaseAgePypi` was introduced in version `44.8.0`.
-    - This is the reason for us having two `packageRules` for PyPI. The first rule tells Renovate to wait three days for all PyPI updates, and the second tells it to ignore this rule for specific update types since they do not have a "minimum release age" and therefore would never be updated otherwise.
-    - When our version is updated to version `44.8.0`, we should replace the `packageRules` with the predefined preset.
+  - Renovate only updates packages when they have been released for at least three days ([`minimumReleaseAge`](https://docs.renovatebot.com/configuration-options/#minimumreleaseage)). This allows the package autors to potentially fix bugs or retract malicious code, reducing the risk of us merging unsafe code.
 - **Labels**
   - Our custom preset labels all PRs made by Renovate with `type: dependency`
   - Security PRs (Renovate reads these from Dependabot) are labelled with `type: security`
