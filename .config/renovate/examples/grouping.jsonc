@@ -3,6 +3,8 @@
 // There are also grouping presets (https://docs.renovatebot.com/presets-group/) 
 // that you could use in your configuration. Use with care.
 {
+  // The schema is used for editor autocomplete and validation of Renovate config
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
   ],
