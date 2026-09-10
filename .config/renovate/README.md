@@ -76,7 +76,8 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
     ```jsonc
     // Renovate configuration for this repository
     {
-      "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
+      // Provides editor autocomplete and validation for Renovate config
+      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
       "extends": [
         "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
       ]
@@ -103,13 +104,14 @@ In some cases, the config has already been expanded to include presets (`extends
     ```jsonc
     // Extends the custom preset defined in .config/renovate/default.jsonc
     {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
-    "extends": [
+      // Provides editor autocomplete and validation for Renovate config
+      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+      "extends": [
         "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
         "<some-other-preset>" // Any presets your repository already lists in extends
-    ],
-    "<some-option>": "<some-value>", // Any options your repository already set
-    "packageRules": ... // Any package rules your repository already set
+      ],
+      "<some-option>": "<some-value>", // Any options your repository already set
+      "packageRules": ... // Any package rules your repository already set
     }
     ```
 
