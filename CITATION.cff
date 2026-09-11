@@ -12,7 +12,7 @@ authors:
     website: 'https://ror.org/04ev03g22'
 title: Data Centre Template GitHub Repository
 identifiers:
-  - description: Zenodo DOI for the Data Centre Template Github Repository
+  - description: Zenodo DOI for the Data Centre Template GitHub Repository
     type: doi
     value: 10.5281/zenodo.22706807
 repository-code: "https://github.com/ScilifelabDataCentre/data-centre-template"
