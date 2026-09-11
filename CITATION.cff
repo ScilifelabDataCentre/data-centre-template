@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+authors:
+  - given-names: Ina
+    family-names: Odén Österbo
+    orcid: 'https://orcid.org/0009-0000-8945-8541'
+  - given-names: Aishling
+    family-names: Cooke
+  - name: SciLifeLab Data Centre
+    website: 'https://ror.org/04ev03g22'
+title: Data Centre Template GitHub Repository
+identifiers:
+  - description: Zenodo DOI for the Data Centre Template Github Repository
+    type: doi
+    value: 10.5281/zenodo.22706807
+repository-code: "https://github.com/ScilifelabDataCentre/data-centre-template"
+license: "MIT"
