@@ -14,6 +14,6 @@ title: Data Centre Template GitHub Repository
 identifiers:
   - description: Zenodo DOI for the Data Centre Template GitHub Repository
     type: doi
-    value: 10.5281/zenodo.22706807
+    value: 10.5281/zenodo.22706806
 repository-code: "https://github.com/ScilifelabDataCentre/data-centre-template"
 license: "MIT"
