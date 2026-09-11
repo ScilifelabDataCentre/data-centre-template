@@ -1,6 +1,7 @@
 # Template Repository for the SciLifeLab Data Centre
 
 ![Status: Work in Progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)
+[![DOI](https://zenodo.org/badge/1004906929.svg)](https://doi.org/10.5281/zenodo.22706806)
 
 This repository provides example configurations for a set of different tools.
 
