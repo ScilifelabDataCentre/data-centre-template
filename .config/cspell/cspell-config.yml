@@ -204,6 +204,15 @@ overrides:
   # The structure should be the same as in the Directory-specific settings
   # Use ignoreWords: to override the forbidden-words.txt dictionary
   # -------------------------------------------------------------------------
+  # CITATION files
+  # -------------------------------------------------------------------------
+  - filename: 
+      - "**/CITATION.cff"
+      - "**/CITATION.template.cff"
+    words:
+      - orcid # cspell:disable-line
+      - zenodo # cspell:disable-line  
+  # -------------------------------------------------------------------------
   # GitHub Actions
   # -------------------------------------------------------------------------
   - filename: "**/.github/**/*.{yml,yaml}"
