@@ -21,4 +21,6 @@ identifiers:
     type: doi
     value: 10.5281/zenodo.22706806
 repository-code: "https://github.com/ScilifelabDataCentre/data-centre-template"
-license: "MIT"
+license: 
+  - MIT
+  - CC-BY-4.0
