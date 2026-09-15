@@ -35,4 +35,6 @@ identifiers:
     type: doi
     value: <<zenodo-doi>>
 repository-code: "<<repository-code-url>>"
-license: "MIT"
+license: 
+  - MIT
+  - CC-BY-4.0
