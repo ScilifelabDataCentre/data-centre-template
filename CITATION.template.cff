@@ -1,10 +1,14 @@
 # Template citation file for your repository.
 # What to do:
-# 1. Replace the information in this file with the information for your own repository.
-# 2. Rename this file to CITATION.cff and place it in the root of your repository
-#
+# 1. Rename this file to CITATION.cff and place it in the root of your repository.
+# 2. Replace the information in this file with the information for your own repository.
+# 
+# Some fields are optional and can be removed if not needed:
+# - abstract: https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#abstract
+# - keywords: https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#keywords
+# 
 # More information: 
-# - Development Guidelines: <FILL IN WHEN MERGED>
+# - Development Guidelines: https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/citing_and_citability
 # - Zenodo: https://help.zenodo.org/docs/github/describe-software/citation-file/
 # - GitHub docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files
 # ---
@@ -22,6 +26,10 @@ authors:
   - name: SciLifeLab Data Centre
     website: 'https://ror.org/04ev03g22'
 title: <<repository-or-project-title>>
+abstract: <<short-description>> # Optional. Remove if not needed. 
+keywords: # Optional. Remove if not needed.
+  - <<keyword-1>>
+  - <<keyword-2>>
 identifiers:
   - description: Zenodo DOI for <<repository-or-project-title>>
     type: doi
