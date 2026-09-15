@@ -1,3 +1,8 @@
+# Citation file for the Data Centre Template GitHub Repository
+# The information in this file should be replaced with the information for your own repository.
+# For a copy-paste version of this file, see CITATION.template.cff.
+# More information: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files
+# ---
 cff-version: 1.2.0
 message: >-
   If you use this software, please cite it using the
