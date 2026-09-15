@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+authors:
+  - given-names: <<first-author-given-names>>
+    family-names: <<first-author-family-names>>
+    orcid: '<<first-author-orcid>>'
+  - given-names: <<second-author-given-names>>
+    family-names: <<second-author-family-names>>
+    orcid: '<<second-author-orcid>>'
+  - name: SciLifeLab Data Centre
+    website: 'https://ror.org/04ev03g22'
+title: <<repository-or-project-title>>
+identifiers:
+  - description: Zenodo DOI for <<repository-or-project-title>>
+    type: doi
+    value: <<zenodo-doi>>
+repository-code: "<<repository-code-url>>"
+license: "MIT"
