@@ -37,7 +37,7 @@ The instructions in the sections below cover:
 The following example shows how to cite the {{SERVICE NAME}} website content using the SciCrunch format:
 
 ```text
-{{SERVICE NAME}} ({{ACCESS DATE}}), SciLifeLab Data Centre, version {{SERVICE VERSION}} from {{SERVICE URL}}, RRID:{{SERVICE RRID}}.
+{{SERVICE NAME}} ({{ACCESS DATE}}), {{AUTHORS}}, SciLifeLab Data Centre, version {{SERVICE VERSION}} from {{SERVICE URL}}, RRID:{{SERVICE RRID}}.
 ```
 
 ## Citing underlying code
@@ -47,7 +47,7 @@ The following example shows how to cite the {{SERVICE NAME}} website content usi
 The following example shows how to cite the underlying code of {{SERVICE NAME}}, using the APA format:
 
 ```text
-SciLifeLab Data Centre ({{YEAR}}). {{SOFTWARE NAME}} (Version {{SOFTWARE VERSION}}) [Software]. Zenodo. https://doi.org/{{SOFTWARE DOI}}
+{{AUTHORS}}, SciLifeLab Data Centre ({{YEAR}}). {{SOFTWARE NAME}} (Version {{SOFTWARE VERSION}}) [Software]. Zenodo. https://doi.org/{{SOFTWARE DOI}}
 ```
 
 ## Journalists
