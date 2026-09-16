@@ -25,16 +25,16 @@ The instructions in the sections below cover:
 | --------------------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------- |
 | Name                                                            | {{SERVICE NAME}}                                  | {{SOFTWARE NAME, E.G. REPOSITORY NAME}}            |
 | Contributors and organisation                                   | SciLifeLab Data Centre [^1]                       | SciLifeLab Data Centre                             |
-| Version                                                         | {{INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION}} | {{INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION}} |
+| Version                                                         | {{INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION}} [^1] | {{INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION}} |
 | Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [^2] {{SERVICE RRID}}                   | **Zenodo DOI:** {{SOFTWARE DOI}}                   |
 
-[^1]: If you are aiming to cite particular pages of {{SERVICE NAME}} in particular (e.g. {{EXAMPLE}}), you may find that an author is mentioned and a date is given. In this case, you should include the appropriate date and author instead, but must still include the RRID. If information is given on how to cite something featured on a given page, then that citation should be used instead.
+[^1]: If you are aiming to cite specific pages of {{SERVICE NAME}} (e.g. {{EXAMPLE}}), you may find that an author is mentioned and a date is given. In this case, you should include the appropriate date and author instead, but must still include the RRID. If information is given on how to cite something featured on a given page, then that citation should be used instead.
 
-[^2]: The Resource Identification Portal was created in support of the Resource Identification Initiative. It aims to promote the identification, discovery, and reuse of research resources. Research Resource Identifiers (RRIDs) are persistent and unique identifiers for referencing a research resource. By citing {{SERVICE NAME}} using the RRID, you will facilitate further reuse of {{SERVICE NAME}}, enable us to track any that activity, and allow others to easily find the Summary Report for usage of {{SERVICE NAME}}.
+[^2]: The Resource Identification Portal was created in support of the Resource Identification Initiative. It aims to promote the identification, discovery, and reuse of research resources. Research Resource Identifiers (RRIDs) are persistent and unique identifiers for referencing a research resource. By citing {{SERVICE NAME}} using the RRID, you will facilitate further reuse of {{SERVICE NAME}}, enable us to track that activity, and allow others to easily find the Summary Report for usage of {{SERVICE NAME}}.
 
 ## Citing website content
 
-The following example shows the SciCrunch format:
+The following example shows how to cite the {{SERVICE NAME}} website content using the SciCrunch format:
 
 ```text
 {{SERVICE NAME}} ({{ACCESS DATE}}), SciLifeLab Data Centre, version {{VERSION NUMBER}} from {{SERVICE URL}}, RRID:{{SERVICE RRID}}.
@@ -42,10 +42,12 @@ The following example shows the SciCrunch format:
 
 ## Citing underlying code
 
-{{SERVICE NAME}} is operated by the SciLifeLab Data Centre. All of the source code used on the website is available on GitHub. The code used to produce the website is available in our [Github repository]({{LINK TO REPO}}).
+{{SERVICE NAME}} is operated by the SciLifeLab Data Centre. All of the source code used on the website is available on GitHub. The code used to produce the website is available in our [GitHub repository]({{LINK TO REPO}}).
+
+The following example shows how to cite the underlying code of {{SERVICE NAME}}, using the APA format:
 
 ```text
-SciLifeLab Data Centre ({{YEAR}}). {{SOFTWARE NAME}} (Version {{VERSION NUMBER}}) [Software]. Zenodo. https://doi.org/{{DOI}}
+SciLifeLab Data Centre ({{YEAR}}). {{SOFTWARE NAME}} (Version {{VERSION NUMBER}}) [Software]. Zenodo. https://doi.org/{{SOFTWARE DOI}}
 ```
 
 ## Journalists
