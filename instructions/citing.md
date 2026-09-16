@@ -15,12 +15,12 @@ When citing [SERVICE NAME] or the underlying code, please follow the ["Citing Se
 
 ## Metadata for [SERVICE NAME]
 
-| Element                                                         | Service                           | Code                                  |
-| --------------------------------------------------------------- | --------------------------------- | ------------------------------------- |
-| Name                                                            | [SERVICE NAME]                    | [SOFTWARE NAME, E.G. REPOSITORY NAME] |
-| Contributors and organisation                                   | SciLifeLab Data Centre            | SciLifeLab Data Centre                |
-| Version                                                         | [INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION] (footnote 1) | [INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION]    |
-| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID] (footnote 1)          | **Zenodo DOI:** [SOFTWARE DOI]        |
+| Element                                                         | Service                                                      | Code                                             |
+| --------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------ |
+| Name                                                            | [SERVICE NAME]                                               | [SOFTWARE NAME, E.G. REPOSITORY NAME]            |
+| Contributors and organisation                                   | SciLifeLab Data Centre                                       | SciLifeLab Data Centre                           |
+| Version                                                         | [INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION] (footnote 1) | [INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION] |
+| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID] (footnote 1)                        | **Zenodo DOI:** [SOFTWARE DOI]                   |
 
 footnote 1: If you are aiming to cite particular pages of [SERVICE NAME] in particular (e.g. [EXAMPLE]), you may find that an author is mentioned and a date is given. In this case, you should include the appropriate date and author instead, but must still include the RRID. If information is given on how to cite something featured on a given page, then that citation should be used instead.
 
