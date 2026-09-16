@@ -19,6 +19,7 @@ The end goal is for this repository to be populated with examples implementing g
 ├── .config/        # Tool config, one subdirectory per tool
 │   ├── cspell/
 │   └── renovate/
+├── instructions/   # Templates for instructions, e.g. user-facing
 ├── CITATION.cff            # This repo's CITATION.cff file
 ├── CITATION.template.cff   # Template CITATION.cff file
 └── README.md
@@ -32,6 +33,7 @@ The end goal is for this repository to be populated with examples implementing g
 | [`CITATION.template.cff`](CITATION.template.cff)          | Template CITATION.cff file to copy-paste and adjust to another repository.                                                                                                                   | [Citing and Citability](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/citing_and_citability) |
 | [`CODEOWNERS` file](.github/CODEOWNERS)                   | Defines which individuals or teams that are responsible for the contents of this repository.                                                                                                 | -                                                                                                                       |
 | [CSpell](.config/cspell/README.md)                        | Allows spell checking for files changed in a PR                                                                                                                                              | -                                                                                                                       |
+| [Citation instruction template](instructions/citing.md)   | Template for user-facing instructions on how to cite our services and code.                                                                                                                  | [Citing and Citability](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/citing_and_citability) |
 | [Pull request template](.github/pull_request_template.md) | When a PR is opened, the description is automatically filled with the contents of this file. It helps make pull requests easier to prepare and review.                                       | [Pull Request Guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/pull_requests)       |
 | [Renovate](.config/renovate/README.md)                    | Allows repositories in ScilifelabDataCentre GitHub Organisation to use a custom Renovate preset in their Renovate configuration instead of teams building their own completely from scratch. | -                                                                                                                       |
 
