@@ -19,22 +19,20 @@ When citing [SERVICE NAME] or the underlying code, please follow the ["Citing Se
 | --------------------------------------------------------------- | --------------------------------- | ------------------------------------- |
 | Name                                                            | [SERVICE NAME]                    | [SOFTWARE NAME, E.G. REPOSITORY NAME] |
 | Contributors and organisation                                   | SciLifeLab Data Centre            | SciLifeLab Data Centre                |
-| Version                                                         | Find the version here: [version]. | Find the version here: [version]      |
-| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID]          | **Zenodo DOI:** [SOFTWARE DOI]        |
+| Version                                                         | [INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION] (footnote 1) | [INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION]    |
+| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID] (footnote 1)          | **Zenodo DOI:** [SOFTWARE DOI]        |
 
-## Research community
+footnote 1: If you are aiming to cite particular pages of [SERVICE NAME] in particular (e.g. [EXAMPLE]), you may find that an author is mentioned and a date is given. In this case, you should include the appropriate date and author instead, but must still include the RRID. If information is given on how to cite something featured on a given page, then that citation should be used instead.
+
+footnote 2: The Resource Identification Portal was created in support of the Resource Identification Initiative. It aims to promote the identification, discovery, and reuse of research resources. Research Resource Identifiers (RRIDs) are persistent and unique identifiers for referencing a research resource. By citing [SERVICE NAME] using the RRID, you will facilitate further reuse of [SERVICE NAME], enable us to track any that activity, and allow others to easily find the Summary Report for usage of [SERVICE NAME].
+
+## In research publications
 
 In this section, you’ll find instructions on how to cite the [SERVICE NAME] website, or underlying code, in research publications.
 
-### Citing website content
+## Citing website content
 
-#### Research Resource Identifier for [SERVICE NAME]
-
-The Resource Identification Portal was created in support of the Resource Identification Initiative. It aims to promote the identification, discovery, and reuse of research resources. Research Resource Identifiers (RRIDs) are persistent and unique identifiers for referencing a research resource.
-
-By citing [SERVICE NAME] using the RRID, you will facilitate further reuse of the platform, enable us to track any that activity, and allow others to easily find the Summary Report for usage of [SERVICE NAME].
-
-#### SciCrunch format
+## Example: SciCrunch format
 
 ```text
 # In-text citation
@@ -43,14 +41,6 @@ By citing [SERVICE NAME] using the RRID, you will facilitate further reuse of th
 # Reference list
 [SERVICE NAME] ([ACCESS DATE]), SciLifeLab Data Centre, version [VERSION NUMBER] from [SERVICE URL], RRID:[SERVICE RRID].
 ```
-
-#### Where to find the version
-
-You will find the version of the platform at the bottom of the footer on any page, or on our Github repository under ‘releases’.
-
-If you are aiming to cite particular pages of [SERVICE NAME] in particular (e.g. [EXAMPLE]), you may find that an author is mentioned and a date is given. In this case, you should include the appropriate date and author instead, but must still include the RRID. If information is given on how to cite something featured on a given page, then that citation should be used instead.
-
-[GIVE AN EXAMPLE OF THIS HERE]
 
 ### Citing underlying code
 
