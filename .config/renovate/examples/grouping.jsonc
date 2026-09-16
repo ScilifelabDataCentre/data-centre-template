@@ -1,12 +1,12 @@
 // Example Renovate configuration for grouping dependencies
 // Either use as inspiration or copy-paste into your configuration
-// There are also grouping presets (https://docs.renovatebot.com/presets-group/) 
+// There are also grouping presets (https://docs.renovatebot.com/presets-group/)
 // that you could use in your configuration. Use with care.
 {
   // The schema is used for editor autocomplete and validation of Renovate config
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
   ],
   "packageRules": [
     // Group Python dev tooling
@@ -18,14 +18,14 @@
         "coverage",
         "flake8",
         "pre-commit",
-        "pylint", 
-        "pytest", 
+        "pylint",
+        "pytest",
         "pytest-*",
-        "ruff"
+        "ruff",
       ],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Python dev dependencies (minor and patch)",
-      "groupSlug": "python-dev-tools" // Branch prefix to these group PRs
+      "groupSlug": "python-dev-tools", // Branch prefix to these group PRs
     },
     // Group Docker image updates
     {
@@ -33,7 +33,7 @@
       "matchManagers": ["dockerfile", "docker-compose"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Docker images (minor and patch)",
-      "groupSlug": "docker-minor-patch" // Branch prefix to these group PRs
+      "groupSlug": "docker-minor-patch", // Branch prefix to these group PRs
     },
     // Group npm dev dependencies
     {
@@ -42,7 +42,7 @@
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "npm dev dependencies (minor and patch)",
-      "groupSlug": "npm-dev-minor-patch" // Branch prefix to these group PRs
-    }
-  ]
+      "groupSlug": "npm-dev-minor-patch", // Branch prefix to these group PRs
+    },
+  ],
 }

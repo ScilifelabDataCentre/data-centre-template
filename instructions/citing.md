@@ -1,7 +1,7 @@
-<!-- 
-Template for user-facing instructions regarding how to cite your service. 
+<!--
+Template for user-facing instructions regarding how to cite your service.
 
-- info from data.scilifelab.se 
+- info from data.scilifelab.se
 - RRID + Zenodo DOI
 - link to development guidelines citing.md
 - exact format of how to cite service and software
@@ -15,12 +15,12 @@ When citing [SERVICE NAME] or the underlying code, please follow the ["Citing Se
 
 ## Metadata for [SERVICE NAME]
 
-| Element                                                         | Service                                                                                                     | Code                                                                                                                                |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Name                                                            | [SERVICE NAME]                                                                                           | [SOFTWARE NAME, E.G. REPOSITORY NAME]                                                                                                                   |
-| Contributors and organisation                                   | SciLifeLab Data Centre                                         | SciLifeLab Data Centre                                                                   |
-| Version                                                         | Find the version here: [version]. | Find the version here: [version] |
-| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID]                                                                   | **Zenodo DOI:** [SOFTWARE DOI]                                                                                                     |
+| Element                                                         | Service                           | Code                                  |
+| --------------------------------------------------------------- | --------------------------------- | ------------------------------------- |
+| Name                                                            | [SERVICE NAME]                    | [SOFTWARE NAME, E.G. REPOSITORY NAME] |
+| Contributors and organisation                                   | SciLifeLab Data Centre            | SciLifeLab Data Centre                |
+| Version                                                         | Find the version here: [version]. | Find the version here: [version]      |
+| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID]          | **Zenodo DOI:** [SOFTWARE DOI]        |
 
 ## Research community
 
@@ -58,11 +58,11 @@ If you are aiming to cite particular pages of [SERVICE NAME] in particular (e.g.
 
 #### APA format
 
-Go to the repository and click the "cite this repository" on the right hand side, under the licenses. Copy-paste that. 
-If there is no such button, copy paste the following. 
+Go to the repository and click the "cite this repository" on the right hand side, under the licenses. Copy-paste that.
+If there is no such button, copy paste the following.
 
 ```text
-# What we've said in the guidelines 
+# What we've said in the guidelines
 SciLifeLab Data Centre (2026). [SOFTWARE NAME] (Version [VERSION NUMBER]) [Software]. Zenodo. https://doi.org/<DOI>
 
 # Example, from GitHub

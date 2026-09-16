@@ -38,12 +38,12 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
             └── grouping.jsonc  # Example: How to group updates
 ```
 
-| File | Purpose |
-| ------ | --------- |
-| `.config/renovate/README.md` | This guide |
-| `.config/renovate/default.jsonc` | Custom Renovate preset |
-| `.config/renovate/examples/` | Examples of how to extend the Renovate configuration in other repository |
-| `.github/renovate.jsonc` | Renovate configuration used in this repository |
+| File                                      | Purpose                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------ |
+| `.config/renovate/README.md`              | This guide                                                                     |
+| `.config/renovate/default.jsonc`          | Custom Renovate preset                                                         |
+| `.config/renovate/examples/`              | Examples of how to extend the Renovate configuration in other repository       |
+| `.github/renovate.jsonc`                  | Renovate configuration used in this repository                                 |
 | `.github/workflows/renovate-validate.yml` | Workflow for validating the Renovate configuration when there's a change in it |
 
 > [!NOTE]
@@ -72,17 +72,17 @@ See [How to use the custom preset in your repository](#how-to-use-the-custom-pre
 
 1. Create a `.github/renovate.jsonc` file in your repository.
 2. Copy-paste the following into the new file:
-  
-    ```jsonc
-    // Renovate configuration for this repository
-    {
-      // Provides editor autocomplete and validation for Renovate config
-      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-      "extends": [
-        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"
-      ]
-    }
-    ```
+
+   ```jsonc
+   // Renovate configuration for this repository
+   {
+     // Provides editor autocomplete and validation for Renovate config
+     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+     "extends": [
+       "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
+     ],
+   }
+   ```
 
 ### Update an existing configuration
 
@@ -101,19 +101,19 @@ In some cases, the config has already been expanded to include presets (`extends
 1. Optional but **recommended**: Move/rename the config file to `.github/renovate.jsonc` (`jsonc` suffix to allow comments).
 2. Add `"github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0"` to `extends`. Your file should now have this structure:
 
-    ```jsonc
-    // Extends the custom preset defined in .config/renovate/default.jsonc
-    {
-      // Provides editor autocomplete and validation for Renovate config
-      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-      "extends": [
-        "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
-        "<some-other-preset>" // Any presets your repository already lists in extends
-      ],
-      "<some-option>": "<some-value>", // Any options your repository already set
-      "packageRules": ... // Any package rules your repository already set
-    }
-    ```
+   ```jsonc
+   // Extends the custom preset defined in .config/renovate/default.jsonc
+   {
+     // Provides editor autocomplete and validation for Renovate config
+     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+     "extends": [
+       "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
+       "<some-other-preset>" // Any presets your repository already lists in extends
+     ],
+     "<some-option>": "<some-value>", // Any options your repository already set
+     "packageRules": ... // Any package rules your repository already set
+   }
+   ```
 
 3. Remove configuration options from your previous setup if redundant or out of date.
 
