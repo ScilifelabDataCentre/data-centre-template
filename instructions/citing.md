@@ -1,10 +1,26 @@
 <!-- 
 Template for user-facing instructions regarding how to cite your service. 
+
+- info from data.scilifelab.se 
+- RRID + Zenodo DOI
+- link to development guidelines citing.md
+- exact format of how to cite service and software
 -->
 
 # How to cite [SERVICE NAME]
 
-In line with the principles of FAIR and Open Science, we encourage the reuse and recognition of material made available on [SERVICE NAME]. On this page, you will find information about how to cite the platform when reusing and referencing the content. Please note that the information on the platform is updated continuously, therefore it is important to refer to specific versions (or to provide access dates) within citations.
+In line with the principles of FAIR and Open Science, we encourage the reuse and recognition of material made available on [SERVICE NAME]. On this page, you will find information about how to cite [SERVICE NAME] when reusing and referencing the content, as well as the underlying code. Please note that the information on [SERVICE NAME] is updated continuously, therefore it is important to refer to specific versions (or to provide access dates) within citations.
+
+When citing [SERVICE NAME] or the underlying code, please follow the ["Citing Services and Code" guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/blob/main/citing_and_citability/citing.md#what-a-citation-must-include) on the SciLifeLab Data Centre's development-guidelines GitHub repository.
+
+## Metadata for [SERVICE NAME]
+
+| Element                                                         | Service                                                                                                     | Code                                                                                                                                |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Name                                                            | [SERVICE NAME]                                                                                           | [SOFTWARE NAME, E.G. REPOSITORY NAME]                                                                                                                   |
+| Contributors and organisation                                   | SciLifeLab Data Centre                                         | SciLifeLab Data Centre                                                                   |
+| Version                                                         | Find the version here: [version]. | Find the version here: [version] |
+| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [SERVICE RRID]                                                                   | **Zenodo DOI:** [SOFTWARE DOI]                                                                                                     |
 
 ## Research community
 
@@ -13,8 +29,6 @@ In this section, you’ll find instructions on how to cite the [SERVICE NAME] we
 ### Citing website content
 
 #### Research Resource Identifier for [SERVICE NAME]
-
-**RRID**: [SERVICE RRID]
 
 The Resource Identification Portal was created in support of the Resource Identification Initiative. It aims to promote the identification, discovery, and reuse of research resources. Research Resource Identifiers (RRIDs) are persistent and unique identifiers for referencing a research resource.
 
