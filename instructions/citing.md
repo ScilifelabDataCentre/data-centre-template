@@ -14,7 +14,7 @@ When citing {{SERVICE NAME}} or the underlying code, the format will depend on t
 
 The instructions in the sections below cover:
 
-- [Metadata for {{SERVICE NAME}}](#metadata-for-service-name) to include in the citations
+- [Metadata for {{SERVICE NAME}}](#metadata-for-{{service-name}}) to include in the citations
 - Full examples of how to cite...
   - ...the [website content](#citing-website-content)
   - ...the [underlying code](#citing-underlying-code)
