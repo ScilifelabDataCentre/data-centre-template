@@ -21,12 +21,12 @@ The instructions in the sections below cover:
 
 ## Metadata for {{SERVICE NAME}}
 
-| Element                                                         | Service                                           | Code                                               |
-| --------------------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------- |
-| Name                                                            | {{SERVICE NAME}}                                  | {{SOFTWARE NAME, E.G. REPOSITORY NAME}}            |
-| Contributors and organisation                                   | SciLifeLab Data Centre [^1]                       | SciLifeLab Data Centre                             |
+| Element                                                         | Service                                                | Code                                               |
+| --------------------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------- |
+| Name                                                            | {{SERVICE NAME}}                                       | {{SOFTWARE NAME, E.G. REPOSITORY NAME}}            |
+| Contributors and organisation                                   | SciLifeLab Data Centre [^1]                            | SciLifeLab Data Centre                             |
 | Version                                                         | {{INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION}} [^1] | {{INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION}} |
-| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [^2] {{SERVICE RRID}}                   | **Zenodo DOI:** {{SOFTWARE DOI}}                   |
+| Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [^2] {{SERVICE RRID}}                        | **Zenodo DOI:** {{SOFTWARE DOI}}                   |
 
 [^1]: If you are aiming to cite specific pages of {{SERVICE NAME}} (e.g. {{EXAMPLE}}), you may find that an author is mentioned and a date is given. In this case, you should include the appropriate date and author instead, but must still include the RRID. If information is given on how to cite something featured on a given page, then that citation should be used instead.
 
@@ -52,4 +52,4 @@ SciLifeLab Data Centre ({{YEAR}}). {{SOFTWARE NAME}} (Version {{VERSION NUMBER}}
 
 ## Journalists
 
-Journalists are welcome to reuse images, content, or other material from {{SERVICE NAME}} for articles, blogs, social media etc. ({{CONTENT LICENSE}}). Please refer to {{SERVICE NAME}} as {{SERVICE NAME}} and link to our webpage {{SERVICE URL}} when you use content from {{SERVICE NAME}}. You may also include our RRID [^2].
+Journalists are welcome to reuse images, content, or other material from {{SERVICE NAME}} for articles, blogs, social media etc. ({{CONTENT LICENSE}}). Please refer to {{SERVICE NAME}} as {{SERVICE NAME}} and link to our webpage {{SERVICE URL}} when you use the website content. You may also include our RRID [^2].
