@@ -10,7 +10,7 @@ Replace **every** {{...}} placeholder with your own value, including the ones in
 
 In line with the principles of FAIR and Open Science, we encourage the reuse and recognition of material made available on {{SERVICE NAME}}. On this page, you will find information about how to cite {{SERVICE NAME}} when reusing and referencing the content, as well as the underlying code. Please note that the information on {{SERVICE NAME}} is updated continuously, therefore it is important to refer to specific versions (or to provide access dates) within citations.
 
-When citing {{SERVICE NAME}} or the underlying code, please follow the ["Citing Services and Code" guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/blob/main/citing_and_citability/citing.md#what-a-citation-must-include) on the SciLifeLab Data Centre's development-guidelines GitHub repository. The format will depend on the style required by your target journal or publisher.
+When citing {{SERVICE NAME}} or the underlying code, the format will depend on the style required by your target journal or publisher.
 
 The instructions in the sections below cover:
 
