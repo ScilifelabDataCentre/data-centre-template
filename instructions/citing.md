@@ -14,10 +14,10 @@ When citing {{SERVICE NAME}} or the underlying code, please follow the ["Citing 
 
 ## Metadata for {{SERVICE NAME}}
 
-| Element                                                         | Service                                              | Code                                             |
-| --------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------ |
+| Element                                                         | Service                                                | Code                                               |
+| --------------------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------- |
 | Name                                                            | {{SERVICE NAME}}                                       | {{SOFTWARE NAME, E.G. REPOSITORY NAME}}            |
-| Contributors and organisation                                   | SciLifeLab Data Centre                               | SciLifeLab Data Centre                           |
+| Contributors and organisation                                   | SciLifeLab Data Centre                                 | SciLifeLab Data Centre                             |
 | Version                                                         | {{INSTRUCTIONS ON WHERE TO FIND SERVICE VERSION}} [^1] | {{INSTRUCTIONS ON WHERE TO FIND SOFTWARE VERSION}} |
 | Globally unique, machine-actionable persistent identifier (PID) | **RRID:** [^2] {{SERVICE RRID}}                        | **Zenodo DOI:** {{SOFTWARE DOI}}                   |
 
