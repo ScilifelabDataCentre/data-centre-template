@@ -232,4 +232,4 @@ overrides:
       - "**/.config/renovate/**"
     ignoreRegExpList:
       - "/github>ScilifelabDataCentre\\/data-centre-template\\/\\/\\.config\\/renovate\\/default\\.jsonc#[^#\\s]+/" # cspell:disable-line # Ignore path to the preset
-      - "ScilifelabDataCentre\\/development-guidelines"
+      - "ScilifelabDataCentre\\/development-guidelines" # cspell:disable-line
