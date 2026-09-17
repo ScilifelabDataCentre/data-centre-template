@@ -3,6 +3,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.1"
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.2"
+  ],
+  "customManagers": [
+    // Custom manager to track changes in the upstream ADR template
+    // 1. Look for file adr-template.md
+    // 2. In that file, search for matchStrings pattern
+    // 3. If found, extract currentDigest and treat it as a fake package
+    // 4. currentValueTemplate is set to track main branch
+    // 5. Renovate asks the upstream repo what commit main points to
+    // 6. If main's latest commit differs from the currentDigest, Renovate treat this an available update
+    // 7. Renovate edits adr-template.md, replacing the old SHA with the new one, and opens a PR
+    // 8. Up to us to decide if it's worth updating our template or not
+    {
+      "description": "Track upstream ADR template changes",
+      "customType": "regex",
+      "fileMatch": ["^adr-template\\.md$"],
+      "matchStrings": [
+        "architecture-decision-record/blob/(?<currentDigest>[a-f0-9]{40})/"
+      ],
+      "depNameTemplate": "architecture-decision-record/architecture-decision-record",
+      "packageNameTemplate": "https://github.com/architecture-decision-record/architecture-decision-record",
+      "currentValueTemplate": "main",
+      "datasourceTemplate": "git-refs"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Label ADR template tracking updates",
+      "matchDepNames": ["architecture-decision-record/architecture-decision-record"],
+      "addLabels": ["adr-template"]
+    }
   ]
 }
