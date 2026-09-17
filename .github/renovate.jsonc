@@ -22,9 +22,9 @@
       "matchStrings": [
         "architecture-decision-record/blob/(?<currentDigest>[a-f0-9]{40})/"
       ],
+      "currentValueTemplate": "main",
       "depNameTemplate": "architecture-decision-record/architecture-decision-record",
       "packageNameTemplate": "https://github.com/architecture-decision-record/architecture-decision-record",
-      "currentValueTemplate": "main",
       "datasourceTemplate": "git-refs"
     }
   ],
