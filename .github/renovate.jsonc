@@ -18,7 +18,7 @@
       "description": "Track development-guidelines releases",
       "customType": "regex",
       "managerFilePatterns": ["/^\\.development-guidelines-version$/"],
-      "matchStrings": ["(?<currentValue>v[0-9.]+)"],
+      "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
       "depNameTemplate": "ScilifelabDataCentre/development-guidelines",
       "packageNameTemplate": "https://github.com/ScilifelabDataCentre/development-guidelines",
       "datasourceTemplate": "github-tags",
