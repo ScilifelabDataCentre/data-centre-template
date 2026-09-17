@@ -16,7 +16,7 @@
     // 7. Renovate edits adr-template.md, replacing the old SHA with the new one, and opens a PR
     // 8. Up to us to decide if it's worth updating our template or not
     {
-      "description": "Track upstream ADR template changes",
+      "description": "Track development-guidelines releases",
       "customType": "regex",
       "managerFilePatterns": ["/^adr-template\\.md$/"],
       "matchStrings": [
