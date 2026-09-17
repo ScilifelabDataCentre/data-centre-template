@@ -3,7 +3,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json", // Provides editor autocomplete and validation for Renovate config
   "extends": [
-    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.2"
+    "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.2",
   ],
   "customManagers": [
     // Custom manager to track changes in the upstream ADR template
@@ -20,19 +20,21 @@
       "customType": "regex",
       "fileMatch": ["^adr-template\\.md$"],
       "matchStrings": [
-        "architecture-decision-record/blob/(?<currentDigest>[a-f0-9]{40})/"
+        "architecture-decision-record/blob/(?<currentDigest>[a-f0-9]{40})/",
       ],
       "currentValueTemplate": "main",
       "depNameTemplate": "architecture-decision-record/architecture-decision-record",
       "packageNameTemplate": "https://github.com/architecture-decision-record/architecture-decision-record",
-      "datasourceTemplate": "git-refs"
-    }
+      "datasourceTemplate": "git-refs",
+    },
   ],
   "packageRules": [
     {
       "description": "Label ADR template tracking updates",
-      "matchDepNames": ["architecture-decision-record/architecture-decision-record"],
-      "addLabels": ["adr-template"]
-    }
-  ]
+      "matchDepNames": [
+        "architecture-decision-record/architecture-decision-record",
+      ],
+      "addLabels": ["adr-template"],
+    },
+  ],
 }
