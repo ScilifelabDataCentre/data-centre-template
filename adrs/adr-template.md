@@ -1,5 +1,8 @@
 <!--
-This template is copied from the linked template in the development-guidelines repository. Link to guidelines: https://github.com/ScilifelabDataCentre/development-guidelines/blob/v0.0.1/adrs/README.md -->
+ADR (Architecture Decision Record) template
+
+This template is copied from the linked template in the development-guidelines repository. Link to guidelines: https://github.com/ScilifelabDataCentre/development-guidelines/blob/v0.0.1/adrs/README.md 
+-->
 
 # Title
 
