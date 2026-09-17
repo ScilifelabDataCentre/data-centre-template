@@ -18,7 +18,7 @@
     {
       "description": "Track upstream ADR template changes",
       "customType": "regex",
-      "fileMatch": ["^adr-template\\.md$"],
+      "managerFilePatterns": ["/^adr-template\\.md$/"],
       "matchStrings": [
         "architecture-decision-record/blob/(?<currentDigest>[a-f0-9]{40})/",
       ],
