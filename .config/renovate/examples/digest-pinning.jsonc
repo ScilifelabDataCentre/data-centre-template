@@ -6,7 +6,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>ScilifelabDataCentre/data-centre-template//.config/renovate/default.jsonc#v1.1.0",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
   ],
   "packageRules": [
     // Grouping of digest updates for GitHub Actions
@@ -15,7 +15,7 @@
       "description": "Group digest updates for GitHub Actions (minor and patch grouped by preset)",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["digest", "pinDigest"],
-      "groupName": "GitHub Actions (digest)"
-    }
-  ]
+      "groupName": "GitHub Actions (digest)",
+    },
+  ],
 }
