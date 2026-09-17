@@ -18,23 +18,23 @@
     {
       "description": "Track development-guidelines releases",
       "customType": "regex",
-      "managerFilePatterns": ["/^adr-template\\.md$/"],
+      "managerFilePatterns": ["/^\\.development-guidelines-version$/"],
       "matchStrings": [
-        "architecture-decision-record/blob/(?<currentDigest>[a-f0-9]{40})/",
+        "(?<currentValue>v[0-9.]+)",
       ],
-      "currentValueTemplate": "main",
-      "depNameTemplate": "architecture-decision-record/architecture-decision-record",
-      "packageNameTemplate": "https://github.com/architecture-decision-record/architecture-decision-record",
-      "datasourceTemplate": "git-refs",
+      "depNameTemplate": "ScilifelabDataCentre/development-guidelines",
+      "packageNameTemplate": "https://github.com/ScilifelabDataCentre/development-guidelines",      
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver",
     },
   ],
   "packageRules": [
     {
-      "description": "Label ADR template tracking updates",
+      "description": "Label development-guidelines tracking updates",
       "matchDepNames": [
-        "architecture-decision-record/architecture-decision-record",
+        "ScilifelabDataCentre/development-guidelines",
       ],
-      "addLabels": ["adr-template"],
+      "addLabels": ["dev-guidelines"],
     },
   ],
 }
