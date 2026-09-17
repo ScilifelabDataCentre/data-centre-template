@@ -19,11 +19,9 @@
       "description": "Track development-guidelines releases",
       "customType": "regex",
       "managerFilePatterns": ["/^\\.development-guidelines-version$/"],
-      "matchStrings": [
-        "(?<currentValue>v[0-9.]+)",
-      ],
+      "matchStrings": ["(?<currentValue>v[0-9.]+)"],
       "depNameTemplate": "ScilifelabDataCentre/development-guidelines",
-      "packageNameTemplate": "https://github.com/ScilifelabDataCentre/development-guidelines",      
+      "packageNameTemplate": "https://github.com/ScilifelabDataCentre/development-guidelines",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "semver",
     },
@@ -31,9 +29,7 @@
   "packageRules": [
     {
       "description": "Label development-guidelines tracking updates",
-      "matchDepNames": [
-        "ScilifelabDataCentre/development-guidelines",
-      ],
+      "matchDepNames": ["ScilifelabDataCentre/development-guidelines"],
       "addLabels": ["dev-guidelines"],
     },
   ],
