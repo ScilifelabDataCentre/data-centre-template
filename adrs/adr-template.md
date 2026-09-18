@@ -1,15 +1,15 @@
 <!--
 ADR (Architecture Decision Record) template
 
-This template is copied from the linked template in the development-guidelines repository. 
-Link to guidelines: https://github.com/ScilifelabDataCentre/development-guidelines/blob/v0.0.1/adrs/README.md 
+This template is copied from the linked template in the development-guidelines repository.
+Link to guidelines: https://github.com/ScilifelabDataCentre/development-guidelines/blob/v0.0.1/adrs/README.md
 -->
 
-# {{ Short Decision Title }}
+# {{ SHORT_DECISION_TITLE }}
 
 ## Status
 
-What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?
+{{ STATUS }} <!-- One of: Proposed, Accepted, Rejected, Deprecated, Superseded -->
 
 ## Context
 
