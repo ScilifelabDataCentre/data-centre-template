@@ -20,4 +20,12 @@ when you have a new decision to record in the ADR
 
 # Architecture Decision Records (ADRs)
 
-This directory defines a copy-pastable template for architecture decision records (ADRs), aligned with our [development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs).
+This directory defines a copy-pastable template for architecture decision records (ADRs), aligned with the SciLifeLab Data Centre [development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs).
+
+## How to add an ADR
+
+1. Copy the template
+2. Next number
+3. Fill
+4. PR
+
