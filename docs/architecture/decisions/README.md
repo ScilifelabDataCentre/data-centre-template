@@ -28,4 +28,3 @@ This directory defines a copy-pastable template for architecture decision record
 2. Next number
 3. Fill
 4. PR
-
