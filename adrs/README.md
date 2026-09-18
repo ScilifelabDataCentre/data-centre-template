@@ -17,3 +17,7 @@ when you have a new decision to record in the ADR
 2. fill it in
 3. create a pr
 -->
+# Architecture Decision Records (ADRs)
+
+This directory defines a copy-pastable template for architecture decision records (ADRs), compliant with our [development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs).
+
