@@ -12,7 +12,7 @@ Accepted <!-- One of: Accepted, Deprecated, Superseded -->
 The goal of this repository is to:
 
 - Implement what the `development-guidelines` repository specifies.
-- Provide a template for new repositories and copy-pasteable template files / configurations for existing repositories, to simplify day-to-day work for the SciLifeLab Data Centre teams. <!-- cspell:ignore pasteable -->
+- Provide a template for new repositories and copy-pasteable template files / configurations for existing repositories, to simplify day-to-day work for the SciLifeLab Data Centre teams.
 
 This decision was made while implementing the ADR guidelines: The guidelines link to an external template in the "How to use ADRs" section. Any changes to the external template or our guidelines can make this repository unaligned with our own development guidelines since keeping them aligned currently relies on someone remembering to look. This is, of course, not specific to the ADRs. Repositories created from this template inherit whatever state it's in, so this drift spreads across our repositories.
 

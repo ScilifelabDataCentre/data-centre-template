@@ -1,6 +1,6 @@
 # Architecture Decision Records (ADRs)
 
-This directory contains a copy-pasteable template for architecture decision records (ADRs), aligned with the SciLifeLab Data Centre [development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs). <!-- cspell:ignore pasteable -->
+This directory contains a copy-pasteable template for architecture decision records (ADRs), aligned with the SciLifeLab Data Centre [development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs).
 
 > [!IMPORTANT]
 > Once it's merged, an ADR is not rewritten. Only the status of an ADR changes. See [Changing the status of an accepted ADR](#changing-the-status-of-an-accepted-adr).
