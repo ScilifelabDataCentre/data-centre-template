@@ -3,7 +3,7 @@
 This directory contains a copy-pastable template for architecture decision records (ADRs), aligned with the SciLifeLab Data Centre [development guidelines](https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs).
 
 > [!IMPORTANT]
-> Once accepted and merged, an ADR is not rewritten. Only the status of an ADR changes. See [Changing the status of an ADR](#changing-the-status-of-an-adr).
+> Once it's merged, an ADR is not rewritten. Only the status of an ADR changes. See [Changing the status of an accepted ADR](#changing-the-status-of-an-accepted-adr).
 
 ## How to add an ADR
 
@@ -12,11 +12,12 @@ This directory contains a copy-pastable template for architecture decision recor
 3. Replace the placeholders with information regarding your decision. Read the comments in the file for hints and instructions on what the sections should contain.
 4. Push to your remote branch and open a PR to your default branch.
 
-## Changing the status of an ADR
+## Changing the status of an accepted ADR
 
-| From     | To         | When | Note                                                          |
-| -------- | ---------- | ---- | ------------------------------------------------------------- |
-| Proposed | Accepted   | ...  | ...                                                           |
-| Proposed | Rejected   | ...  | ...                                                           |
-| Accepted | Deprecated | ...  | ...                                                           |
-| Accepted | Superseded | ...  | Always write the new ADR first, when point the old ADR at it. |
+An accepted ADR can change status in two ways:
+
+- **Deprecated** - When a decision no longer applies and nothing replaces it.
+- **Superseded** - When there's a new decision taking its place.
+
+    > [!NOTE]
+    > Always write the new ADR first, then point the old ADR at it (see template comments for instructions).

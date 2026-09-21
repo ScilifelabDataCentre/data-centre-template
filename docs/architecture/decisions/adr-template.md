@@ -16,7 +16,7 @@ Date: {{ DATE }} <!-- YYYY-MM-DD -->
 
 ## Status
 
-{{ STATUS }} <!-- One of: Proposed, Accepted, Rejected, Deprecated, Superseded -->
+{{ STATUS }} <!-- One of: Accepted, Deprecated, Superseded -->
 <!-- If Superseded, add: Superseded by {{ SUPERSEDING_ADR_NUMBER }} -->
 
 ## Context
