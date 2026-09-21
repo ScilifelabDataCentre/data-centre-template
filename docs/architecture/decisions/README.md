@@ -14,10 +14,9 @@ This directory contains a copy-pastable template for architecture decision recor
 
 ## Changing the status of an ADR
 
-| From | To | When | Note |
-| --- | --- | --- | --- |
-| Proposed | Accepted | ...  | ... |
-| Proposed | Rejected | ... | ... |
-| Accepted | Deprecated | ... | ... |
-| Accepted | Superseded | ... | Always write the new ADR first, when point the old ADR at it. |
-
+| From     | To         | When | Note                                                          |
+| -------- | ---------- | ---- | ------------------------------------------------------------- |
+| Proposed | Accepted   | ...  | ...                                                           |
+| Proposed | Rejected   | ...  | ...                                                           |
+| Accepted | Deprecated | ...  | ...                                                           |
+| Accepted | Superseded | ...  | Always write the new ADR first, when point the old ADR at it. |
