@@ -5,7 +5,7 @@ This template is copied from the linked template in the development-guidelines r
 Link to guidelines (latest version): https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs
 
 Name the file NNNN-short-title.md, where NNNN is the next number in line.
-    Example: '0001-some-decision.md exists' -> next ADR file becomes '0002-another-decision.md'.
+    Example: '0001-some-decision.md' exists -> next ADR file becomes '0002-another-decision.md'.
 Use the unpadded number in the title.
     Example: '0001-some-decision.md' -> "# 1. Some decision"
 -->
