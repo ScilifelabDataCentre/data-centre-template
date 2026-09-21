@@ -3,7 +3,7 @@
 ![Status: Work in Progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22706806-blue)](https://doi.org/10.5281/zenodo.22706806)
 
-This repository provides example configurations for a set of different tools. When creating a new repository with this as a template, remember to update the information to fit **your** repository, and delete any files that only applies to the data-centre-template repository. Each directory / file contains information on how to adopt a template into an already existing repository.
+This repository provides example configurations for a set of different tools. When creating a new repository with this as a template, remember to update the information to fit **your** repository, and delete any files that only apply to the data-centre-template repository. Each directory / file contains information on how to adopt a template into an already existing repository.
 
 The end goal is for this repository to be populated with examples implementing guidelines detailed in the [SciLifeLab Data Centre's development guidelines repository](https://github.com/ScilifelabDataCentre/development-guidelines).
 
@@ -19,7 +19,7 @@ The end goal is for this repository to be populated with examples implementing g
 ├── .config/        # Tool config, one subdirectory per tool
 │   ├── cspell/
 │   └── renovate/
-├── docs/architecture/decisions/     # Architecture Decision Record (ADRs) template
+├── docs/architecture/decisions/     # Architecture Decision Record (ADR) template
 ├── .development-guidelines-version  # Version of the development-guidelines repository that this template aligns with
 ├── CITATION.cff            # This repo's CITATION.cff file
 ├── CITATION.template.cff   # Template CITATION.cff file
