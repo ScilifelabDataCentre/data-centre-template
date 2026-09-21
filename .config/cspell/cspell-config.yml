@@ -206,12 +206,12 @@ overrides:
   # -------------------------------------------------------------------------
   # CITATION files
   # -------------------------------------------------------------------------
-  - filename: 
+  - filename:
       - "**/CITATION.cff"
       - "**/CITATION.template.cff"
     words:
       - orcid # cspell:disable-line
-      - zenodo # cspell:disable-line  
+      - zenodo # cspell:disable-line
   # -------------------------------------------------------------------------
   # GitHub Actions
   # -------------------------------------------------------------------------
@@ -228,7 +228,7 @@ overrides:
   # Renovate related files
   # -------------------------------------------------------------------------
   - filename:
-    - "**/.github/renovate.jsonc"
-    - "**/.config/renovate/**"
+      - "**/.github/renovate.jsonc"
+      - "**/.config/renovate/**"
     ignoreRegExpList:
       - "/github>ScilifelabDataCentre\\/data-centre-template\\/\\/\\.config\\/renovate\\/default\\.jsonc#[^#\\s]+/" # cspell:disable-line # Ignore path to the preset

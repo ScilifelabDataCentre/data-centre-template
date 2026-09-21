@@ -6,9 +6,9 @@ name: Validate Renovate config
 on:
   pull_request:
     paths:
-      - '.github/workflows/renovate-validate.yml'
-      - '.config/renovate/**'
-      - '.github/renovate.jsonc' # Replace with your own config path, incl. in run below
+      - ".github/workflows/renovate-validate.yml"
+      - ".config/renovate/**"
+      - ".github/renovate.jsonc" # Replace with your own config path, incl. in run below
 
 permissions:
   contents: read
@@ -16,12 +16,12 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
           persist-credentials: false # We don't need the token in subsequent steps
-      
+
       - name: Setup Node.js 24
         uses: actions/setup-node@v7
         with:
