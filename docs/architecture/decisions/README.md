@@ -18,6 +18,5 @@ An accepted ADR can change status in two ways:
 
 - **Deprecated** - When a decision no longer applies and nothing replaces it.
 - **Superseded** - When there's a new decision taking its place.
-
     > [!NOTE]
     > Always write the new ADR first, then point the old ADR at it (see template comments for instructions).
