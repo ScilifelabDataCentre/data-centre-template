@@ -25,7 +25,7 @@ Record the version of the development-guidelines repository in [`.development-gu
 ## Consequences
 
 - **Pros**
-  - We automatically find our when there's a new guidelines version available.
+  - We automatically find out when there's a new guidelines version available.
   - The pinned version records which guidelines version this repository implements.
 - **Cons**
   - The Renovate PR only bumps the `.development-guidelines-version` file. Someone still has to read what changed and apply it to the template(s). We should not be merging the Renovate PRs until this repository aligns with the new development-guidelines version.

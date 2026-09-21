@@ -2,7 +2,7 @@
 ADR (Architecture Decision Record) template
 
 This template is copied from the linked template in the development-guidelines repository.
-Link to guidelines: https://github.com/ScilifelabDataCentre/development-guidelines/blob/v0.0.1/adrs/README.md
+Link to guidelines (latest version): https://github.com/ScilifelabDataCentre/development-guidelines/tree/main/adrs
 
 Name the file NNNN-short-title.md, where NNNN is the next number in line.
     Example: '0001-some-decision.md exists' -> next ADR file becomes '0002-another-decision.md'.
