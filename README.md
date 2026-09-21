@@ -19,7 +19,8 @@ The end goal is for this repository to be populated with examples implementing g
 ├── .config/        # Tool config, one subdirectory per tool
 │   ├── cspell/
 │   └── renovate/
-├── docs/architecture/decisions/    # Architecture Decision Record (ADRs) template
+├── docs/architecture/decisions/     # Architecture Decision Record (ADRs) template
+├── .development-guidelines-version  # Version of the development-guidelines repository that this template aligns with
 ├── CITATION.cff            # This repo's CITATION.cff file
 ├── CITATION.template.cff   # Template CITATION.cff file
 └── README.md
