@@ -17,6 +17,4 @@ This directory contains a copy-pastable template for architecture decision recor
 An accepted ADR can change status in two ways:
 
 - **Deprecated** - When a decision no longer applies and nothing replaces it.
-- **Superseded** - When there's a new decision taking its place.
-    > [!NOTE]
-    > Always write the new ADR first, then point the old ADR at it (see template comments for instructions).
+- **Superseded** - When there's a new decision taking its place. _Always write the new ADR first_, then point the old ADR at it (see template comments for instructions).
