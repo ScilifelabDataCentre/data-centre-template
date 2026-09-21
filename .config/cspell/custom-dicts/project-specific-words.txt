@@ -21,6 +21,7 @@ MSBFS
 nerdctl
 Pandoc
 pandoc
+pasteable
 Pinga
 prek
 RACI
