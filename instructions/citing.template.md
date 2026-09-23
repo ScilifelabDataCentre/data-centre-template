@@ -1,5 +1,5 @@
 <!--
-Template for user-facing instructions regarding how to cite your service. 
+Template for user-facing instructions regarding how to cite your service.
 
 See the root README section "Repository contents" for a link to the related development guidelines.
 
