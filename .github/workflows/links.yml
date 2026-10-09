@@ -1,0 +1,89 @@
+# Lychee link checker
+# Goes through all links in the repository and verifies that they work.
+#
+# On PR:
+# - Fail action, nothing else
+# On manual or scheduled run:
+# - Fail action and upload results to repo issue
+#
+# Link: https://github.com/lycheeverse/lychee-action
+---
+name: Lychee Link Checker
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *" # Run once a day at midnight
+
+# Variables - keep them synced
+env:
+  OUT_DIR: ./lychee/
+  OUT_FILE: ./lychee/out.md
+  LABELS: "lychee,links"
+
+jobs:
+  # Job 1: Check links
+  link-checker:
+    runs-on: ubuntu-24.04
+
+    # Explicit permission to checkout repo
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Run Lychee link checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          output: ${{ env.OUT_FILE }}
+
+      # Report needed for next job
+      # But not when run on PR
+      - name: Upload Report
+        # Tell GitHub to run steps even if an earlier step failed
+        if: ${{ !cancelled() && github.event_name != 'pull_request' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: lychee-report
+          path: ${{ env.OUT_FILE }}
+
+  # Job 2: Upload results to issue
+  update-issue:
+    # Only upload to issue if scheduled or manual run
+    # And even if previous failed
+    if: ${{ !cancelled() && github.event_name != 'pull_request' }}
+
+    runs-on: ubuntu-24.04
+
+    permissions:
+      issues: write
+
+    # Needs the previous step
+    needs: link-checker
+
+    steps:
+      # Get report from job 1
+      - name: Download report
+        uses: actions/download-artifact@v8
+        with:
+          name: lychee-report
+          path: ${{ env.OUT_DIR }}
+
+      - name: Check if there's an existing issue
+        id: last-issue
+        uses: micalevisk/last-issue-action@v2
+        with:
+          state: open
+          labels: ${{ env.LABELS }}
+
+      - name: Create Issue From File
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Lychee link check results
+          content-filepath: ${{ env.OUT_FILE }}
+          issue-number: ${{ steps.last-issue.outputs.issue-number }}
+          labels: ${{ env.LABELS }}
