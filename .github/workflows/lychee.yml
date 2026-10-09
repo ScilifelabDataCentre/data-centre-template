@@ -1,12 +1,20 @@
 # Lychee link checker
 # Goes through all links in the repository and verifies that they work.
+# Uses lychee-action: https://github.com/lycheeverse/lychee-action
+# Why? See https://github.com/ScilifelabDataCentre/data-centre-template/blob/main/docs/architecture/decisions/0002-use-lychee-to-check-links.md
 #
+# How to use this in your repo:
+# 1. Copy-paste this file into your repository: .github/workflows/lychee.yml
+# 2. Optional: Create a '.lycheeignore' file in your repository root. 
+#   - Add urls that the workflow should ignore.
+#   - See https://github.com/lycheeverse/lychee-action#excluding-links-from-getting-checked
+# 3. Push to your remote branch and open a PR. 
+#   - No issue should be created. Issue only created during manual or scheduled run after merge of PR.
+# 
 # On PR:
-# - Fail action, nothing else
+# - Fail action if broken links, nothing else
 # On manual or scheduled run:
-# - Fail action and upload results to repo issue
-#
-# Link: https://github.com/lycheeverse/lychee-action
+# - Fail action if broken links and upload results to repo issue (issues must be enabled in repo)
 ---
 name: Lychee Link Checker
 
@@ -14,7 +22,7 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" # Run once a day at midnight
+    - cron: "0 0 * * *" # Run once a day at midnight UTC
 
 # Variables - keep them synced
 env:
