@@ -45,26 +45,30 @@ Even if we chose the most optimal link checker, external links can break without
 
 {{ CONSEQUENCES }} <!-- What becomes easier or more difficult to do because of this change? -->
 
-pros:
+### Pros
 
-- broken links caught before merge
-- link rot gets tracked
+    - Broken links are caught before merge
+    - Link rot gets tracked: Pages get moved, renamed or deleted. Whole sites disappear.
 
-cons:
+### Cons
 
-- PRs can fail on external outages
-- existing repos may fail on their first run
-- don't want lychee.toml or .lycheeignore in root really but the alternative here is to configure a different working directory in the workflow and we don't want to over complicate
-- copied worfklows won't get template updates, but they can configure this with renovate
+    - PRs can fail on external outages that are out of our control (true for any tool)
+    - Repositories implementing this will likely get a failing run initially (anticipated)
 
-neutral:
+### Additional information
 
-- there's an open issue
+- There will always be an open issue with the latest link checker results
+- We will need to have `lychee.toml` in the root, which is not ideal since we want to keep the root as clean as possible. It is possible to configure to a different directory, but that would potentially complicate the rest of the tool flow and configuration.
+- If and then this workflow is copied to a different repository, they will not get updates to the template. They can, however, configure Renovate to track new releases of this repository. An example of this can be found in [this repository's Renovate configuration](../../../.github/renovate.jsonc), together with the [`.development-guidelines-version`](../../../.development-guidelines-version) in the repository root.
 
 <!-- Optional section.
 Uncomment if relevant for decision and fill with sources.
 
+-->
+
 ## References
 
-{{ REFERENCES }}
--->
+https://github.com/lycheeverse
+https://github.com/lycheeverse/lychee
+https://github.com/lycheeverse/lychee-action
+https://lychee.cli.rs/guides/config/
