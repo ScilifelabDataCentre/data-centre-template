@@ -19,19 +19,27 @@ Even if we chose the most optimal link checker, external links can break without
 
 <!-- What is the change that we're proposing and/or doing? -->
 
-- Use lychee through lychee-action, in a template workflow https://github.com/lycheeverse/lychee
-  - fast, written in rust
-  - can check a variety of different formats and both internal and external links, plut anchors
-  - official github action maintained by the same project
-  - can be run locally too before pushing
-  - configurable with e.g. lychee.toml -- excludes, accepted status codes, timeouts, retries
-  - cache can be enabled
-  - open source, dual license MIT / Apache-2.0 which means no restrictions to use
-  - actively maintained by lycheeverse organisation, latest release date:
-- behaviour: on PRs fail on broken links, on scheduled and manual runs fail and update a single issue
-- ignore false positives with lychee.toml -- - could use .lycheeignore but we also want to be able to set more configs and lychee.toml both allows ignoring urls and configuring lychee args.
+### Tool
+
+- Use [`lychee`](https://github.com/lycheeverse/lychee) through the [`lychee-action`](https://github.com/lycheeverse/lychee-action):
+  - Open Source, dual license MIT / Apache-2.0 which means there are no restrictions for us to use it
+  - Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as `lychee` itself). Last release 2026-07-09 (3 months prior to writing this ADR).
+  - Fast - written in Rust
+  - Can check links in a variety of different formats, and both internal and external links
+  - Configurable via e.g. the `lychee.toml`: Can exclude url patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
+  - Allows caching of results
+  - Can be run locally before pushing
+
+### Behavior
+
+- On opened or updated PR: Fail when there are broken links
+- On scheduled and manual runs: Fail and update a single issue in the repository
+- Ignore false positives with [`lychee.toml`](../../../lychee.toml)
+  - We could also use `.lycheeignore` but we want to be able to set more configuration options, and `lychee.toml` allows both ignoring patterns and configuring args.
+
+### Alternatives that were not chosen
+
 - alternatives and why not chosen
-- use badge to show status
 
 ## Consequences
 
