@@ -65,7 +65,7 @@ There are a number of different link checkers. We can not look into absolutely a
       - Schedules runs open/update an issue when it finds broken links
 
 ### Cons
-    
+
     - **General**:
       - PRs can fail on external outages that are out of our control (true for any tool)
       - Repositories implementing this will likely get a failing run initially (anticipated)
@@ -73,7 +73,6 @@ There are a number of different link checkers. We can not look into absolutely a
       - If we only want to check files changed in a PR, we have to configure this ourselves.
       - We can't add any inline-ignores like markdown-link-check allows.
       - Opening an issue needs a separate third-party action.
-
 
 ### Additional information
 
