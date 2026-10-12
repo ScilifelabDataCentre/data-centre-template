@@ -11,7 +11,7 @@ Accepted <!-- One of: Accepted, Deprecated, Superseded -->
 
 <!-- What is the issue that we're seeing that is motivating this decision or change? -->
 
-It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we therefore rely on others finding and reporting the broken links. Currently, the development-guidelines repository has a link checker (markdown-link-check) but fails frequently and has been quite slow. It did sometimes pass on reruns, but not always, and it started to feel like we needed something more conistent and reliable, that we could also introduce as a template workflow in this reposity that others could copy paste.
+It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we rely on others finding and reporting the broken links. Currently, the development-guidelines repository has a link checker ([`markdown-link-check`](https://github.com/tcort/github-action-markdown-link-check)) but fails frequently and has been quite slow. It did sometimes pass on reruns, but not always. This sparked the urge to look into a potential tool switch, that we could also introduce as a template workflow in this reposity that others could copy paste.
 
 Even if we chose the most optimal link checker, external links can break without any change to our repository. Therefore it's not enough to run the check only when there's a pull request (PR) opened. Also, while the usual approach should be to fix broken links when found in PRs, there will be cases where we need to merge without a passing link checker. In this case, we risk loosing the information about the broken links and get the same issue on the next open PR.
 
@@ -39,7 +39,14 @@ Even if we chose the most optimal link checker, external links can break without
 
 ### Alternatives that were not chosen
 
-- alternatives and why not chosen
+There are a number of different link checkers. We can not look into absolutely all of them. In this case, the choice stood between switching to Lychee or Linkspector, or to stay with (and improve / reconfigure) markdown-link-check. The points listed below are the main reasons why they were decided against.
+
+- `markdown-link-check`
+  - Only checks markdown files - we might need to check links in other file types.
+  - Is not maintained as actively, and is a fork of an unmaintained action.
+- `Linkspector`
+  - Is built for PR review, not scheduled checks.
+  - Has narrower file support.
 
 ## Consequences
 
@@ -47,13 +54,26 @@ Even if we chose the most optimal link checker, external links can break without
 
 ### Pros
 
-    - Broken links are caught before merge
-    - Link rot gets tracked: Pages get moved, renamed or deleted. Whole sites disappear.
+    - **General**:
+      - Broken links are caught before merge
+      - Link rot gets tracked - We won't miss pages getting moved, renamed or deleted, or when whole sites disappear.'
+    - `lychee-action`:
+      - We catch link issues in a variety of different file types
+      - We get a detailed job summary by default
+      - Fast: Approximately 1 minute for 576 links (according to `lychee-action`'s own docs)
+      - We can enable caching if needed
+      - Schedules runs open/update an issue when it finds broken links
 
 ### Cons
+    
+    - **General**:
+      - PRs can fail on external outages that are out of our control (true for any tool)
+      - Repositories implementing this will likely get a failing run initially (anticipated)
+    - `lychee-action`:
+      - If we only want to check files changed in a PR, we have to configure this ourselves.
+      - We can't add any inline-ignores like markdown-link-check allows.
+      - Opening an issue needs a separate third-party action.
 
-    - PRs can fail on external outages that are out of our control (true for any tool)
-    - Repositories implementing this will likely get a failing run initially (anticipated)
 
 ### Additional information
 
