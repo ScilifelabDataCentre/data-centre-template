@@ -30,12 +30,12 @@ Even if we chose the most optimal link checker, external links can break without
   - Allows caching of results
   - Can be run locally before pushing
 
-### Behavior
+### Behaviour
 
 - On opened or updated PR: Fail when there are broken links
 - On scheduled and manual runs: Fail and update a single issue in the repository
 - Ignore false positives with [`lychee.toml`](../../../lychee.toml)
-  - We could also use `.lycheeignore` but we want to be able to set more configuration options, and `lychee.toml` allows both ignoring patterns and configuring args.
+  - We could also use `.lycheeignore` but we want to be able to set more configuration options, and `lychee.toml` allows both ignoring patterns and configuring args. <!-- cspell:ignore lycheeignore -->
 
 ### Alternatives that were not chosen
 

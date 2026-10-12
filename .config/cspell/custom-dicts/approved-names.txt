@@ -11,6 +11,8 @@
 # One name per line, in alphabetical order.
 # ---
 Aishling
+Linkspector
+lycheeverse
 Odén
 SciLifeLab
 Österbo
