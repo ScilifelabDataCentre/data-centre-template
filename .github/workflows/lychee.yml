@@ -47,6 +47,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
+          args: --config .config/lychee/lychee-config.toml .
           output: ${{ env.OUT_FILE }}
 
       # Report needed for next job
