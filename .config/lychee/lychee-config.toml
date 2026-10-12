@@ -1,0 +1,27 @@
+# Configuration for the lychee-action
+
+#############################  General config  #############################
+
+# Exclude URLs and mail addresses from checking. The values are treated as regular expressions
+exclude = [
+    
+]
+
+# Enable the checking of fragments in links, both anchor fragments and text fragments.
+# See <https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment/Text_fragments>
+# https://lychee.cli.rs/guides/cli/#--include-fragments
+include_fragments = "anchor-only"
+
+# Don't show interactive progress bar while checking links.
+# https://lychee.cli.rs/guides/cli/#-n---no-progress
+no_progress = true
+
+# Verbose program output
+# Accepts log level: "error", "warn", "info", "debug", "trace"
+# https://lychee.cli.rs/guides/cli/#-v---verbose
+verbose = "info"
+
+#############################  Host specific config  #############################
+
+# Customize hosts here
+# See https://github.com/lycheeverse/lychee/blob/master/lychee.example.toml#L230
