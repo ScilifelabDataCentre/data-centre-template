@@ -54,25 +54,25 @@ There are a number of different link checkers. We can not look into absolutely a
 
 ### Pros
 
-    - **General**:
-      - Broken links are caught before merge
-      - Link rot gets tracked - We won't miss pages getting moved, renamed or deleted, or when whole sites disappear.'
-    - `lychee-action`:
-      - We catch link issues in a variety of different file types
-      - We get a detailed job summary by default
-      - Fast: Approximately 1 minute for 576 links (according to `lychee-action`'s own docs)
-      - We can enable caching if needed
-      - Schedules runs open/update an issue when it finds broken links
+- **General**:
+  - Broken links are caught before merge
+  - Link rot gets tracked - We won't miss pages getting moved, renamed or deleted, or when whole sites disappear.'
+- `lychee-action`:
+  - We catch link issues in a variety of different file types
+  - We get a detailed job summary by default
+  - Fast: Approximately 1 minute for 576 links (according to `lychee-action`'s own docs)
+  - We can enable caching if needed
+  - Schedules runs open/update an issue when it finds broken links
 
 ### Cons
 
-    - **General**:
-      - PRs can fail on external outages that are out of our control (true for any tool)
-      - Repositories implementing this will likely get a failing run initially (anticipated)
-    - `lychee-action`:
-      - If we only want to check files changed in a PR, we have to configure this ourselves.
-      - We can't add any inline-ignores like markdown-link-check allows.
-      - Opening an issue needs a separate third-party action.
+- **General**:
+  - PRs can fail on external outages that are out of our control (true for any tool)
+  - Repositories implementing this will likely get a failing run initially (anticipated)
+- `lychee-action`:
+  - If we only want to check files changed in a PR, we have to configure this ourselves.
+  - We can't add any inline-ignores like markdown-link-check allows.
+  - Opening an issue needs a separate third-party action.
 
 ### Additional information
 
