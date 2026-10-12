@@ -50,7 +50,7 @@ There are a number of different link checkers. We can not look into absolutely a
 
 ## Consequences
 
-{{ CONSEQUENCES }} <!-- What becomes easier or more difficult to do because of this change? -->
+<!-- What becomes easier or more difficult to do because of this change? -->
 
 ### Pros
 
@@ -70,7 +70,7 @@ There are a number of different link checkers. We can not look into absolutely a
   - PRs can fail on external outages that are out of our control (true for any tool)
   - Repositories implementing this will likely get a failing run initially (anticipated)
 - `lychee-action`:
-  - If we only want to check files changed in a PR, we have to configure this ourselves.
+  - If we only want to check files changed in a PR, we have to configure this ourselves. A link breaking anywhere blocks unrelated PRs.
   - We can't add any inline-ignores like markdown-link-check allows.
   - Opening an issue needs a separate third-party action.
 
@@ -80,14 +80,11 @@ There are a number of different link checkers. We can not look into absolutely a
 - We will need to have `lychee.toml` in the root, which is not ideal since we want to keep the root as clean as possible. It is possible to configure to a different directory, but that would potentially complicate the rest of the tool flow and configuration.
 - If and then this workflow is copied to a different repository, they will not get updates to the template. They can, however, configure Renovate to track new releases of this repository. An example of this can be found in [this repository's Renovate configuration](../../../.github/renovate.jsonc), together with the [`.development-guidelines-version`](../../../.development-guidelines-version) in the repository root.
 
-<!-- Optional section.
-Uncomment if relevant for decision and fill with sources.
-
--->
-
 ## References
 
-https://github.com/lycheeverse
-https://github.com/lycheeverse/lychee
-https://github.com/lycheeverse/lychee-action
-https://lychee.cli.rs/guides/config/
+- `lycheeverse` GitHub Organisation: https://github.com/lycheeverse
+- `lychee`, the tool: https://github.com/lycheeverse/lychee
+- `lychee-action` GitHub Action: https://github.com/lycheeverse/lychee-action
+- `lychee` configuration guide: https://lychee.cli.rs/guides/config/
+- Linkspector: https://github.com/UmbrellaDocs/linkspector
+- `markdown-link-check` GitHub Action: https://github.com/tcort/github-action-markdown-link-check
