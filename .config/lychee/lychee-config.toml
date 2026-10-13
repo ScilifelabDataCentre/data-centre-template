@@ -10,6 +10,10 @@ exclude = [
     
 ]
 
+# Include more file types
+# Default is md, html, css, txt, wml
+extensions = ["cff", "css", "html", "jsonc", "md", "toml", "txt", "xml", "yaml", "yml"]
+
 # Do not skip hidden directories and files
 hidden = true
 
