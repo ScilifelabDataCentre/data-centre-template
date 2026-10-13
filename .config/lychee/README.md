@@ -33,9 +33,7 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 | `.config/cspell/lychee-config.toml`                                 | Lychee configuration file used by the workflow |
 | `.config/cspell/README.md`                                         | This guide                                                                                                                         |
 
-## How this setup works
-
-### What does the workflow do?
+## What does the workflow do?
 
 The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
@@ -45,9 +43,6 @@ The lychee link checker runs on different events and behaves differently dependi
 | Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | On manual trigger | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-### What does the configuration file do?
-
-The workflow can and does run without a configuration file; We could either skip the configuration completely and run the default options, or we could be configuring the tool via `args` (line 38 in `lychee.yml`)
 
 
 ## How to use it in your repo 
