@@ -61,7 +61,7 @@ There are a number of different link checkers. We can not look into absolutely a
   - We get a detailed job summary by default
   - Fast: Approximately 1 minute for 576 links (according to `lychee-action`'s own docs)
   - We can enable caching if needed
-  - Schedules runs open/update an issue when it finds broken links
+  - Scheduled runs open/update an issue when it finds broken links (and when it passes)
 
 ### Cons
 
