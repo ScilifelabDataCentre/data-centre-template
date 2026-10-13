@@ -43,7 +43,18 @@ The lychee link checker runs on different events and behaves differently dependi
 | Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | On manual trigger | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
+### Configuration options
 
+Lychee has a number of defaults (subject to change) and a wide variety of different configuration options, impossible for us to keep up to date in this type of document. For information on the different options, see the link to the "Lychee Configuration Guide" at the top of this file.
+
+The configuration file in this setup includes the following options:
+
+- `exclude` to be able to exclude some urls from the link checker
+- `include_fragments` to also check headers (e.g. we could link to `#configuration-options` in this file and it would catch potential issues in that url)
+- `no_progress = true` to disable interactive progress bar during CI
+- `verbose = "info"` to get INFO level logging output during runs
+
+Regaring `no_progress` and `verbose`: These values are normally passed into `lychee` automatically by the `lychee-action`, but it is overridden when `args` is passed in. Instead of keeping all args in the workflow file, we specify all of them in the configuration file.
 
 ## How to use it in your repo 
 

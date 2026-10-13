@@ -5,7 +5,7 @@
 
 #############################  General config  #############################
 
-# Exclude URLs and mail addresses from checking. The values are treated as regular expressions
+# Exclude URLs from check (regex)
 exclude = [
     
 ]
