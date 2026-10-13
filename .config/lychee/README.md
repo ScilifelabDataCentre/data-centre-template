@@ -4,16 +4,35 @@ Links are checked and verified to work with Lychee. This guide explains how the 
 
 [Lychee tool (`lychee`)](https://github.com/lycheeverse/lychee) ·
 [Lychee GitHub Action (`lychee-action`)](https://github.com/lycheeverse/lychee-action) ·
-[Lychee Configuration Guide](https://lychee.cli.rs/guides/config/)
+[Lychee Configuration Guide](https://lychee.cli.rs/guides/config/) ·
+[ADR: 0002](https://github.com/ScilifelabDataCentre/data-centre-template/blob/main/docs/architecture/decisions/0002-use-lychee-to-check-links.md)
 
 > [!NOTE] 
 > **Jump straight to setting it up?**
 > 
 > Go to [#](#)
 
-## Why lychee
+## Files in this setup
 
-https://github.com/ScilifelabDataCentre/data-centre-template/blob/main/docs/architecture/decisions/0002-use-lychee-to-check-links.md
+This template uses one GitHub Actions workflow file and one Lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)). For information about why Lychee was chosen, see the `ADR: 0002` link above.
+
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── lychee.yml
+└── .config/
+    └── lychee/
+        ├── README.md
+        └── lychee-config.toml
+```
+
+| File                                                               | Purpose                                                                                                                            |
+| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `.github/workflows/lychee.yml`                                     | Runs the lychee link checker                                                                                                                        |
+| `.config/cspell/lychee-config.toml`                                 | lychee configuration file used by the workflow |
+| `.config/cspell/README.md`                                         | This guide                                                                                                                         |
+
 
 ## This configuration 
 
