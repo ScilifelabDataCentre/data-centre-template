@@ -50,6 +50,7 @@ Lychee has a number of defaults (subject to change) and a wide variety of differ
 The configuration file in this setup includes the following options:
 
 - `exclude` to be able to exclude some urls from the link checker
+- `hidden = true` to also check links within hidden files (e.g. `.config/`, `.github/`...)
 - `include_fragments` to also check headers (e.g. we could link to `#configuration-options` in this file and it would catch potential issues in that url)
 - `no_progress = true` to disable interactive progress bar during CI
 - `verbose = "info"` to get INFO level logging output during runs
