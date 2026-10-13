@@ -30,8 +30,8 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 | File                                                               | Purpose                                                                                                                            |
 | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `.github/workflows/lychee.yml`                                     | Runs the lychee link checker                                                                                                                        |
-| `.config/cspell/lychee-config.toml`                                 | Lychee configuration file used by the workflow |
-| `.config/cspell/README.md`                                         | This guide                                                                                                                         |
+| `.config/lychee/lychee-config.toml`                                 | Lychee configuration file used by the workflow |
+| `.config/lychee/README.md`                                         | This guide                                                                                                                         |
 
 ## What does the workflow do?
 
