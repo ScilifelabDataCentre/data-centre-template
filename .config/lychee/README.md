@@ -33,10 +33,13 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 | `.config/cspell/lychee-config.toml`                                 | Lychee configuration file used by the workflow |
 | `.config/cspell/README.md`                                         | This guide                                                                                                                         |
 
-
 ## How this setup works
 
-The lychee link checker runs:
+The lychee link checker runs on different events and acts differently depending on when the workflow is run. The flowchart below describes the flow of events.
+
+```mermaid
+```
+
 - When a PR is opened or updated
 - On a schedule: Every day at midnight (UTC)
 - When it's manually triggered
