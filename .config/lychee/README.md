@@ -35,14 +35,13 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 
 ## How this setup works
 
-The lychee link checker runs on different events and acts differently depending on when the workflow is run. The flowchart below describes the flow of events.
+The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
-```mermaid
-```
-
-- When a PR is opened or updated
-- On a schedule: Every day at midnight (UTC)
-- When it's manually triggered
+| When | lychee is run? | 
+| --- | --- |
+| PR is opened / updated | :white_check_mark: |
+| Scheduled run: Every day at midnight (UTC) | :white_check_mark: |
+| On manual trigger | :white_check_mark: |
 
 
 
