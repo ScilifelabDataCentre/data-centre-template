@@ -11,7 +11,7 @@ exclude = [
 ]
 
 # Include more file types
-# Default is to scan links in md, html, css, txt, wml
+# Default is to scan links in md, html, css, txt, xml
 extensions = ["cff", "css", "html", "jsonc", "md", "toml", "txt", "xml", "yaml", "yml"]
 
 # Do not skip hidden directories and files
