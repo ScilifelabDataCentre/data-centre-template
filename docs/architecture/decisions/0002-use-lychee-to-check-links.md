@@ -70,7 +70,7 @@ There are a number of different link checkers. We can not look into absolutely a
   - PRs can fail on external outages that are out of our control (true for any tool)
   - Repositories implementing this will likely get a failing run initially (anticipated)
 - `lychee-action`:
-  - If we only want to check files changed in a PR, we have to configure this ourselves. A link breaking anywhere blocks unrelated PRs.
+  - If we only want to check files changed in a PR, we have to configure this ourselves. A link breaking anywhere blocks unrelated PRs. This is not covered in the initial setup. If it becomes a problem, we'll have another look, and hopefully there will be an existing tool or solution for it that feels less hacky than what would be needed at the moment.
   - We can't add any inline-ignores like markdown-link-check allows.
   - Opening an issue needs a separate third-party action.
 
