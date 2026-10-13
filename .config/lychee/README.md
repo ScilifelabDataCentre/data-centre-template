@@ -7,9 +7,9 @@ Links are checked and verified to work with Lychee. This guide explains how the 
 [Lychee Configuration Guide](https://lychee.cli.rs/guides/config/) ·
 [ADR: 0002](https://github.com/ScilifelabDataCentre/data-centre-template/blob/main/docs/architecture/decisions/0002-use-lychee-to-check-links.md)
 
-> [!NOTE] 
+> [!NOTE]
 > **Jump straight to setting it up?**
-> 
+>
 > Go to [How to use this in your repository](#how-to-use-this-in-your-repository).
 
 ## Files in this setup
@@ -27,21 +27,21 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
         └── lychee-config.toml
 ```
 
-| File                                                               | Purpose                                                                                                                            |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `.github/workflows/lychee.yml`                                     | Runs the lychee link checker                                                                                                                        |
-| `.config/lychee/lychee-config.toml`                                 | Lychee configuration file used by the workflow |
-| `.config/lychee/README.md`                                         | This guide                                                                                                                         |
+| File                                | Purpose                                        |
+| ----------------------------------- | ---------------------------------------------- |
+| `.github/workflows/lychee.yml`      | Runs the lychee link checker                   |
+| `.config/lychee/lychee-config.toml` | Lychee configuration file used by the workflow |
+| `.config/lychee/README.md`          | This guide                                     |
 
 ## What does the workflow do?
 
 The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
-| When | lychee </br> run? | Result uploaded </br> as artefact? | Result uploaded to </br> GitHub issue? |
-| --- | --- | --- | --- |
-| PR is opened / updated | :white_check_mark: | :x: | :x: |
-| Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| On manual trigger | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| When                                       | lychee </br> run?  | Result uploaded </br> as artefact? | Result uploaded to </br> GitHub issue? |
+| ------------------------------------------ | ------------------ | ---------------------------------- | -------------------------------------- |
+| PR is opened / updated                     | :white_check_mark: | :x:                                | :x:                                    |
+| Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
+| On manual trigger                          | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
 
 ### Configuration options
 
@@ -62,4 +62,4 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
 2. Verify that the configuration file seems reasonable for your repository.
 3. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add urls that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
 4. Push to your remote branch and open a PR. Adjust your configuration depending on the workflow results.
-    - No issue should be created. Issue only created during manual or scheduled run after merge of PR.
+   - No issue should be created. Issue only created during manual or scheduled run after merge of PR.
