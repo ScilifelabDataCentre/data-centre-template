@@ -54,7 +54,7 @@ The configuration file in this setup includes the following options:
 - `no_progress = true` to disable interactive progress bar during CI
 - `verbose = "info"` to get INFO level logging output during runs
 
-Regaring `no_progress` and `verbose`: These values are normally passed into `lychee` automatically by the `lychee-action`, but it is overridden when `args` is passed in. Instead of keeping all args in the workflow file, we specify all of them in the configuration file.
+Regarding `no_progress` and `verbose`: These values are normally passed into `lychee` automatically by the `lychee-action`, but it is overridden when `args` is passed in. Instead of keeping all args in the workflow file, we specify all of them in the configuration file.
 
 ## How to use this in your repository
 
