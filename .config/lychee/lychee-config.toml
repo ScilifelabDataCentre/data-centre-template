@@ -11,8 +11,8 @@ exclude = [
 ]
 
 # Include more file types
-# Defaults are included in the list
-extensions = ["cff", "css", "htm", "html", "jsonc", "md", "mkd", "mdx", "mdown", "mdwn", "mkdn", "markdown", "toml", "txt", "xml", "yaml", "yml"]
+# Defaults are included in the list (v0.24.2)
+extensions = ["cff", "css", "htm", "html", "jsonc", "md", "mkd", "mdx", "mdown", "mkdown", "mdwn", "mkdn", "markdown", "toml", "txt", "xml", "yaml", "yml"]
 
 # Do not skip hidden directories and files
 hidden = true
