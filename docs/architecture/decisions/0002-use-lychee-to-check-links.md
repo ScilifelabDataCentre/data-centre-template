@@ -79,7 +79,6 @@ There are a number of different link checkers. We can not look into absolutely a
 - The workflow would run without a configuration file and we technically would not **need** it.
   - We could either skip the configuration completely and let lychee use the default options, or we could be configuring the tool via `args` in the workflow file.
   - We could also be using the `.lycheeignore` file instead of or as well as the `lychee-config.toml` file, but we want to be able to set more configuration options, and `lychee-config.toml` allows both ignoring patterns and configuring args. <!-- cspell:ignore lycheeignore -->
-- We will need to have `lychee-config.toml` in the root, which is not ideal since we want to keep the root as clean as possible. It is possible to configure to a different directory, but that would potentially complicate the rest of the tool flow and configuration.
 - If and then this workflow is copied to a different repository, they will not get updates to the template. They can, however, configure Renovate to track new releases of this repository. An example of this can be found in [this repository's Renovate configuration](../../../.github/renovate.jsonc), together with the [`.development-guidelines-version`](../../../.development-guidelines-version) in the repository root.
 
 ## References
