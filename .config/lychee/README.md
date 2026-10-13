@@ -35,20 +35,20 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 
 ## How this setup works
 
+### What does the workflow do?
+
 The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
-| When | lychee is run? | 
-| --- | --- |
-| PR is opened / updated | :white_check_mark: |
-| Scheduled run: Every day at midnight (UTC) | :white_check_mark: |
-| On manual trigger | :white_check_mark: |
+| When | lychee </br> run? | Result uploaded </br> as artefact? | Result uploaded to </br> GitHub issue? |
+| --- | --- | --- | --- |
+| PR is opened / updated | :white_check_mark: | :x: | :x: |
+| Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| On manual trigger | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
+### What does the configuration file do?
 
+The workflow can and does run without a configuration file; We could either skip the configuration completely and run the default options, or we could be configuring the tool via `args` (line 38 in `lychee.yml`)
 
-On PR:
-- Fail action if broken links, nothing else
-On manual or scheduled run:
-- Fail action if broken links and upload results to repo issue (issues must be enabled in repo) 
 
 ## How to use it in your repo 
 
