@@ -48,7 +48,7 @@ jobs:
         with:
           args: --config .config/lychee/lychee-config.toml .
           output: ${{ env.OUT_FILE }}
-      
+
       - name: Save lychee cache
         uses: actions/cache/save@v6
         if: always()
