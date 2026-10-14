@@ -45,26 +45,26 @@ This template uses two GitHub Actions workflow files and one lychee configuratio
         └── lychee-config.toml
 ```
 
-| File                                | Purpose                                                             |
-| ----------------------------------- | ------------------------------------------------------------------- |
-| `.github/workflows/lychee-main.yml` | Runs the lychee link checker once a day and when manually triggered |
-| `.github/workflows/lychee-pr.yml`   | Runs the lychee link checker when a PR is opened or updated         |
-| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow                      |
-| `.config/lychee/README.md`          | This guide                                                          |
+| File                                | Purpose                                                                   |
+| ----------------------------------- | ------------------------------------------------------------------------- |
+| `.github/workflows/lychee-main.yml` | Runs the lychee link checker once a day and when manually triggered. [^1] |
+| `.github/workflows/lychee-pr.yml`   | Runs the lychee link checker when a PR is opened or updated [^2]          |
+| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow                            |
+| `.config/lychee/README.md`          | This guide                                                                |
 
 ## What do the workflows do?
 
-The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
+The two workflows run on different events as described in the table above, and they also behave differently:
 
-| When                                            | lychee <br> run?   | Result uploaded <br> as artifact? | Result uploaded to <br> GitHub issue? |
-| ----------------------------------------------- | ------------------ | --------------------------------- | ------------------------------------- |
-| PR is opened / updated [^1]                     | :white_check_mark: | :x:                               | :x:                                   |
-| Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                | :white_check_mark:                    |
-| On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                | :white_check_mark:                    |
+| When                                            | lychee <br> run?   | Result uploaded to <br> GitHub issue? | Result is saved to cache? |
+| ----------------------------------------------- | ------------------ | ------------------------------------- | ------------------------- |
+| PR is opened / updated [^1]                     | :white_check_mark: | :x:                                   | :white_check_mark:        |
+| Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                    | :x:                       |
+| On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                    | :x:                       |
 
-[^1]: We want to verify the links before merging
+[^1]: Even if we use the most optimal link checker, external links can break without any changes to our repository
 
-[^2]: Even if we use the most optimal link checker, external links can break without any changes to our repository
+[^2]: We want to verify the links before merging
 
 ## Configuration options
 
