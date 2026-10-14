@@ -49,7 +49,7 @@ This template uses two GitHub Actions workflow files and one lychee configuratio
 | ----------------------------------- | ------------------------------------------------------------------------- |
 | `.github/workflows/lychee-main.yml` | Runs the lychee link checker once a day and when manually triggered. [^1] |
 | `.github/workflows/lychee-pr.yml`   | Runs the lychee link checker when a PR is opened or updated [^2]          |
-| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow                            |
+| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflows                           |
 | `.config/lychee/README.md`          | This guide                                                                |
 
 [^1]: Even if we use the most optimal link checker, external links can break without any changes to our repository
@@ -87,8 +87,8 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file.
 
-    - **Only want to run lychee manually / on schedule?** Skip the `lychee-pr.yml` file - only copy `lychee-main.yml`.
-    - **Only want to run lychee on PR?** Skip the `lychee-main.yml` file - only copy `lychee-pr.yml`.
+   - **Only want to run lychee manually / on schedule?** Skip the `lychee-pr.yml` file - only copy `lychee-main.yml`.
+   - **Only want to run lychee on PR?** Skip the `lychee-main.yml` file - only copy `lychee-pr.yml`.
 
 2. Verify that the configuration file seems reasonable for your repository; Add and remove options when needed.
 3. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add URLs that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
