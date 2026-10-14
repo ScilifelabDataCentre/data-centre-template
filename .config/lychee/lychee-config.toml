@@ -12,7 +12,7 @@ exclude = [
 
 # Include more file types
 # Defaults are included in the list (v0.24.2)
-extensions = ["cff", "css", "htm", "html", "jsonc", "markdown", "md", "mdown", "mdwn", "mdx", "mkd", "mkdn", "mkdown", "toml", "txt", "xml", "yaml", "yml"]
+extensions = ["cff", "css", "htm", "html", "jsonc", "markdown", "md", "mdown", "mdwn", "mdx", "mkd", "mkdn", "mkdown", "toml", "txt", "xml", "yaml", "yml"] # cspell:disable-line
 
 # Do not skip hidden directories and files
 hidden = true
