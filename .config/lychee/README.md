@@ -1,6 +1,6 @@
 # Lychee Link Checker
 
-Links are checked and verified to work with Lychee. This guide explains how the link checking is configured in this setup, how it works and how to implement it in another repository.
+In this template, links are checked and verified to work with Lychee. This guide explains how link checking is configured, how it works and how to use it in another repository.
 
 [Lychee tool (`lychee`)](https://github.com/lycheeverse/lychee) ·
 [Lychee GitHub Action (`lychee-action`)](https://github.com/lycheeverse/lychee-action) ·
@@ -10,6 +10,25 @@ Links are checked and verified to work with Lychee. This guide explains how the 
 > **Jump straight to setting it up?**
 >
 > Go to [How to use this in your repository](#how-to-use-this-in-your-repository).
+
+## Why?
+
+It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we rely on others finding and reporting broken links. The link checker in this repository, lychee via lychee-action, is configured to run when a Pull Request (PR) is opened or updated, on a schedule (once a day), and when manually triggered
+
+**lychee-action was chosen because it's:**
+
+- Open Source, dual license MIT / Apache-2.0 which means there are no restructions for us to use it.
+- Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as `lychee` itself).
+- Fast - written in Rust.
+- Can check links in a variety of different formats, and both internal and external links.
+- Configurable, e.g. via our `lychee-config.toml`: Can exclude url patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
+- Allows caching of results.
+- Can be run locally before pushing.
+
+**The triggers for lychee were chosen because:**
+
+- We want to verify the links before merging &rarr; on PR
+- Even if we use the most optimal link checker, external links can break without any changes to our repository &rarr; on schedule and manual trigger
 
 ## Files in this setup
 
