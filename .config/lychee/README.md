@@ -26,7 +26,7 @@ In this repository, lychee (via `lychee-action`) is configured to run when a Pul
 - Fast - written in Rust.
 - Can check links in a variety of different formats, and both internal and external links.
 - Configurable, e.g. via our `lychee-config.toml`: Can exclude URL patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
-- Allows caching of results (not configured at this time).
+- Allows caching of results.
 - `lychee` can be installed and run locally before pushing to the remote branch.
 
 ## Files in this setup
