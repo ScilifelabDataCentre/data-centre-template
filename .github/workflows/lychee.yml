@@ -17,6 +17,7 @@ env:
   OUT_DIR: ./lychee/
   OUT_FILE: ./lychee/out.md
   LABELS: "lychee,links"
+  CACHE_LOC: .lycheecache
 
 jobs:
   # Job 1: Check links
@@ -34,9 +35,10 @@ jobs:
           persist-credentials: false # We don't need the token in subsequent steps
 
       - name: Restore lychee cache
+        id: restore-cache
         uses: actions/cache@v6
         with:
-          path: .lycheecache
+          path: ${{ env.CACHE_LOC }}
           key: cache-lychee-${{ github.sha }}
           restore-keys: cache-lychee-
 
@@ -46,6 +48,13 @@ jobs:
         with:
           args: --config .config/lychee/lychee-config.toml .
           output: ${{ env.OUT_FILE }}
+      
+      - name: Save lychee cache
+        uses: actions/cache/save@v6
+        if: always()
+        with:
+          path: ${{ env.CACHE_LOC }}
+          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
 
       # Report needed for next job
       # But not when run on PR
