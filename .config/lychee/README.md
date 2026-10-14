@@ -15,13 +15,13 @@ In this template, links are checked and verified to work with lychee (via `lyche
 
 It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we rely on others finding and reporting broken links.
 
-There are a number of different link checkers and we cannot look into all of them. In this case, the choice stood mostly between the currently used (in `development-guidelines` repository at the time of writing)`markdown-link-check` and lychee - lychee was chosen.
+There are a number of different link checkers and we cannot look into all of them. In this case, the choice stood mostly between the currently used (in `development-guidelines` repository at the time of writing) `markdown-link-check` and lychee - lychee was chosen.
 
 In this repository, lychee (via `lychee-action`) is configured to run when a Pull Request (PR) is opened or updated, on a schedule (once a day), and when manually triggered.
 
 **lychee was chosen because:**
 
-- Open Source, dual license MIT / Apache-2.0 &rarr; no restrictions for us to use it.
+- Open Source, dual-licensed MIT / Apache-2.0 &rarr; no restrictions for us to use it.
 - Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as lychee itself).
 - Fast - written in Rust.
 - Can check links in a variety of different formats, and both internal and external links.
@@ -83,7 +83,7 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file.
 2. Verify that the configuration file seems reasonable for your repository; Add and remove options when needed.
-3. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add urls that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
+3. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add URLs that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
 4. Push to your remote branch and open a PR. Adjust your configuration depending on the workflow results.
    - No issue should be created. Issue only created during manual or scheduled run after merge of PR.
 
@@ -96,3 +96,4 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
   - `.lycheeignore` doesn't allow that
   - `lychee-config.toml` allows both ignoring patterns and configuring args.
   - `.lycheeignore` would have to be placed in the directory root, which we are trying to avoid
+- We pin versions in the workflow instead of specific SHAs. While it's recommended to pin the SHA, and this repository has Renovate configured to handle digest updates, this template is intended for copy-paste into other repositories (which might not have that Renovate configuration set).
