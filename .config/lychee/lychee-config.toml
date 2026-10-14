@@ -1,7 +1,7 @@
 # Configuration for the lychee-action
 # There are 2 sections: 
-# General config: Configuration that applies to all links.
-# Host specific config: Configuration that should be applied to only specific links.
+# - General config: Configuration that applies to all links.
+# - Host specific config: Configuration that should be applied to only specific links.
 
 #############################  General config  #############################
 
