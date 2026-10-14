@@ -72,6 +72,8 @@ lychee has a number of defaults (subject to change) and a wide variety of differ
 
 The configuration file in this setup includes the following options:
 
+- `cache` to enable caching of the results
+- `cache_exclude_status` to exclude failing links from cache
 - `exclude` to be able to exclude some URLs from the link checker
 - `extensions` to expand link checking to more file types.
 - `hidden = true` to also check links within hidden files (e.g. `.config/`, `.github/`...)
@@ -84,6 +86,10 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
 ## How to use this in your repository
 
 1. Recreate the file and folder structure shown in the [Files in this setup](#files-in-this-setup) section in your repository, including the exact contents of each file.
+
+    - **Only want to run lychee manually / on schedule?** Skip the `lychee-pr.yml` file - only copy `lychee-main.yml`.
+    - **Only want to run lychee on PR?** Skip the `lychee-main.yml` file - only copy `lychee-pr.yml`.
+
 2. Verify that the configuration file seems reasonable for your repository; Add and remove options when needed.
 3. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add URLs that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
 4. Push to your remote branch and open a PR. Adjust your configuration depending on the workflow results.
