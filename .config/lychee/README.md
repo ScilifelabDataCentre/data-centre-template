@@ -56,8 +56,8 @@ The lychee link checker runs on different events and behaves differently dependi
 | Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
 | On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
 
-[^1] We want to verify the links before merging
-[^2]Even if we use the most optimal link checker, external links can break without any changes to our repository
+[^1]: We want to verify the links before merging
+[^2]: Even if we use the most optimal link checker, external links can break without any changes to our repository
 
 ## Configuration options
 
