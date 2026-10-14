@@ -19,14 +19,14 @@ exclude = [
 # https://lychee.cli.rs/guides/cli/#--extensions
 extensions = ["cff", "css", "htm", "html", "jsonc", "markdown", "md", "mdown", "mdwn", "mdx", "mkd", "mkdn", "mkdown", "toml", "txt", "xml", "yaml", "yml"] # cspell:disable-line
 
-# Do not skip hidden directories and files
+# Do not skip hidden directories and files (e.g. .github/, .config/, etc)
 # https://lychee.cli.rs/guides/cli/#--hidden
 hidden = true
 
-# Enable the checking of fragments in links, both anchor fragments and text fragments.
+# Enable the checking of fragments in links
 # See <https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment/Text_fragments>
 # https://lychee.cli.rs/guides/cli/#--include-fragments
-include_fragments = "anchor-only"
+include_fragments = "anchor-only" # links to headers
 
 # Don't show interactive progress bar while checking links.
 # https://lychee.cli.rs/guides/cli/#-n---no-progress

@@ -87,8 +87,12 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
 4. Push to your remote branch and open a PR. Adjust your configuration depending on the workflow results.
    - No issue should be created. Issue only created during manual or scheduled run after merge of PR.
 
-## Implications of this setup
+## Notes regarding this setup
 
 - If we only want to check files changed in a PR, we have to configure this ourselves. This means that a link breaking anywhere blocks unrelated PRs. This is not covered in this setup. If it becomes a problem, we can have another look, and hopefully there will be an existing tool or solution for it that feels less hacky than what would be needed at the moment.
 - lychee does not allow us to add any inline-ignores like markdown-link-check does.
 - There will always be an open issue with the latest link checker results.
+- Instead of using the `.config/lychee/lychee-config.toml`, we could have used the `.lycheeignore` as described in the actions documentation. However, we wanted to be able to set more configuration options and:
+  - `.lycheeignore` doesn't allow that
+  - `lychee-config.toml` allows both ignoring patterns and configuring args.
+  - `.lycheeignore` would have to be placed in the directory root, which we are trying to avoid
