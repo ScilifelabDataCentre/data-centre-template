@@ -5,7 +5,6 @@ Links are checked and verified to work with Lychee. This guide explains how the 
 [Lychee tool (`lychee`)](https://github.com/lycheeverse/lychee) ·
 [Lychee GitHub Action (`lychee-action`)](https://github.com/lycheeverse/lychee-action) ·
 [Lychee Configuration Guide](https://lychee.cli.rs/guides/config/) ·
-[ADR: 0002](https://github.com/ScilifelabDataCentre/data-centre-template/blob/main/docs/architecture/decisions/0002-use-lychee-to-check-links.md)
 
 > [!NOTE]
 > **Jump straight to setting it up?**
@@ -14,7 +13,7 @@ Links are checked and verified to work with Lychee. This guide explains how the 
 
 ## Files in this setup
 
-This template uses one GitHub Actions workflow file and one Lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)). For information about why Lychee was chosen, see the `ADR: 0002` link above.
+This template uses one GitHub Actions workflow file and one Lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)). Information on why Lychee was chosen will be placed in the `development-guidelines` repository. <!-- TODO: link -->
 
 ```text
 .
