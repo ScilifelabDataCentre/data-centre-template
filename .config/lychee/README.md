@@ -25,11 +25,6 @@ It's impossible to keep track of all links in a repository and manually make sur
 - Allows caching of results.
 - `lychee` can be installed and run locally before pushing to the remote branch.
 
-**The triggers for lychee were chosen because:**
-
-- We want to verify the links before merging &rarr; on PR
-- Even if we use the most optimal link checker, external links can break without any changes to our repository &rarr; on schedule and manual trigger
-
 ## Files in this setup
 
 This template uses one GitHub Actions workflow file and one Lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)).
@@ -55,11 +50,14 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 
 The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
-| When                                       | lychee </br> run?  | Result uploaded </br> as artefact? | Result uploaded to </br> GitHub issue? |
-| ------------------------------------------ | ------------------ | ---------------------------------- | -------------------------------------- |
-| PR is opened / updated                     | :white_check_mark: | :x:                                | :x:                                    |
-| Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
-| On manual trigger                          | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
+| When                                            | lychee </br> run?  | Result uploaded </br> as artefact? | Result uploaded to </br> GitHub issue? |
+| ----------------------------------------------- | ------------------ | ---------------------------------- | -------------------------------------- |
+| PR is opened / updated [^1]                     | :white_check_mark: | :x:                                | :x:                                    |
+| Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
+| On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
+
+[^1] We want to verify the links before merging
+[^2]Even if we use the most optimal link checker, external links can break without any changes to our repository
 
 ## Configuration options
 
