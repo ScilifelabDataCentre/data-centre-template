@@ -1,10 +1,10 @@
 # Lychee Link Checker
 
-In this template, links are checked and verified to work with Lychee (via `lychee-action`). This guide explains how link checking is configured, how it works and how to use it in another repository.
+In this template, links are checked and verified to work with lychee (via `lychee-action`). This guide explains how link checking is configured, how it works and how to use it in another repository.
 
-[Lychee tool (`lychee`)](https://github.com/lycheeverse/lychee) ·
-[Lychee GitHub Action (`lychee-action`)](https://github.com/lycheeverse/lychee-action) ·
-[Lychee Configuration Guide](https://lychee.cli.rs/guides/config/) ·
+[lychee tool (`lychee`)](https://github.com/lycheeverse/lychee) ·
+[lychee GitHub Action (`lychee-action`)](https://github.com/lycheeverse/lychee-action) ·
+[lychee Configuration Guide](https://lychee.cli.rs/guides/config/)
 
 > [!NOTE]
 > **Jump straight to setting it up?**
@@ -15,14 +15,14 @@ In this template, links are checked and verified to work with Lychee (via `lyche
 
 It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we rely on others finding and reporting broken links.
 
-There are a number of different link checkers and we cannot look into all of them. In this case, the choice stood mostly between the currently used (in `development-guidelines` repository at the time of writing)`markdown-link-check` and `lychee` - `lychee` was chosen.
+There are a number of different link checkers and we cannot look into all of them. In this case, the choice stood mostly between the currently used (in `development-guidelines` repository at the time of writing)`markdown-link-check` and lychee - lychee was chosen.
 
-In this repository, `lychee` (via `lychee-action`) is configured to run when a Pull Request (PR) is opened or updated, on a schedule (once a day), and when manually triggered.
+In this repository, lychee (via `lychee-action`) is configured to run when a Pull Request (PR) is opened or updated, on a schedule (once a day), and when manually triggered.
 
-**`lychee` was chosen because:**
+**lychee was chosen because:**
 
 - Open Source, dual license MIT / Apache-2.0 &rarr; no restructions for us to use it.
-- Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as `lychee` itself).
+- Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as lychee itself).
 - Fast - written in Rust.
 - Can check links in a variety of different formats, and both internal and external links.
 - Configurable, e.g. via our `lychee-config.toml`: Can exclude url patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
@@ -31,7 +31,7 @@ In this repository, `lychee` (via `lychee-action`) is configured to run when a P
 
 ## Files in this setup
 
-This template uses one GitHub Actions workflow file and one Lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)).
+This template uses one GitHub Actions workflow file and one lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)).
 
 ```text
 .
@@ -47,7 +47,7 @@ This template uses one GitHub Actions workflow file and one Lychee configuration
 | File                                | Purpose                                        |
 | ----------------------------------- | ---------------------------------------------- |
 | `.github/workflows/lychee.yml`      | Runs the lychee link checker                   |
-| `.config/lychee/lychee-config.toml` | Lychee configuration file used by the workflow |
+| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow |
 | `.config/lychee/README.md`          | This guide                                     |
 
 ## What does the workflow do?
@@ -66,7 +66,7 @@ The lychee link checker runs on different events and behaves differently dependi
 
 ## Configuration options
 
-Lychee has a number of defaults (subject to change) and a wide variety of different configuration options, impossible for us to keep up to date in this type of document. For information on the different options, see the link to the "Lychee Configuration Guide" at the top of this file.
+lychee has a number of defaults (subject to change) and a wide variety of different configuration options, impossible for us to keep up to date in this type of document. For information on the different options, see the link to the "lychee Configuration Guide" at the top of this file.
 
 The configuration file in this setup includes the following options:
 
@@ -90,5 +90,5 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
 ## Implications of this setup
 
 - If we only want to check files changed in a PR, we have to configure this ourselves. This means that a link breaking anywhere blocks unrelated PRs. This is not covered in this setup. If it becomes a problem, we can have another look, and hopefully there will be an existing tool or solution for it that feels less hacky than what would be needed at the moment.
-- Lychee does not allow us to add any inline-ignores like markdown-link-check does.
+- lychee does not allow us to add any inline-ignores like markdown-link-check does.
 - There will always be an open issue with the latest link checker results.
