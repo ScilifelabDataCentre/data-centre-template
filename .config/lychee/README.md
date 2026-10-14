@@ -21,11 +21,11 @@ In this repository, lychee (via `lychee-action`) is configured to run when a Pul
 
 **lychee was chosen because:**
 
-- Open Source, dual license MIT / Apache-2.0 &rarr; no restructions for us to use it.
+- Open Source, dual license MIT / Apache-2.0 &rarr; no restrictions for us to use it.
 - Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as lychee itself).
 - Fast - written in Rust.
 - Can check links in a variety of different formats, and both internal and external links.
-- Configurable, e.g. via our `lychee-config.toml`: Can exclude url patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
+- Configurable, e.g. via our `lychee-config.toml`: Can exclude URL patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
 - Allows caching of results (not configured at this time).
 - `lychee` can be installed and run locally before pushing to the remote branch.
 
@@ -54,11 +54,11 @@ This template uses one GitHub Actions workflow file and one lychee configuration
 
 The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
-| When                                            | lychee </br> run?  | Result uploaded </br> as artefact? | Result uploaded to </br> GitHub issue? |
-| ----------------------------------------------- | ------------------ | ---------------------------------- | -------------------------------------- |
-| PR is opened / updated [^1]                     | :white_check_mark: | :x:                                | :x:                                    |
-| Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
-| On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                 | :white_check_mark:                     |
+| When                                            | lychee <br> run?   | Result uploaded <br> as artifact? | Result uploaded to <br> GitHub issue? |
+| ----------------------------------------------- | ------------------ | --------------------------------- | ------------------------------------- |
+| PR is opened / updated [^1]                     | :white_check_mark: | :x:                               | :x:                                   |
+| Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                | :white_check_mark:                    |
+| On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                | :white_check_mark:                    |
 
 [^1]: We want to verify the links before merging
 
@@ -70,10 +70,10 @@ lychee has a number of defaults (subject to change) and a wide variety of differ
 
 The configuration file in this setup includes the following options:
 
-- `exclude` to be able to exclude some urls from the link checker
+- `exclude` to be able to exclude some URLs from the link checker
 - `extensions` to expand link checking to more file types.
 - `hidden = true` to also check links within hidden files (e.g. `.config/`, `.github/`...)
-- `include_fragments` to also check headers (e.g. we could link to `#configuration-options` in this file and it would catch potential issues in that url)
+- `include_fragments` to also check headers (e.g. we could link to `#configuration-options` in this file and it would catch potential issues in that URL)
 - `no_progress = true` to disable interactive progress bar during CI
 - `verbose = "info"` to get INFO level logging output during runs
 
