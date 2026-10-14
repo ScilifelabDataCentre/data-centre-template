@@ -31,26 +31,28 @@ In this repository, lychee (via `lychee-action`) is configured to run when a Pul
 
 ## Files in this setup
 
-This template uses one GitHub Actions workflow file and one lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)).
+This template uses two GitHub Actions workflow files and one lychee configuration file ([`.config/lychee/lychee-config.toml`](lychee-config.toml)).
 
 ```text
 .
 ├── .github/
 │   └── workflows/
-│       └── lychee.yml
+│       ├── lychee-main.yml
+│       └── lychee-pr.yml
 └── .config/
     └── lychee/
         ├── README.md
         └── lychee-config.toml
 ```
 
-| File                                | Purpose                                        |
-| ----------------------------------- | ---------------------------------------------- |
-| `.github/workflows/lychee.yml`      | Runs the lychee link checker                   |
-| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow |
-| `.config/lychee/README.md`          | This guide                                     |
+| File                                | Purpose                                                             |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| `.github/workflows/lychee-main.yml` | Runs the lychee link checker once a day and when manually triggered |
+| `.github/workflows/lychee-pr.yml`   | Runs the lychee link checker when a PR is opened or updated         |
+| `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow                      |
+| `.config/lychee/README.md`          | This guide                                                          |
 
-## What does the workflow do?
+## What do the workflows do?
 
 The lychee link checker runs on different events and behaves differently depending on when the workflow is run.
 
