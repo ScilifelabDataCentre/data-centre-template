@@ -11,6 +11,7 @@
 # https://lychee.cli.rs/guides/cli/#--exclude
 exclude = [
     "^https://github.com/ScilifelabDataCentre/k1h-platform-docs/", # private repo
+    ".*#metadata-for-{{service-name}}$", # template header with placeholder
 ]
 
 # Include more file types
