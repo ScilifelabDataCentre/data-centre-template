@@ -13,16 +13,20 @@ In this template, links are checked and verified to work with Lychee (via `lyche
 
 ## Why?
 
-It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we rely on others finding and reporting broken links. The link checker in this repository, `lychee` via `lychee-action`, is configured to run when a Pull Request (PR) is opened or updated, on a schedule (once a day), and when manually triggered.
+It's impossible to keep track of all links in a repository and manually make sure that all internal and external links continue to work. Without an automated link checker, we rely on others finding and reporting broken links.
 
-**`lychee-action` was chosen because:**
+There are a number of different link checkers and we cannot look into all of them. In this case, the choice stood mostly between the currently used (in `development-guidelines` repository at the time of writing)`markdown-link-check` and `lychee` - `lychee` was chosen.
+
+In this repository, `lychee` (via `lychee-action`) is configured to run when a Pull Request (PR) is opened or updated, on a schedule (once a day), and when manually triggered.
+
+**`lychee` was chosen because:**
 
 - Open Source, dual license MIT / Apache-2.0 &rarr; no restructions for us to use it.
 - Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as `lychee` itself).
 - Fast - written in Rust.
 - Can check links in a variety of different formats, and both internal and external links.
 - Configurable, e.g. via our `lychee-config.toml`: Can exclude url patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
-- Allows caching of results.
+- Allows caching of results (not configured at this time).
 - `lychee` can be installed and run locally before pushing to the remote branch.
 
 ## Files in this setup
