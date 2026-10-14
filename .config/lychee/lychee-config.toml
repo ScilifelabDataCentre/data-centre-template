@@ -2,19 +2,24 @@
 # There are 2 sections: 
 # - General config: Configuration that applies to all links.
 # - Host specific config: Configuration that should be applied to only specific links.
+#
+# See lychee's own example: https://github.com/lycheeverse/lychee/blob/master/lychee.example.toml
 
 #############################  General config  #############################
 
 # Exclude URLs from check (regex)
+# https://lychee.cli.rs/guides/cli/#--exclude
 exclude = [
     
 ]
 
 # Include more file types
 # Defaults are included in the list (v0.24.2)
+# https://lychee.cli.rs/guides/cli/#--extensions
 extensions = ["cff", "css", "htm", "html", "jsonc", "markdown", "md", "mdown", "mdwn", "mdx", "mkd", "mkdn", "mkdown", "toml", "txt", "xml", "yaml", "yml"] # cspell:disable-line
 
 # Do not skip hidden directories and files
+# https://lychee.cli.rs/guides/cli/#--hidden
 hidden = true
 
 # Enable the checking of fragments in links, both anchor fragments and text fragments.
