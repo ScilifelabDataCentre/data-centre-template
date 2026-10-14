@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false # We don't need the token in subsequent steps
 
       - name: Run Lychee link checker
         id: lychee
