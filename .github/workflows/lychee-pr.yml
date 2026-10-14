@@ -1,0 +1,52 @@
+# Link checking using Lychee (lychee-action)
+# Link: https://github.com/lycheeverse/lychee-action
+#
+# See .config/lychee/README.md for information about
+# this workflow and the Lychee configuration
+---
+name: Lychee Link Checker (PR)
+
+on:
+  pull_request:
+
+# Variables
+env:
+  OUT_FILE: ./lychee/out.md
+  CACHE_LOC: .lycheecache
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-24.04
+
+    # Explicit permission to checkout repo
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false # We don't need the token in subsequent steps
+
+      - name: Restore lychee cache
+        id: restore-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ env.CACHE_LOC }}
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Run Lychee link checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .config/lychee/lychee-config.toml .
+          output: ${{ env.OUT_FILE }}
+
+      - name: Save lychee cache
+        uses: actions/cache/save@v6
+        # Save cache even when lychee fails
+        if: ${{ !cancelled() }}
+        with:
+          path: ${{ env.CACHE_LOC }}
+          key: ${{ steps.restore-cache.outputs.cache-primary-key }}
