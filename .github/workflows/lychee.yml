@@ -59,7 +59,7 @@ jobs:
     permissions:
       issues: write
 
-    # Needs the previous step
+    # Needs the previous job
     needs: link-checker
 
     steps:
