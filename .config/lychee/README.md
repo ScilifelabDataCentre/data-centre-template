@@ -52,19 +52,19 @@ This template uses two GitHub Actions workflow files and one lychee configuratio
 | `.config/lychee/lychee-config.toml` | lychee configuration file used by the workflow                            |
 | `.config/lychee/README.md`          | This guide                                                                |
 
+[^1]: Even if we use the most optimal link checker, external links can break without any changes to our repository
+
+[^2]: We want to verify the links before merging
+
 ## What do the workflows do?
 
 The two workflows run on different events as described in the table above, and they also behave differently:
 
-| When                                            | lychee <br> run?   | Result uploaded to <br> GitHub issue? | Result is saved to cache? |
-| ----------------------------------------------- | ------------------ | ------------------------------------- | ------------------------- |
-| PR is opened / updated [^1]                     | :white_check_mark: | :x:                                   | :white_check_mark:        |
-| Scheduled run: Every day at midnight (UTC) [^2] | :white_check_mark: | :white_check_mark:                    | :x:                       |
-| On manual trigger [^2]                          | :white_check_mark: | :white_check_mark:                    | :x:                       |
-
-[^1]: Even if we use the most optimal link checker, external links can break without any changes to our repository
-
-[^2]: We want to verify the links before merging
+| When                                       | lychee <br> run?   | Result uploaded to <br> GitHub issue? | Result is saved to cache? |
+| ------------------------------------------ | ------------------ | ------------------------------------- | ------------------------- |
+| PR is opened / updated                     | :white_check_mark: | :x:                                   | :white_check_mark:        |
+| Scheduled run: Every day at midnight (UTC) | :white_check_mark: | :white_check_mark:                    | :x:                       |
+| On manual trigger                          | :white_check_mark: | :white_check_mark:                    | :x:                       |
 
 ## Configuration options
 
