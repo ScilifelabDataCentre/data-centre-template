@@ -9,6 +9,9 @@ name: Lychee Link Checker (PR)
 on:
   pull_request:
 
+permissions:
+  contents: read
+
 # Variables
 env:
   OUT_FILE: ./lychee/out.md
@@ -17,10 +20,6 @@ env:
 jobs:
   link-checker:
     runs-on: ubuntu-24.04
-
-    # Explicit permission to checkout repo
-    permissions:
-      contents: read
 
     steps:
       - name: Checkout repository
