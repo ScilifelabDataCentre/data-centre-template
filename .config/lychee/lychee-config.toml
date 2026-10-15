@@ -39,7 +39,7 @@ no_progress = true
 
 # Root path to use when checking absolute local links
 # https://lychee.cli.rs/guides/cli/#--root-dir
-root_dir = "."
+root_dir = "." # working directory
 
 # Verbose program output
 # Accepts log level: "error", "warn", "info", "debug", "trace"
