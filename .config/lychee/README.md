@@ -22,7 +22,7 @@ In this repository, lychee (via `lychee-action`) is configured to run when a Pul
 **lychee was chosen because:**
 
 - Open Source, dual-licensed MIT / Apache-2.0 &rarr; no restrictions for us to use it.
-- Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse) (same as lychee itself).
+- Actively maintained by the [lycheeverse GitHub Organisation](https://github.com/lycheeverse).
 - Fast - written in Rust.
 - Can check links in a variety of different formats, and both internal and external links.
 - Configurable, e.g. via our `lychee-config.toml`: Can exclude URL patterns, add accepted status codes, enable scanning internal link anchors, add timeouts and retries, etc.
