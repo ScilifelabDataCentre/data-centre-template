@@ -79,6 +79,7 @@ The configuration file in this setup includes the following options:
 - `hidden = true` to also check links within hidden files (e.g. `.config/`, `.github/`...)
 - `include_fragments` to also check headers (e.g. we could link to `#configuration-options` in this file and it would catch potential issues in that URL)
 - `no_progress = true` to disable interactive progress bar during CI
+- `root_dir` to make sure future absolute local links are found
 - `verbose = "info"` to get INFO level logging output during runs
 
 Regarding `no_progress` and `verbose`: These values are normally passed into `lychee` automatically by the `lychee-action`, but it is overridden when `args` is passed in by our workflow file. Instead of keeping all args in the workflow file, we specify all of them in the configuration file.
