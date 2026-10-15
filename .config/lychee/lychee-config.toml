@@ -37,6 +37,9 @@ include_fragments = "anchor-only" # links to headers
 # https://lychee.cli.rs/guides/cli/#-n---no-progress
 no_progress = true
 
+# Root path to use when checking absolute local links
+root_dir = "."
+
 # Verbose program output
 # Accepts log level: "error", "warn", "info", "debug", "trace"
 # https://lychee.cli.rs/guides/cli/#-v---verbose
