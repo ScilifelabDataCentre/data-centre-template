@@ -15,6 +15,8 @@ Figshare
 jsquery
 Kivy
 logfmt
+lycheecache
+lycheeignore
 mdlint
 Miarka
 MSBFS
