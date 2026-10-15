@@ -30,7 +30,6 @@ extensions = ["cff", "css", "htm", "html", "jsonc", "markdown", "md", "mdown", "
 hidden = true
 
 # Enable the checking of fragments in links
-# See <https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment/Text_fragments>
 # https://lychee.cli.rs/guides/cli/#--include-fragments
 include_fragments = "anchor-only" # links to headers
 
