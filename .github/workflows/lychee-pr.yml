@@ -15,7 +15,7 @@ permissions:
 # Variables
 env:
   OUT_FILE: ./lychee/out.md
-  CACHE_LOC: .lycheecache
+  LYCHEE_CACHE_FILE: .lycheecache # lychee's fixed cache file name; don't change
 
 jobs:
   link-checker:
@@ -31,7 +31,7 @@ jobs:
         id: restore-cache
         uses: actions/cache/restore@v6
         with:
-          path: ${{ env.CACHE_LOC }}
+          path: ${{ env.LYCHEE_CACHE_FILE }}
           key: cache-lychee-${{ github.sha }}
           restore-keys: cache-lychee-
 
@@ -47,5 +47,5 @@ jobs:
         # Save cache even when lychee fails
         if: ${{ !cancelled() }}
         with:
-          path: ${{ env.CACHE_LOC }}
+          path: ${{ env.LYCHEE_CACHE_FILE }}
           key: ${{ steps.restore-cache.outputs.cache-primary-key }}
