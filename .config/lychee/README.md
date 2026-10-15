@@ -90,9 +90,10 @@ Regarding `no_progress` and `verbose`: These values are normally passed into `ly
    - **Only want to run lychee manually / on schedule?** Skip the `lychee-pr.yml` file - only copy `lychee-main.yml`.
    - **Only want to run lychee on PR?** Skip the `lychee-main.yml` file - only copy `lychee-pr.yml`.
 
-2. Verify that the configuration file seems reasonable for your repository; Add and remove options when needed.
-3. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add URLs that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
-4. Push to your remote branch and open a PR. Adjust your configuration depending on the workflow results.
+2. Add `.lycheecache` to your `.gitignore` so that you don't accidentally push it to your remote branch after potential local lychee runs.
+3. Verify that the configuration file seems reasonable for your repository; Add and remove options when needed.
+4. In the configuration file, replace the regular expressions within the `exclude`. Either keep it empty or add URLs that you already know should be ignored during the link checking. See the [lychee.example.toml](https://github.com/lycheeverse/lychee/blob/54f8bf47ffbd35973b8eb016ccbc67221c75ba5f/lychee.example.toml#L161) for examples.
+5. Push to your remote branch and open a PR. Adjust your configuration depending on the workflow results.
    - No issue should be created. Issue only created during manual or scheduled run after merge of PR.
 
 ## Notes regarding this setup
