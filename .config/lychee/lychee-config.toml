@@ -19,6 +19,7 @@ exclude = [
     'https://doi.org/10.5281/zenodo.22706806', # will not change
     '^https://github.com/ScilifelabDataCentre/k1h-platform-docs/', # private repo
     '.*#metadata-for-\{\{service-name\}\}$', # template header with placeholder
+    '^https://ror\.org/', # ror is blocking, throttling didn't help
 ]
 
 # Include more file types
