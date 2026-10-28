@@ -17,6 +17,7 @@ cache_exclude_status = "400.."
 # https://lychee.cli.rs/guides/cli/#--exclude
 exclude = [
     'https://doi.org/10.5281/zenodo.22706806', # will not change
+    'https://ror.org/04ev03g22', # will not change
     '^https://github.com/ScilifelabDataCentre/k1h-platform-docs/', # private repo
     '.*#metadata-for-\{\{service-name\}\}$', # template header with placeholder
 ]
