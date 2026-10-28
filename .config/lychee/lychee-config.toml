@@ -51,7 +51,3 @@ verbose = "info"
 
 # Customize hosts here
 # See https://github.com/lycheeverse/lychee/blob/master/lychee.example.toml#L230
-
-[hosts."ror.org"]
-concurrency = 1
-request_interval = "2s"
