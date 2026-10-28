@@ -1,7 +1,7 @@
 # Template Repository for the SciLifeLab Data Centre
 
 ![Status: Work in Progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)
-[![Lychee Link Checker](https://github.com/ScilifelabDataCentre/data-centre-template/actions/workflows/lychee-main.yml/badge.svg?branch=main)](https://github.com/ScilifelabDataCentre/data-centre-template/actions/workflows/lychee-main.yml)
+[![Lychee Link Checker](https://github.com/ScilifelabDataCentre/data-centre-template/actions/workflows/lychee-main.yml/badge.svg)](https://github.com/ScilifelabDataCentre/data-centre-template/actions/workflows/lychee-main.yml)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22706806-blue)](https://doi.org/10.5281/zenodo.22706806)
 
 This repository provides example configurations for a set of different tools. When creating a new repository with this as a template, remember to update the information to fit **your** repository, and delete any files that only apply to the data-centre-template repository. Each directory / file contains information on how to adopt a template into an already existing repository.
